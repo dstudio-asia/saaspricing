@@ -5,16 +5,21 @@ window.addEventListener("load", function () {
 
 //  Countdown timer function  
   
-  let countDownDate = new Date("2022/12/28 14:37").getTime();
+  let countDownDate = [new Date("2023/12/28 17:37"), new Date("2023/01/28 18:37"), new Date("2023/06/28 14:37")]
 
-  // Update the count down every 1 second
-  let x = setInterval(function () {
+    
+let x = setInterval(function () {
+  // Get today's date and time
+  let now = new Date().getTime();
 
-    // Get today's date and time
-    let now = new Date().getTime();
+  let countdowns = document.querySelectorAll(".saaspricing-countdown");
 
-    // Find the distance between now and the count down date
-    let distance = countDownDate - now;
+  // Find the distance between now and the count down date
+  countdowns.forEach((countdown, i) => {
+    
+    let countdownIndex = countdown.dataset.countdownIndex;
+    let distance = countDownDate[countdownIndex] - now;
+      
 
     // Time calculations for days, hours, minutes and seconds
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -22,23 +27,16 @@ window.addEventListener("load", function () {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Output the result in an element with id="demo"
+    countdown.innerHTML = days + "d: " + hours + "h: "
+                + minutes + "m: " + seconds + "s ";
 
-    let countdowns = document.querySelectorAll(".sasspricing-countdown");
-  
+    if (distance < 0) {
+      clearInterval(x);
+      countdown.innerHTML = "EXPIRED";
+    }
+  });
+}, 1000);
 
-    countdowns.forEach((countdown) => {
-
-      countdown.innerHTML = days + "d: " + hours + "h: "
-        + minutes + "m: " + seconds + "s ";
-
-      // If the count down is over, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        countdown.innerHTML = "EXPIRED";
-      }
-    });
-  }, 1000);
 
 
   // review star rating function
@@ -91,28 +89,4 @@ $(document).ready(function() {
 		}
 		
 	});
-
-	$('.image-popup-fit-width').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		image: {
-			verticalFit: false
-		}
-	});
-
-	$('.image-popup-no-margins').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		closeBtnInside: false,
-		fixedContentPos: true,
-		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-		image: {
-			verticalFit: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300 // don't foget to change the duration also in CSS
-		}
-	});
-
 });
