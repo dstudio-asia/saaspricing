@@ -1,9 +1,14 @@
 :root{
-    --color-white: #fff ;
-    --color-black: #202020 ;
-    --color-gray-100: #fafafa ;
-    --color-box-shadow: #00000015;
- 
+    --saaspricing-primary-color:#6EC1E4;
+    --saaspricing-secondary-color:#54595F;
+    --saaspricing-color-white: #fff ;
+    --saaspricing-color-black: #202020 ;
+    --saaspricing-color-gray-100: #fafafa ;
+    --saaspricing-color-box-shadow: #00000015;
+}
+p{
+padding: 0;
+margin: 0;
 }
 
 .tableHeader {
@@ -22,8 +27,18 @@
 
 .saaspricing-table tr td {
     border-left: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 8px 24px;
+    padding: 15px;
     font-size: 14px;
+}
+.saaspricing-table tr td.ribbon-wrapper{
+    border: none;
+}
+.saaspricing-table tr.saaspricing-ribbon-table-row:hover{
+  background:none;
+}
+
+.saaspricing-table tr td.ribbon-wrapper{
+    padding:0;
 }
 
 .saaspricing-table tr td:first-child {
@@ -52,22 +67,16 @@
 
 /* Highlighted column */
 
-
-.saaspricing-table tr td:nth-child(3) {
-    padding: 15px 48px;
-}
-
-
 .saaspricing-table tr.price-table-head td {
     font-size: 16px;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: capitalize;
     min-width: 220px;
 }
 
 .saaspricing-table tr.price-table-head {
-    background-color: #7f1987;
-    color: var(--color-white);
+    background-color: var(--saaspricing-primary-color);
+    color: var(--saaspricing-color-white);
 }
 
 .saaspricing-table td.price {
@@ -77,13 +86,13 @@
     position: relative;
 }
 
-.saaspricing-table td.saaspricing-table-popular {
-    color: #202020;
-    text-transform: uppercase;
+.saaspricing-table td div.saaspricing-common-ribbon{
+    color: var(--saaspricing-color-white);
+    text-transform: capitalize;
     font-size: 12px;
-    padding: 12px 48px;
+    padding: 15px;
     font-weight: 700;
-    background-color: #fdffb6;
+    background-color: var(--saaspricing-secondary-color);
 }
 
 .saaspricing-table .saaspricing-blank {
@@ -184,8 +193,10 @@
     box-shadow: 0px 2px 10px #00000020;
 }
 
-.sasspricing-countdown {
+.saaspricing-countdown{
     white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 tbody svg {

@@ -12,6 +12,7 @@
  use Elementor\Group_Control_Box_Shadow;
  use Elementor\Group_Control_Image_Size;
  use \Elementor\Group_Control_Css_Filter;
+ use \Elementor\Group_Control_Border;
  
  if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -185,17 +186,17 @@ protected function register_controls() {
     $this->add_control(
         'saasp_column_html_title_tag_1',
         [
-            'label' => esc_html__( 'Title HTML Tag', 'textdomain' ),
+            'label' => esc_html__( 'Title HTML Tag', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SELECT,
-            'default' => 'span',
+            'default' => 'p',
             'options' => [
-                'h2' => esc_html__( 'H2', 'textdomain' ),
-                'h3' => esc_html__( 'H3', 'textdomain' ),
-                'h4'  => esc_html__( 'H4', 'textdomain' ),
-                'h5' => esc_html__( 'H5', 'textdomain' ),
-                'h6' => esc_html__( 'H6', 'textdomain' ),
-                'span' => esc_html__( 'Span', 'textdomain' ),
-                'p' => esc_html__( 'P', 'textdomain' ),
+                'h2' => esc_html__( 'H2', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h3' => esc_html__( 'H3', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h4'  => esc_html__( 'H4', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h5' => esc_html__( 'H5', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h6' => esc_html__( 'H6', SAAS_PRICINNG_TXT_DOMAIN ),
+                'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
+                'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
             ],
         ]
     );
@@ -204,10 +205,10 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_show_ribbon_1',
         [
-            'label' => esc_html__( 'Ribbon', 'textdomain' ),
+            'label' => esc_html__( 'Ribbon', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'textdomain' ),
-            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
             'return_value' => 'yes',
             'default' => 'yes',
             'condition' => [
@@ -219,9 +220,9 @@ protected function register_controls() {
     $this->add_control(
         'saasp_ribbon_title_1',
         [
-            'label' => esc_html__( 'Title', 'textdomain' ),
+            'label' => esc_html__( 'Title', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'Most Popular', 'textdomain' ),
+            'default' => esc_html__( 'Most Popular', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' => [
                 'saasp_comparison_show_ribbon_1' => 'yes',
             ],
@@ -231,10 +232,10 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_show_countdown_1',
         [
-            'label' => esc_html__( 'Countdown', 'textdomain' ),
+            'label' => esc_html__( 'Countdown', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'textdomain' ),
-            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
             'return_value' => 'yes',
             'default' => 'yes',
             'condition' => [
@@ -246,7 +247,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_expire_date_1',
         [
-            'label' => esc_html__( 'Expire Date', 'textdomain' ),
+            'label' => esc_html__( 'Expire Date', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
             'condition' => [
@@ -258,26 +259,27 @@ protected function register_controls() {
     $this->add_control(
         'sassp_column_one_combined_alignment',
         [
-            'label' => esc_html__( 'Alignment', 'textdomain' ),
+            'label' => esc_html__( 'Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
             'options' => [
                 'left' => [
-                    'title' => esc_html__( 'Left', 'textdomain' ),
+                    'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-left',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Center', 'textdomain' ),
+                    'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-center',
                 ],
                 'right' => [
-                    'title' => esc_html__( 'Right', 'textdomain' ),
+                    'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-right',
                 ],
             ],
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} .your-class' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saasp-ribbon-1' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-1' => 'text-align: {{VALUE}};',
             ],
         ]
     );
@@ -324,17 +326,17 @@ protected function register_controls() {
     $this->add_control(
         'saasp_column_html_title_tag_2',
         [
-            'label' => esc_html__( 'Title HTML Tag', 'textdomain' ),
+            'label' => esc_html__( 'Title HTML Tag', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SELECT,
-            'default' => 'span',
+            'default' => 'p',
             'options' => [
-                'h2' => esc_html__( 'H2', 'textdomain' ),
-                'h3' => esc_html__( 'H3', 'textdomain' ),
-                'h4'  => esc_html__( 'H4', 'textdomain' ),
-                'h5' => esc_html__( 'H5', 'textdomain' ),
-                'h6' => esc_html__( 'H6', 'textdomain' ),
-                'span' => esc_html__( 'Span', 'textdomain' ),
-                'p' => esc_html__( 'P', 'textdomain' ),
+                'h2' => esc_html__( 'H2', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h3' => esc_html__( 'H3', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h4'  => esc_html__( 'H4', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h5' => esc_html__( 'H5', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h6' => esc_html__( 'H6', SAAS_PRICINNG_TXT_DOMAIN ),
+                'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
+                'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
             ],
         ]
     );
@@ -342,10 +344,10 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_show_ribbon_2',
         [
-            'label' => esc_html__( 'Ribbon', 'textdomain' ),
+            'label' => esc_html__( 'Ribbon', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'textdomain' ),
-            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
             'return_value' => 'yes',
             'default' => 'yes',
             'condition' => [
@@ -357,9 +359,9 @@ protected function register_controls() {
     $this->add_control(
         'saasp_ribbon_title_2',
         [
-            'label' => esc_html__( 'Title', 'textdomain' ),
+            'label' => esc_html__( 'Title', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'Most Popular', 'textdomain' ),
+            'default' => esc_html__( 'Most Popular', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' => [
                 'saasp_comparison_show_ribbon_2' => 'yes',
             ],
@@ -369,10 +371,10 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_show_countdown_2',
         [
-            'label' => esc_html__( 'Countdown', 'textdomain' ),
+            'label' => esc_html__( 'Countdown', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'textdomain' ),
-            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
             'return_value' => 'yes',
             'default' => 'yes',
             'condition' => [
@@ -384,7 +386,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_expire_date_2',
         [
-            'label' => esc_html__( 'Expire Date', 'textdomain' ),
+            'label' => esc_html__( 'Expire Date', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
             'condition' => [
@@ -396,26 +398,27 @@ protected function register_controls() {
     $this->add_control(
         'sassp_column_two_combined_alignment',
         [
-            'label' => esc_html__( 'Alignment', 'textdomain' ),
+            'label' => esc_html__( 'Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
             'options' => [
                 'left' => [
-                    'title' => esc_html__( 'Left', 'textdomain' ),
+                    'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-left',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Center', 'textdomain' ),
+                    'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-center',
                 ],
                 'right' => [
-                    'title' => esc_html__( 'Right', 'textdomain' ),
+                    'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-right',
                 ],
             ],
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} .your-class' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saasp-ribbon-2' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-2' => 'text-align: {{VALUE}};',
             ],
         ]
     );
@@ -462,17 +465,17 @@ protected function register_controls() {
     $this->add_control(
         'saasp_column_html_title_tag_3',
         [
-            'label' => esc_html__( 'Title HTML Tag', 'textdomain' ),
+            'label' => esc_html__( 'Title HTML Tag', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SELECT,
-            'default' => 'span',
+            'default' => 'p',
             'options' => [
-                'h2' => esc_html__( 'H2', 'textdomain' ),
-                'h3' => esc_html__( 'H3', 'textdomain' ),
-                'h4'  => esc_html__( 'H4', 'textdomain' ),
-                'h5' => esc_html__( 'H5', 'textdomain' ),
-                'h6' => esc_html__( 'H6', 'textdomain' ),
-                'span' => esc_html__( 'Span', 'textdomain' ),
-                'p' => esc_html__( 'P', 'textdomain' ),
+                'h2' => esc_html__( 'H2', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h3' => esc_html__( 'H3', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h4'  => esc_html__( 'H4', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h5' => esc_html__( 'H5', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h6' => esc_html__( 'H6', SAAS_PRICINNG_TXT_DOMAIN ),
+                'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
+                'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
             ],
         ]
     );
@@ -480,10 +483,10 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_show_ribbon_3',
         [
-            'label' => esc_html__( 'Ribbon', 'textdomain' ),
+            'label' => esc_html__( 'Ribbon', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'textdomain' ),
-            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
             'return_value' => 'yes',
             'default' => 'yes',
             'condition' => [
@@ -495,9 +498,9 @@ protected function register_controls() {
     $this->add_control(
         'saasp_ribbon_title_3',
         [
-            'label' => esc_html__( 'Title', 'textdomain' ),
+            'label' => esc_html__( 'Title', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'Most Popular', 'textdomain' ),
+            'default' => esc_html__( 'Most Popular', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' => [
                 'saasp_comparison_show_ribbon_3' => 'yes',
             ],
@@ -507,10 +510,10 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_show_countdown_3',
         [
-            'label' => esc_html__( 'Countdown', 'textdomain' ),
+            'label' => esc_html__( 'Countdown', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'textdomain' ),
-            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
             'return_value' => 'yes', 
             'default' => 'yes',
             'condition' => [
@@ -522,7 +525,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_expire_date_3',
         [
-            'label' => esc_html__( 'Expire Date', 'textdomain' ),
+            'label' => esc_html__( 'Expire Date', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
             'condition' => [
@@ -554,7 +557,8 @@ protected function register_controls() {
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table tr.price-table-head td' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saasp-ribbon-3' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-3' => 'text-align: {{VALUE}};',
             ],
         ]
     );
@@ -618,7 +622,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .price-table-head td span' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .price-table-head td .saaspricing-heading-title' => 'color: {{VALUE}}',
             ],
         ]
     );
@@ -627,7 +631,7 @@ protected function register_controls() {
         Group_Control_Typography::get_type(),
         [
             'name' => 'saasp_heading_title_typography',
-            'selector' => '{{WRAPPER}} .price-table-head td span',
+            'selector' => '{{WRAPPER}} .price-table-head td .saaspricing-heading-title',
         ]
     );
 
@@ -658,6 +662,135 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_header_ribbon_style_tab',
+        [
+            'label' => esc_html__( 'Ribbon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_background_color',
+        [
+            'label' => esc_html__( 'Background Color', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-common-ribbon' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_header_ribbon_border',
+            'selector' => '{{WRAPPER}} .saaspricing-common-ribbon',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_border_radius',
+        [
+            'label' => esc_html__( 'Border Radius', 'textdomain' ),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em', 'custom' ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-common-ribbon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+        Group_Control_Box_Shadow::get_type(),
+        [
+            'name' => 'saasp_header_ribbon_box_shadow',
+            'selector' => '{{WRAPPER}} .saaspricing-common-ribbon',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_padding',
+        [
+            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em', 'custom' ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-common-ribbon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_title_heading',
+        [
+            'label' => esc_html__( 'Title', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::HEADING,
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_title_color',
+        [
+            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-ribbon-title' => 'color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+         Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_header_ribbon_title_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-ribbon-title',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_title_padding',
+        [
+            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em', 'custom' ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-ribbon-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_countdown_color',
+        [
+            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-countdown' => 'color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+         Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_header_ribbon_countdown_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-countdown',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_header_ribbon_countdown_padding',
+        [
+            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em', 'custom' ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-countdown' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
     
 
     $this->end_controls_section();
@@ -677,41 +810,38 @@ protected function render() {
                     <?php
                     if($settings['saasp_comparison_show_ribbon_1'] == "yes" || $settings['saasp_comparison_show_countdown_1'] == "yes" || $settings['saasp_comparison_show_ribbon_2'] == "yes" || $settings['saasp_comparison_show_countdown_2'] == "yes" || $settings['saasp_comparison_show_ribbon_3'] == "yes" || $settings['saasp_comparison_show_countdown_3'] == "yes"){
                     ?>
-                    <tr>
-                        <td></td>
+                    <tr class="saaspricing-ribbon-table-row">
+                    <td></td>
+                     <?php
+                      $saasp_expdate_one = $settings['saasp_comparison_expire_date_1'];
+                      $saasp_expdate_two = $settings['saasp_comparison_expire_date_2'];
+                      $saasp_expdate_three =  $settings['saasp_comparison_expire_date_3'];
+                      for($i = 1, $j = 0; $i <= $settings['saasp_select_columns'], $j < $settings['saasp_select_columns']; $i++, $j++){
+                     ?>
+                      <td class="ribbon-wrapper saasp-ribbon-<?php echo esc_attr($i); ?>" data-exp-date-one="<?php echo esc_attr($saasp_expdate_one); ?>" data-exp-date-two="<?php echo esc_attr($saasp_expdate_two); ?>" data-exp-date-three="<?php echo esc_attr($saasp_expdate_three); ?>">
                         <?php
-                        if($settings['saasp_comparison_show_ribbon_1'] == "yes" || $settings['saasp_comparison_show_countdown_1'] == "yes" ){
+                        if($settings['saasp_comparison_show_ribbon_'.$i] == "yes" || $settings['saasp_comparison_show_countdown_'.$i] == "yes" ){
                         ?>
-                        <td class="saaspricing-table-popular">
-                            <div><?php echo esc_html($settings['saasp_ribbon_title_1']); ?></div>
-                            <div class="saaspricing-countdown py-1 px-2 fs-sm text-dark rounded" data-expire-date-1="<?php echo "hello" ?>"> </div>
-                            <div>
-                                <?php
-                                 echo $settings['saasp_comparison_show_ribbon_1'];
-                                 echo $settings['saasp_comparison_show_ribbon_1'];
-                                 echo $settings['saasp_comparison_show_ribbon_1'];
-                                 echo $settings['saasp_comparison_show_countdown_1'];
-                                 echo $settings['saasp_comparison_show_countdown_2'];
-                                 echo $settings['saasp_comparison_show_countdown_3'];
-                                ?>
-                            </div>
-                        </td>
+                        <div class="saaspricing-common-ribbon">
+                            <?php
+                             if($settings['saasp_ribbon_title_'.$i]){
+                            ?>
+                            <div class="saaspricing-ribbon-title"><?php echo esc_html($settings['saasp_ribbon_title_'.$i]); ?></div>
+                            <?php
+                             }
+                            ?>
+                            <?php
+                            if($settings['saasp_comparison_show_countdown_'.$i]){
+                            ?>
+                            <div class="saaspricing-countdown fs-sm" data-countdown-index="<?php echo esc_attr($j); ?>" data-expire-date-<?php echo esc_attr($i); ?>="<?php echo esc_attr($settings['saasp_comparison_expire_date_'.$i]); ?>" > </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
                         <?php
                         }
-                        if($settings['saasp_comparison_show_ribbon_2'] == "yes" || $settings['saasp_comparison_show_countdown_2'] == "yes" ){
                         ?>
-                        <td class="saaspricing-table-popular">
-                            <div class="">Middle Popular</div>
-                            <div class="saaspricing-countdown py-1 px-2 fs-sm text-dark rounded" > </div>
-                        </td>
-                       <?php
-                        }
-                        if($settings['saasp_comparison_show_ribbon_3'] == "yes" || $settings['saasp_comparison_show_countdown_3'] == "yes" ){
-                       ?>
-                         <td class="saaspricing-table-popular">
-                            <div class="">Third popular</div>
-                            <div class="saaspricing-countdown py-1 px-2 fs-sm text-dark rounded" > </div>
-                        </td>
+                       </td>
                        <?php
                         }
                        ?>
@@ -726,9 +856,9 @@ protected function render() {
                         <?php
                         for ( $i = 1; $i <= $settings['saasp_select_columns'] ; $i++ ) {
                            ?>
-                            <td>
-                            <span><?php echo esc_html($settings['saasp_header_title_text_'.$i]); ?></span>
-                            <br><small class="fs-sm"><?php echo esc_html($settings['saasp_header_title_des_'.$i]); ?></small>
+                            <td class="saasp-table-head-<?php echo esc_attr($i); ?>">
+                            <?php esc_html(printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_column_html_title_tag_'.$i], $settings['saasp_header_title_text_'.$i]));?>
+                            <small class="fs-sm"><?php echo esc_html($settings['saasp_header_title_des_'.$i]); ?></small>
                             </td>
                            <?php
                         }

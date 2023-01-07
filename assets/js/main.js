@@ -1,82 +1,70 @@
-jQuery(document).ready(function($){
-
+;(function($) {
   "use strict";
+  $(window).on("elementor/frontend/init", function () {
+      elementorFrontend.hooks.addAction("frontend/element_ready/saasComparison.default", function (scope, $) {
+        let saaspMainClass = $(scope).find(".ribbon-wrapper");
+        let saaspDateOne = saaspMainClass.data('exp-date-one');
+        let saaspDateTwo = saaspMainClass.data('exp-date-two');
+        let saaspDateThree = saaspMainClass.data('exp-date-three');
 
-  const dataValue = $('.saaspricing-countdown').data('my-expire-date-1');
-  console.log(dataValue);
-  let countDownDate = new Date("2023/01/4 23:04").getTime();
+        let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)]
+        let saaspExpire = setInterval(function () {
+          // Get today's date and time
+          let saaspCurrentTime = new Date().getTime();
 
-  // Update the count down every 1 second
-  let x = setInterval(function () {
+          let countdowns =  document.querySelectorAll(".saaspricing-countdown");
 
-    // Get today's date and time
-    let now = new Date().getTime();
+          // Find the distance between now and the count down date
+          countdowns.forEach((countdown, i) => {
+            
+            let countdownIndex = countdown.dataset.countdownIndex;
+            let distance = saaspCountDownDate[countdownIndex] - saaspCurrentTime;
+              
 
-    // Find the distance between now and the count down date
-    let distance = countDownDate - now;
+            // Time calculations for days, hours, minutes and seconds
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Time calculations for days, hours, minutes and seconds
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdown.innerHTML = days + "d: " + hours + "h: "
+                        + minutes + "m: " + seconds + "s ";
 
-    // Output the result in an element with id="demo"
+            if (distance < 0) {
+              clearInterval(x);
+              countdown.innerHTML = "EXPIRED";
+            }
+          });
+        }, 1000);
 
-    let countdowns = document.querySelectorAll(".saaspricing-countdown");
-  
+        //-- Table Sticky Header Function
+        window.onscroll = function () { saaspTableSticky() };
+        let saaspHeader = document.getElementById("tableHeader");
+        let saaspSticky = saaspHeader.offsetTop;
+        function saaspTableSticky() {      
+          if (window.pageYOffset > saaspSticky) {
+            header.classList.add("saaspricing-sticky");
+          } else {
+            header.classList.remove("saaspricing-sticky");
+          }
+        }
 
-    countdowns.forEach((countdown) => {
+        //-- Tooltip Trigger Function 
+        let saaspTooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        let saaspTooltipList = saaspTooltipTriggerList.map(function (saaspTooltipTriggerEl) {
+          return new bootstrap.Tooltip(saaspTooltipTriggerEl)
+        })
 
-      countdown.innerHTML = days + "d: " + hours + "h: "
-        + minutes + "m: " + seconds + "s ";
-
-      // If the count down is over, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        countdown.innerHTML = " ";
-        countdown.style.display = "none";
-      }
-    });
-  }, 1000);
-
-
-
-  // table sticky header function
-
-  window.onscroll = function () { myFunction() };
-
-  let header = document.getElementById("tableHeader");
-  let sticky = header.offsetTop;
-
-  function myFunction() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("saaspricing-sticky");
-    } else {
-      header.classList.remove("saaspricing-sticky");
-    }
-  }
-
-  // tooltip trigger function 
-
-  let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
+        //-- Image Popup
+        $('.image-popup-vertical-fit').magnificPopup({
+          type: 'image',
+          closeOnContentClick: true,
+          mainClass: 'mfp-img-mobile',
+          image: {
+            verticalFit: true
+          }
+        });
+           
+      });
   })
-
-  	
-   $('.image-popup-vertical-fit').magnificPopup(
-    {
-		type: 'image',
-		closeOnContentClick: true,
-		mainClass: 'mfp-img-mobile',
-		image: {
-			verticalFit: true
-		}
-	}
-  );
-
-  
-
-
-});
+})(jQuery);
