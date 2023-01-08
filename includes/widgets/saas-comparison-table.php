@@ -199,6 +199,9 @@ protected function register_controls() {
                 'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
                 'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
             ],
+            'condition' => [
+                'saasp_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -305,6 +308,9 @@ protected function register_controls() {
             'label_off' => esc_html__( 'Hide', 'textdomain' ),
             'return_value' => 'yes',
             'default' => 'yes',
+            'condition' => [
+                'saasp_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -333,6 +339,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} td.saasp-ribbon-1 .saaspricing-common-ribbon' => 'align-items: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-1' => 'text-align: {{VALUE}};',
+            ],
+            'condition' => [
+                'saasp_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -391,6 +400,9 @@ protected function register_controls() {
                 'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
                 'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
             ],
+            'condition' => [
+                'saasp_select_columns' => ['2','3'],
+            ],
         ]
     );
     
@@ -417,6 +429,7 @@ protected function register_controls() {
             'default' => esc_html__( 'Most Popular', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' => [
                 'saasp_comparison_show_ribbon_2' => 'yes',
+                'saasp_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -444,6 +457,61 @@ protected function register_controls() {
             'label_block' => false,
             'condition' => [
                 'saasp_comparison_show_countdown_2' => 'yes',
+                'saasp_select_columns' => ['2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_choose_media_2',
+        [
+            'label' => esc_html__( 'Choose Image', 'textdomain' ),
+            'type' =>  Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+            'condition' => [
+                'saasp_select_columns' => ['2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_image_width_media_2',
+        [
+            'label' => esc_html__( 'Image Width', 'textdomain' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ '%'],
+            'range' => [
+                '%' => [
+                    'min' => 0,
+                    'max' => 100,
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 100,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' => [
+                'saasp_select_columns' => ['2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_media_light_box_2',
+        [
+            'label' => esc_html__( 'Light Box', 'textdomain' ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', 'textdomain' ),
+            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'condition' => [
+                'saasp_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -454,7 +522,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
             'options' => [
-                'left' => [
+                'start' => [
                     'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-left',
                 ],
@@ -462,7 +530,7 @@ protected function register_controls() {
                     'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-center',
                 ],
-                'right' => [
+                'end' => [
                     'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-right',
                 ],
@@ -472,6 +540,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} td.saasp-ribbon-2 .saaspricing-common-ribbon' => 'align-items: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-2' => 'text-align: {{VALUE}};',
+            ],
+            'condition' => [
+                'saasp_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -530,6 +601,9 @@ protected function register_controls() {
                 'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
                 'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
             ],
+            'condition' => [
+                'saasp_select_columns' => '3',
+            ],
         ]
     );
 
@@ -556,6 +630,7 @@ protected function register_controls() {
             'default' => esc_html__( 'Most Popular', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' => [
                 'saasp_comparison_show_ribbon_3' => 'yes',
+                'saasp_select_columns' => '3'
             ],
         ]
     );
@@ -583,6 +658,61 @@ protected function register_controls() {
             'label_block' => false,
             'condition' => [
                 'saasp_comparison_show_countdown_3' => 'yes',
+                'saasp_select_columns' => '3',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_choose_media_3',
+        [
+            'label' => esc_html__( 'Choose Image', 'textdomain' ),
+            'type' =>  Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+            'condition' => [
+                'saasp_select_columns' => '3',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_image_width_media_3',
+        [
+            'label' => esc_html__( 'Image Width', 'textdomain' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ '%'],
+            'range' => [
+                '%' => [
+                    'min' => 0,
+                    'max' => 100,
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 100,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' => [
+                'saasp_select_columns' => '3',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_media_light_box_3',
+        [
+            'label' => esc_html__( 'Light Box', 'textdomain' ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', 'textdomain' ),
+            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'condition' => [
+                'saasp_select_columns' => '3',
             ],
         ]
     );
@@ -594,7 +724,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
             'options' => [
-                'left' => [
+                'start' => [
                     'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-left',
                 ],
@@ -602,7 +732,7 @@ protected function register_controls() {
                     'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-center',
                 ],
-                'right' => [
+                'end' => [
                     'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-right',
                 ],
@@ -612,6 +742,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} td.saasp-ribbon-3 .saaspricing-common-ribbon' => 'align-items: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-3' => 'text-align: {{VALUE}};',
+            ],
+            'condition' => [
+                'saasp_select_columns' => '3',
             ],
         ]
     );
