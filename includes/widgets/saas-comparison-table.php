@@ -13,6 +13,7 @@
  use Elementor\Group_Control_Image_Size;
  use \Elementor\Group_Control_Css_Filter;
  use \Elementor\Group_Control_Border;
+ use \Elementor\Utils;
  
  if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -257,12 +258,64 @@ protected function register_controls() {
     );
 
     $this->add_control(
+        'saasp_comparison_choose_media_1',
+        [
+            'label' => esc_html__( 'Choose Image', 'textdomain' ),
+            'type' =>  Controls_Manager::MEDIA,
+            'default' => [
+                'url' => Utils::get_placeholder_image_src(),
+            ],
+            'condition' => [
+                'saasp_select_columns' => ['1','2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_image_width_media_1',
+        [
+            'label' => esc_html__( 'Image Width', 'textdomain' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ '%'],
+            'range' => [
+                '%' => [
+                    'min' => 0,
+                    'max' => 100,
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 100,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' => [
+                'saasp_select_columns' => ['1','2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_media_light_box_1',
+        [
+            'label' => esc_html__( 'Light Box', 'textdomain' ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', 'textdomain' ),
+            'label_off' => esc_html__( 'Hide', 'textdomain' ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+        ]
+    );
+
+
+    $this->add_control(
         'sassp_column_one_combined_alignment',
         [
             'label' => esc_html__( 'Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
             'options' => [
-                'left' => [
+                'start' => [
                     'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-left',
                 ],
@@ -270,7 +323,7 @@ protected function register_controls() {
                     'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-center',
                 ],
-                'right' => [
+                'end' => [
                     'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-right',
                 ],
@@ -278,7 +331,7 @@ protected function register_controls() {
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} .saasp-ribbon-1' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} td.saasp-ribbon-1 .saaspricing-common-ribbon' => 'align-items: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-1' => 'text-align: {{VALUE}};',
             ],
         ]
@@ -417,7 +470,7 @@ protected function register_controls() {
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} .saasp-ribbon-2' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} td.saasp-ribbon-2 .saaspricing-common-ribbon' => 'align-items: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-2' => 'text-align: {{VALUE}};',
             ],
         ]
@@ -557,7 +610,7 @@ protected function register_controls() {
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} .saasp-ribbon-3' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} td.saasp-ribbon-3 .saaspricing-common-ribbon' => 'align-items: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-table tr.price-table-head td.saasp-table-head-3' => 'text-align: {{VALUE}};',
             ],
         ]
@@ -823,20 +876,23 @@ protected function render() {
                         if($settings['saasp_comparison_show_ribbon_'.$i] == "yes" || $settings['saasp_comparison_show_countdown_'.$i] == "yes" ){
                         ?>
                         <div class="saaspricing-common-ribbon">
+                            <div class="saaspricing-ribbon-title">
                             <?php
-                             if($settings['saasp_ribbon_title_'.$i]){
+                            if($settings['saasp_ribbon_title_'.$i]){
+                            echo esc_html($settings['saasp_ribbon_title_'.$i]);
+                            }
                             ?>
-                            <div class="saaspricing-ribbon-title"><?php echo esc_html($settings['saasp_ribbon_title_'.$i]); ?></div>
+                            </div>
+                           
+                            <div class="saaspricing-countdown fs-sm" style="margin-bottom: 0;"> 
                             <?php
-                             }
+                            if($settings['saasp_comparison_show_countdown_'.$i] && $settings['saasp_comparison_show_countdown_'.$i] != ""){
                             ?>
-                            <?php
-                            if($settings['saasp_comparison_show_countdown_'.$i]){
-                            ?>
-                            <div class="saaspricing-countdown fs-sm" data-countdown-index="<?php echo esc_attr($j); ?>" data-expire-date-<?php echo esc_attr($i); ?>="<?php echo esc_attr($settings['saasp_comparison_expire_date_'.$i]); ?>" > </div>
+                            <div class="show-expire-date" data-countdown-index="<?php echo esc_attr($j); ?>" data-expire-date-<?php echo esc_attr($i); ?>="<?php echo esc_attr($settings['saasp_comparison_expire_date_'.$i]); ?>"></div>
                             <?php
                             }
                             ?>
+                            </div>
                         </div>
                         <?php
                         }

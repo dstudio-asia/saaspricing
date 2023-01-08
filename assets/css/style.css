@@ -87,13 +87,20 @@ margin: 0;
 }
 
 .saaspricing-table td div.saaspricing-common-ribbon{
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: var(--saaspricing-color-white);
     text-transform: capitalize;
     font-size: 12px;
-    padding: 15px;
+    padding: 36px;
     font-weight: 700;
     background-color: var(--saaspricing-secondary-color);
 }
+
+
 
 .saaspricing-table .saaspricing-blank {
     background-color: #fafafa;
@@ -195,8 +202,6 @@ margin: 0;
 
 .saaspricing-countdown{
     white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
 }
 
 tbody svg {

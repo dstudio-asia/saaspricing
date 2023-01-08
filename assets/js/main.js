@@ -12,7 +12,7 @@
           // Get today's date and time
           let saaspCurrentTime = new Date().getTime();
 
-          let countdowns =  document.querySelectorAll(".saaspricing-countdown");
+          let countdowns =  document.querySelectorAll(".show-expire-date");
 
           // Find the distance between now and the count down date
           countdowns.forEach((countdown, i) => {
