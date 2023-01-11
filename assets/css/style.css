@@ -72,6 +72,7 @@ margin: 0;
     font-weight: 600;
     text-transform: capitalize;
     min-width: 220px;
+    padding:20px;
 }
 
 .saaspricing-table tr.price-table-head {
@@ -80,14 +81,14 @@ margin: 0;
 }
 
 .saaspricing-table td.price {
-    padding: 16px 24px;
+    padding: 20px;
     font-size: 20px;
     font-weight: 600;
     position: relative;
 }
 
 .saaspricing-table td div.saaspricing-common-ribbon{
-    height: 72px;
+    height: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,12 +96,10 @@ margin: 0;
     color: var(--saaspricing-color-white);
     text-transform: capitalize;
     font-size: 12px;
-    padding: 36px;
+    padding: 40px 20px;
     font-weight: 700;
     background-color: var(--saaspricing-secondary-color);
 }
-
-
 
 .saaspricing-table .saaspricing-blank {
     background-color: #fafafa;
@@ -111,6 +110,10 @@ margin: 0;
 .saaspricing-table svg {
     max-width: 80px;
     fill: #7f1987;
+}
+
+.elementor-widget-saasComparison .elementor-widget-container{
+    overflow: hidden;
 }
 
 
@@ -131,6 +134,19 @@ margin: 0;
     color: gray;
     text-align: left;
     line-height: 1.6em;
+}
+
+.saasspricing-pricing-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:5px;
+    line-height: .8; 
+    padding:15px 0 8px 0;
+}
+.saaspricing-original-slashed-price, .saaspricing-price-symbol, .saaspricing-fraction-price{
+    line-height: .8;
 }
 
 /* ribbons  */
@@ -202,6 +218,11 @@ margin: 0;
 
 .saaspricing-countdown{
     white-space: nowrap;
+}
+
+.saaspricing-fraction-price{
+ vertical-align: super;
+ font-size: 16px;
 }
 
 tbody svg {
