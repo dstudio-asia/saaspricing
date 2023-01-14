@@ -57,10 +57,6 @@ margin: 0;
     background-color: #f9f9f9;
 }
 
-.saaspricing-table .fa-check {
-    color: #198754;
-}
-
 .saaspricing-table .fa-times {
     color: #D8D6E3;
 }
@@ -88,7 +84,7 @@ margin: 0;
 }
 
 .saaspricing-table td div.saaspricing-common-ribbon{
-    height: 30px;
+    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +92,6 @@ margin: 0;
     color: var(--saaspricing-color-white);
     text-transform: capitalize;
     font-size: 12px;
-    padding: 40px 20px;
     font-weight: 700;
     background-color: var(--saaspricing-secondary-color);
 }
@@ -106,17 +101,17 @@ margin: 0;
     border: 0 none;
 }
 
-.saaspricing-table img,
-.saaspricing-table svg {
+.saaspricing-table img {
     max-width: 80px;
-    fill: #7f1987;
+}
+
+.saaspricing-table-title{
+    font-size: 28px;
 }
 
 .elementor-widget-saasComparison .elementor-widget-container{
     overflow: hidden;
 }
-
-
 
 /* single pricing section  */
 
@@ -227,7 +222,6 @@ margin: 0;
 
 tbody svg {
     cursor: pointer;
-    color: #7f1987;
 }
 
 .tooltip-inner {

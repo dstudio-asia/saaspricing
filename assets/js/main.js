@@ -2,19 +2,20 @@
   "use strict";
   $(window).on("elementor/frontend/init", function () {
       elementorFrontend.hooks.addAction("frontend/element_ready/saasComparison.default", function (scope, $) {
-        let saaspMainClass = $(scope).find(".ribbon-wrapper");
-        let saaspDateOne = saaspMainClass.data('exp-date-one');
-        let saaspDateTwo = saaspMainClass.data('exp-date-two');
-        let saaspDateThree = saaspMainClass.data('exp-date-three');
 
-        let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)]
         let saaspExpire = setInterval(function() {
-          // Get today's date and time
+
+          let saaspMainClass = $(scope).find(".ribbon-wrapper");
+          let saaspDateOne = saaspMainClass.data('exp-date-one');
+          let saaspDateTwo = saaspMainClass.data('exp-date-two');
+          let saaspDateThree = saaspMainClass.data('exp-date-three');
+
+          let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)];
           let saaspCurrentTime = new Date().getTime();
-        
           let countdowns = $(scope).find(".show-expire-date");
         
           // Find the distance between now and the count down date
+          
           countdowns.each(function() {
             let countdownIndex = $(this).data("countdown-index");
             let distance = saaspCountDownDate[countdownIndex] - saaspCurrentTime;
@@ -23,7 +24,7 @@
             let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
+            
             $(this).html(days + "d: " + hours + "h: " + minutes + "m: " + seconds + "s ");
         
             if (distance < 0) {
@@ -32,7 +33,6 @@
             }
           });
         }, 1000);
-        
 
         //-- Table Sticky Header Function
         window.onscroll = function () { saaspTableSticky() };
@@ -40,9 +40,9 @@
         let saaspSticky = saaspHeader.offsetTop;
         function saaspTableSticky() {      
           if (window.pageYOffset > saaspSticky) {
-            header.classList.add("saaspricing-sticky");
+            saaspHeader.classList.add("saaspricing-sticky");
           } else {
-            header.classList.remove("saaspricing-sticky");
+            saaspHeader.classList.remove("saaspricing-sticky");
           }
         }
 
