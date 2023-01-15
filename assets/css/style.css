@@ -5,6 +5,7 @@
     --saaspricing-color-black: #202020 ;
     --saaspricing-color-gray-100: #fafafa ;
     --saaspricing-color-box-shadow: #00000015;
+    --saaspricing-color-blue: #0d6efd;
 }
 p{
 padding: 0;
@@ -27,9 +28,10 @@ margin: 0;
 
 .saaspricing-table tr td {
     border-left: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 15px;
+    padding: 15px 20px;
     font-size: 14px;
 }
+
 .saaspricing-table tr td.ribbon-wrapper{
     border: none;
 }
@@ -84,7 +86,6 @@ margin: 0;
 }
 
 .saaspricing-table td div.saaspricing-common-ribbon{
-    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,6 +108,14 @@ margin: 0;
 
 .saaspricing-table-title{
     font-size: 28px;
+}
+
+.saaspricing-ribbon-title {
+    padding: 0px 20px;
+}
+
+.show-expire-date {
+    padding: 0px 20px;
 }
 
 .elementor-widget-saasComparison .elementor-widget-container{
@@ -161,7 +170,7 @@ margin: 0;
     height: 40px;
     width: 40px;
     border-radius: 50px;
-    color: var( --saaspricing-color-white);
+    color: var(--saaspricing-color-white);
     right: 10px;
     top: 15px;
 }
@@ -170,7 +179,33 @@ margin: 0;
     vertical-align: super;
 }
 
-/* button css  */
+/* button css */
+.saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)){
+    color:var(--saaspricing-color-white);
+}
+a.saaspricing-secondary-btn{
+    color:var(--saaspricing-color-blue);
+}
+.saaspricing-xsm-btn{
+    font-size: 14px;
+    padding: 10px 20px;
+}
+.saaspricing-sm-btn{
+    font-size: 15px;
+    padding: 12px 24px;
+}
+.saaspricing-m-btn{
+    font-size: 16px;
+    padding: 15px 30px;
+}
+.saaspricing-l-btn{
+    font-size: 18px;
+    padding: 20px 40px;
+}
+.saaspricing-xl-btn{
+    font-size: 20px;
+    padding: 25px 50px;
+}
 
 .saaspricing-btn-1:hover {
     background-color: #198754;

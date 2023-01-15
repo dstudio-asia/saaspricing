@@ -1472,7 +1472,7 @@ protected function register_controls() {
     $this->add_responsive_control(
         'saasp_ribbon_min_height',
         [
-            'label' => esc_html__( 'Height', 'textdomain' ),
+            'label' => esc_html__( 'Height', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SLIDER,
             'size_units' => [ 'px'],
             'range' => [
@@ -2424,19 +2424,19 @@ protected function register_controls() {
     $this->add_control(
         'saaspricing_comparison_features_title_alignment',
         [
-            'label' => esc_html__( 'Feature Alignment', 'textdomain' ),
+            'label' => esc_html__( 'Feature Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
             'options' => [
                 'left' => [
-                    'title' => esc_html__( 'Left', 'textdomain' ),
+                    'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-left',
                 ],
                 'center' => [
-                    'title' => esc_html__( 'Center', 'textdomain' ),
+                    'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-center',
                 ],
                 'right' => [
-                    'title' => esc_html__( 'Right', 'textdomain' ),
+                    'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
                     'icon' => 'eicon-text-align-right',
                 ],
             ],
@@ -2451,8 +2451,955 @@ protected function register_controls() {
     $this->add_control(
         'saaspricing_comparison_features_cell_alignment',
         [
-            'label' => esc_html__( 'Cell Alignment', 'textdomain' ),
+            'label' => esc_html__( 'Cell Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::CHOOSE,
+            'options' => [
+                'left' => [
+                    'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                'center' => [
+                    'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                'right' => [
+                    'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'center',
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} td.saaspricing-cell' => 'text-align: {{VALUE}};',
+            ],
+        ]
+    );
+
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+        'saasp_cta_section_starts',
+        [
+            'label' => esc_html__( 'CTA', SAAS_PRICINNG_TXT_DOMAIN ),
+            'tab' =>   Controls_Manager::TAB_CONTENT,
+        ]
+    );
+
+    $this->add_control(
+        'saasp_column_one_primary_cta',
+        [
+            'label' => esc_html__( 'Column One', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_popover_1',
+        [
+            'label' => esc_html__( 'Primary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => esc_html__( 'Default', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_on' => esc_html__( 'Custom', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+        ]
+    );
+
+    $this->start_popover('saasp_primary_cta_popover_1');
+
+    $this->add_control(
+        'saasp_primary_cta_switch_1',
+        [
+            'label' => esc_html__( 'Primary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_text_1',
+        [
+            'label' => esc_html__( 'Text', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Get Started', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_primary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_url_1',
+        [
+            'label' => esc_html__( 'Link', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', SAAS_PRICINNG_TXT_DOMAIN ),
+            'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+                'custom_attributes' => '',
+            ],
+            'label_block' => true,
+            'condition' =>[
+                'saasp_primary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_size_1',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'small',
+            'options' => [
+                'extra-small' => esc_html__( 'Extra Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'small'  => esc_html__( 'Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'medium' => esc_html__( 'Medium', SAAS_PRICINNG_TXT_DOMAIN ),
+                'large' => esc_html__( 'Large', SAAS_PRICINNG_TXT_DOMAIN ),
+                'extra-large' => esc_html__( 'Extra Large', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_icon_1',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::ICONS,
+            'default' => [
+                'value' => 'fas fa-arrow-right',
+                'library' => 'fa-solid',
+            ],
+            'recommended' => [
+                'fa-solid' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+                'fa-regular' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saasp_primary_cta_icon_spacing_1',
+        [
+            'label' => esc_html__( 'Icon Spacing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 50,
+                    'step' => 1,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-icon-spacing-1' => 'padding-left: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_id_1',
+        [
+            'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'btn-id-1', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_primary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->end_popover('saasp_primary_cta_popover_1');
+
+
+    // Column 1 Secondary
+
+    $this->add_control(
+        'saasp_secondary_cta_popover_1',
+        [
+            'label' => esc_html__( 'Secondary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => esc_html__( 'Default', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_on' => esc_html__( 'Custom', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+        ]
+    );
+
+    $this->start_popover('saasp_secondary_cta_popover_1');
+
+    $this->add_control(
+        'saasp_secondary_cta_switch_1',
+        [
+            'label' => esc_html__( 'Secondary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'no',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_text_1',
+        [
+            'label' => esc_html__( 'Text', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Learn More...', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_secondary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_url_1',
+        [
+            'label' => esc_html__( 'Link', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', SAAS_PRICINNG_TXT_DOMAIN ),
+            'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+                'custom_attributes' => '',
+            ],
+            'label_block' => true,
+            'condition' =>[
+                'saasp_secondary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_size_1',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'small',
+            'options' => [
+                'extra-small' => esc_html__( 'Extra Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'small'  => esc_html__( 'Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'medium' => esc_html__( 'Medium', SAAS_PRICINNG_TXT_DOMAIN ),
+                'large' => esc_html__( 'Large', SAAS_PRICINNG_TXT_DOMAIN ),
+                'extra-large' => esc_html__( 'Extra Large', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'border-style: {{VALUE}};',
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_icon_1',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::ICONS,
+            'recommended' => [
+                'fa-solid' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+                'fa-regular' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saasp_secondary_cta_icon_spacing_1',
+        [
+            'label' => esc_html__( 'Icon Spacing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 5,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_id_1',
+        [
+            'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( ' ', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_secondary_cta_switch_1' => 'yes',
+            ]
+        ]
+    );
+
+    $this->end_popover('saasp_secondary_cta_popover_1');
+ 
+
+    $this->add_control(
+        'saasp_primary_cta_2',
+        [
+            'label' => esc_html__( 'Column Two', SAAS_PRICINNG_TXT_DOMAIN ), 
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+            'condition' =>[
+                'saasp_select_columns' => ['2','3'],
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_popover_2',
+        [
+            'label' => esc_html__( 'Primary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => esc_html__( 'Default', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_on' => esc_html__( 'Custom', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'condition' =>[
+                'saasp_select_columns' => ['2','3'],
+            ]
+        ]
+    );
+
+    $this->start_popover('saasp_primary_cta_popover_2');
+
+    $this->add_control(
+        'saasp_primary_cta_switch_2',
+        [
+            'label' => esc_html__( 'Primary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_text_2',
+        [
+            'label' => esc_html__( 'Text', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Get Started', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_primary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_url_2',
+        [
+            'label' => esc_html__( 'Link', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', SAAS_PRICINNG_TXT_DOMAIN ),
+            'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+                'custom_attributes' => '',
+            ],
+            'label_block' => true,
+            'condition' =>[
+                'saasp_primary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_size_2',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'small',
+            'options' => [
+                'extra-small' => esc_html__( 'Extra Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'small'  => esc_html__( 'Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'medium' => esc_html__( 'Medium', SAAS_PRICINNG_TXT_DOMAIN ),
+                'large' => esc_html__( 'Large', SAAS_PRICINNG_TXT_DOMAIN ),
+                'extra-large' => esc_html__( 'Extra Large', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_icon_2',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::ICONS,
+            'default' => [
+                'value' => 'fas  fa-arrow-right',
+                'library' => 'fa-solid',
+            ],
+            'recommended' => [
+                'fa-solid' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+                'fa-regular' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saasp_primary_cta_icon_spacing_2',
+        [
+            'label' => esc_html__( 'Icon Spacing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 5,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-icon-spacing-2' => 'padding-left: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_id_2',
+        [
+            'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'btn-id-2', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_primary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->end_popover('saasp_primary_cta_popover_2');
+
+    $this->add_control(
+        'saasp_secondary_cta_popover_2',
+        [
+            'label' => esc_html__( 'Secondary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => esc_html__( 'Default', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_on' => esc_html__( 'Custom', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'condition' =>[
+                'saasp_select_columns' => ['2','3'],
+            ]
+        ]
+    );
+
+    $this->start_popover('saasp_secondary_cta_popover_2');
+
+    $this->add_control(
+        'saasp_secondary_cta_switch_2',
+        [
+            'label' => esc_html__( 'Secondary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'no',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_text_2',
+        [
+            'label' => esc_html__( 'Text', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Learn More...', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_secondary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_url_2',
+        [
+            'label' => esc_html__( 'Link', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', SAAS_PRICINNG_TXT_DOMAIN ),
+            'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+                'custom_attributes' => '',
+            ],
+            'label_block' => true,
+            'condition' =>[
+                'saasp_secondary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_size_2',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'small',
+            'options' => [
+                'extra-small' => esc_html__( 'Extra Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'small'  => esc_html__( 'Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'medium' => esc_html__( 'Medium', SAAS_PRICINNG_TXT_DOMAIN ),
+                'large' => esc_html__( 'Large', SAAS_PRICINNG_TXT_DOMAIN ),
+                'extra-large' => esc_html__( 'Extra Large', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'border-style: {{VALUE}};',
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_icon_2',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::ICONS,
+            'recommended' => [
+                'fa-solid' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+                'fa-regular' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saasp_secondary_cta_icon_spacing_2',
+        [
+            'label' => esc_html__( 'Icon Spacing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 5,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_id_2',
+        [
+            'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( ' ', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_secondary_cta_switch_2' => 'yes',
+            ]
+        ]
+    );
+
+    $this->end_popover('saasp_secondary_cta_popover_2');
+
+    $this->add_control(
+        'saasp_primary_cta',
+        [
+            'label' => esc_html__( 'Column Three', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+            'condition' =>[
+                'saasp_select_columns' => '3',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_popover_3',
+        [
+            'label' => esc_html__( 'Primary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => esc_html__( 'Default', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_on' => esc_html__( 'Custom', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'condition' =>[
+                'saasp_select_columns' => '3',
+            ]
+        ]
+    );
+
+    $this->start_popover('saasp_primary_cta_popover_3');
+
+    $this->add_control(
+        'saasp_primary_cta_switch_3',
+        [
+            'label' => esc_html__( 'Primary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_text_3',
+        [
+            'label' => esc_html__( 'Text', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Get Started', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_primary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_url_3',
+        [
+            'label' => esc_html__( 'Link', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', SAAS_PRICINNG_TXT_DOMAIN ),
+            'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+                'custom_attributes' => '',
+            ],
+            'label_block' => true,
+            'condition' =>[
+                'saasp_primary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_size_3',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'small',
+            'options' => [
+                'extra-small' => esc_html__( 'Extra Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'small'  => esc_html__( 'Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'medium' => esc_html__( 'Medium', SAAS_PRICINNG_TXT_DOMAIN ),
+                'large' => esc_html__( 'Large', SAAS_PRICINNG_TXT_DOMAIN ),
+                'extra-large' => esc_html__( 'Extra Large', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_icon_3',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::ICONS,
+            'default' => [
+                'value' => 'fas  fa-arrow-right',
+                'library' => 'fa-solid',
+            ],
+            'recommended' => [
+                'fa-solid' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+                'fa-regular' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saasp_primary_cta_icon_spacing_3',
+        [
+            'label' => esc_html__( 'Icon Spacing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 5,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-icon-spacing-3' => 'padding-left: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' =>[
+                'saasp_primary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_primary_cta_id_3',
+        [
+            'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'btn-id-3', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_primary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->end_popover('saasp_primary_cta_popover_3');
+
+    $this->add_control(
+        'saasp_secondary_cta_popover_3',
+        [
+            'label' => esc_html__( 'Secondary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => esc_html__( 'Default', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_on' => esc_html__( 'Custom', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'condition' =>[
+                'saasp_select_columns' => '3',
+            ]
+        ]
+    );
+
+    $this->start_popover('saasp_secondary_cta_popover_3');
+
+    $this->add_control(
+        'saasp_secondary_cta_switch_3',
+        [
+            'label' => esc_html__( 'Secondary', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', SAAS_PRICINNG_TXT_DOMAIN ),
+            'label_off' => esc_html__( 'Hide', SAAS_PRICINNG_TXT_DOMAIN ),
+            'return_value' => 'yes',
+            'default' => 'no',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_text_3',
+        [
+            'label' => esc_html__( 'Text', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Learn More...', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_secondary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_url_3',
+        [
+            'label' => esc_html__( 'Link', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', SAAS_PRICINNG_TXT_DOMAIN ),
+            'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'default' => [
+                'url' => '',
+                'is_external' => true,
+                'nofollow' => true,
+                'custom_attributes' => '',
+            ],
+            'label_block' => true,
+            'condition' =>[
+                'saasp_secondary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_size_3',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'small',
+            'options' => [
+                'extra-small' => esc_html__( 'Extra Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'small'  => esc_html__( 'Small', SAAS_PRICINNG_TXT_DOMAIN ),
+                'medium' => esc_html__( 'Medium', SAAS_PRICINNG_TXT_DOMAIN ),
+                'large' => esc_html__( 'Large', SAAS_PRICINNG_TXT_DOMAIN ),
+                'extra-large' => esc_html__( 'Extra Large', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'border-style: {{VALUE}};',
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_icon_3',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::ICONS,
+            'recommended' => [
+                'fa-solid' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+                'fa-regular' => [
+                    'circle',
+                    'dot-circle',
+                    'square-full',
+                ],
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saasp_secondary_cta_icon_spacing_3',
+        [
+            'label' => esc_html__( 'Icon Spacing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 5,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .your-class' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' =>[
+                'saasp_secondary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->add_control(
+        'saasp_secondary_cta_id_3',
+        [
+            'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( ' ', SAAS_PRICINNG_TXT_DOMAIN ),
+            'condition' =>[
+                'saasp_secondary_cta_switch_3' => 'yes',
+            ]
+        ]
+    );
+
+    $this->end_popover('saasp_secondary_cta_popover_3');
+
+    $this->add_control(
+        'text_align',
+        [
+            'label' => esc_html__( 'CTA Alignment', 'textdomain' ),
+            'type' => Controls_Manager::CHOOSE,
             'options' => [
                 'left' => [
                     'title' => esc_html__( 'Left', 'textdomain' ),
@@ -2470,11 +3417,10 @@ protected function register_controls() {
             'default' => 'center',
             'toggle' => true,
             'selectors' => [
-                '{{WRAPPER}} td.saaspricing-cell' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-cta-main' => 'text-align: {{VALUE}};',
             ],
         ]
     );
-
 
     $this->end_controls_section();
 
@@ -2589,7 +3535,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_features_icon_color',
         [
-            'label' => esc_html__( 'Color', 'textdomain' ),
+            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell i' => 'color: {{VALUE}}',
@@ -2601,7 +3547,7 @@ protected function register_controls() {
     $this->add_responsive_control(
         'saaspricing_comparison_features_icon_size',
         [
-            'label' => esc_html__( 'Size', 'textdomain' ),
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SLIDER,
             'size_units' => [ 'px'],
             'range' => [
@@ -2633,7 +3579,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_feature_title_color',
         [
-            'label' => esc_html__( 'Color', 'textdomain' ),
+            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-title' => 'color: {{VALUE}}',
@@ -2652,7 +3598,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_feature_title_background_color',
         [
-            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'label' => esc_html__( 'Background Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-main' => 'background-color: {{VALUE}}',
@@ -2672,7 +3618,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_cell_color',
         [
-            'label' => esc_html__( 'Color', 'textdomain' ),
+            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-cell span.saaspricing-cell-text' => 'color: {{VALUE}}',
@@ -2691,7 +3637,7 @@ protected function register_controls() {
     $this->add_responsive_control(
         'saasp_feature_cell_padding',
         [
-            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'label' => esc_html__( 'Padding', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -2713,7 +3659,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_cell_background_color',
         [
-            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'label' => esc_html__( 'Background Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}}  td.saaspricing-cell' => 'background-color: {{VALUE}}',
@@ -2734,7 +3680,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_cell_hover_background_color',
         [
-            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'label' => esc_html__( 'Background Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} td.saaspricing-cell:hover' => 'background-color: {{VALUE}}',
@@ -2743,6 +3689,316 @@ protected function register_controls() {
     );
 
     $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+        'saasp_comparison_cta_section',
+        [
+            'label' => esc_html__( 'CTA', 'textdomain' ),
+            'tab' =>   Controls_Manager::TAB_STYLE,
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_section',
+        [
+            'label' => esc_html__( 'Primary CTA', 'textdomain' ),
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+        ]
+    );
+
+    $this->start_controls_tabs(
+        'saasp_comparison_primary_cta_hover_normal_text_color'
+    );
+
+    $this->start_controls_tab(
+        'saasp_comparison_primary_cta_normal_text',
+        [
+            'label' => esc_html__( 'Normal', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_normal_text_color',
+        [
+            'label' => esc_html__( 'Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-btn' => 'color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->start_controls_tab(
+        'saasp_comparison_primary_cta_hover_text',
+        [
+            'label' => esc_html__( 'Hover', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_hover_text_color',
+        [
+            'label' => esc_html__( 'Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-btn:hover' => 'color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
+    $this->add_group_control(
+         Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_comparison_primary_cta_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-primary-btn',
+        ]
+    );
+
+    $this->start_controls_tabs(
+        'saasp_comparison_primary_cta_hover_normal_background_color'
+    );
+
+    $this->start_controls_tab(
+        'saasp_comparison_primary_cta_normal_background',
+        [
+            'label' => esc_html__( 'Normal', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_normal_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-btn' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->start_controls_tab(
+        'saasp_comparison_primary_cta_hover_background',
+        [
+            'label' => esc_html__( 'Hover', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_hover_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-btn:hover' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_comparison_primary_cta_border',
+            'selector' => '{{WRAPPER}} .saaspricing-primary-btn',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_border_radius',
+        [
+            'label' => esc_html__( 'Border Radius', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+         Group_Control_Box_Shadow::get_type(),
+        [
+            'name' => 'saasp_comparison_primary_cta_box_shadow',
+            'selector' => '{{WRAPPER}} .saaspricing-primary-btn',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_padding',
+        [
+            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_section',
+        [
+            'label' => esc_html__( 'Secondary CTA', 'textdomain' ),
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+        ]
+    );
+
+    $this->start_controls_tabs(
+        'saasp_comparison_secondary_cta_hover_normal_text_color'
+    );
+
+    $this->start_controls_tab(
+        'saasp_comparison_secondary_cta_normal_text',
+        [
+            'label' => esc_html__( 'Normal', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_normal_text_color',
+        [
+            'label' => esc_html__( 'Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-btn' => 'color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->start_controls_tab(
+        'saasp_comparison_secondary_cta_hover_text',
+        [
+            'label' => esc_html__( 'Hover', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_hover_text_color',
+        [
+            'label' => esc_html__( 'Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-btn:hover' => 'color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
+    $this->add_group_control(
+         Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_comparison_secondary_cta_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-secondary-btn',
+        ]
+    );
+
+    $this->start_controls_tabs(
+        'saasp_comparison_secondary_cta_hover_normal_background_color'
+    );
+
+    $this->start_controls_tab(
+        'saasp_comparison_secondary_cta_normal_background',
+        [
+            'label' => esc_html__( 'Normal', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_normal_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-btn' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->start_controls_tab(
+        'saasp_comparison_secondary_cta_hover_background',
+        [
+            'label' => esc_html__( 'Hover', 'textdomain' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_hover_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-btn:hover' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_comparison_secondary_cta_border',
+            'selector' => '{{WRAPPER}} .saaspricing-secondary-btn',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_border_radius',
+        [
+            'label' => esc_html__( 'Border Radius', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+         Group_Control_Box_Shadow::get_type(),
+        [
+            'name' => 'saasp_comparison_secondary_cta_box_shadow',
+            'selector' => '{{WRAPPER}} .saaspricing-secondary-btn',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_padding',
+        [
+            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
 
     $this->end_controls_section();
 }
@@ -2774,7 +4030,7 @@ protected function render() {
  $settings = $this->get_settings_for_display();
 ?>
   <!-- pricing comparison table start  -->
-  <div class="saaspricing-main table-responsive-xl position-relative">
+  <div class="saaspricing-main table-responsive-lg position-relative">
             <table class="saaspricing-table" role="presentation">
                 <!-- table header start  -->
                 <thead class="tableHeader" id="tableHeader">
@@ -3128,34 +4384,100 @@ protected function render() {
                 <!-- table footer start  -->
                 <tfoot>
                     <!-- cta start  -->
-                    <tr>
+                    <tr class="saaspricing-cta-main">
                         <td></td>
+                        <?php
+                        for($i= 1; $i <= $settings['saasp_select_columns']; $i++){
+                        if ( ! empty( $settings['saasp_primary_cta_url_'.$i]['url'] ) ) {
+                            $this->add_link_attributes( 'saasp_primary_cta_url_'.$i, $settings['saasp_primary_cta_url_'.$i] );
+                        }elseif( ! empty( $settings['saasp_secondary_cta_url_'.$i]['url'] ) ){
+                            $this->add_link_attributes( 'saasp_secondary_cta_url_'.$i, $settings['saasp_secondary_cta_url_'.$i] );
+                        }
+                        ?>
                         <td class="footer-cta">
 
-                            <a href="#" class="btn btn-dark text-nowrap" role="button"> Get started <span
-                                    class="ms-2"><i class="fas fa-arrow-right"></i></span> </a>
-                            <a class="d-block fs-sm fw-normal mt-3" href="#"> Learn More...</a>
-                        </td>
-                        <td class="footer-cta">
-
-                            <a href="#" class="btn btn-dark text-nowrap" role="button"> Get started <span
-                                    class="ms-2"><i class="fas fa-arrow-right"></i></span> </a>
-                            <a class="d-block fs-sm fw-normal mt-3" href="#"> Free trial?</a>
-                        </td>
-                        <td class="footer-cta">
-
-                            <a href="#" class="btn btn-dark text-nowrap" role="button"> Get started <span
-                                    class="ms-2"><i class="fas fa-arrow-right"></i></span> </a>
-                            <a class="d-block fs-sm fw-normal mt-3" href="#"> Free trial?</a>
-                        </td>
+                            <!-- Primary Button -->
+                            <?php
+                             if( 'yes' === $settings['saasp_primary_cta_switch_'.$i] && '' !== $settings['saasp_primary_cta_text_'.$i]){
+                            ?>
+                            <a class="btn btn-info text-nowrap saaspricing-primary-btn <?php
+                             if('extra-small' === $settings['saasp_primary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-xsm-btn');
+                             }elseif('small' === $settings['saasp_primary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-sm-btn');
+                             }
+                             elseif('medium' === $settings['saasp_primary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-m-btn');
+                             }
+                             elseif('large' ===$settings['saasp_primary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-l-btn');
+                             }
+                             elseif('extra-large' ===$settings['saasp_primary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-xl-btn');
+                             }
+                            ?>" 
+                            role="button" <?php echo $this->get_render_attribute_string( 'saasp_primary_cta_url_'.$i ); ?>
+                            <?php
+                            if('' !== $settings['saasp_primary_cta_id_'.$i]){
+                            ?>
+                            id="<?php echo esc_attr($settings['saasp_primary_cta_id_'.$i]); ?>"
+                            <?php
+                            }
+                            ?>
+                            > 
+                             <?php echo esc_html($settings['saasp_primary_cta_text_'.$i]); ?>
+                             <span class="saaspricing-icon-spacing-<?php echo esc_attr($i); ?>">
+                             <?php Icons_Manager::render_icon( $settings['saasp_primary_cta_icon_'.$i], [ 'aria-hidden' => 'true' ] ); ?>
+                             </span> 
+                            </a>
+                            <?php
+                             }
+                            ?>
+                            <!-- Secondary Button -->
+                            <?php
+                             if( 'yes' === $settings['saasp_secondary_cta_switch_'.$i] && '' !== $settings['saasp_secondary_cta_text_'.$i]){
+                            ?>
+                            <a class="d-block fs-sm fw-normal mt-3 saaspricing-secondary-btn <?php
+                             if('extra-small' === $settings['saasp_secondary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-xsm-btn');
+                             }elseif('small' === $settings['saasp_secondary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-sm-btn');
+                             }
+                             elseif('medium' === $settings['saasp_secondary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-m-btn');
+                             }
+                             elseif('large' ===$settings['saasp_secondary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-l-btn');
+                             }
+                             elseif('extra-large' ===$settings['saasp_secondary_cta_size_'.$i]){
+                                echo esc_attr('saaspricing-xl-btn');
+                             }
+                            ?>" 
+                            role="button" <?php echo $this->get_render_attribute_string( 'saasp_secondary_cta_url_'.$i ); ?>
+                            <?php
+                            if('' !== $settings['saasp_secondary_cta_id_'.$i]){
+                            ?>
+                            id="<?php echo esc_attr($settings['saasp_secondary_cta_id_'.$i]); ?>"
+                            <?php
+                            }
+                            ?>
+                            > 
+                             <?php echo esc_html($settings['saasp_secondary_cta_text_'.$i]); ?>
+                             <span class="saaspricing-icon-spacing-<?php echo esc_attr($i); ?>">
+                             <?php Icons_Manager::render_icon( $settings['saasp_secondary_cta_icon_'.$i], [ 'aria-hidden' => 'true' ] ); ?>
+                             </span> 
+                            </a>
+                            <?php
+                             }
+                            ?>
+                         </td>
+                        <?php
+                        }
+                        ?>
                     </tr>
-                    <!-- cta start  -->
                 </tfoot>
-                <!-- table footer end  -->
-
             </table>
         </div>
-        <!-- pricing comparison table end  -->
 <?php
  }
 }
