@@ -29,3 +29,5 @@ All notable changes to Saaspricing will be documented in this file.
 - Content field is not vanishing while there is no value at all.
 - All the borders should have a style option.
 - Footer style option of secondary CTA Is not done properly.
+- Table Layout Fixed
+- CTA Background Color
