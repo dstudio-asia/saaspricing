@@ -31,3 +31,4 @@ function saasp_load_plugin_data() {
 
 }
 add_action( 'plugins_loaded', 'saasp_load_plugin_data' );
+

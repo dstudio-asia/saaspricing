@@ -35,6 +35,7 @@
         }, 1000);
 
         //-- Table Sticky Header Function
+        
         window.onscroll = function () { saaspTableSticky() };
         let saaspHeader = document.getElementById("tableHeader");
         let saaspSticky = saaspHeader.offsetTop;
