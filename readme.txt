@@ -31,3 +31,7 @@ All notable changes to Saaspricing will be documented in this file.
 - Footer style option of secondary CTA Is not done properly.
 - Table Layout Fixed
 - CTA Background Color
+
+### Update
+
+- Remove svg upload image option 

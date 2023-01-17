@@ -23,6 +23,18 @@ margin: 0;
     border: 0 none;
 }
 
+.saaspricing-table p{
+    margin:0;
+    padding:0;
+}
+
+/* tr.saaspricing-feature-list{
+    background:blue;
+}
+tr.saaspricing-feature-list:hover{
+    background:red;
+} */
+
 .saaspricing-table tr:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
