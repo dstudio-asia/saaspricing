@@ -28,15 +28,17 @@ margin: 0;
     padding:0;
 }
 
-/* tr.saaspricing-feature-list{
-    background:blue;
-}
-tr.saaspricing-feature-list:hover{
-    background:red;
-} */
-
-.saaspricing-table tr:not(:last-child) {
+tr.saaspricing-price-table-head, tr.saaspricing-feature-list {
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+.saaspricing-table-title-des-main , tr.saaspricing-feature-list{
+    border-left: 1px solid #fafafa;
+    border-right: 1px solid #fafafa;
+}
+
+td.footer-cta {
+    border-bottom: 1px solid #fafafa;
+    border-right: 1px solid #fafafa;
 }
 
 .saaspricing-table tr td {
@@ -78,7 +80,7 @@ tr.saaspricing-feature-list:hover{
 
 /* Highlighted column */
 
-.saaspricing-table tr.price-table-head td {
+.saaspricing-table tr.saaspricing-price-table-head td {
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
@@ -86,7 +88,7 @@ tr.saaspricing-feature-list:hover{
     padding:20px;
 }
 
-.saaspricing-table tr.price-table-head {
+td.saaspricing-table-head {
     background-color: var(--saaspricing-primary-color);
     color: var(--saaspricing-color-white);
 }
@@ -111,8 +113,8 @@ tr.saaspricing-feature-list:hover{
 }
 
 .saaspricing-table .saaspricing-blank {
-    background-color: #fafafa;
-    border: 0 none;
+    background-color: #ffffff;
+    border:none;
 }
 
 .saaspricing-table img {

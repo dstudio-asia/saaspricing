@@ -34,19 +34,6 @@
           });
         }, 1000);
 
-        //-- Table Sticky Header Function
-
-        // window.onscroll = function () { saaspTableSticky() };
-        // let saaspHeader = document.getElementById("tableHeader");
-        // let saaspSticky = saaspHeader.offsetTop;
-        // function saaspTableSticky() {      
-        //   if (window.pageYOffset > saaspSticky) {
-        //     saaspHeader.classList.add("saaspricing-sticky");
-        //   } else {
-        //     saaspHeader.classList.remove("saaspricing-sticky");
-        //   }
-        // }
-
         document.onscroll = function () { saaspTableSticky() };
         let saaspHeader = document.getElementById("tableHeader");
         let saaspSticky = saaspHeader.offsetTop;
