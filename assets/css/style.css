@@ -31,6 +31,7 @@ margin: 0;
 tr.saaspricing-price-table-head, tr.saaspricing-feature-list {
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
+
 .saaspricing-table-title-des-main , tr.saaspricing-feature-list{
     border-left: 1px solid #fafafa;
     border-right: 1px solid #fafafa;
@@ -137,7 +138,7 @@ td.saaspricing-table-head {
     overflow: hidden;
 }
 
-/* single pricing section  */
+/* vertical pricing section  */
 
 .saaspricing-heading {
     font-size: 50px;
@@ -162,8 +163,9 @@ td.saaspricing-table-head {
     flex-wrap: wrap;
     gap:5px;
     line-height: .8; 
-    padding:15px 0 8px 0;
+    padding:20px 0 10px 0;
 }
+
 .saaspricing-original-slashed-price, .saaspricing-price-symbol, .saaspricing-fraction-price{
     line-height: .8;
 }
@@ -194,29 +196,42 @@ td.saaspricing-table-head {
     vertical-align: super;
 }
 
+/* Features */
+
+.vertical-pricing-card ol{
+   padding:0; 
+}
+
 /* button css */
+
 .saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)){
     color:var(--saaspricing-color-white);
 }
+
 a.saaspricing-secondary-btn{
     color:var(--saaspricing-color-blue);
 }
+
 .saaspricing-xsm-btn{
     font-size: 14px;
     padding: 10px 20px;
 }
+
 .saaspricing-sm-btn{
     font-size: 15px;
     padding: 12px 24px;
 }
+
 .saaspricing-m-btn{
     font-size: 16px;
     padding: 15px 30px;
 }
+
 .saaspricing-l-btn{
     font-size: 18px;
     padding: 20px 40px;
 }
+
 .saaspricing-xl-btn{
     font-size: 20px;
     padding: 25px 50px;
@@ -290,10 +305,8 @@ tbody svg {
     border-bottom-color: var( --saaspricing-color-white);
 }
 
-
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
 .bs-tooltip-top .tooltip-arrow::before {
-
     border-top-color: var( --saaspricing-color-white);
 }
 

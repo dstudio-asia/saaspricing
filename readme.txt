@@ -31,7 +31,9 @@ All notable changes to Saaspricing will be documented in this file.
 - Footer style option of secondary CTA Is not done properly.
 - Table Layout Fixed
 - CTA Background Color
+- Secondary button link not found issue
+- After giving null value on rating my plugin show server error and page also broken
 
 ### Update
 
-- Remove svg upload image option 
+- Remove svg upload image option

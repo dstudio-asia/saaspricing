@@ -12,22 +12,22 @@
 
           let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)];
           let saaspCurrentTime = new Date().getTime();
-          let countdowns = $(scope).find(".show-expire-date");
+          let saaspCountdowns = $(scope).find(".show-expire-date");
         
           // Find the distance between now and the count down date
           
-          countdowns.each(function() {
-            let countdownIndex = $(this).data("countdown-index");
-            let distance = saaspCountDownDate[countdownIndex] - saaspCurrentTime;
+          saaspCountdowns.each(function() {
+            let saaspCountDownIndex = $(this).data("countdown-index");
+            let saaspDistance = saaspCountDownDate[saaspCountDownIndex] - saaspCurrentTime;
         
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            let saaspDays = Math.floor(saaspDistance / (1000 * 60 * 60 * 24));
+            let saaspHours = Math.floor((saaspDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let saaspMinutes = Math.floor((saaspDistance % (1000 * 60 * 60)) / (1000 * 60));
+            let saaspSeconds = Math.floor((saaspDistance % (1000 * 60)) / 1000);
             
-            $(this).html(days + "d: " + hours + "h: " + minutes + "m: " + seconds + "s ");
+            $(this).html(saaspDays + "d: " + saaspHours + "h: " + saaspMinutes + "m: " + saaspSeconds + "s ");
         
-            if (distance < 0) {
+            if (saaspDistance < 0) {
               clearInterval(saaspExpire);
               $(this).html("EXPIRED");
             }
