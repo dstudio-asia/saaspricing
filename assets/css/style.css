@@ -1,4 +1,4 @@
-:root{
+:root {
     --saaspricing-primary-color:#6EC1E4;
     --saaspricing-secondary-color:#54595F;
     --saaspricing-color-white: #fff ;
@@ -7,11 +7,16 @@
     --saaspricing-color-box-shadow: #00000015;
     --saaspricing-color-blue: #0d6efd;
 }
-p{
+
+p, h2 {
 padding: 0;
 margin: 0;
 }
 
+.entry-content h2 , .entry-content p{
+    margin-bottom: 0;
+    margin-bottom: 0;
+}
 .tableHeader {
     background-color: var( --saaspricing-color-white);
 }
@@ -23,7 +28,7 @@ margin: 0;
     border: 0 none;
 }
 
-.saaspricing-table p{
+.saaspricing-table p {
     margin:0;
     padding:0;
 }
@@ -32,7 +37,7 @@ tr.saaspricing-price-table-head, tr.saaspricing-feature-list {
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.saaspricing-table-title-des-main , tr.saaspricing-feature-list{
+.saaspricing-table-title-des-main , tr.saaspricing-feature-list {
     border-left: 1px solid #fafafa;
     border-right: 1px solid #fafafa;
 }
@@ -51,11 +56,11 @@ td.footer-cta {
 .saaspricing-table tr td.ribbon-wrapper{
     border: none;
 }
-.saaspricing-table tr.saaspricing-ribbon-table-row:hover{
+.saaspricing-table tr.saaspricing-ribbon-table-row:hover {
   background:none;
 }
 
-.saaspricing-table tr td.ribbon-wrapper{
+.saaspricing-table tr td.ribbon-wrapper {
     padding:0;
 }
 
@@ -81,6 +86,10 @@ td.footer-cta {
 
 /* Highlighted column */
 
+td.ribbon-wrapper.saaspricing-common-ribbon.saasp-hidden{
+    visibility: hidden;
+}
+
 .saaspricing-table tr.saaspricing-price-table-head td {
     font-size: 16px;
     font-weight: 600;
@@ -101,16 +110,13 @@ td.saaspricing-table-head {
     position: relative;
 }
 
-.saaspricing-table td div.saaspricing-common-ribbon{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.saaspricing-table td.ribbon-wrapper.saaspricing-common-ribbon {
     color: var(--saaspricing-color-white);
     text-transform: capitalize;
     font-size: 12px;
     font-weight: 700;
     background-color: var(--saaspricing-secondary-color);
+    padding:20px 20px;
 }
 
 .saaspricing-table .saaspricing-blank {
@@ -126,22 +132,38 @@ td.saaspricing-table-head {
     font-size: 28px;
 }
 
-.saaspricing-ribbon-title {
-    padding: 0px 20px;
-}
-
-.show-expire-date {
-    padding: 0px 20px;
-}
-
 .elementor-widget-saasComparison .elementor-widget-container{
     overflow: hidden;
 }
 
 /* vertical pricing section  */
 
+.pricing-cards-all{
+    overflow: hidden;
+}
+
 .saaspricing-heading {
     font-size: 50px;
+}
+
+ .saasprcing-vertical-pricing {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: .8;
+    gap:5px;
+}
+
+.saaspricing-period {
+    text-align: center;
+}
+
+.saaspricing-card-header {
+    padding: .5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    background-color: #198754;
 }
 
 .saaspricing-horizontal {
@@ -156,7 +178,7 @@ td.saaspricing-table-head {
     line-height: 1.6em;
 }
 
-.saasspricing-pricing-block{
+.saasspricing-pricing-block {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +188,7 @@ td.saaspricing-table-head {
     padding:20px 0 10px 0;
 }
 
-.saaspricing-original-slashed-price, .saaspricing-price-symbol, .saaspricing-fraction-price{
+.saaspricing-original-slashed-price, .saaspricing-price-symbol, .saaspricing-fraction-price {
     line-height: .8;
 }
 
@@ -192,47 +214,104 @@ td.saaspricing-table-head {
     top: 15px;
 }
 
+/* Pricing */
+
+.saasprcing-vertical-pricing{
+    padding:20px 0;
+}
+
+.saaspricing-vertical-title{
+    padding:15px 0 20px 0;
+}
+.saaspricing-vertical-description{
+    padding:0 0 20px 0;
+}
+
+.saaspricing-vertical-price, .saaspricing-vertical-symbol{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.saaspricing-vertical-period {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.saaspricing-vertical-original{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Countdown */
+
+.saaspricing-vertical-countdown{
+    margin: 25px 0 20px 0;
+}
+
+.saaspricing-vertical-countdown span.saaspricing-countdown {
+    white-space:nowrap;
+    border-radius: 0.3rem;
+    color: #dc3545;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-color: #dc3545;
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .saaspricing-align-super {
     vertical-align: super;
 }
 
 /* Features */
 
-.vertical-pricing-card ol{
+.vertical-pricing-card ol {
    padding:0; 
+}
+
+.saaspricing-features-title{
+    font-weight: bold;
+}
+
+.saaspricing-vertical-feature{
+    background-color: #ffefd570;
+    padding: 1.5rem 0.5rem;
+    margin: 1rem 0;
 }
 
 /* button css */
 
-.saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)){
+.saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)) {
     color:var(--saaspricing-color-white);
 }
 
-a.saaspricing-secondary-btn{
+a.saaspricing-secondary-btn {
     color:var(--saaspricing-color-blue);
 }
 
-.saaspricing-xsm-btn{
+.saaspricing-xsm-btn {
     font-size: 14px;
     padding: 10px 20px;
 }
 
-.saaspricing-sm-btn{
+.saaspricing-sm-btn {
     font-size: 15px;
     padding: 12px 24px;
 }
 
-.saaspricing-m-btn{
+.saaspricing-m-btn {
     font-size: 16px;
     padding: 15px 30px;
 }
 
-.saaspricing-l-btn{
+.saaspricing-l-btn {
     font-size: 18px;
     padding: 20px 40px;
 }
 
-.saaspricing-xl-btn{
+.saaspricing-xl-btn {
     font-size: 20px;
     padding: 25px 50px;
 }
@@ -276,11 +355,11 @@ a.saaspricing-secondary-btn{
     box-shadow: 0px 2px 10px #00000020;
 }
 
-.saaspricing-countdown{
+.saaspricing-countdown {
     white-space: nowrap;
 }
 
-.saaspricing-fraction-price{
+.saaspricing-fraction-price {
  vertical-align: super;
  font-size: 16px;
 }
