@@ -3537,6 +3537,8 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell i' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell svg' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-feature-main i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-feature-main svg' => 'color: {{VALUE}} ',
             ],
         ]
     );
@@ -3560,6 +3562,8 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell span.saaspricing-cell-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-feature-main svg' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-feature-main i' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
