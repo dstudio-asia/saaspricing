@@ -13,9 +13,8 @@ padding: 0;
 margin: 0;
 }
 
-p.saaspricing-vertical-description, h6.card-title.saaspricing-vertical-title{
+p.saaspricing-vertical-description, .card-title.saaspricing-vertical-title{
     margin-bottom:0;
-    line-height: .8;
 }
 
 .tableHeader {
