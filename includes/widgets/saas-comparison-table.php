@@ -4567,7 +4567,7 @@ protected function render() {
                              }
                             ?>
                             <?php
-                            if('top' === $settings['saasp_comparison_primary_cta_position_'.$i]){
+                            if('top' === $settings['saasp_comparison_primary_cta_position_'.$i] &&  'yes' !== $settings['saasp_comparison_primary_cta_switch_'.$i]){
                                 $saasp_margin_top = "mt-3";
                             ?>
                             <br/>
