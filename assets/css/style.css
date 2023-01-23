@@ -13,9 +13,8 @@ padding: 0;
 margin: 0;
 }
 
-.entry-content h2 , .entry-content p{
-    margin-bottom: 0;
-    margin-bottom: 0;
+p.saaspricing-vertical-description, h6.card-title.saaspricing-vertical-title{
+    margin-bottom:0;
     line-height: .8;
 }
 
@@ -52,7 +51,12 @@ td.saaspricing-footer-cta {
     border-bottom: 1px solid #fafafa;
     border-right: 1px solid #fafafa;
 }
-td.saaspricing-header-cta{
+
+td.saaspricing-feature-main{
+    gap:5px;
+}
+
+td.saaspricing-header-cta {
 border-bottom: none;
 }
 

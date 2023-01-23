@@ -4511,26 +4511,11 @@ protected function render() {
                             <?php
                             }
                             ?>
-                        </td>
-                        <?php
-                        }
-                        ?>
-                    </tr>
-                    <?php
-                    if( 'top' === $settings['saasp_comparison_primary_cta_position_1']  || 'top' === $settings['saasp_comparison_secondary_cta_position_1'] 
-                     || 'top' === $settings['saasp_comparison_primary_cta_position_2']  || 'top' === $settings['saasp_comparison_secondary_cta_position_2']
-                     || 'top' === $settings['saasp_comparison_primary_cta_position_3']  || 'top' === $settings['saasp_comparison_secondary_cta_position_3']
-                    ){
-                    ?>
-                    <tr class="saaspricing-cta-main">
-                        <td class="saaspricing-blank"></td>
-                        <?php
-                        for($i= 1; $i <= $settings['saasp_comparison_select_columns']; $i++){
-                        if ( ! empty( $settings['saasp_comparison_primary_cta_url_'.$i]['url'] ) ) {
-                            $this->add_link_attributes( 'saasp_comparison_primary_cta_url_'.$i, $settings['saasp_comparison_primary_cta_url_'.$i] );
-                        }
-                        ?>
-                        <td class="saaspricing-header-cta">
+                            <?php
+                            if ( ! empty( $settings['saasp_comparison_primary_cta_url_'.$i]['url'] ) ) {
+                                $this->add_link_attributes( 'saasp_comparison_primary_cta_url_'.$i, $settings['saasp_comparison_primary_cta_url_'.$i] );
+                            }
+                            ?>
                             <?php
                              if( 'yes' === $settings['saasp_comparison_primary_cta_switch_'.$i] && 
                              '' !== $settings['saasp_comparison_primary_cta_text_'.$i] &&
@@ -4571,15 +4556,14 @@ protected function render() {
                             <?php
                              }
                             ?>
-                            <?php
-                            if('top' === $settings['saasp_comparison_primary_cta_position_'.$i] &&  'yes' !== $settings['saasp_comparison_primary_cta_switch_'.$i]){
+                            <?php  
+                            if('top' === $settings['saasp_comparison_primary_cta_position_'.$i] &&  'yes' === $settings['saasp_comparison_primary_cta_switch_'.$i]){
+                                echo "<br/>";
                                 $saasp_margin_top = "mt-3";
-                            ?>
-                            <br/>
-                            <?php
+                            }else{
+                                $saasp_margin_top = "";
                             }
                             ?>
-                            <!-- Secondary Button -->
                             <?php
                             if( 'yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i] &&
                             '' !== $settings['saasp_comparison_secondary_cta_text_'.$i] &&
@@ -4589,7 +4573,7 @@ protected function render() {
                                 $this->add_link_attributes( 'saasp_comparison_secondary_cta_url_'.$i, $settings['saasp_comparison_secondary_cta_url_'.$i] );
                             }
                             ?>
-                            <a class="btn btn-link <?php echo esc_attr( $saasp_margin_top); ?> saaspricing-secondary-btn <?php
+                            <a class="btn btn-link saaspricing-secondary-btn <?php echo esc_attr($saasp_margin_top); ?> <?php
                              if('extra-small' === $settings['saasp_comparison_secondary_cta_size_'.$i]){
                                 echo esc_attr('saaspricing-xsm-btn');
                              }elseif('small' === $settings['saasp_comparison_secondary_cta_size_'.$i]){
@@ -4622,14 +4606,13 @@ protected function render() {
                             <?php
                              }
                             ?>
-                         </td>
+                             
+                        </td>
                         <?php
                         }
                         ?>
                     </tr>
-                    <?php
-                    }
-                    ?>
+                    
                 </thead>
                 <!-- table header end  -->
 
