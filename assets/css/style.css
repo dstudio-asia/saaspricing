@@ -16,7 +16,9 @@ margin: 0;
 .entry-content h2 , .entry-content p{
     margin-bottom: 0;
     margin-bottom: 0;
+    line-height: .8;
 }
+
 .tableHeader {
     background-color: var( --saaspricing-color-white);
 }
@@ -149,6 +151,10 @@ td.saaspricing-table-head {
     overflow: hidden;
 }
 
+/* .saaspricing-vertical-header{
+    padding: 20px;
+} */
+
 .saaspricing-heading {
     font-size: 50px;
 }
@@ -159,7 +165,7 @@ td.saaspricing-table-head {
     flex-wrap: wrap;
     justify-content: center;
     line-height: .8;
-    gap:5px;
+    gap:10px;
 }
 
 .saaspricing-card-header {
@@ -224,10 +230,10 @@ td.saaspricing-table-head {
 }
 
 .saaspricing-vertical-title{
-    padding:15px 0 20px 0;
+    padding:0 0 10px 0;
 }
 .saaspricing-vertical-description{
-    padding:0 0 20px 0;
+    padding:10px 0 0 0;
 }
 
 .saaspricing-vertical-price, .saaspricing-vertical-symbol{
@@ -250,7 +256,7 @@ td.saaspricing-table-head {
 /* Countdown */
 
 .saaspricing-vertical-countdown{
-    margin: 25px 0 20px 0;
+    padding: 15px 0;
 }
 
 .saaspricing-vertical-countdown span.saaspricing-countdown {
@@ -266,6 +272,12 @@ td.saaspricing-table-head {
 
 .saaspricing-align-super {
     vertical-align: super;
+}
+
+/* Review */
+
+.saaspricing-star-icon{
+    padding: 15px 0;
 }
 
 /* Features */

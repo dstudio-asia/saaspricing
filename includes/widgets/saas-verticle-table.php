@@ -423,7 +423,8 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-countdown' => 'text-align: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-vertical-ratings' => 'text-align: {{VALUE}};',
-                '{{WRAPPER}} .saasprcing-pricing' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}}  span.saaspricing-vertical-period.w-100.mt-1' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saasprcing-vertical-pricing' => 'justify-content: {{VALUE}};',
             ],
         ]
     );
@@ -840,8 +841,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-vertical-description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -2228,6 +2228,9 @@ $settings = $this->get_settings_for_display();
             <!-- card body end -->
 
             <!-- cta start  -->
+            <?php
+            if( 'yes' === $settings['saasp_vertical_primary_cta_switch'] || 'yes' === $settings['saasp_vertical_secondary_cta_switch'] ){
+            ?>
             <div class="card-footer">
                 <?php
                 if( 'yes' === $settings['saasp_vertical_primary_cta_switch'] && '' !== $settings['saasp_vertical_primary_cta_text']){
@@ -2296,6 +2299,9 @@ $settings = $this->get_settings_for_display();
                 }
                 ?>
             </div>
+            <?php
+             }
+            ?>
             <!-- cta end  -->
         </div>
     </div>

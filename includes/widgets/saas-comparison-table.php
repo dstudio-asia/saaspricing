@@ -1810,6 +1810,7 @@ protected function register_controls() {
             'toggle' => true,
             'selectors' => [
                 '{{WRAPPER}} td.saaspricing-feature-main' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} td.saaspricing-feature-main' => 'justify-content: {{VALUE}};',
             ],
         ]
     );
