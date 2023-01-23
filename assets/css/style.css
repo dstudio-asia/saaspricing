@@ -226,7 +226,8 @@ td.saaspricing-table-head {
 /* Pricing */
 
 .saasprcing-vertical-pricing{
-    padding:20px 0;
+    padding:10px 0;
+    margin:10px 0;
 }
 
 .saaspricing-vertical-title{

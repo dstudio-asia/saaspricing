@@ -4165,6 +4165,7 @@ protected function register_controls() {
             'separator'=>'before',
             'selectors' => [
                 '{{WRAPPER}} td.saaspricing-footer-cta' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} td.saaspricing-header-cta' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -4359,11 +4360,15 @@ protected function render() {
                         for($i = 1; $i <= $settings['saasp_comparison_select_columns'] ; $i++){
                         ?>
                         <td class="price saaspricing-original-price">
-
+                            <?php
+                            if( '' !== $settings['saasp_comparison_choose_media_'.$i]['url']){
+                            ?>
                             <a  class="<?php if('yes' === $settings['saasp_comparison_media_light_box_'.$i]){ echo esc_attr('image-popup-vertical-fit'); }?>" href="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>">
                                 <img src="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>" class="<?php echo esc_attr('saaspricing-header-image-'.$i) ?>" >
                             </a>
-                    
+                            <?php
+                            }
+                            ?>
                             <div class="saasspricing-pricing-block" >
                                 
                             <?php
