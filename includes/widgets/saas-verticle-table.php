@@ -653,7 +653,7 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'btn-id-1', SAAS_PRICINNG_TXT_DOMAIN ),
+            'default' => esc_html__( '', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' =>[
                 'saasp_vertical_primary_cta_switch' => 'yes',
             ]
@@ -778,7 +778,7 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Button ID', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'btn-secondary-1', SAAS_PRICINNG_TXT_DOMAIN ),
+            'default' => esc_html__( '', SAAS_PRICINNG_TXT_DOMAIN ),
             'condition' =>[
                 'saasp_vertical_secondary_cta_switch' => 'yes',
             ]
@@ -1955,7 +1955,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-secondary' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricng-secondary-main' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -2078,7 +2078,7 @@ $settings = $this->get_settings_for_display();
                     <?php
                     if('before'=== $settings['saasp_vertical_pricing_symbol_position']){
                     ?>
-                    <span class="saaspricing-vertical-symbol saaspricing-vertical-typography">
+                    <span class="saaspricing-vertical-symbol">
                     <?php
                     if('custom' !== $settings['saasp_vertical_currency_symbol']){
                         echo esc_html($this->get_currency_symbol($settings['saasp_vertical_currency_symbol']));
@@ -2099,7 +2099,7 @@ $settings = $this->get_settings_for_display();
                     <?php
                     if('' !== explode(".", $settings['sassp_vertical_price'])[1]){
                     ?>
-                    <span class="saaspricing-fraction-price saaspricing-vertical-typography"><?php echo esc_html(explode(".", $settings['sassp_vertical_price'])[1]); ?></span>
+                    <span class="saaspricing-fraction-price"><?php echo esc_html(explode(".", $settings['sassp_vertical_price'])[1]); ?></span>
                     <?php
                     }
                     }else{
@@ -2111,7 +2111,7 @@ $settings = $this->get_settings_for_display();
                     <?php
                     if('after' === $settings['saasp_vertical_pricing_symbol_position']){
                     ?>
-                    <span class="saaspricing-vertical-symbol saaspricing-vertical-typography">
+                    <span class="saaspricing-vertical-symbol">
                     <?php
                     if('custom' !== $settings['saasp_vertical_currency_symbol']){
                         echo esc_html($this->get_currency_symbol($settings['saasp_vertical_currency_symbol']));
@@ -2214,7 +2214,7 @@ $settings = $this->get_settings_for_display();
                         if($settings['saasp_vertical_features']){
                         foreach($settings['saasp_vertical_features'] as $saasp_vetical_features){
                         ?>
-                        <li class="mb-3">
+                        <li class="saaspricing-vertical-margin">
                         <?php Icons_Manager::render_icon( $saasp_vetical_features['saasp_vertical_features_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                         <small><?php echo esc_html($saasp_vetical_features['saasp_vertical_features_text']); ?></small>
                         </li>
@@ -2238,7 +2238,7 @@ $settings = $this->get_settings_for_display();
                         $this->add_link_attributes( 'saasp_vertical_primary_cta_url', $settings['saasp_vertical_primary_cta_url'] );
                     }
                 ?>
-                <a class="btn saaspricing-vertical-primary btn-dark mb-3 mt-3 <?php
+                <a class="btn saaspricing-vertical-primary btn-dark <?php
                 if('extra-small' === $settings['saasp_vertical_primary_cta_size']){
                 echo esc_attr('saaspricing-xsm-btn');
                 }elseif('small' === $settings['saasp_vertical_primary_cta_size']){
@@ -2255,7 +2255,13 @@ $settings = $this->get_settings_for_display();
                 }
                 ?>" 
                 <?php echo $this->get_render_attribute_string( 'saasp_vertical_primary_cta_url'); ?>
-                id="<?php echo esc_attr($settings['saasp_vertical_primary_cta_id']); ?>">
+                <?php
+                if('' !== $settings['saasp_vertical_primary_cta_id']){
+                ?>
+                id="<?php echo esc_attr($settings['saasp_vertical_primary_cta_id']); ?>"
+                <?php
+                }
+                ?>>
                 <?php echo esc_html($settings['saasp_vertical_primary_cta_text']); ?> 
                 <span class="saaspricing-primary-spacing"> 
                 <?php Icons_Manager::render_icon( $settings['saasp_vertical_primary_cta_icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -2270,8 +2276,8 @@ $settings = $this->get_settings_for_display();
                         $this->add_link_attributes( 'saasp_vertical_secondary_cta_url', $settings['saasp_vertical_secondary_cta_url'] );
                     }
                 ?>
-                <div class="mb-3">
-                    <a class="d-block saaspricing-vertical-secondary <?php
+                <div class="saaspricng-secondary-main">
+                    <a class="saaspricing-vertical-secondary <?php
                     if('extra-small' === $settings['saasp_vertical_secondary_cta_size']){
                     echo esc_attr('saaspricing-xsm-btn');
                     }elseif('small' === $settings['saasp_vertical_secondary_cta_size']){
@@ -2288,7 +2294,13 @@ $settings = $this->get_settings_for_display();
                     }
                     ?>" 
                     <?php echo $this->get_render_attribute_string( 'saasp_vertical_secondary_cta_url'); ?>
-                    id="<?php echo esc_attr($settings['saasp_vertical_secondary_cta_id']); ?>">
+                    <?php
+                    if('' !== $settings['saasp_vertical_secondary_cta_id']){
+                    ?>
+                    id="<?php echo esc_attr($settings['saasp_vertical_secondary_cta_id']); ?>"
+                    <?php
+                    }
+                    ?>>
                     <?php echo esc_html($settings['saasp_vertical_secondary_cta_text']); ?>
                     <span class="saaspricing-secondary-spacing"> 
                     <?php Icons_Manager::render_icon( $settings['saasp_vertical_secondary_cta_icon'], [ 'aria-hidden' => 'true' ] ); ?>
