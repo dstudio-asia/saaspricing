@@ -130,7 +130,6 @@ protected function render() {
    <!-- single pricing section start -->
    <div class="saaspricing-horizontal my-5">
             <div class="row ">
-
                 <!-- heading and feature start  -->
                 <div class=" col-lg-8 ">
                     <div class="p-4 p-sm-5 d-flex flex-column justify-content-center position-relative h-100">

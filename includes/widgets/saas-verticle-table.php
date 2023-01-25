@@ -132,7 +132,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_icon',
         [
-            'label' => esc_html__( 'Icon', 'textdomain' ),
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::ICONS,
             'default' => [
                 'value' => 'fas fa-circle',
@@ -499,6 +499,17 @@ protected function register_controls() {
 			]
         );
 
+        $saasp_vertical_features->add_control(
+            'saasp_vertical_features_icon_color',
+            [
+                'label' => esc_html__( 'Icon Color', SAAS_PRICINNG_TXT_DOMAIN ),
+                'type' =>  Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
 		$this->add_control(
 			'saasp_vertical_features',
 			[
@@ -817,6 +828,7 @@ protected function register_controls() {
             ]
         ]
     );
+
     
     $this->add_responsive_control(
         'saasp_vertical_secondary_cta_icon_spacing',
@@ -898,10 +910,11 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_header_background_color',
         [
-            'label' => esc_html__( 'Background Color', 'textdomain' ),
+            'label' => esc_html__( 'Background Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-header' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-icon' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -909,7 +922,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_header_padding',
         [
-            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'label' => esc_html__( 'Padding', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1078,7 +1091,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_ribbon_border_radius',
         [
-            'label' => esc_html__( 'Border Radius', 'textdomain' ),
+            'label' => esc_html__( 'Border Radius', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1098,7 +1111,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_ribbon_padding',
         [
-            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'label' => esc_html__( 'Padding', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1435,7 +1448,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_countdown_padding',
         [
-            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'label' => esc_html__( 'Padding', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1447,7 +1460,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_ribbon_margin',
         [
-            'label' => esc_html__( 'Margin', 'textdomain' ),
+            'label' => esc_html__( 'Margin', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1478,7 +1491,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_countdown_border_radius',
         [
-            'label' => esc_html__( 'Border Radius', 'textdomain' ),
+            'label' => esc_html__( 'Border Radius', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1611,7 +1624,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_features_padding',
         [
-            'label' => esc_html__( 'Padding', 'textdomain' ),
+            'label' => esc_html__( 'Padding', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -1654,18 +1667,6 @@ protected function register_controls() {
             'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ), 
             'type' =>  Controls_Manager::HEADING,
             'separator' =>'before',
-        ]
-    );
-
-    $this->add_control(
-        'saasp_vertical_features_icon_color',
-        [
-            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .vertical-pricing-card ol i' => 'color: {{VALUE}}',
-                '{{WRAPPER}} .vertical-pricing-card ol svg' => 'color: {{VALUE}} ',
-            ],
         ]
     );
     
@@ -2078,14 +2079,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_vertical_cata_background_color',
+        'saasp_vertical_cta_background_color',
         [
             'label' => esc_html__( 'Background Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::COLOR,
             'separator'=>'before',
             'selectors' => [
                 '{{WRAPPER}} .card-footer' => 'background-color: {{VALUE}}',
-                '{{WRAPPER}} .saaspricing-cta-card' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -2098,7 +2098,6 @@ protected function register_controls() {
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .card-footer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-cta-card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -2135,8 +2134,7 @@ $settings = $this->get_settings_for_display();
 
 ?>
   <!-- basic pricing card start   -->
-  <div class="pricing-cards-all">
-
+<div class="pricing-cards-all">
 <div class="row">
     <div class="col-md-12 col-lg-12 col-xl-12 mt-auto">
         <div class="saaspricing-card vertical-pricing-card">
@@ -2155,16 +2153,16 @@ $settings = $this->get_settings_for_display();
             ?>
             <div class="card-body position-relative">
 
+                <div class="saaspricing-vertical-header">
                 <?php
-                if( '' !== $settings['saasp_vertical_icon']['value']['url']){
+                if('' !== $settings['saasp_vertical_icon']['value']){
                 ?>
-                <div class="saaspricing-vertical-icon pt-5 pb-5">
+                <div class="saaspricing-vertical-icon pt-1 pb-1">
                 <?php Icons_Manager::render_icon( $settings['saasp_vertical_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                 </div>
                 <?php
                 }
                 ?>
-                <div class="saaspricing-vertical-header">
                 <?php
                 if('' !== $settings['saasp_vetical_header_title']){
                  printf('<%1$s class="card-title saaspricing-vertical-title">%2$s</%1$s>', esc_html($settings['saasp_vetical_header_title_tag']) ,esc_html($settings['saasp_vetical_header_title']));
@@ -2174,10 +2172,10 @@ $settings = $this->get_settings_for_display();
                  <?php echo esc_html($settings['saasp_vertical_header_description']); ?>
                 </p>
                 </div>
+
                 <!-- pricing  -->
 
                 <div class="saasprcing-vertical-pricing">
-                   
                     <?php
                     if('none' !== $settings['saasp_vertical_currency_symbol'] && 'yes' === $settings['saasp_vertical_sale']){
                     ?>
@@ -2203,7 +2201,6 @@ $settings = $this->get_settings_for_display();
                     }
                     ?>
 
-                    <!-- <span class="saaspricing-heading fw-bold saaspricing-vertical-pricing"> -->
                     <?php
                     if('before'=== $settings['saasp_vertical_pricing_symbol_position']){
                     ?>
@@ -2276,6 +2273,7 @@ $settings = $this->get_settings_for_display();
                 <?php
                 }
                 ?>
+
                 <!-- ratings and reviews -->
 
                 <?php
@@ -2328,6 +2326,7 @@ $settings = $this->get_settings_for_display();
                 <?php
                 }
                 ?>
+
                 <?php
                 if( 'top' === $settings['saasp_vertical_primary_cta_position'] || 'top' === $settings['saasp_vertical_secondary_cta_position'] ){
                 ?>
@@ -2413,6 +2412,7 @@ $settings = $this->get_settings_for_display();
                 }
                 ?>
             </div>
+            
             <?php
             }
             ?>
@@ -2431,9 +2431,9 @@ $settings = $this->get_settings_for_display();
                         if($settings['saasp_vertical_features']){
                         foreach($settings['saasp_vertical_features'] as $saasp_vetical_features){
                         ?>
-                        <li class="saaspricing-vertical-margin">
+                        <li class="saaspricing-vertical-margin elementor-repeater-item-<?php echo esc_attr($saasp_vetical_features['_id']); ?>">
                         <?php Icons_Manager::render_icon( $saasp_vetical_features['saasp_vertical_features_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                        <small><?php echo esc_html($saasp_vetical_features['saasp_vertical_features_text']); ?></small>
+                        <small class=""><?php echo esc_html($saasp_vetical_features['saasp_vertical_features_text']); ?></small>
                         </li>
                         <?php
                         }
@@ -2536,8 +2536,6 @@ $settings = $this->get_settings_for_display();
             <!-- cta end  -->
         </div>
     </div>
-</div>
-
 </div>
 </div>
 <!-- basic pricing card start -->

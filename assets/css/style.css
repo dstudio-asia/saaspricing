@@ -299,7 +299,8 @@ li.saaspricing-vertical-margin:last-child{
 /* Features */
 
 .vertical-pricing-card ol {
-   padding:0; 
+   padding:0;
+   margin:0;
 }
 
 p.saaspricing-features-title{
