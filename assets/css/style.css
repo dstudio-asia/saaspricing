@@ -150,6 +150,21 @@ td.saaspricing-table-head {
 
 /* vertical pricing section  */
 
+.saaspricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.saaspricing-cta-card{
+    padding: 0.5rem 1rem;
+}
+
 .pricing-cards-all{
     overflow: hidden;
 }
