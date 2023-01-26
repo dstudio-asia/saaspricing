@@ -162,7 +162,7 @@ td.saaspricing-table-head {
 }
 
 .saaspricing-cta-card{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
 }
 
 .pricing-cards-all{
@@ -179,7 +179,7 @@ td.saaspricing-table-head {
     flex-wrap: wrap;
     justify-content: center;
     line-height: .8;
-    gap:10px;
+    gap:5px;
 }
 
 .saaspricing-card-header {
