@@ -921,8 +921,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'fill: {{VALUE}}',
-                '{{WRAPPER}} .saaspricing-vertical-icon i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'fill: {{VALUE}}; color: {{VALUE}}; border-color: {{VALUE}};',
             ],
         ]
     );
@@ -946,7 +945,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'width: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-vertical-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -970,7 +969,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-vertical-icon i' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'margin-bottom: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -2470,7 +2469,8 @@ $settings = $this->get_settings_for_display();
 
             <!-- cta start  -->   
             <?php
-            if( 'bottom' === $settings['saasp_vertical_primary_cta_position'] || 'bottom' === $settings['saasp_vertical_secondary_cta_position'] ){
+             if('yes' === $settings['saasp_vertical_primary_cta_switch'] || 'yes' === $settings['saasp_vertical_secondary_cta_switch']){
+             if('top' !== $settings['saasp_vertical_primary_cta_position'] || 'top' !== $settings['saasp_vertical_secondary_cta_position']){
             ?>
             <div class="card-footer">
                 <?php
@@ -2555,7 +2555,8 @@ $settings = $this->get_settings_for_display();
                 ?>
             </div>
             <?php
-             }
+            }
+            }
             ?>
             <!-- cta end  -->
         </div>
