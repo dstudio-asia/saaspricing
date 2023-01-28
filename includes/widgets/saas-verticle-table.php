@@ -2474,11 +2474,12 @@ $settings = $this->get_settings_for_display();
             ?>
             <div class="card-footer">
                 <?php
-                if( 'yes' === $settings['saasp_vertical_primary_cta_switch'] && '' !== $settings['saasp_vertical_primary_cta_text'] 
-                    && 'bottom' === $settings['saasp_vertical_primary_cta_position'] || empty($settings['saasp_vertical_primary_cta_position'])){
-                    if ( ! empty( $settings['saasp_vertical_primary_cta_url']['url'] ) ) {
-                        $this->add_link_attributes( 'saasp_vertical_primary_cta_url', $settings['saasp_vertical_primary_cta_url'] );
-                    }
+                if('' !== $settings['saasp_vertical_primary_cta_text'] 
+                && 'bottom' === $settings['saasp_vertical_primary_cta_position'] || empty($settings['saasp_vertical_primary_cta_position'])){
+                if ( ! empty( $settings['saasp_vertical_primary_cta_url']['url'] ) ) {
+                    $this->add_link_attributes( 'saasp_vertical_primary_cta_url', $settings['saasp_vertical_primary_cta_url'] );
+                }
+                if('yes' === $settings['saasp_vertical_primary_cta_switch']){
                 ?>
                 <a class="btn saaspricing-vertical-primary btn-dark <?php
                 if('extra-small' === $settings['saasp_vertical_primary_cta_size']){
@@ -2511,13 +2512,15 @@ $settings = $this->get_settings_for_display();
                 </a>
                 <?php
                 }
+                }
                 ?>
                 <?php
-                if( 'yes' === $settings['saasp_vertical_secondary_cta_switch'] && '' !== $settings['saasp_vertical_secondary_cta_text']
-                    && 'bottom' === $settings['saasp_vertical_secondary_cta_position'] || empty($settings['saasp_vertical_secondary_cta_position'])){
-                    if ( ! empty( $settings['saasp_vertical_secondary_cta_url']['url'] ) ) {
-                        $this->add_link_attributes( 'saasp_vertical_secondary_cta_url', $settings['saasp_vertical_secondary_cta_url'] );
-                    }
+                if( '' !== $settings['saasp_vertical_secondary_cta_text']
+                && 'bottom' === $settings['saasp_vertical_secondary_cta_position'] || empty($settings['saasp_vertical_secondary_cta_position'])){
+                if ( ! empty( $settings['saasp_vertical_secondary_cta_url']['url'] ) ) {
+                    $this->add_link_attributes( 'saasp_vertical_secondary_cta_url', $settings['saasp_vertical_secondary_cta_url'] );
+                }
+                if('yes' === $settings['saasp_vertical_secondary_cta_switch']){
                 ?>
                 <div class="saaspricng-secondary-main">
                     <a class="saaspricing-vertical-secondary <?php
@@ -2551,6 +2554,7 @@ $settings = $this->get_settings_for_display();
                     </a>
                 </div>
                 <?php
+                }
                 }
                 ?>
             </div>
