@@ -120,6 +120,81 @@ public function saasp_allowed_tags(){
 
 protected function register_controls() {
 
+    $this->start_controls_section(
+        'saasp_vhorizontal_content_header',
+        [
+            'label' => esc_html__( 'Header', SAAS_PRICINNG_TXT_DOMAIN ),
+            'tab' =>  Controls_Manager::TAB_CONTENT,
+        ]
+    );
+
+    $this->add_control(
+        'saasp_horizontal_header_title',
+        [
+            'label' => esc_html__( 'Title', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Saaspricing', SAAS_PRICINNG_TXT_DOMAIN ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_vhorizontal_header_description',
+        [
+            'label' => esc_html__( 'Description', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::TEXT,
+            'default' => esc_html__( 'Enter Your Description', SAAS_PRICINNG_TXT_DOMAIN ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_horizontal_header_title_tag',
+        [
+            'label' => esc_html__( 'Title HTML Tag', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SELECT,
+            'default' => 'h2',
+            'options' => [
+                'h2' => esc_html__( 'H2', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h3' => esc_html__( 'H3', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h4'  => esc_html__( 'H4', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h5' => esc_html__( 'H5', SAAS_PRICINNG_TXT_DOMAIN ),
+                'h6' => esc_html__( 'H6', SAAS_PRICINNG_TXT_DOMAIN ),
+                'span' => esc_html__( 'Span', SAAS_PRICINNG_TXT_DOMAIN ),
+                'p' => esc_html__( 'P', SAAS_PRICINNG_TXT_DOMAIN ),
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'sassp_vertical_ribbon_alignment',
+        [
+            'label' => esc_html__( 'Alignment', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::CHOOSE,
+            'options' => [
+                'left' => [
+                    'title' => esc_html__( 'Left', SAAS_PRICINNG_TXT_DOMAIN ),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                'center' => [
+                    'title' => esc_html__( 'Center', SAAS_PRICINNG_TXT_DOMAIN ),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                'right' => [
+                    'title' => esc_html__( 'Right', SAAS_PRICINNG_TXT_DOMAIN ),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'center', 
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-ribbon-title' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-vertical-title' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-vertical-description' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-vertical-header' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-vertical-icon' => 'text-align: {{VALUE}};',
+            ],
+        ]
+    );
+
 	
 }
 

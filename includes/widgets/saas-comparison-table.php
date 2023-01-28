@@ -4737,9 +4737,8 @@ protected function render() {
                             }
                             ?>
                             <?php
-                             if( 'yes' === $settings['saasp_comparison_primary_cta_switch_'.$i] && 
-                             '' !== $settings['saasp_comparison_primary_cta_text_'.$i] &&
-                             'top' === $settings['saasp_comparison_primary_cta_position_'.$i] ){
+                             if( '' !== $settings['saasp_comparison_primary_cta_text_'.$i] && 'top' === $settings['saasp_comparison_primary_cta_position_'.$i] ){
+                             if( 'yes' === $settings['saasp_comparison_primary_cta_switch_'.$i] ){
                             ?>
                             <a class="btn btn-info saaspricing-primary-btn saaspricing-primary-<?php echo esc_attr($i);; ?> <?php
                              if('extra-small' === $settings['saasp_comparison_primary_cta_size_'.$i]){
@@ -4774,6 +4773,7 @@ protected function render() {
                             </p>
                             </a>
                             <?php
+                              }
                              }
                             ?>
                             <?php  
@@ -4785,15 +4785,13 @@ protected function render() {
                             }
                             ?>
                             <?php
-                            if( 'yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i] &&
-                            '' !== $settings['saasp_comparison_secondary_cta_text_'.$i] &&
-                            'top' === $settings['saasp_comparison_secondary_cta_position_'.$i]){
-
+                            if( '' !== $settings['saasp_comparison_secondary_cta_text_'.$i] && 'top' === $settings['saasp_comparison_secondary_cta_position_'.$i]){
                             if( ! empty( $settings['saasp_comparison_secondary_cta_url_'.$i]['url'] ) ){
                                 $this->add_link_attributes( 'saasp_comparison_secondary_cta_url_'.$i, $settings['saasp_comparison_secondary_cta_url_'.$i] );
                             }
+                            if( 'yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i] ){
                             ?>
-                            <a class="btn btn-link saaspricing-secondary-btn saaspricing-primary-<?php echo esc_attr($i);; ?> <?php echo esc_attr($saasp_margin_top); ?> <?php
+                            <a class="btn btn-link saaspricing-secondary-btn saaspricing-secondary-<?php echo esc_attr($i);; ?> <?php echo esc_attr($saasp_margin_top); ?> <?php
                              if('extra-small' === $settings['saasp_comparison_secondary_cta_size_'.$i]){
                                 echo esc_attr('saaspricing-xsm-btn');
                              }elseif('small' === $settings['saasp_comparison_secondary_cta_size_'.$i]){
@@ -4825,6 +4823,7 @@ protected function render() {
                             </a>
                             <?php
                              }
+                            }
                             ?>
                              
                         </td>
@@ -4994,11 +4993,10 @@ protected function render() {
 
                             <!-- Primary Button -->
                             <?php
-                             if( 'yes' === $settings['saasp_comparison_primary_cta_switch_'.$i] && 
-                             '' !== $settings['saasp_comparison_primary_cta_text_'.$i] &&
-                             'bottom' === $settings['saasp_comparison_primary_cta_position_'.$i ] ||
+                             if( '' !== $settings['saasp_comparison_primary_cta_text_'.$i] && 'bottom' === $settings['saasp_comparison_primary_cta_position_'.$i ] ||
                              empty($settings['saasp_comparison_primary_cta_position_'.$i ])
                              ){
+                              if('yes' === $settings['saasp_comparison_primary_cta_switch_'.$i]){
                             ?>
                             <a class="btn btn-info saaspricing-primary-btn saaspricing-primary-<?php echo esc_attr($i);; ?> <?php
                              if('extra-small' === $settings['saasp_comparison_primary_cta_size_'.$i]){
@@ -5034,6 +5032,7 @@ protected function render() {
                             </a>
                             <?php
                              }
+                             }
                             ?>
                             <?php
                             if('bottom' === $settings['saasp_comparison_primary_cta_position_'.$i] || empty($settings['saasp_comparison_primary_cta_position_'.$i])){
@@ -5045,14 +5044,13 @@ protected function render() {
                             ?>
                             <!-- Secondary Button -->
                             <?php
-                             if( 'yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i] &&
-                             '' !== $settings['saasp_comparison_secondary_cta_text_'.$i] && 
-                             'bottom' === $settings['saasp_comparison_secondary_cta_position_'.$i] ||
+                             if(  '' !== $settings['saasp_comparison_secondary_cta_text_'.$i] &&  'bottom' === $settings['saasp_comparison_secondary_cta_position_'.$i] ||
                              empty($settings['saasp_comparison_secondary_cta_position_'.$i ])){
 
                              if( ! empty( $settings['saasp_comparison_secondary_cta_url_'.$i]['url'] ) ){
                                 $this->add_link_attributes( 'saasp_comparison_secondary_cta_url_'.$i, $settings['saasp_comparison_secondary_cta_url_'.$i] );
                              }
+                             if('yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i]){
                             ?>
                             <a class="btn btn-link <?php echo esc_attr($saasp_margin_top); ?> saaspricing-secondary-btn 
                             saaspricing-secondary-<?php echo esc_attr($i);; ?> <?php
@@ -5087,6 +5085,7 @@ protected function render() {
                             </a>
                             <?php
                              }
+                            }
                             ?>
                          </td>
                         <?php
