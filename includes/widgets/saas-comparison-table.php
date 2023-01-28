@@ -1497,7 +1497,7 @@ protected function register_controls() {
                 'value' => 'fas fa-check',
                 'library' => 'fa-solid',
             ],
-            'exclude_inline_options' => [ 'svg' ],
+            // 'exclude_inline_options' => [ 'svg' ],
         ]
     );
 
@@ -1631,7 +1631,7 @@ protected function register_controls() {
                 'value' => 'fas fa-check',
                 'library' => 'fa-solid',
             ],
-            'exclude_inline_options' => [ 'svg' ],
+            // 'exclude_inline_options' => [ 'svg' ],
         ]
     );
 
@@ -1672,7 +1672,7 @@ protected function register_controls() {
                 'value' => 'fas fa-check',
                 'library' => 'fa-solid',
             ],
-            'exclude_inline_options' => [ 'svg' ],
+            // 'exclude_inline_options' => [ 'svg' ],
         ]
     );
 
@@ -1810,7 +1810,7 @@ protected function register_controls() {
                 'value' => 'fas fa-check',
                 'library' => 'fa-solid',
             ],
-            'exclude_inline_options' => [ 'svg' ],
+            // 'exclude_inline_options' => [ 'svg' ],
         ]
     );
 
@@ -1850,7 +1850,7 @@ protected function register_controls() {
                 'value' => 'fas fa-check',
                 'library' => 'fa-solid',
             ],
-            'exclude_inline_options' => [ 'svg' ],
+            // 'exclude_inline_options' => [ 'svg' ],
         ]
     );
 
@@ -1889,7 +1889,7 @@ protected function register_controls() {
                 'value' => 'fas fa-check',
                 'library' => 'fa-solid',
             ],
-            'exclude_inline_options' => [ 'svg' ],
+            // 'exclude_inline_options' => [ 'svg' ],
         ]
     );
 
@@ -3976,29 +3976,27 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_features_icon_section',
+        'saasp_comparison_feature_icon_section',
         [
-            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ), 
+            'label' => esc_html__( 'Tooltip', SAAS_PRICINNG_TXT_DOMAIN ), 
             'type' =>  Controls_Manager::HEADING,
+            'separator'=>'before'
         ]
     );
 
     $this->add_control(
-        'saasp_comparison_features_icon_color',
+        'saasp_comparison_feature_tooltip_icon_color',
         [
             'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell i' => 'color: {{VALUE}}',
-                '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell svg' => 'color: {{VALUE}} ',
-                '{{WRAPPER}} .saaspricing-feature-main i' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-feature-main svg' => 'color: {{VALUE}} ',
             ],
         ]
     );
-    
+
     $this->add_responsive_control(
-        'saaspricing_comparison_features_icon_size',
+        'saaspricing_comparison_features_tooltip_icon_size',
         [
             'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::SLIDER,
@@ -4015,9 +4013,7 @@ protected function register_controls() {
                 'size' => 14,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell span.saaspricing-cell-icon' => 'font-size: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-feature-main svg' => 'font-size: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-feature-main i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-feature-main svg' => 'font-size: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}}',
             ],
         ]
     );
@@ -4057,6 +4053,50 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-main' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_features_icon_section',
+        [
+            'label' => esc_html__( 'Icon', SAAS_PRICINNG_TXT_DOMAIN ), 
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_features_icon_color',
+        [
+            'label' => esc_html__( 'Color', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-feature-list td.saaspricing-cell svg' => 'color: {{VALUE}} ',
+            ],
+        ]
+    );
+    
+    $this->add_responsive_control(
+        'saaspricing_comparison_features_icon_size',
+        [
+            'label' => esc_html__( 'Size', SAAS_PRICINNG_TXT_DOMAIN ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 1,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 14,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} span.saaspricing-cell-icon svg' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -4998,7 +5038,7 @@ protected function render() {
                              ){
                               if('yes' === $settings['saasp_comparison_primary_cta_switch_'.$i]){
                             ?>
-                            <a class="btn btn-info saaspricing-primary-btn saaspricing-primary-<?php echo esc_attr($i);; ?> <?php
+                            <a class="btn btn-info saaspricing-primary-btn mb-3 saaspricing-primary-<?php echo esc_attr($i);; ?> <?php
                              if('extra-small' === $settings['saasp_comparison_primary_cta_size_'.$i]){
                                 echo esc_attr('saaspricing-xsm-btn');
                              }elseif('small' === $settings['saasp_comparison_primary_cta_size_'.$i]){
@@ -5035,8 +5075,7 @@ protected function render() {
                              }
                             ?>
                             <?php
-                            if('bottom' === $settings['saasp_comparison_primary_cta_position_'.$i] || empty($settings['saasp_comparison_primary_cta_position_'.$i])){
-                                $saasp_margin_top = "mt-3";
+                            if('bottom' === $settings['saasp_comparison_primary_cta_position_'.$i] && !empty($settings['saasp_comparison_primary_cta_position_'.$i]) ){
                             ?>
                             <br/>
                             <?php
@@ -5052,7 +5091,7 @@ protected function render() {
                              }
                              if('yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i]){
                             ?>
-                            <a class="btn btn-link <?php echo esc_attr($saasp_margin_top); ?> saaspricing-secondary-btn 
+                            <a class="btn btn-link saaspricing-secondary-btn 
                             saaspricing-secondary-<?php echo esc_attr($i);; ?> <?php
                              if('extra-small' === $settings['saasp_comparison_secondary_cta_size_'.$i]){
                                 echo esc_attr('saaspricing-xsm-btn');
