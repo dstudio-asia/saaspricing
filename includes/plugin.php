@@ -230,12 +230,14 @@ final class SaasPricing {
 		wp_register_script( 'saasp-popup-js', SAAS_PRICING_ASSETS_URL . 'js/popup.js' , [ 'jquery' ] , null , true );
 		wp_register_script( 'saasp-fontawesome-js', SAAS_PRICING_ASSETS_URL . 'js/all.min.js' , [ 'jquery' ] , null , true );
 		wp_register_script( 'saasp-vertical-js', SAAS_PRICING_ASSETS_URL . 'js/saasp-vertical.js' , [ 'jquery' ] , self::VERSION , true );
+		wp_register_script( 'saasp-horizontal-js', SAAS_PRICING_ASSETS_URL . 'js/saasp-horizontal.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-main-js', SAAS_PRICING_ASSETS_URL . 'js/main.js' , [ 'jquery' ] , self::VERSION , true );
 
 		wp_enqueue_script('saasp-fontawesome-js');
 		wp_enqueue_script('saasp-bootstrap-js');
 		wp_enqueue_script('saasp-popup-js');
 		wp_enqueue_script('saasp-vertical-js');
+		wp_enqueue_script('saasp-horizontal-js');
 		wp_enqueue_script('saasp-main-js');
 
 	}

@@ -158,7 +158,7 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Title', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'Saaspricing', SAAS_PRICINNG_TXT_DOMAIN ),
+            'default' => esc_html__( 'Enter Your Title', SAAS_PRICINNG_TXT_DOMAIN ),
         ]
     );
 
@@ -926,7 +926,7 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_responsive_control(
+    $this->add_control(
         'saasp_vertical_header_icon_size',
         [
             'label' => esc_html__( 'Icon Size', SAAS_PRICINNG_TXT_DOMAIN ),
@@ -935,7 +935,7 @@ protected function register_controls() {
             'range' => [
                 'px' => [
                     'min' => 0,
-                    'max' => 1000,
+                    'max' => 300,
                     'step' => 1,
                 ],
             ],
@@ -944,8 +944,7 @@ protected function register_controls() {
                 'size' => 50,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'width: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-icon' => 'font-size:{{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1481,7 +1480,7 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_vertical_ribbon_margin',
+        'saasp_vertical_countdown_margin',
         [
             'label' => esc_html__( 'Margin', SAAS_PRICINNG_TXT_DOMAIN ),
             'type' =>  Controls_Manager::DIMENSIONS,
@@ -2180,7 +2179,7 @@ $settings = $this->get_settings_for_display();
                 <?php
                 if('' !== $settings['saasp_vertical_icon']['value']){
                 ?>
-                <div class="saaspricing-vertical-icon pt-1 pb-1">
+                <div class="saaspricing-vertical-icon elementor-icon" >
                 <?php Icons_Manager::render_icon( $settings['saasp_vertical_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                 </div>
                 <?php
@@ -2560,8 +2559,6 @@ $settings = $this->get_settings_for_display();
             </div>
             <?php
             }
-            // }
-            // }
             ?>
             <!-- cta end  -->
         </div>
