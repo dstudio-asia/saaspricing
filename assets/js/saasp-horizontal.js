@@ -5,7 +5,7 @@
 
           let saaspExpire = setInterval(function() {
   
-            let saaspMainClass = $(scope).find("#countdown");
+            let saaspMainClass = $(scope).find(".saaspricing-countdown");
             let saaspDate = saaspMainClass.data('expire-date');
             
             let saaspCountDownDate = [new Date(saaspDate)];

@@ -231,26 +231,26 @@ final class SaasPricing {
 		wp_register_script( 'saasp-fontawesome-js', SAAS_PRICING_ASSETS_URL . 'js/all.min.js' , [ 'jquery' ] , null , true );
 		wp_register_script( 'saasp-vertical-js', SAAS_PRICING_ASSETS_URL . 'js/saasp-vertical.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-horizontal-js', SAAS_PRICING_ASSETS_URL . 'js/saasp-horizontal.js' , [ 'jquery' ] , self::VERSION , true );
-		wp_register_script( 'saasp-main-js', SAAS_PRICING_ASSETS_URL . 'js/main.js' , [ 'jquery' ] , self::VERSION , true );
+		wp_register_script( 'saasp-comparison-js', SAAS_PRICING_ASSETS_URL . 'js/saasp-comparison.js' , [ 'jquery' ] , self::VERSION , true );
 
 		wp_enqueue_script('saasp-fontawesome-js');
 		wp_enqueue_script('saasp-bootstrap-js');
 		wp_enqueue_script('saasp-popup-js');
 		wp_enqueue_script('saasp-vertical-js');
 		wp_enqueue_script('saasp-horizontal-js');
-		wp_enqueue_script('saasp-main-js');
+		wp_enqueue_script('saasp-comparison-js');
 
 	}
 	
 	function saasp_register_widgets( $widgets_manager ) {
 
-		require_once(  __DIR__ . '/widgets/saas-comparison-table.php' );
-		require_once(  __DIR__ . '/widgets/saas-verticle-table.php' );
-		require_once(  __DIR__ . '/widgets/saas-horizontal-table.php' );
+		require_once(  __DIR__ . '/widgets/saaspricing-comparison-table.php' );
+		require_once(  __DIR__ . '/widgets/saaspricing-vertical-table.php' );
+		require_once(  __DIR__ . '/widgets/saaspricing-horizontal-table.php' );
 
 		$widgets_manager->register( new \SaasComparisonTable() );
 		$widgets_manager->register( new \SaasHorizontalTable() );
-		$widgets_manager->register( new \SaasVerticleTable() );
+		$widgets_manager->register( new \SaasVerticalTable() );
 
 	}
 

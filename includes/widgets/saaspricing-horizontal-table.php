@@ -404,7 +404,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_horizontal_cta_row_reverse',
         [
-            'label' => esc_html__( 'Row Reverse', 'saaspricing' ),
+            'label' => esc_html__( 'Reverse Column', 'saaspricing' ),
             'type' =>  Controls_Manager::SWITCHER,
             'label_on' => esc_html__( 'Show', 'saaspricing' ),
             'label_off' => esc_html__( 'Hide', 'saaspricing' ),
@@ -593,6 +593,15 @@ protected function register_controls() {
         );
 
         $this->add_control(
+            'saasp_horizontal_cta_section_heading',
+            [
+                'label' => esc_html__( 'CTA Buttons', 'saaspricing' ),
+                'type' =>  Controls_Manager::HEADING,
+                'separator' => 'before'
+            ]
+        );
+
+        $this->add_control(
             'saasp_horizontal_primary_cta_switch',
             [
                 'label' => esc_html__( 'Primary', 'saaspricing' ),
@@ -601,7 +610,6 @@ protected function register_controls() {
                 'label_off' => esc_html__( 'Hide', 'saaspricing' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
-                'separator' => 'before',
             ]
         );
     
@@ -661,22 +669,12 @@ protected function register_controls() {
             [
                 'label' => esc_html__( 'Icon', 'saaspricing' ),
                 'type' =>  Controls_Manager::ICONS,
+                'skin' => 'inline',
                 'default' => [
                     'value' => 'fas fa-arrow-right',
                     'library' => 'fa-solid',
                 ],
-                'recommended' => [
-                    'fa-solid' => [
-                        'circle',
-                        'dot-circle',
-                        'square-full',
-                    ],
-                    'fa-regular' => [
-                        'circle',
-                        'dot-circle',
-                        'square-full',
-                    ],
-                ],
+                'exclude_inline_options' => [ 'svg' ],
                 'condition' =>[
                     'saasp_horizontal_primary_cta_switch' => 'yes',
                 ]
@@ -790,18 +788,8 @@ protected function register_controls() {
             [
                 'label' => esc_html__( 'Icon', 'saaspricing' ),
                 'type' =>  Controls_Manager::ICONS,
-                'recommended' => [
-                    'fa-solid' => [
-                        'circle',
-                        'dot-circle',
-                        'square-full',
-                    ],
-                    'fa-regular' => [
-                        'circle',
-                        'dot-circle',
-                        'square-full',
-                    ],
-                ],
+                'skin' => 'inline',
+                'exclude_inline_options' => [ 'svg' ],
                 'condition' =>[
                     'saasp_horizontal_secondary_cta_switch' => 'yes',
                 ]
@@ -2182,8 +2170,8 @@ protected function render() {
 ?>
 
 
-   <div class="saaspricing-horizontal my-5">
-            <div class="row" <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'id="saaspricing-row-reverse"' ); } ?>>
+   <div class="saaspricing-horizontal">
+            <div class="row <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'saaspricing-row-reverse' ); } ?>">
                 <div class="col-lg-8">
                     <div class="p-4 p-sm-5 d-flex flex-column justify-content-center position-relative h-100">
                         <div class="saaspricing-horizontal-header">
@@ -2283,7 +2271,7 @@ protected function render() {
                             <?php
                             if( 'before' === $settings['saasp_horizontal_pricing_symbol_position'] ){
                             ?>
-                            <span class="saaspricing-horizontal-symbol">
+                            <span class="saaspricing-horizontal-symbol saaspricing-horizontal-price-text">
                                 <?php
                                 if( 'custom' !== $settings['saasp_horizontal_currency_symbol'] ){
                                     echo esc_html($this->get_currency_symbol($settings['saasp_horizontal_currency_symbol']));
@@ -2320,7 +2308,7 @@ protected function render() {
                             <?php
                             if( 'after' === $settings['saasp_horizontal_pricing_symbol_position'] ){
                             ?>
-                            <span class="saaspricing-horizontal-symbol">
+                            <span class="saaspricing-horizontal-symbol saaspricing-horizontal-price-text">
                                 <?php
                                 if( 'custom' !== $settings['saasp_horizontal_currency_symbol'] ){
                                     echo esc_html($this->get_currency_symbol($settings['saasp_horizontal_currency_symbol']));
@@ -2349,8 +2337,7 @@ protected function render() {
                         <div class="saaspricing-horizontal-countdown">
                             <span class="saaspricing-countdown"
                             data-countdown-index="0"
-                            data-expire-date="<?php echo esc_attr($settings['saasp_horizontal_expire_date']); ?>"
-                            id="countdown">
+                            data-expire-date="<?php echo esc_attr($settings['saasp_horizontal_expire_date']); ?>">
                             </span>
                         </div>
                         <?php

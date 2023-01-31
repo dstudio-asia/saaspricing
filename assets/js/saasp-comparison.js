@@ -1,16 +1,18 @@
 ;(function($) {
     "use strict";
     $(window).on("elementor/frontend/init", function () {
-        elementorFrontend.hooks.addAction("frontend/element_ready/saasVertical.default", function (scope, $) {
-
+        elementorFrontend.hooks.addAction("frontend/element_ready/saasComparison.default", function (scope, $) {
+  
           let saaspExpire = setInterval(function() {
   
-            let saaspMainClass = $(scope).find(".saaspricing-countdown");
-            let saaspDate = saaspMainClass.data('expire-date');
-            
-            let saaspCountDownDate = [new Date(saaspDate)];
+            let saaspMainClass = $(scope).find(".saaspricing-ribbon-wrapper");
+            let saaspDateOne = saaspMainClass.data('exp-date-one');
+            let saaspDateTwo = saaspMainClass.data('exp-date-two');
+            let saaspDateThree = saaspMainClass.data('exp-date-three');
+  
+            let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)];
             let saaspCurrentTime = new Date().getTime();
-            let saaspCountdowns = $(scope).find(".saaspricing-countdown");
+            let saaspCountdowns = $(scope).find(".show-expire-date");
           
             // Find the distance between now and the count down date
             
@@ -31,6 +33,24 @@
               }
             });
           }, 1000);
+  
+          // Tooltip Trigger Function
+          
+          let saaspTooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+          let saaspTooltipList = saaspTooltipTriggerList.map(function (saaspTooltipTriggerEl) {
+            return new bootstrap.Tooltip(saaspTooltipTriggerEl)
+          })
+  
+          // Image Popup
+
+          $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+              verticalFit: true
+            }
+          });
              
         });
     })

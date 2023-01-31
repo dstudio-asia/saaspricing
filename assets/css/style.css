@@ -1,25 +1,27 @@
 :root {
     --saaspricing-primary-color:#6EC1E4;
-    --saaspricing-secondary-color:#54595F;
+    --saaspricing-color-secondary:#54595F;
     --saaspricing-color-white: #fff ;
     --saaspricing-color-black: #202020 ;
     --saaspricing-color-gray-100: #fafafa ;
     --saaspricing-color-box-shadow: #00000015;
     --saaspricing-color-blue: #0d6efd;
+    --saaspricing-border-color: #00000008;
+    --saaspricing-color-green: #198754;
+    --saaspricing-color-steel-blue: #6c757d;
+    --saaspricing-color-papaya-whip: #ffefd570;
+    --saaspricing-color-crimson: #dc3545;
+    --saaspricing-color-yellow: #f4b400;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-padding: 0;
-margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
-p.saaspricing-vertical-description, .card-title.saaspricing-vertical-title{
+.saaspricing-vertical-description, .card-title.saaspricing-vertical-title {
     margin-bottom:0;
 }
-
-/* .tableHeader {
-    background-color: var( --saaspricing-color-white);
-} */
 
 .saaspricing-table {
     table-layout: fixed;
@@ -33,17 +35,12 @@ p.saaspricing-vertical-description, .card-title.saaspricing-vertical-title{
     padding:0;
 }
 
-tr.saaspricing-price-table-head, tr.saaspricing-feature-list {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+.saaspricing-price-table-head, .saaspricing-feature-list {
+    border-bottom: 1px solid var(--saaspricing-border-color);
 }
 
-.saaspricing-table-title-des-main , tr.saaspricing-feature-list {
-    /* border-left: 1px solid #fafafa; */
-    border-right: 1px solid #fafafa;
-}
-
-.saaspricing-table td.ribbon-wrapper.saaspricing-common-ribbon{
-    border-right: 1px solid #ffffff;
+.saaspricing-table-title-des-main, .saaspricing-feature-list {
+    border-right: 1px solid var(--saaspricing-color-gray-100);
 }
 
 .saaspricing-table tr td:last-child {
@@ -54,63 +51,35 @@ tr.saaspricing-price-table-head, tr.saaspricing-feature-list {
     border-left: 1px solid transparent;
 }
 
-/* td.saaspricing-footer-cta {
-    border-bottom: 1px solid #fafafa;
-    border-right: 1px solid #fafafa;
-} */
-
-td.saaspricing-feature-main{
+.saaspricing-feature-main {
     gap:5px;
 }
 
-td.saaspricing-header-cta {
-border-bottom: none;
-}
-
 .saaspricing-table tr td {
-    /* border-left: 1px solid rgba(0, 0, 0, 0.05); */
     padding: 15px 20px;
     font-size: 14px;
 }
 
-.saaspricing-table tr td.ribbon-wrapper{
+.saaspricing-table .saaspricing-ribbon-table-row .saaspricing-ribbon-wrapper{
     border: none;
-}
-.saaspricing-table tr.saaspricing-ribbon-table-row:hover {
-  background:none;
-}
-
-.saaspricing-table tr td.ribbon-wrapper {
     padding:0;
 }
 
-/* .saaspricing-table tr td:first-child {
-    border-left: 0 none;
-} */
-
-.saaspricing-table tr td.price.saaspricing-pricing {
-    text-align: center;
+.saaspricing-table .saaspricing-ribbon-table-row:hover {
+    background:none;
 }
 
-/* .saaspricing-table tr:nth-child(even) {
-    background-color: var( --saaspricing-color-white);
-} */
-
-/* .saaspricing-table tr:hover {
-    background-color: #f9f9f9;
-} */
-
 .saaspricing-table .fa-times {
-    color: #D8D6E3;
+    color: var( --saaspricing-color-gray-100 );
 }
 
 /* Highlighted column */
 
-td.ribbon-wrapper.saaspricing-common-ribbon.saasp-hidden{
+.saaspricing-table .saaspricing-ribbon-table-row .saasp-hidden {
     visibility: hidden;
 }
 
-.saaspricing-table tr.saaspricing-price-table-head td {
+.saaspricing-table .saaspricing-price-table-head td {
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
@@ -118,29 +87,28 @@ td.ribbon-wrapper.saaspricing-common-ribbon.saasp-hidden{
     padding:20px;
 }
 
-td.saaspricing-table-head {
+.saaspricing-table .saaspricing-table-head {
     background-color: var(--saaspricing-primary-color);
     color: var(--saaspricing-color-white);
 }
 
-.saaspricing-table td.price {
+.saaspricing-table .price {
     padding: 20px;
     font-size: 20px;
     font-weight: 600;
     position: relative;
 }
 
-.saaspricing-table td.ribbon-wrapper.saaspricing-common-ribbon {
+.saaspricing-table .saaspricing-ribbon-table-row .saaspricing-common-ribbon {
     color: var(--saaspricing-color-white);
     text-transform: capitalize;
     font-size: 12px;
     font-weight: 700;
-    background-color: var(--saaspricing-secondary-color);
+    background-color: var( --saaspricing-color-secondary );
     padding:20px 20px;
 }
 
 .saaspricing-table .saaspricing-blank {
-    /* background-color: #ffffff; */
     border:none;
 }
 
@@ -148,12 +116,8 @@ td.saaspricing-table-head {
     max-width: 80px;
 }
 
-.saaspricing-table-title{
+.saaspricing-table-title {
     font-size: 28px;
-}
-
-.elementor-widget-saasComparison .elementor-widget-container{
-    overflow: hidden;
 }
 
 /* vertical pricing section  */
@@ -172,12 +136,17 @@ td.saaspricing-table-head {
     border: none;
 }
 
-.saaspricing-cta-card{
+.saaspricing-cta-card {
     padding: 0.5rem 0rem;
 }
 
-.pricing-cards-all{
+.saaspricing-cards-all {
     overflow: hidden;
+    height: 100%;
+}
+
+.saaspricing-cards-all .row {
+    height: 100%;
 }
 
 .saaspricing-heading {
@@ -188,7 +157,7 @@ td.saaspricing-table-head {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     line-height: .8;
     gap:5px;
 }
@@ -197,12 +166,12 @@ td.saaspricing-table-head {
     padding: .5rem 1rem;
     margin-bottom: 0;
     background-color: rgba(0,0,0,.03);
-    background-color: #198754;
+    background-color: var(--saaspricing-color-green );
 }
 
 .saaspricing-horizontal {
-    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 24px var( --saaspricing-color-box-shadow );
+    box-shadow: 0 0 24px var( --saaspricing-color-box-shadow );
     overflow: hidden;
 }
 
@@ -215,7 +184,7 @@ td.saaspricing-table-head {
 
 .saasspricing-pricing-block {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-wrap: wrap;
     gap:5px;
@@ -227,13 +196,13 @@ td.saaspricing-table-head {
     line-height: .8;
 }
 
-li.saaspricing-vertical-margin{
+.saaspricing-vertical-margin {
     margin-bottom: 1rem;
 }
-li.saaspricing-vertical-margin:last-child{
+
+.saaspricing-vertical-margin:last-child {
     margin-bottom: 0;
 }
-
 
 /* ribbons  */
 
@@ -262,7 +231,7 @@ li.saaspricing-vertical-margin:last-child{
     border-radius: 50px;
     font-weight: bold;
     font-size: 12px;
-    background-color: #198754;
+    background-color: var(--saaspricing-color-green);
     padding: 30px;
 }
 
@@ -274,12 +243,12 @@ li.saaspricing-vertical-margin:last-child{
     right: 10px;
 }
 
-#saaspricing-row-reverse {
+.saaspricing-row-reverse {
     flex-direction: row-reverse;
 }
 
 .saaspricing-border-bottom {
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--saaspricing-border-color);
 }
 
 .saaspricing-horizontal-title, 
@@ -307,7 +276,7 @@ li.saaspricing-vertical-margin:last-child{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    color: #6c757d;
+    color: var(--saaspricing-color-steel-blue);
 }
 
 .saaspricing-vertical-original, .saaspricing-horizontal-original {
@@ -321,13 +290,13 @@ li.saaspricing-vertical-margin:last-child{
     padding: 15px 0;
 }
 
-.saaspricing-vertical-countdown span.saaspricing-countdown,
-.saaspricing-horizontal-countdown span.saaspricing-countdown {
+.saaspricing-vertical-countdown .saaspricing-countdown,
+.saaspricing-horizontal-countdown .saaspricing-countdown {
     white-space:nowrap;
     border-radius: 0.3rem;
-    color: #dc3545;
+    color: var( --saaspricing-color-crimson );
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    border-color: #dc3545;
+    border-color: var( --saaspricing-color-crimson );
     border: 1px solid;
     font-size: 18px;
     font-weight: bold;
@@ -346,13 +315,13 @@ li.saaspricing-vertical-margin:last-child{
 /* Features */
 
 .saaspricing-horizontal-feature-title {
-    color: #6c757d;
+    color: var(--saaspricing-color-steel-blue);
     font-weight: 700;
     padding-bottom: 16px;
 }
 
 .saasp-horizontal-icon-wrapper {
- padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .saaspricing-horizontal-des {
@@ -379,7 +348,7 @@ p.saaspricing-features-title {
 }
 
 .saaspricing-vertical-feature {
-    background-color: #ffefd570;
+    background-color: var( --saaspricing-color-papaya-whip );
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
 }
@@ -387,8 +356,8 @@ p.saaspricing-features-title {
 /* Sidebar */
 
 .saaspricing-horizontal-sidebar {
-    background: #ffefd570;
-    padding:48px;
+    background: var( --saaspricing-color-papaya-whip );
+    padding: 48px;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -400,10 +369,10 @@ p.saaspricing-features-title {
 /* button css */
 
 .saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)) {
-    color:var(--saaspricing-color-white);
+    color:var(--saaspricing-color-white );
 }
 
-a.saaspricing-secondary-btn {
+.saaspricing-secondary-btn {
     color:var(--saaspricing-color-blue);
 }
 
@@ -441,20 +410,20 @@ a.saaspricing-vertical-primary {
 }
 
 .saaspricng-horizontal-secondary-main {
- margin:20px 0;
+    margin:20px 0;
 }
 
-.saaspricing-horizontal-primary{
-  margin: 20px 0;
+.saaspricing-horizontal-primary {
+    margin: 20px 0;
 }
 
 .saaspricing-btn-1:hover {
-    background-color: #198754;
-    color: var( --saaspricing-color-white);
+    background-color: var(--saaspricing-color-green );
+    color: var( --saaspricing-color-white );
 }
 
 .saaspricing-bg-warm {
-    background: #ffefd570;
+    background: var( --saaspricing-color-papaya-whip );
 }
 
 .saaspricing-star-right {
@@ -465,7 +434,7 @@ a.saaspricing-vertical-primary {
 }
 
 .saaspricing-yellow {
-    color: #f4b400;
+    color: var( --saaspricing-color-yellow );
 }
 
 .fs-sm {
@@ -474,17 +443,6 @@ a.saaspricing-vertical-primary {
 
 .border-o {
     border-radius: 50px;
-}
-
-.saaspricing-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    margin-bottom: 375px;
-    background: #ffffff;
-    -webkit-box-shadow: 0px 2px 10px #00000020;
-    box-shadow: 0px 2px 10px #00000020;
 }
 
 .saaspricing-countdown {
@@ -500,30 +458,34 @@ tbody svg {
     cursor: pointer;
 }
 
+.elementor-widget-saasComparison .elementor-widget-container {
+    overflow: hidden;
+}
+
 .tooltip-inner {
     max-width: 300px;
     padding: 15px 20px;
-    color: #202020;
+    color: var(--saaspricing-color-black);
     text-align: center;
-    background-color: var( --saaspricing-color-white);
+    background-color: var( --saaspricing-color-white );
     border-radius: .25rem;
-    -webkit-box-shadow: 0px 0px 10px #00000020;
-    box-shadow: 0px 0px 10px #00000020;
+    -webkit-box-shadow: 0px 0px 10px var( --saaspricing-color-box-shadow );
+    box-shadow: 0px 0px 10px var( --saaspricing-color-box-shadow );
 }
 
 .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before,
 .bs-tooltip-bottom .tooltip-arrow::before {
-    border-bottom-color: var( --saaspricing-color-white);
+    border-bottom-color: var( --saaspricing-color-white );
 }
 
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
 .bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: var( --saaspricing-color-white);
+    border-top-color: var( --saaspricing-color-white );
 }
 
 .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before,
 .bs-tooltip-end .tooltip-arrow::before {
-    border-right-color: var( --saaspricing-color-white);
+    border-right-color: var( --saaspricing-color-white );
 }
 
 .tooltip.show {
@@ -540,16 +502,16 @@ tbody svg {
     margin: 0 auto;
     width: 100% !important;
     max-width: 600px !important;
-    background-color: var( --saaspricing-color-white);
+    background-color: var( --saaspricing-color-white );
 }
 
 .mfp-image-holder .mfp-close,
 .mfp-iframe-holder .mfp-close {
-    color: #000;
+    color: var(--saaspricing-color-black);
     right: -30px;
     top: -30px;
     text-align: right;
-    background: var( --saaspricing-color-white);
+    background: var( --saaspricing-color-white );
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
