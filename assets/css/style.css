@@ -19,7 +19,9 @@ p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.saaspricing-vertical-description, .card-title.saaspricing-vertical-title {
+.saaspricing-vertical-description, 
+.vertical-pricing-card .saaspricing-vertical-title, 
+.saaspricing-horizontal .saaspricing-horizontal-title {
     margin-bottom:0;
 }
 
@@ -132,8 +134,9 @@ p, h1, h2, h3, h4, h5, h6 {
     border-radius: .25rem;
 }
 
-.card-footer {
-    border: none;
+.saaspricing-card-footer {
+    padding: .5rem 1rem;
+    background-color: rgba(0,0,0,.03);
 }
 
 .saaspricing-cta-card {
@@ -239,7 +242,7 @@ p, h1, h2, h3, h4, h5, h6 {
     left: 10px;
 }
 
-.saaspricing-horizontal-left-position {
+.saaspricing-horizontal-right-position {
     right: 10px;
 }
 
@@ -308,7 +311,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Review */
 
-.saaspricing-star-icon{
+.saaspricing-star-icon {
     padding: 15px 0;
 }
 
@@ -401,7 +404,7 @@ p.saaspricing-features-title {
     padding: 25px 50px;
 }
 
-a.saaspricing-vertical-primary {
+.saaspricing-cards-all .saaspricing-vertical-primary {
     margin: 20px 0;
 }
 
@@ -437,7 +440,7 @@ a.saaspricing-vertical-primary {
     color: var( --saaspricing-color-yellow );
 }
 
-.fs-sm {
+.saaspricing-fs-sm {
     font-size: 12px;
 }
 
@@ -454,7 +457,7 @@ a.saaspricing-vertical-primary {
  font-size: 16px;
 }
 
-tbody svg {
+.saaspricing-table .saaspricing-table-body svg {
     cursor: pointer;
 }
 

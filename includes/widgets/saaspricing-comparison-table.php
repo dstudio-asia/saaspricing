@@ -1,10 +1,4 @@
 <?php
-/**
- * Class: SaasComparisonTable
- * Name: Saas Comparison Table
- * Slug: saas-pricing
- */
-
  // Elementor Classes
 
  use Elementor\Controls_Manager;
@@ -22,10 +16,10 @@
  * Class SaasComparisonTable
  */
 
-class SaasComparisonTable extends \Elementor\Widget_Base {
+class SaaspComparisonTable extends \Elementor\Widget_Base {
 
 public function get_name() {
-    return 'saasComparison';
+    return 'saaspComparison';
 }
 
 public function get_title() {
@@ -2159,18 +2153,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_id_1',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
-            'condition' =>[
-                'saasp_comparison_primary_cta_switch_1' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_primary_cta_background_color_1',
         [
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
@@ -2343,18 +2325,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-spacing-1' => 'padding-left: {{SIZE}}{{UNIT}};',
             ],
-            'condition' =>[
-                'saasp_comparison_secondary_cta_switch_1' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_secondary_cta_id_1',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
             'condition' =>[
                 'saasp_comparison_secondary_cta_switch_1' => 'yes',
             ]
@@ -2571,18 +2541,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_id_2',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
-            'condition' =>[
-                'saasp_comparison_primary_cta_switch_2' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_primary_cta_background_color_2',
         [
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
@@ -2758,18 +2716,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-spacing-2' => 'padding-left: {{SIZE}}{{UNIT}};',
             ],
-            'condition' =>[
-                'saasp_comparison_secondary_cta_switch_2' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_secondary_cta_id_2',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
             'condition' =>[
                 'saasp_comparison_secondary_cta_switch_2' => 'yes',
             ]
@@ -2986,18 +2932,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_id_3',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
-            'condition' =>[
-                'saasp_comparison_primary_cta_switch_3' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_primary_cta_background_color_3',
         [
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
@@ -3173,18 +3107,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-spacing-3' => 'padding-left: {{SIZE}}{{UNIT}};',
             ],
-            'condition' =>[
-                'saasp_comparison_secondary_cta_switch_3' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_secondary_cta_id_3',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
             'condition' =>[
                 'saasp_comparison_secondary_cta_switch_3' => 'yes',
             ]
@@ -3570,7 +3492,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .show-expire-date' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-show-expire-date' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -4457,7 +4379,7 @@ protected function render() {
 ?>
   <div class="saaspricing-main table-responsive-lg position-relative">
             <table class="saaspricing-table" role="presentation">
-                <thead class="tableHeader">
+                <thead>
                     <?php
                     if( 'yes' === $settings['saasp_comparison_show_ribbon_1']  ||  'yes' === $settings['saasp_comparison_show_countdown_1']  ||
                         'yes' === $settings['saasp_comparison_show_ribbon_2'] || 'yes' === $settings['saasp_comparison_show_countdown_2'] ||  
@@ -4486,11 +4408,11 @@ protected function render() {
                                 }
                                 ?>
                             </div>
-                            <div class="saaspricing-countdown fs-sm" style="margin-bottom: 0;"> 
+                            <div class="saaspricing-countdown saaspricing-fs-sm"> 
                                 <?php
                                 if( 'yes' === $settings['saasp_comparison_show_countdown_'.$i] &&  '' !== $settings['saasp_comparison_show_countdown_'.$i] ){
                                 ?>
-                                <div class="show-expire-date" data-countdown-index="<?php echo esc_attr($j); ?>" 
+                                <div class="saaspricing-show-expire-date" data-countdown-index="<?php echo esc_attr($j); ?>" 
                                 data-expire-date-<?php echo esc_attr($i); ?>="<?php echo esc_attr($settings['saasp_comparison_expire_date_'.$i]); ?>">
                                 </div>
                             </div>
@@ -4514,7 +4436,7 @@ protected function render() {
                         <td class="saaspricing-blank"></td>
                         <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
                             <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html($settings['saasp_comparison_column_html_title_tag']), esc_html($settings['saasp_comparison_header_title_text_1']));?>
-                            <small class="fs-sm">
+                            <small class="saaspricing-fs-sm">
                                 <?php echo esc_html($settings['saasp_comparison_header_title_des_'.$i]); ?>
                             </small>
                         </td>
@@ -4529,13 +4451,13 @@ protected function render() {
                         <td class="saaspricing-blank"></td>
                         <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
                             <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html($settings['saasp_comparison_column_html_title_tag']), esc_html($settings['saasp_comparison_header_title_text_1']));?>
-                            <small class="fs-sm">
+                            <small class="saaspricing-fs-sm">
                                 <?php echo esc_html($settings['saasp_comparison_header_title_des_1']); ?>
                             </small>
                         </td>
                         <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
                             <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html($settings['saasp_comparison_column_html_title_tag']), esc_html($settings['saasp_comparison_header_title_text_2']));?>
-                            <small class="fs-sm">
+                            <small class="saaspricing-fs-sm">
                                 <?php echo esc_html($settings['saasp_comparison_header_title_des_2']); ?>
                             </small>
                         </td>
@@ -4554,19 +4476,19 @@ protected function render() {
                         <td class="saaspricing-blank"></td>
                         <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
                             <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html($settings['saasp_comparison_column_html_title_tag']), esc_html($settings['saasp_comparison_header_title_text_1']));?>
-                            <small class="fs-sm">
+                            <small class="saaspricing-fs-sm">
                                 <?php echo esc_html($settings['saasp_comparison_header_title_des_1']); ?>
                             </small>
                         </td>
                         <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
                             <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html($settings['saasp_comparison_column_html_title_tag']), esc_html($settings['saasp_comparison_header_title_text_2']));?>
-                            <small class="fs-sm">
+                            <small class="saaspricing-fs-sm">
                                 <?php echo esc_html($settings['saasp_comparison_header_title_des_2']); ?>
                             </small>
                         </td>
                         <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
                             <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html($settings['saasp_comparison_column_html_title_tag']), esc_html($settings['saasp_comparison_header_title_text_3']));?>
-                            <small class="fs-sm">
+                            <small class="saaspricing-fs-sm">
                                 <?php echo esc_html($settings['saasp_comparison_header_title_des_3']); ?>
                             </small>
                         </td>
@@ -4579,13 +4501,13 @@ protected function render() {
                         <td class="saaspricing-table-title-des"> 
                         <?php
                         if( '' !== $settings['saasp_comparison_header_table_title'] ){
-                            printf('<%1$s class="d-block mb-3 saaspricing-table-title" role="heading"> %2$s </%1$s>', esc_html($settings['saasp_comparison_header_table_title_tag']), esc_html($settings['saasp_comparison_header_table_title']));
+                            printf('<%1$s class="d-block saaspricing-table-title" role="heading"> %2$s </%1$s>', esc_html($settings['saasp_comparison_header_table_title_tag']), esc_html($settings['saasp_comparison_header_table_title']));
                         }
                         ?>
                         <?php
                         if('' !== $settings['saasp_comparison_header_table_description'] ){
                         ?>
-                        <span class="d-block fs-sm w-sm-100 saaspricing-table-description">
+                        <span class="d-block saaspricing-fs-sm w-sm-100 saaspricing-table-description">
                             <?php echo esc_html($settings['saasp_comparison_header_table_description']); ?>
                         </span>
                         <?php
@@ -4748,7 +4670,7 @@ protected function render() {
                                     if( '' !== $settings['saasp_comparison_rating_counter_'.$i] ){
                                     ?>
                                     <small class="saaspricing-review-text"> 
-                                        (<?php echo esc_html($settings['saasp_comparison_rating_counter_'.$i]); ?>) 
+                                        <?php echo esc_html__('(','saaspricing') . esc_html($settings['saasp_comparison_rating_counter_'.$i]) . esc_html__(')','saaspricing'); ?> 
                                     </small>
                                     <?php
                                     }
@@ -4783,15 +4705,10 @@ protected function render() {
                                 echo esc_attr('saaspricing-xl-btn');
                              }
                             ?>" 
-                            role="button" <?php echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags()); ?>
+                            role="button" 
                             <?php
-                            if('' !== $settings['saasp_comparison_primary_cta_id_'.$i]){
-                            ?>
-                            id="<?php echo esc_attr($settings['saasp_comparison_primary_cta_id_'.$i]); ?>"
-                            <?php
-                            }
-                            ?>
-                            >
+                            echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags()); 
+                            ?>>
                             <p class="saaspricing-btn-wraper">
                              <?php echo esc_html($settings['saasp_comparison_primary_cta_text_'.$i]); ?>
                              <span class="saaspricing-primary-spacing-<?php echo esc_attr($i); ?>">
@@ -4836,15 +4753,10 @@ protected function render() {
                                 echo esc_attr('saaspricing-xl-btn');
                              }
                             ?>" 
-                            role="button" <?php echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_secondary_cta_url_'.$i ), $this->saasp_allowed_tags()); ?>
+                            role="button" 
                             <?php
-                            if('' !== $settings['saasp_comparison_secondary_cta_id_'.$i]){
-                            ?>
-                            id="<?php echo esc_attr($settings['saasp_comparison_secondary_cta_id_'.$i]); ?>"
-                            <?php
-                            }
-                            ?>
-                            > 
+                            echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_secondary_cta_url_'.$i ), $this->saasp_allowed_tags()); 
+                            ?>> 
                             <?php echo esc_html($settings['saasp_comparison_secondary_cta_text_'.$i]); ?>
                             <span class="saaspricing-secondary-spacing-<?php echo esc_attr($i); ?>">
                             <?php Icons_Manager::render_icon( $settings['saasp_comparison_secondary_cta_icon_'.$i], [ 'aria-hidden' => 'true' ] ); ?>
@@ -4860,7 +4772,7 @@ protected function render() {
                         ?>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="saaspricing-table-body">
                     <?php
                     if( '1' === $settings['saasp_comparison_select_columns'] && $settings['saasp_comparison_table_feature_list_1'] ){
                     foreach( $settings['saasp_comparison_table_feature_list_1'] as $saasp_features_one ){
@@ -5058,15 +4970,10 @@ protected function render() {
                                 echo esc_attr('saaspricing-xl-btn');
                              }
                             ?>" 
-                            role="button" <?php echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags()); ?>
+                            role="button" 
                             <?php
-                            if('' !== $settings['saasp_comparison_primary_cta_id_'.$i]){
-                            ?>
-                            id="<?php echo esc_attr($settings['saasp_comparison_primary_cta_id_'.$i]); ?>"
-                            <?php
-                            }
-                            ?>
-                            >
+                            echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags()); 
+                            ?>>
                             <p class="saaspricing-btn-wraper">
                             <?php echo esc_html($settings['saasp_comparison_primary_cta_text_'.$i]); ?>
                             <span class="saaspricing-primary-spacing-<?php echo esc_attr($i); ?>">
@@ -5110,15 +5017,10 @@ protected function render() {
                                 echo esc_attr('saaspricing-xl-btn');
                              }
                             ?>" 
-                            role="button" <?php echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_secondary_cta_url_'.$i ), $this->saasp_allowed_tags()); ?>
-                            <?php
-                            if('' !== $settings['saasp_comparison_secondary_cta_id_'.$i]){
-                            ?>
-                            id="<?php echo esc_attr($settings['saasp_comparison_secondary_cta_id_'.$i]); ?>"
-                            <?php
-                            }
-                            ?>
-                            > 
+                            role="button" 
+                            <?php 
+                            echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_secondary_cta_url_'.$i ), $this->saasp_allowed_tags()); 
+                            ?>> 
                             <?php echo esc_html($settings['saasp_comparison_secondary_cta_text_'.$i]); ?>
                             <span class="saaspricing-secondary-spacing-<?php echo esc_attr($i); ?>">
                                 <?php Icons_Manager::render_icon( $settings['saasp_comparison_secondary_cta_icon_'.$i], [ 'aria-hidden' => 'true' ] ); ?>

@@ -1,10 +1,4 @@
 <?php
-/**
- * Class: SaasVerticalTable
- * Name: Saas Vertical Table
- * Slug: saas-pricing
- */
-
  // Elementor Classes
 
  use Elementor\Controls_Manager;
@@ -18,13 +12,13 @@
 }
 
 /**
- * Class SaasVerticalTable
+ * Class SaaspVerticalTable
  */
 
-class SaasVerticalTable extends \Elementor\Widget_Base {
+class SaaspVerticalTable extends \Elementor\Widget_Base {
 
 public function get_name() {
-    return 'saasVertical';
+    return 'saaspVertical';
 }
 
 public function get_title() {
@@ -684,18 +678,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_vertical_primary_cta_id',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
-            'condition' =>[
-                'saasp_vertical_primary_cta_switch' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
         'saasp_vertical_secondary_cta_switch',
         [
             'label' => esc_html__( 'Secondary', 'saaspricing' ),
@@ -814,18 +796,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-spacing' => 'padding-left: {{SIZE}}{{UNIT}};',
             ],
-            'condition' =>[
-                'saasp_vertical_secondary_cta_switch' => 'yes',
-            ]
-        ]
-    );
-
-    $this->add_control(
-        'saasp_vertical_secondary_cta_id',
-        [
-            'label' => esc_html__( 'Button ID', 'saaspricing' ),
-            'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( '', 'saaspricing' ),
             'condition' =>[
                 'saasp_vertical_secondary_cta_switch' => 'yes',
             ]
@@ -1526,7 +1496,7 @@ protected function register_controls() {
                 'size' => 0,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ratings span:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-ratings span:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -2064,7 +2034,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'separator'=>'before',
             'selectors' => [
-                '{{WRAPPER}} .card-footer' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-card-footer' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -2076,7 +2046,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .card-footer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-card-footer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -2256,7 +2226,7 @@ $settings = $this->get_settings_for_display();
                 <?php
                 if( 'yes' === $settings['saasp_vertical_show_rating'] && '' !== $settings['saasp_vertical_rating_num'] ){
                 ?>
-                <div class="ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
+                <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
                     <div class="saaspricing-star-icon fs-6"> 
                         <?php                                    
                         $saasp_rating = $settings['saasp_vertical_rating_num'];
@@ -2293,7 +2263,7 @@ $settings = $this->get_settings_for_display();
                         if( '' !== $settings['saasp_vertical_rating_counter'] ){
                         ?>
                         <small class="saaspricing-review-text"> 
-                            (<?php echo esc_html($settings['saasp_vertical_rating_counter']); ?>) 
+                            <?php echo esc_html__('(','saaspricing') . esc_html($settings['saasp_vertical_rating_counter']) . esc_html__(')','saaspricing'); ?> 
                         </small>
                         <?php
                         }
@@ -2303,7 +2273,6 @@ $settings = $this->get_settings_for_display();
                 <?php
                 }
                 ?>
-
                 <?php
                 if( 'top' === $settings['saasp_vertical_primary_cta_position'] || 'top' === $settings['saasp_vertical_secondary_cta_position'] ){
                 ?>
@@ -2331,13 +2300,8 @@ $settings = $this->get_settings_for_display();
                 echo esc_attr('saaspricing-xl-btn');
                 }
                 ?>" 
-                <?php echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_primary_cta_url'), $this->saasp_allowed_tags()); ?>
                 <?php
-                if( '' !== $settings['saasp_vertical_primary_cta_id'] ){
-                ?>
-                id="<?php echo esc_attr($settings['saasp_vertical_primary_cta_id']); ?>"
-                <?php
-                }
+                echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_primary_cta_url'), $this->saasp_allowed_tags()); 
                 ?>>
                 <?php echo esc_html($settings['saasp_vertical_primary_cta_text']); ?> 
                 <span class="saaspricing-primary-spacing"> 
@@ -2371,13 +2335,8 @@ $settings = $this->get_settings_for_display();
                     echo esc_attr('saaspricing-xl-btn');
                     }
                     ?>" 
-                    <?php echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_secondary_cta_url'), $this->saasp_allowed_tags()); ?>
                     <?php
-                    if( '' !== $settings['saasp_vertical_secondary_cta_id'] ){
-                    ?>
-                    id="<?php echo esc_attr($settings['saasp_vertical_secondary_cta_id']); ?>"
-                    <?php
-                    }
+                    echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_secondary_cta_url'), $this->saasp_allowed_tags()); 
                     ?>>
                     <?php echo esc_html($settings['saasp_vertical_secondary_cta_text']); ?>
                     <span class="saaspricing-secondary-spacing"> 
@@ -2409,7 +2368,7 @@ $settings = $this->get_settings_for_display();
                         ?>
                         <li class="saaspricing-vertical-margin elementor-repeater-item-<?php echo esc_attr($saasp_vertical_features['_id']); ?>">
                             <?php Icons_Manager::render_icon( $saasp_vertical_features['saasp_vertical_features_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                            <small class="">
+                            <small>
                             <?php echo esc_html($saasp_vertical_features['saasp_vertical_features_text']); ?>
                             </small>
                         </li>
@@ -2424,7 +2383,7 @@ $settings = $this->get_settings_for_display();
              if( 'top' !== $settings['saasp_vertical_primary_cta_position'] && 'bottom' === $settings['saasp_vertical_primary_cta_position']
               || 'top' !== $settings['saasp_vertical_secondary_cta_position'] && 'bottom' === $settings['saasp_vertical_secondary_cta_position'] ){
             ?>
-            <div class="card-footer saaspricing-vertical-cta-alignment">
+            <div class="saaspricing-card-footer saaspricing-vertical-cta-alignment">
                 <?php
                 if( '' !== $settings['saasp_vertical_primary_cta_text'] 
                 && 'bottom' === $settings['saasp_vertical_primary_cta_position'] || empty($settings['saasp_vertical_primary_cta_position']) ){
@@ -2449,13 +2408,8 @@ $settings = $this->get_settings_for_display();
                 echo esc_attr('saaspricing-xl-btn');
                 }
                 ?>" 
-                <?php echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_primary_cta_url'), $this->saasp_allowed_tags()); ?>
-                <?php
-                if( '' !== $settings['saasp_vertical_primary_cta_id'] ){
-                ?>
-                id="<?php echo esc_attr($settings['saasp_vertical_primary_cta_id']); ?>"
-                <?php
-                }
+                <?php 
+                echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_primary_cta_url'), $this->saasp_allowed_tags()); 
                 ?>>
                 <?php echo esc_html($settings['saasp_vertical_primary_cta_text']); ?> 
                 <span class="saaspricing-primary-spacing"> 
@@ -2491,13 +2445,8 @@ $settings = $this->get_settings_for_display();
                     echo esc_attr('saaspricing-xl-btn');
                     }
                     ?>" 
-                    <?php echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_secondary_cta_url'), $this->saasp_allowed_tags()); ?>
-                    <?php
-                    if( '' !== $settings['saasp_vertical_secondary_cta_id'] ){
-                    ?>
-                    id="<?php echo esc_attr($settings['saasp_vertical_secondary_cta_id']); ?>"
-                    <?php
-                    }
+                    <?php 
+                    echo wp_kses($this->get_render_attribute_string( 'saasp_vertical_secondary_cta_url'), $this->saasp_allowed_tags()); 
                     ?>>
                     <?php echo esc_html($settings['saasp_vertical_secondary_cta_text']); ?>
                     <span class="saaspricing-secondary-spacing"> 

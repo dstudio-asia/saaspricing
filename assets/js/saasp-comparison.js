@@ -1,7 +1,7 @@
 ;(function($) {
     "use strict";
     $(window).on("elementor/frontend/init", function () {
-        elementorFrontend.hooks.addAction("frontend/element_ready/saasComparison.default", function (scope, $) {
+        elementorFrontend.hooks.addAction("frontend/element_ready/saaspComparison.default", function (scope, $) {
   
           let saaspExpire = setInterval(function() {
   
@@ -12,7 +12,7 @@
   
             let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)];
             let saaspCurrentTime = new Date().getTime();
-            let saaspCountdowns = $(scope).find(".show-expire-date");
+            let saaspCountdowns = $(scope).find(".saaspricing-show-expire-date");
           
             // Find the distance between now and the count down date
             

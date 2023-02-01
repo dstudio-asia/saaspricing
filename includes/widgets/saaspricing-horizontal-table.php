@@ -1,10 +1,4 @@
 <?php
-/**
- * Class: SaasHorizontalTable
- * Name: Saas Horizontal Table
- * Slug: saas-pricing
- */
-
  // Elementor Classes
 
  use Elementor\Controls_Manager;
@@ -18,13 +12,13 @@
 }
 
 /**
- * Class SaasHorizontalTable
+ * Class SaaspHorizontalTable
  */
 
-class SaasHorizontalTable extends \Elementor\Widget_Base {
+class SaaspHorizontalTable extends \Elementor\Widget_Base {
 
 public function get_name() {
-    return 'saasHorizontal';
+    return 'saaspHorizontal';
 }
 
 public function get_title() {
@@ -708,18 +702,6 @@ protected function register_controls() {
         );
     
         $this->add_control(
-            'saasp_horizontal_primary_cta_id',
-            [
-                'label' => esc_html__( 'Button ID', 'saaspricing' ),
-                'type' =>  Controls_Manager::TEXT,
-                'default' => esc_html__( '', 'saaspricing' ),
-                'condition' =>[
-                    'saasp_horizontal_primary_cta_switch' => 'yes',
-                ]
-            ]
-        );
-    
-        $this->add_control(
             'saasp_horizontal_secondary_cta_switch',
             [
                 'label' => esc_html__( 'Secondary', 'saaspricing' ),
@@ -824,18 +806,6 @@ protected function register_controls() {
         );
     
         $this->add_control(
-            'saasp_horizontal_secondary_cta_id',
-            [
-                'label' => esc_html__( 'Button ID', 'saaspricing' ),
-                'type' =>  Controls_Manager::TEXT,
-                'default' => esc_html__( '', 'saaspricing' ),
-                'condition' =>[
-                    'saasp_horizontal_secondary_cta_switch' => 'yes',
-                ]
-            ]
-        );
-    
-        $this->add_control(
             'saasp_horizontal_cta_alignment',
             [
                 'label' => esc_html__( 'CTA Alignment', 'saaspricing' ),
@@ -910,7 +880,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 10,
+                'size' => 0,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
@@ -1595,7 +1565,7 @@ protected function register_controls() {
                 'size' => 0,
             ],
             'selectors' => [
-                '{{WRAPPER}} .ratings span:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-ratings span:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -2198,8 +2168,7 @@ protected function render() {
                             if( '' !== $settings['saasp_horizontal_features_title'] ){
                             ?>
                             <p class="saaspricing-horizontal-feature-title">
-                            <?php echo esc_html($settings['saasp_horizontal_features_title']); ?>
-                                <span class="line-pricing"></span>
+                                <?php echo esc_html($settings['saasp_horizontal_features_title']); ?>
                             </p>
                             <?php
                             }
@@ -2347,7 +2316,7 @@ protected function render() {
                         <?php
                         if( 'yes' === $settings['saasp_horizontal_show_rating'] && '' !== $settings['saasp_horizontal_rating_num'] ){
                         ?>
-                        <div class="ratings saaspricing-horizontal-ratings">
+                        <div class="saaspricing-ratings saaspricing-horizontal-ratings">
                             <div class="saaspricing-star-icon fs-6"> 
                                 <?php                                    
                                 $saasp_rating = $settings['saasp_horizontal_rating_num'];
@@ -2384,7 +2353,7 @@ protected function render() {
                                 if( '' !== $settings['saasp_horizontal_rating_counter'] ){
                                 ?>
                                 <small class="saaspricing-review-text"> 
-                                    (<?php echo esc_html($settings['saasp_horizontal_rating_counter']); ?>) 
+                                    <?php echo esc_html__('(','saaspricing') . esc_html($settings['saasp_horizontal_rating_counter']) . esc_html__(')','saaspricing'); ?>
                                 </small>
                                 <?php
                                 }
@@ -2416,13 +2385,8 @@ protected function render() {
                         echo esc_attr('saaspricing-xl-btn');
                         }
                         ?>" 
-                        <?php echo wp_kses($this->get_render_attribute_string( 'saasp_horizontal_primary_cta_url'), $this->saasp_allowed_tags()); ?>
-                        <?php
-                        if( '' !== $settings['saasp_horizontal_primary_cta_id'] ){
-                        ?>
-                        id="<?php echo esc_attr($settings['saasp_horizontal_primary_cta_id']); ?>"
-                        <?php
-                        }
+                        <?php 
+                        echo wp_kses($this->get_render_attribute_string( 'saasp_horizontal_primary_cta_url'), $this->saasp_allowed_tags());
                         ?>>
                             <?php echo esc_html($settings['saasp_horizontal_primary_cta_text']); ?> 
                             <span class="saaspricing-primary-spacing"> 
@@ -2455,18 +2419,13 @@ protected function render() {
                             echo esc_attr('saaspricing-xl-btn');
                             }
                             ?>" 
-                            <?php echo wp_kses($this->get_render_attribute_string( 'saasp_horizontal_secondary_cta_url'), $this->saasp_allowed_tags()); ?>
-                            <?php
-                            if( '' !== $settings['saasp_horizontal_secondary_cta_id'] ){
-                            ?>
-                            id="<?php echo esc_attr($settings['saasp_horizontal_secondary_cta_id']); ?>"
-                            <?php
-                            }
+                            <?php 
+                            echo wp_kses($this->get_render_attribute_string( 'saasp_horizontal_secondary_cta_url'), $this->saasp_allowed_tags()); 
                             ?>>
-                                <?php echo esc_html($settings['saasp_horizontal_secondary_cta_text']); ?>
-                                <span class="saaspricing-secondary-spacing"> 
-                                <?php Icons_Manager::render_icon( $settings['saasp_horizontal_secondary_cta_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                </span>
+                            <?php echo esc_html($settings['saasp_horizontal_secondary_cta_text']); ?>
+                            <span class="saaspricing-secondary-spacing"> 
+                            <?php Icons_Manager::render_icon( $settings['saasp_horizontal_secondary_cta_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                            </span>
                             </a>
                         </div>
                         <?php
