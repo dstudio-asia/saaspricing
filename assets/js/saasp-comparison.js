@@ -43,7 +43,7 @@
   
           // Image Popup
 
-          $('.image-popup-vertical-fit').magnificPopup({
+          $('.saaspricing-image-popup').magnificPopup({
             type: 'image',
             closeOnContentClick: true,
             mainClass: 'mfp-img-mobile',
