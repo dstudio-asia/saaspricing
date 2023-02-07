@@ -1,7 +1,7 @@
 <?php
-namespace SaasPricingTable;
+namespace Saas_Pricing_Table;
 
-final class SaasPricing {
+final class Saas_Pricing {
 	/**
 	 * Addon Version
 	 *
@@ -35,7 +35,7 @@ final class SaasPricing {
 	 * @since 1.0.0
 	 * @access private
 	 * @static
-	 * @var \SaasPricingTable\SaasPricing The single instance of the class.
+	 * @var \Saas_Pricing_Table\Saas_Pricing The single instance of the class.
 	 */
 
 	private static $_instance = null;
@@ -48,7 +48,7 @@ final class SaasPricing {
 	 * @since 1.0.0
 	 * @access public
 	 * @static
-	 * @return \SaasPricingTable\SaasPricing  An instance of the class.
+	 * @return \Saas_Pricing_Table\Saas_Pricing  An instance of the class.
 	 */
 
 	public static function instance() {
@@ -248,9 +248,9 @@ final class SaasPricing {
 		require_once(  __DIR__ . '/widgets/saaspricing-vertical-table.php' );
 		require_once(  __DIR__ . '/widgets/saaspricing-horizontal-table.php' );
 
-		$widgets_manager->register( new \SaaspComparisonTable() );
-		$widgets_manager->register( new \SaaspHorizontalTable() );
-		$widgets_manager->register( new \SaaspVerticalTable() );
+		$widgets_manager->register( new \Saasp_Comparison() );
+		$widgets_manager->register( new \Saasp_Horizontal() );
+		$widgets_manager->register( new \Saasp_Vertical() );
 
 	}
 
@@ -259,7 +259,7 @@ final class SaasPricing {
 		$elements_manager->add_category(
 			'saas_pricing_category',
 			[
-				'title' => esc_html__( 'SaasPricing', 'saaspricing' ),
+				'title' => esc_html__( 'Saas_Pricing', 'saaspricing' ),
 				'icon' => 'fa fa-plug',
 			]
 		);

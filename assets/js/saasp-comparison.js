@@ -1,7 +1,7 @@
 ;(function($) {
     "use strict";
     $(window).on("elementor/frontend/init", function () {
-        elementorFrontend.hooks.addAction("frontend/element_ready/saaspComparison.default", function (scope, $) {
+        elementorFrontend.hooks.addAction("frontend/element_ready/saasp-comparison.default", function (scope, $) {
   
           let saaspExpire = setInterval(function() {
   
@@ -29,7 +29,7 @@
           
               if (saaspDistance < 0) {
                 clearInterval(saaspExpire);
-                $(this).html("EXPIRED");
+                $(this).html("0d: 0h: 0m: 0s");
               }
             });
           }, 1000);

@@ -1,17 +1,11 @@
 :root {
-    --saaspricing-primary-color:#6EC1E4;
-    --saaspricing-color-secondary:#54595F;
-    --saaspricing-color-white: #fff ;
-    --saaspricing-color-black: #202020 ;
-    --saaspricing-color-gray-100: #fafafa ;
-    --saaspricing-color-box-shadow: #00000015;
-    --saaspricing-color-blue: #0d6efd;
-    --saaspricing-border-color: #00000008;
-    --saaspricing-color-green: #198754;
-    --saaspricing-color-steel-blue: #6c757d;
-    --saaspricing-color-papaya-whip: #ffefd570;
-    --saaspricing-color-crimson: #dc3545;
-    --saaspricing-color-yellow: #f4b400;
+    --saaspricing-primary-color:#555555;
+    --saaspricing-background-color:#F7F7F7;
+    --saaspricing-secondary-color: #000000 ;
+    --saaspricing-btn-background-color: #818a91 ;
+    --saaspricing-white-color: #ffffff;
+    --saaspricing-box-shadow-color: #00000015;
+    --saaspricing-yellow-color: #f4b400;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -19,17 +13,30 @@ p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.saaspricing-vertical-description, 
-.vertical-pricing-card .saaspricing-vertical-title, 
-.saaspricing-horizontal .saaspricing-horizontal-title {
-    margin-bottom:0;
-}
-
 .saaspricing-table {
     table-layout: fixed;
     min-width: 830px;
     border: unset;
     margin-bottom: 0;
+    overflow: hidden;
+}
+
+.saaspricing-horizontal .saaspricing-horizontal-sidebar a,
+.saaspricing-cards-all .saaspricing-card a,
+.saaspricing-table .saaspricing-table-title-des-main a,
+.saaspricing-table .saaspricing-cta-main a{
+    text-decoration: none;
+}
+ 
+.vertical-pricing-card .saaspricing-vertical-title, 
+.saaspricing-horizontal .saaspricing-horizontal-title {
+    margin-bottom:0;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.saaspricing-table-description{
+    font-size: 16px;
 }
 
 .saaspricing-table p {
@@ -91,7 +98,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .saaspricing-table .saaspricing-table-head {
     background-color: var(--saaspricing-primary-color);
-    color: var(--saaspricing-color-white);
+    color: var(--saaspricing-white-color);
 }
 
 .saaspricing-table .saaspricing-price {
@@ -102,11 +109,11 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .saaspricing-table .saaspricing-ribbon-table-row .saaspricing-common-ribbon {
-    color: var(--saaspricing-color-white);
+    color: var(--saaspricing-white-color);
     text-transform: capitalize;
     font-size: 12px;
     font-weight: 700;
-    background-color: var( --saaspricing-color-secondary );
+    background-color: var( --saaspricing-secondary-color );
     padding:20px 20px;
 }
 
@@ -136,7 +143,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .saaspricing-card-footer {
     padding: .5rem 1rem;
-    background-color: rgba(0,0,0,.03);
+    background-color: var(--saaspricing-primary-color);
 }
 
 .saaspricing-cta-card {
@@ -164,17 +171,18 @@ p, h1, h2, h3, h4, h5, h6 {
     line-height: .8;
     gap:5px;
 }
+.saaspricing-vertical-body-alignment{
+    color: var(--saaspricing-primary-color);
+}
 
 .saaspricing-card-header {
     padding: .5rem 1rem;
     margin-bottom: 0;
     background-color: rgba(0,0,0,.03);
-    background-color: var(--saaspricing-color-green );
+    background-color: var(--saaspricing-secondary-color);
 }
 
 .saaspricing-horizontal {
-    -webkit-box-shadow: 0 0 24px var( --saaspricing-color-box-shadow );
-    box-shadow: 0 0 24px var( --saaspricing-color-box-shadow );
     overflow: hidden;
 }
 
@@ -193,6 +201,7 @@ p, h1, h2, h3, h4, h5, h6 {
     gap:5px;
     line-height: .7; 
     padding:20px 0 10px 0;
+    color:var(--saaspricing-primary-color);
 }
 
 .saaspricing-original-slashed-price, .saaspricing-price-symbol, .saaspricing-fraction-price {
@@ -200,7 +209,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .saaspricing-vertical-margin {
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem;
 }
 
 .saaspricing-vertical-margin:last-child {
@@ -224,7 +233,7 @@ p, h1, h2, h3, h4, h5, h6 {
     height: 40px;
     width: 40px;
     border-radius: 50px;
-    color: var(--saaspricing-color-white);
+    color: var(--saaspricing-white-color);
     right: 10px;
     top: 15px;
     overflow: hidden;
@@ -234,7 +243,8 @@ p, h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     font-weight: bold;
     font-size: 12px;
-    background-color: var(--saaspricing-color-green);
+    background-color: var(--saaspricing-secondary-color);
+    color:var(--saaspricing-color-black);
     padding: 30px;
 }
 
@@ -260,11 +270,25 @@ p, h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
 }
 
+.saaspricing-ribbon-title, .saaspricing-horizontal-ribbon{
+    font-size: 14px;
+    font-weight: bold;
+}
+
 /* Pricing */
 
 .saasprcing-vertical-pricing, .saasprcing-horizontal-pricing {
     padding:10px 0;
     margin:10px 0;
+}
+
+.saaspricing-price-text{
+    font-size: 50px;
+    font-weight: bold;
+}
+.saaspricing-original-slashed-price, .saaspricing-period {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .saaspricing-vertical-price, 
@@ -275,11 +299,17 @@ p, h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-.saaspricing-vertical-period, .saaspricing-horizontal-period {
+.saaspricing-vertical-period {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    color: var(--saaspricing-color-steel-blue);
+}
+
+.saaspricing-horizontal-period{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--saaspricing-white-color);
 }
 
 .saaspricing-vertical-original, .saaspricing-horizontal-original {
@@ -293,13 +323,23 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 15px 0;
 }
 
-.saaspricing-vertical-countdown .saaspricing-countdown,
-.saaspricing-horizontal-countdown .saaspricing-countdown {
+.saaspricing-vertical-countdown .saaspricing-countdown{
     white-space:nowrap;
     border-radius: 0.3rem;
-    color: var( --saaspricing-color-crimson );
+    color: var( --saaspricing-color-black );
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    border-color: var( --saaspricing-color-crimson );
+    border-color: var( --saaspricing-color-black );
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.saaspricing-horizontal-countdown .saaspricing-countdown{
+    white-space:nowrap;
+    border-radius: 0.3rem;
+    color: var( --saaspricing-white-color );
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-color: var( --saaspricing-white-color );
     border: 1px solid;
     font-size: 18px;
     font-weight: bold;
@@ -315,16 +355,21 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 15px 0;
 }
 
+.saaspricing-star-icon small{
+    color: var(--saaspricing-primary-color);
+    font-weight: normal;
+}
+
 /* Features */
 
 .saaspricing-horizontal-feature-title {
-    color: var(--saaspricing-color-steel-blue);
+    color: var(--saaspricing-color-black);
     font-weight: 700;
     padding-bottom: 16px;
 }
 
 .saasp-horizontal-icon-wrapper {
-    padding-bottom: 20px;
+    padding-bottom: 1.8rem;
 }
 
 .saaspricing-horizontal-des {
@@ -351,7 +396,6 @@ p.saaspricing-features-title {
 }
 
 .saaspricing-vertical-feature {
-    background-color: var( --saaspricing-color-papaya-whip );
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
 }
@@ -359,7 +403,8 @@ p.saaspricing-features-title {
 /* Sidebar */
 
 .saaspricing-horizontal-sidebar {
-    background: var( --saaspricing-color-papaya-whip );
+    background: var( --saaspricing-primary-color );
+    color: var( --saaspricing-white-color );
     padding: 48px;
     align-items: center;
     justify-content: center;
@@ -372,36 +417,46 @@ p.saaspricing-features-title {
 /* button css */
 
 .saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)) {
-    color:var(--saaspricing-color-white );
+    color:var(--saaspricing-white-color );
 }
 
 .saaspricing-secondary-btn {
-    color:var(--saaspricing-color-blue);
+    color:var(--saaspricing-color-black);
 }
 
 .saaspricing-xsm-btn {
     font-size: 14px;
     padding: 10px 20px;
+    color: var(--saaspricing-white-color);
+    background-color: var(--saaspricing-btn-background-color);
 }
 
 .saaspricing-sm-btn {
     font-size: 15px;
     padding: 12px 24px;
+    color: var(--saaspricing-white-color);
+    background-color: var(--saaspricing-btn-background-color);
 }
 
 .saaspricing-m-btn {
     font-size: 16px;
     padding: 15px 30px;
+    color: var(--saaspricing-white-color);
+    background-color: var(--saaspricing-btn-background-color);
 }
 
 .saaspricing-l-btn {
     font-size: 18px;
     padding: 20px 40px;
+    color: var(--saaspricing-white-color);
+    background-color: var(--saaspricing-btn-background-color);
 }
 
 .saaspricing-xl-btn {
     font-size: 20px;
     padding: 25px 50px;
+    color: var(--saaspricing-white-color);
+    background-color: var(--saaspricing-btn-background-color);
 }
 
 .saaspricing-cards-all .saaspricing-vertical-primary {
@@ -422,11 +477,7 @@ p.saaspricing-features-title {
 
 .saaspricing-btn-1:hover {
     background-color: var(--saaspricing-color-green );
-    color: var( --saaspricing-color-white );
-}
-
-.saaspricing-bg-warm {
-    background: var( --saaspricing-color-papaya-whip );
+    color: var( --saaspricing-white-color );
 }
 
 .saaspricing-star-right {
@@ -437,15 +488,11 @@ p.saaspricing-features-title {
 }
 
 .saaspricing-yellow {
-    color: var( --saaspricing-color-yellow );
+    color: var( --saaspricing-yellow-color );
 }
 
 .saaspricing-fs-sm {
     font-size: 12px;
-}
-
-.border-o {
-    border-radius: 50px;
 }
 
 .saaspricing-countdown {
@@ -461,8 +508,10 @@ p.saaspricing-features-title {
     cursor: pointer;
 }
 
-.elementor-widget-saasComparison .elementor-widget-container {
-    overflow: hidden;
+.elementor-widget-saasp-comparison .elementor-widget-container,
+.elementor-widget-saasp-vertical .elementor-widget-container,
+.elementor-widget-saasp-horizontal .elementor-widget-container {
+ background-color: var(--saaspricing-background-color);
 }
 
 .tooltip-inner {
@@ -470,25 +519,25 @@ p.saaspricing-features-title {
     padding: 15px 20px;
     color: var(--saaspricing-color-black);
     text-align: center;
-    background-color: var( --saaspricing-color-white );
+    background-color: var( --saaspricing-white-color );
     border-radius: .25rem;
-    -webkit-box-shadow: 0px 0px 10px var( --saaspricing-color-box-shadow );
-    box-shadow: 0px 0px 10px var( --saaspricing-color-box-shadow );
+    -webkit-box-shadow: 0px 0px 10px var( --saaspricing-box-shadow-color );
+    box-shadow: 0px 0px 10px var( --saaspricing-box-shadow-color );
 }
 
 .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before,
 .bs-tooltip-bottom .tooltip-arrow::before {
-    border-bottom-color: var( --saaspricing-color-white );
+    border-bottom-color: var( --saaspricing-white-color );
 }
 
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
 .bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: var( --saaspricing-color-white );
+    border-top-color: var( --saaspricing-white-color );
 }
 
 .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before,
 .bs-tooltip-end .tooltip-arrow::before {
-    border-right-color: var( --saaspricing-color-white );
+    border-right-color: var( --saaspricing-white-color );
 }
 
 .tooltip.show {
@@ -505,7 +554,7 @@ p.saaspricing-features-title {
     margin: 0 auto;
     width: 100% !important;
     max-width: 600px !important;
-    background-color: var( --saaspricing-color-white );
+    background-color: var( --saaspricing-white-color );
 }
 
 .mfp-image-holder .mfp-close,
@@ -514,7 +563,7 @@ p.saaspricing-features-title {
     right: -30px;
     top: -30px;
     text-align: right;
-    background: var( --saaspricing-color-white );
+    background: var( --saaspricing-white-color );
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -541,7 +590,7 @@ p.saaspricing-features-title {
 }
 
 @media screen and (max-width: 768px) {
-    .w-sm-100 {
-        width: 100% !important;
+    .saaspricing-w-sm-100 {
+        width: 100%;
     }
 }
