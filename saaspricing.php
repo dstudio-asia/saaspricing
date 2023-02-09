@@ -4,10 +4,10 @@
  * Description: Ultimate pricing & comparison widget for Elementor. Three table options, customizable, scrollable, switchable, timer, ribbon, reviews, tooltip, mirror & more! Get the ultimate pricing experience with Saaspricing
  * Version: 1.0.0
  * Requires at least: 5.2
- * Requires PHP: 7.3
+ * Requires PHP: 7.4
  * Elementor tested up to: 3.8.0
  * Author: Debuggers Studio
- * Author URI: 
+ * Author URI: https://debuggersstudio.com
  * Text Domain: saaspricing
  * Domain Path: /languages
  */

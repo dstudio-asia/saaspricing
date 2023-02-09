@@ -6,9 +6,9 @@
           let saaspExpire = setInterval(function() {
   
             let saaspMainClass = $(scope).find(".saaspricing-ribbon-wrapper");
-            let saaspDateOne = saaspMainClass.data('exp-date-one');
-            let saaspDateTwo = saaspMainClass.data('exp-date-two');
-            let saaspDateThree = saaspMainClass.data('exp-date-three');
+            let saaspDateOne = saaspMainClass.data('expire-date-one');
+            let saaspDateTwo = saaspMainClass.data('expire-date-two');
+            let saaspDateThree = saaspMainClass.data('expire-date-three');
   
             let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)];
             let saaspCurrentTime = new Date().getTime();

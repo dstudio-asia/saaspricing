@@ -307,7 +307,7 @@ protected function register_controls() {
             'type' => Controls_Manager::SWITCHER,
             'label_on' => esc_html__( 'On', 'saaspricing' ),
             'label_off' => esc_html__( 'Off', 'saaspricing' ),
-            'default' => 'yes',
+            'default' => 'no',
         ]
     );
 
@@ -340,7 +340,7 @@ protected function register_controls() {
             'label_on' => esc_html__( 'Show', 'saaspricing' ),
             'label_off' => esc_html__( 'Hide', 'saaspricing' ),
             'return_value' => 'yes',
-            'default' => 'yes',
+            'default' => 'no',
             'separator' => 'before',
         ]
     );
@@ -366,7 +366,7 @@ protected function register_controls() {
             'label_on' => esc_html__( 'Show', 'saaspricing' ),
             'label_off' => esc_html__( 'Hide', 'saaspricing' ),
             'return_value' => 'yes',
-            'default' => 'yes',
+            'default' => 'off',
             'separator' =>'before',
         ]
     );
@@ -490,13 +490,19 @@ protected function register_controls() {
 				'fields' => $saasp_vertical_features->get_controls(),
 				'default' => [
 					[
-						'saasp_vertical_features_text' => esc_html__( '1', 'saaspricing' ),
+						'saasp_vertical_features_text' => esc_html__( 'Feature 1', 'saaspricing' ),
 					],
 					[
-						'saasp_vertical_features_text' => esc_html__( '2', 'saaspricing' ),
+						'saasp_vertical_features_text' => esc_html__( 'Feature 2', 'saaspricing' ),
 					],
 					[
-						'saasp_vertical_features_text' => esc_html__( '3', 'saaspricing' ),
+						'saasp_vertical_features_text' => esc_html__( 'Feature 3', 'saaspricing' ),
+					],
+					[
+						'saasp_vertical_features_text' => esc_html__( 'Feature 4', 'saaspricing' ),
+					],
+					[
+						'saasp_vertical_features_text' => esc_html__( 'Feature 5', 'saaspricing' ),
 					],
 				],
 				'title_field' => '{{{ saasp_vertical_features_text }}}',
@@ -720,7 +726,7 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Text', 'saaspricing' ),
             'type' =>  Controls_Manager::TEXT,
-            'default' => esc_html__( 'Learn More...', 'saaspricing' ),
+            'default' => esc_html__( 'Learn More', 'saaspricing' ),
             'condition' =>[
                 'saasp_vertical_secondary_cta_switch' => 'yes',
             ]
@@ -1159,7 +1165,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 24,
+                'size' => 42,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-symbol' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -1661,7 +1667,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 0,
+                'size' => 10,
             ],
             'selectors' => [
                 '{{WRAPPER}} .vertical-pricing-card ol svg ' => 'margin-right: {{SIZE}}{{UNIT}};',
@@ -2053,6 +2059,18 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_vertical_cta_global_margin',
+        [
+            'label' => esc_html__( 'Margin', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-card-footer' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
     $this->end_controls_section();
 }
 
@@ -2092,7 +2110,7 @@ $settings = $this->get_settings_for_display();
                 if( 'yes' === $settings['saasp_vertical_show_ribbon'] ){
                 ?>
                     <div class="saaspricing-card-header saaspricing-vertical-ribbon">
-                        <p class="saaspricing-ribbon-title text-light fs-6 mb-0 saaspricing-vertical-header-alignment"> 
+                        <p class="saaspricing-ribbon-title mb-0 saaspricing-vertical-header-alignment"> 
                             <small>
                                 <?php echo esc_html($settings['saasp_vertical_ribbon_title']); ?>
                             </small>
@@ -2114,7 +2132,7 @@ $settings = $this->get_settings_for_display();
                         ?>
                         <?php
                         if( '' !== $settings['saasp_vertical_header_title'] ){
-                            printf('<%1$s class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">%2$s</%1$s>', esc_html($settings['saasp_vertical_header_title_tag']) ,esc_html($settings['saasp_vertical_header_title']));
+                            printf('<%1$s class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">%2$s</%1$s>', esc_html($settings['saasp_vertical_header_title_tag']), esc_html($settings['saasp_vertical_header_title']));
                         }
                         ?>
                         <p class="saaspricing-vertical-description saaspricing-vertical-header-alignment">
@@ -2322,7 +2340,7 @@ $settings = $this->get_settings_for_display();
                             }
                         ?>
                             <div class="saaspricng-secondary-main">
-                                <a class="saaspricing-vertical-secondary <?php
+                                <a class="btn saaspricing-vertical-secondary <?php
                                 if( 'extra-small' === $settings['saasp_vertical_secondary_cta_size'] ){
                                 echo esc_attr('saaspricing-xsm-btn');
                                 }elseif( 'small' === $settings['saasp_vertical_secondary_cta_size'] ){
@@ -2432,7 +2450,7 @@ $settings = $this->get_settings_for_display();
                             if( 'yes' === $settings['saasp_vertical_secondary_cta_switch'] ){
                         ?>
                                 <div class="saaspricng-secondary-main">
-                                    <a class="saaspricing-vertical-secondary <?php
+                                    <a class="btn saaspricing-vertical-secondary <?php
                                     if( 'extra-small' === $settings['saasp_vertical_secondary_cta_size'] ){
                                     echo esc_attr('saaspricing-xsm-btn');
                                     }elseif( 'small' === $settings['saasp_vertical_secondary_cta_size'] ){
