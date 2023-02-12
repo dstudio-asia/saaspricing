@@ -2104,7 +2104,7 @@ $settings = $this->get_settings_for_display();
 ?>
 <div class="saaspricing-cards-all">
     <div class="row">   
-        <div class="col-md-12 col-lg-12 col-xl-12 mt-auto">
+        <div class="col-md-12 col-lg-12 col-xl-12">
             <div class="saaspricing-card vertical-pricing-card">
                 <?php
                 if( 'yes' === $settings['saasp_vertical_show_ribbon'] ){
@@ -2119,8 +2119,9 @@ $settings = $this->get_settings_for_display();
                 <?php
                 }
                 ?>
-                <div class="card-body position-relative">
-                    <div class="saaspricing-vertical-header saaspricing-vertical-header-alignment">
+                <div class="saaspricing-card-body position-relative">
+                    <div class="saaspricing-vertical-header saaspricing-vertical-header-alignment 
+                    <?php if( 'yes' !== $settings['saasp_vertical_show_ribbon'] ){ echo esc_attr('saaspricing-p-vertical-header');} ?>">
                         <?php
                         if( '' !== $settings['saasp_vertical_icon']['value'] ){
                         ?>

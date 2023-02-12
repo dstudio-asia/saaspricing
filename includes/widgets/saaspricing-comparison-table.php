@@ -148,7 +148,7 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Table Title Tag', 'saaspricing' ),
             'type' =>  Controls_Manager::SELECT,
-            'default' => 'span',
+            'default' => 'h2',
             'options' => [
                 'h2' => esc_html__( 'H2', 'saaspricing' ),
                 'h3' => esc_html__( 'H3', 'saaspricing' ),

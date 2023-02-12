@@ -27,7 +27,7 @@ final class Saas_Pricing {
 	 * @var string Minimum PHP version required to run the addon.
 	 */
 
-	const MINIMUM_PHP_VERSION = '7.3';
+	const MINIMUM_PHP_VERSION = '7.4';
 
 	/**
 	 * Instance
