@@ -2140,7 +2140,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 8,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-spacing-1' => 'padding-left: {{SIZE}}{{UNIT}};',
@@ -2528,7 +2528,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 8,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-spacing-2' => 'padding-left: {{SIZE}}{{UNIT}};',
@@ -2919,7 +2919,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 8,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-spacing-3' => 'padding-left: {{SIZE}}{{UNIT}};',
@@ -3908,7 +3908,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 14,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-main svg' => 'font-size: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}}',
@@ -3990,7 +3990,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 14,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-cell-icon svg' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
@@ -4618,8 +4618,8 @@ protected function render() {
                                     <?php
                                     if('' !== $settings['saasp_comparison_period_'.$i]){
                                     ?>
-                                        <span class="saaspricing-period saaspricing-comparison-header-alignment
-                                        <?php if( 'below' === $settings['saasp_comparison_header_period_position']){ echo esc_attr('w-100 mt-1'); } ?>">
+                                        <span class="saaspricing-period ms-1 saaspricing-comparison-header-alignment
+                                        <?php if( 'below' === $settings['saasp_comparison_header_period_position']){ echo esc_attr('w-100'); } ?>">
                                             <?php
                                                 echo esc_html($settings['saasp_comparison_period_'.$i]);
                                             ?>

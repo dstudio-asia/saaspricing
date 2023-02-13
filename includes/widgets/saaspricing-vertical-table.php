@@ -674,7 +674,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 10,
+                'size' => 8,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-spacing' => 'padding-left: {{SIZE}}{{UNIT}};',
@@ -1644,7 +1644,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 14,
             ],
             'selectors' => [
                 '{{WRAPPER}} .vertical-pricing-card ol svg ' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -1667,7 +1667,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 10,
+                'size' => 5,
             ],
             'selectors' => [
                 '{{WRAPPER}} .vertical-pricing-card ol svg ' => 'margin-right: {{SIZE}}{{UNIT}};',

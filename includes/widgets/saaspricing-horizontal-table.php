@@ -689,7 +689,7 @@ protected function register_controls() {
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 10,
+                    'size' => 8,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .saaspricing-primary-spacing' => 'padding-left: {{SIZE}}{{UNIT}};',
@@ -879,7 +879,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 0,
+                'size' => 10,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
@@ -1174,7 +1174,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 16,
+                'size' => 14,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-icon-wrapper svg' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -1197,7 +1197,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 10,
+                'size' => 5,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-icon-wrapper svg' => 'margin-right: {{SIZE}}{{UNIT}};',

@@ -40,6 +40,7 @@
           let saaspTooltipList = saaspTooltipTriggerList.map(function (saaspTooltipTriggerEl) {
             return new bootstrap.Tooltip(saaspTooltipTriggerEl)
           })
+
   
           // Image Popup
 
