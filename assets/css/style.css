@@ -34,6 +34,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .saaspricing-table-description {
     font-size: 16px;
     color: var(--saaspricing-boulder);
+    padding-bottom: 40px;
 }
 
 .saaspricing-table p {
@@ -47,7 +48,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .saaspricing-table .saaspricing-table-title-des{
-    vertical-align: bottom;
+    vertical-align: middle;
     padding-bottom: 30px;
 }
 
@@ -630,6 +631,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .saaspricing-table-background {
     background-color: var(--saaspricing-wild-sand);
+}
+
+.elementor-widget-saasp-vertical .elementor-widget-container,
+.elementor-widget-saasp-horizontal .elementor-widget-container {
+    background-color: #F7F7F7;
 }
 
 .tooltip-inner {

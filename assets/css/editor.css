@@ -1,9 +1,3 @@
-
-.elementor-widget-saasp-vertical .elementor-widget-container,
-.elementor-widget-saasp-horizontal .elementor-widget-container {
-    background-color: #F7F7F7;
-}
-
 .elementor-control.elementor-control-type-heading .elementor-control-title {
     font-weight: 600;
     margin: 0;
@@ -16,7 +10,7 @@
 }
 
 .elementor-element .saasp-icon:after {
-	content: 'Sassp';
+	content: 'sp';
 	position: absolute;
 	top: 0;
 	right: 0;
