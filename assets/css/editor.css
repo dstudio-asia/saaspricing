@@ -1,0 +1,31 @@
+
+.elementor-widget-saasp-vertical .elementor-widget-container,
+.elementor-widget-saasp-horizontal .elementor-widget-container {
+    background-color: #F7F7F7;
+}
+
+.elementor-control.elementor-control-type-heading .elementor-control-title {
+    font-weight: 600;
+    margin: 0;
+    font-size: 12px;
+}
+
+.elementor-control-type-heading .elementor-control-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.elementor-element .saasp-icon:after {
+	content: 'Sassp';
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	padding: 3px 4px;
+	border: 1px solid #fff;
+	font-size: 9px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+	mix-blend-mode: difference;
+}

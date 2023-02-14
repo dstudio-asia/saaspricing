@@ -206,6 +206,7 @@ final class Saas_Pricing {
 
 		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'saasp_frontend_styles' ] );
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'saasp_frontend_scripts' ] );
+		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'saasp_editor_styles' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'saasp_register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [$this,'saasp_add_categories']);
 	}
@@ -239,6 +240,13 @@ final class Saas_Pricing {
 		wp_enqueue_script('saasp-vertical-js');
 		wp_enqueue_script('saasp-horizontal-js');
 		wp_enqueue_script('saasp-comparison-js');
+
+	}
+
+	public function saasp_editor_styles(){
+
+		wp_register_style( 'saasp-editor-css', SAAS_PRICING_ASSETS_URL . 'css/editor.css' );
+		wp_enqueue_style( 'saasp-editor-css' );
 
 	}
 	

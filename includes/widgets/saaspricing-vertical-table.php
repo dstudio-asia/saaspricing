@@ -28,7 +28,7 @@ public function get_title() {
 }
 
 public function get_icon() {
-    return 'eicon-price-table';
+    return 'saasp-icon eicon-price-table';
 }
 
 public function get_categories() {
@@ -2106,6 +2106,7 @@ $settings = $this->get_settings_for_display();
     <div class="row">   
         <div class="col-md-12 col-lg-12 col-xl-12">
             <div class="saaspricing-card vertical-pricing-card">
+                <!-- Table ribbon -->
                 <?php
                 if( 'yes' === $settings['saasp_vertical_show_ribbon'] ){
                 ?>
@@ -2120,6 +2121,7 @@ $settings = $this->get_settings_for_display();
                 }
                 ?>
                 <div class="saaspricing-card-body position-relative">
+                    <!-- Table header -->
                     <div class="saaspricing-vertical-header saaspricing-vertical-header-alignment 
                     <?php if( 'yes' !== $settings['saasp_vertical_show_ribbon'] ){ echo esc_attr('saaspricing-p-vertical-header');} ?>">
                         <?php
@@ -2133,14 +2135,14 @@ $settings = $this->get_settings_for_display();
                         ?>
                         <?php
                         if( '' !== $settings['saasp_vertical_header_title'] ){
-                            printf('<%1$s class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">%2$s</%1$s>', esc_html($settings['saasp_vertical_header_title_tag']), esc_html($settings['saasp_vertical_header_title']));
+                            printf('<%1$s class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">%2$s</%1$s>', $settings['saasp_vertical_header_title_tag'] , $settings['saasp_vertical_header_title']);
                         }
                         ?>
                         <p class="saaspricing-vertical-description saaspricing-vertical-header-alignment">
                             <?php echo esc_html($settings['saasp_vertical_header_description']); ?>
                         </p>
                     </div>
-
+                    <!-- Table pricing -->
                     <div class="saasprcing-vertical-pricing saaspricing-vertical-body-alignment">
                         <?php
                         if( 'none' !== $settings['saasp_vertical_currency_symbol'] && 'yes' === $settings['saasp_vertical_sale'] ){
@@ -2232,6 +2234,7 @@ $settings = $this->get_settings_for_display();
                         }
                         ?>
                     </div>
+                    <!-- Table countdown -->
                     <?php
                     if( 'yes' === $settings['saasp_vertical_show_countdown'] &&  '' !== $settings['saasp_vertical_show_countdown'] ){
                     ?>
@@ -2244,6 +2247,7 @@ $settings = $this->get_settings_for_display();
                     <?php
                     }
                     ?>
+                    <!-- Table review -->
                     <?php
                     if( 'yes' === $settings['saasp_vertical_show_rating'] && '' !== $settings['saasp_vertical_rating_num'] ){
                     ?>
@@ -2295,6 +2299,7 @@ $settings = $this->get_settings_for_display();
                     <?php
                     }
                     ?>
+                    <!-- Table top CTA -->
                     <?php
                     if( 'top' === $settings['saasp_vertical_primary_cta_position'] || 'top' === $settings['saasp_vertical_secondary_cta_position'] ){
                     ?>
@@ -2373,6 +2378,7 @@ $settings = $this->get_settings_for_display();
                 <?php
                 }
                 ?>
+                <!-- Table features -->
                     <div class="saaspricing-vertical-feature">
                         <?php
                         if( '' !== $settings['saasp_vertical_features_title'] ){
@@ -2401,6 +2407,7 @@ $settings = $this->get_settings_for_display();
                         </ol>
                     </div>
                 </div>
+                <!-- Table bottom CTA -->
                 <?php
                 if( 'top' !== $settings['saasp_vertical_primary_cta_position'] && 'bottom' === $settings['saasp_vertical_primary_cta_position']
                 || 'top' !== $settings['saasp_vertical_secondary_cta_position'] && 'bottom' === $settings['saasp_vertical_secondary_cta_position'] ){

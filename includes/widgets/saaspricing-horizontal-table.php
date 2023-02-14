@@ -28,7 +28,7 @@ public function get_title() {
 }
 
 public function get_icon() {
-    return 'eicon-device-tablet';
+    return 'saasp-icon eicon-device-tablet';
 }
 
 public function get_categories() {
@@ -2140,11 +2140,12 @@ protected function render() {
     <div class="saaspricing-horizontal">
         <div class="row <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'saaspricing-row-reverse' ); } ?>">
             <div class="col-lg-8">
-                <div class="p-4 p-sm-5 d-flex flex-column justify-content-center position-relative h-100">
+                <div class="sasspricing-horizontal-left d-flex flex-column justify-content-center position-relative h-100">
+                    <!-- Table header -->
                     <div class="saaspricing-horizontal-header">
                         <?php
                         if( '' !== $settings['saasp_horizontal_header_title'] ){
-                            printf('<%1$s class="saaspricing-horizontal-title">%2$s</%1$s>', esc_html($settings['saasp_horizontal_header_title_tag']), esc_html($settings['saasp_horizontal_header_title']));
+                            printf('<%1$s class="saaspricing-horizontal-title">%2$s</%1$s>', $settings['saasp_horizontal_header_title_tag'], $settings['saasp_horizontal_header_title']);
                         }
                         ?>
                         <?php
@@ -2157,7 +2158,7 @@ protected function render() {
                         }
                         ?>
                     </div>
-
+                    <!-- Table features -->
                     <div class="saaspricing-horizontal-feature-list">
                         <?php
                         if( '' !== $settings['saasp_horizontal_features_title'] ){
@@ -2189,6 +2190,7 @@ protected function render() {
             </div>
             <div class="col-lg-4">
                 <div class="saaspricing-horizontal-sidebar">
+                    <!-- Table ribbon -->
                     <?php
                     if( 'yes' === $settings['saasp_horizontal_show_ribbon'] && '' !== $settings['saasp_horizontal_ribbon_title'] ){
                         if( 'left' === $settings['saasp_horizontal_ribbon_position'] ){
@@ -2205,9 +2207,11 @@ protected function render() {
                     <?php
                     }
                     ?>
+                    <!-- Table slogan -->
                     <p class="saaspricing-horizontal-slogan-title">
                         <?php echo esc_html($settings['saasp_horizontal_cta_slogan_text']); ?>
                     </p>
+                    <!-- Table pricing -->
                     <div class="saasprcing-horizontal-pricing">
                         <?php
                         if( 'none' !== $settings['saasp_horizontal_currency_symbol'] && 'yes' === $settings['saasp_horizontal_sale'] ){
@@ -2297,7 +2301,7 @@ protected function render() {
                         }
                         ?>
                     </div>
-
+                    <!-- Table countdown -->
                     <?php
                     if( 'yes' === $settings['saasp_horizontal_show_countdown'] &&  '' !== $settings['saasp_horizontal_show_countdown'] ){
                     ?>
@@ -2310,7 +2314,7 @@ protected function render() {
                     <?php
                     }
                     ?>
-
+                    <!-- Table review -->
                     <?php
                     if( 'yes' === $settings['saasp_horizontal_show_rating'] && '' !== $settings['saasp_horizontal_rating_num'] ){
                     ?>
@@ -2362,6 +2366,7 @@ protected function render() {
                     <?php
                     }
                     ?>
+                    <!-- Table buttons -->
                     <?php
                     if( '' !== $settings['saasp_horizontal_primary_cta_text'] && 'yes' === $settings['saasp_horizontal_primary_cta_switch'] ){
                         if ( ! empty( $settings['saasp_horizontal_primary_cta_url']['url'] ) ) {
