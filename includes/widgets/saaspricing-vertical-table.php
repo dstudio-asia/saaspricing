@@ -1647,7 +1647,7 @@ protected function register_controls() {
                 'size' => 14,
             ],
             'selectors' => [
-                '{{WRAPPER}} .vertical-pricing-card ol svg ' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg ' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1670,7 +1670,7 @@ protected function register_controls() {
                 'size' => 5,
             ],
             'selectors' => [
-                '{{WRAPPER}} .vertical-pricing-card ol svg ' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg ' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1690,7 +1690,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .vertical-pricing-card ol small' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol small' => 'color: {{VALUE}}',
             ],
         ]
     );
@@ -1699,7 +1699,7 @@ protected function register_controls() {
         Group_Control_Typography::get_type(),
         [
             'name' => 'saasp_vertical_features_text_typography',
-            'selector' => '{{WRAPPER}} .vertical-pricing-card ol small',
+            'selector' => '{{WRAPPER}} .saaspricing-vertical-pricing-card ol small',
         ]
     );
 
@@ -2105,7 +2105,7 @@ $settings = $this->get_settings_for_display();
 <div class="saaspricing-cards-all">
     <div class="row">   
         <div class="col-md-12 col-lg-12 col-xl-12">
-            <div class="saaspricing-card vertical-pricing-card">
+            <div class="saaspricing-card saaspricing-vertical-pricing-card">
                 <!-- Table ribbon -->
                 <?php
                 if( 'yes' === $settings['saasp_vertical_show_ribbon'] ){

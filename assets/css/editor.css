@@ -5,7 +5,7 @@
 }
 
 .elementor-control-type-heading .elementor-control-title {
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
 }
 
