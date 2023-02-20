@@ -16,14 +16,14 @@
     exit; // Exit if accessed directly.
 }
 
-define( 'SAAS_PRICING__FILE__', __FILE__ ); 
-define( 'SAAS_PRICING__DIR__', __DIR__ );
-define( 'SAAS_PRICING_URL', plugins_url( '/', SAAS_PRICING__FILE__ ) );
-define( 'SAAS_PRICING_ASSETS_URL', SAAS_PRICING_URL . 'assets/' ); 
+define( 'SAASP_PRICING__FILE__', __FILE__ ); 
+define( 'SAASP_PRICING__DIR__', __DIR__ );
+define( 'SAASP_PRICING_URL', plugins_url( '/', SAASP_PRICING__FILE__ ) );
+define( 'SAASP_PRICING_ASSETS_URL', SAASP_PRICING_URL . 'assets/' ); 
 
 function saasp_load_plugin_data() {
 
-	require_once( SAAS_PRICING__DIR__ . '/includes/widget.php' );
+	require_once( SAASP_PRICING__DIR__ . '/includes/widget.php' );
     
 	\Saas_Pricing_Table\Saas_Pricing::instance();
 
