@@ -244,7 +244,7 @@ protected function register_controls() {
             'toggle' => true,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-title' => 'text-align: {{VALUE}};',
-                '{{WRAPPER}} .saaspricing-horizontal-des' => 'text-align: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-horizontal-description' => 'text-align: {{VALUE}};',
             ],
         ]
     );
@@ -888,7 +888,6 @@ protected function register_controls() {
         ]
     );
 
-
     $this->add_control(
         'saasp_horizontal_header_title_color',
         [
@@ -909,7 +908,7 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_horizontal_header_des_heading',
+        'saasp_horizontal_header_description_heading',
         [
             'label' => esc_html__( 'Description', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
@@ -918,7 +917,7 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_horizontal_header_des_distance',
+        'saasp_horizontal_header_description_distance',
         [
             'label' => esc_html__( 'Distance', 'saaspricing' ),
             'type' =>  Controls_Manager::SLIDER,
@@ -935,18 +934,18 @@ protected function register_controls() {
                 'size' => 30,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-horizontal-des' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-horizontal-description' => 'padding-bottom: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
 
     $this->add_control(
-        'saasp_horizontal_header_des_color',
+        'saasp_horizontal_header_description_color',
         [
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-horizontal-des' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-horizontal-description' => 'color: {{VALUE}}',
             ],
         ]
     );
@@ -954,8 +953,8 @@ protected function register_controls() {
     $this->add_group_control(
         Group_Control_Typography::get_type(),
         [
-            'name' => 'saasp_horizontal_header_des_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-horizontal-des',
+            'name' => 'saasp_horizontal_header_description_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-horizontal-description',
         ]
     );
 
@@ -2199,7 +2198,7 @@ protected function render() {
                         <?php
                         if( '' !== $settings['saasp_horizontal_header_description'] ){
                         ?>
-                            <p class="saaspricing-horizontal-des <?php if( 'yes' === ($settings['saasp_horizontal_show_divider']) ){ echo esc_attr('saaspricing-border-bottom'); } ?>">
+                            <p class="saaspricing-horizontal-description <?php if( 'yes' === ($settings['saasp_horizontal_show_divider']) ){ echo esc_attr('saaspricing-border-bottom'); } ?>">
                                 <?php echo esc_html($settings['saasp_horizontal_header_description']); ?>
                             </p>
                         <?php

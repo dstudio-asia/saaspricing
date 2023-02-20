@@ -967,6 +967,29 @@ protected function register_controls() {
     );
 
     $this->add_control(
+        'saasp_vertical_header_title_distance',
+        [
+            'label' => esc_html__( 'Distance', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 10,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card .saaspricing-vertical-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
         'saasp_vertical_header_description_heading',
         [
             'label' => esc_html__( 'Description', 'saaspricing' ),
@@ -976,7 +999,7 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_vertical_header_des_color',
+        'saasp_vertical_header_description_color',
         [
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
@@ -989,7 +1012,7 @@ protected function register_controls() {
     $this->add_group_control(
         Group_Control_Typography::get_type(),
         [
-            'name' => 'saasp_vertical_header_des_typography',
+            'name' => 'saasp_vertical_header_description_typography',
             'selector' => '{{WRAPPER}} .saaspricing-vertical-description',
         ]
     );
@@ -1653,6 +1676,29 @@ protected function register_controls() {
         [
             'name' => 'saasp_vertical_features_title_typography',
             'selector' => '{{WRAPPER}} .saaspricing-features-title',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_vertical_feature_title_distance',
+        [
+            'label' => esc_html__( 'Distance', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 16,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-vertical-feature .saaspricing-features-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+            ],
         ]
     );
 
