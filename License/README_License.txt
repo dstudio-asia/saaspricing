@@ -4,7 +4,7 @@ This plugin is comprised of two parts.
 License (GPL). You will find a copy of the GPL in the same directory as this
 text file.
 
-(2) All other parts, but not limited to the CSS code, images, and design are
+(2) All other parts, but not limited to the CSS code and design are
 licensed according to the terms of your purchased license.
 
 Read more about licensing here: http://themeforest.net/licenses

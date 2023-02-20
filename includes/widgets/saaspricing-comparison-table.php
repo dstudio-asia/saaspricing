@@ -5469,7 +5469,7 @@ protected function render() {
                                     }
                                     ?>
                                     href="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>">
-                                        <img src="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>" class="<?php echo esc_attr('saaspricing-header-image-'.$i) ?>" alt="comparison table media">
+                                        <img src="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>" class="<?php echo esc_attr('saaspricing-header-image-'.$i) ?>" alt="comparison table media <?php echo esc_attr($i); ?>">
                                     </a>
                                 <?php
                                 }
