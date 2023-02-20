@@ -23,7 +23,7 @@ define( 'SAAS_PRICING_ASSETS_URL', SAAS_PRICING_URL . 'assets/' );
 
 function saasp_load_plugin_data() {
 
-	require_once( SAAS_PRICING__DIR__ . '/includes/plugin.php' );
+	require_once( SAAS_PRICING__DIR__ . '/includes/widget.php' );
     
 	\Saas_Pricing_Table\Saas_Pricing::instance();
 

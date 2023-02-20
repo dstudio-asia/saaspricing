@@ -216,11 +216,13 @@ final class Saas_Pricing {
 	    wp_register_style( 'saasp-fontawesome-css', SAAS_PRICING_ASSETS_URL . 'css/all.min.css' );
 		wp_register_style( 'saasp-bootstrap-css', SAAS_PRICING_ASSETS_URL . 'css/bootstrap.min.css' );
 	    wp_register_style( 'saasp-popup-css', SAAS_PRICING_ASSETS_URL . 'css/popup.css' );
+		wp_register_style( 'saasp-vendor-css', SAAS_PRICING_ASSETS_URL . 'css/vendor.css',  );
 		wp_register_style( 'saasp-style-css', SAAS_PRICING_ASSETS_URL . 'css/style.css',  );
 	  
 		wp_enqueue_style( 'saasp-fontawesome-css' );
 		wp_enqueue_style( 'saasp-bootstrap-css' );
 		wp_enqueue_style( 'saasp-popup-css' );
+		wp_enqueue_style( 'saasp-vendor-css' );
 		wp_enqueue_style( 'saasp-style-css' );
 
 	}

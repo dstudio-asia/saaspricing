@@ -2,18 +2,22 @@
     --saaspricing-primary:#54595F;
     --saaspricing-wild-sand:#F7F7F7;
     --saaspricing-platinum:#DEE1E2;
-    --saaspricing-boulder:#7A7A7A;
+    --saaspricing-boulder:#4E4E4E;
     --saaspricing-mako:#474F53;
-    --saaspricing-secondary:#818A91;
+    --saaspricing-secondary:#474F53;
     --saaspricing-white:#ffffff;
     --saaspricing-black:#000000;
+    --saaspricing-dark-gray:#505050;
     --saaspricing-box-shadow:#00000015;
     --saaspricing-yellow:#f4b400;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    padding: 0;
+.saaspricing-table p, .saaspricing-table h1,
+.saaspricing-table h2, .saaspricing-table h3,
+.saaspricing-table h4, .saaspricing-table h5,
+.saaspricing-table h6 {
     margin: 0;
+    padding: 0;
 }
 
 .saaspricing-table {
@@ -22,6 +26,7 @@ p, h1, h2, h3, h4, h5, h6 {
     border: unset;
     margin-bottom: 0;
     overflow: hidden;
+    border-collapse: separate;
 }
 
 .saaspricing-horizontal .saaspricing-horizontal-sidebar a,
@@ -37,17 +42,12 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-bottom: 40px;
 }
 
-.saaspricing-table p {
-    margin: 0;
-    padding: 0;
-}
-
 .saaspricing-price-table-head small {
     font-size: 14px;
     font-weight: 400;
 }
 
-.saaspricing-table .saaspricing-table-title-des{
+.saaspricing-table .saaspricing-table-title-des {
     vertical-align: middle;
     padding-bottom: 30px;
 }
@@ -69,19 +69,15 @@ p, h1, h2, h3, h4, h5, h6 {
     border-left: 1px solid transparent;
 }
 
-.saaspricing-cell span{
+.saaspricing-cell span {
     font-weight: 500;
-}
-.saaspricing-table .saaspricing-cell-icon svg{
-    margin-right: 5px;
 }
 
 .saaspricing-table .saaspricing-price-table-help svg {
-    margin-right: 5px;
     color: var(--saaspricing-primary);
 }
 
-.saaspricing-table tr td {
+.saaspricing-table .saaspricing-feature-list td {
     padding: 0 30px 20px 30px;
     font-size: 14px;
 }
@@ -141,6 +137,12 @@ p, h1, h2, h3, h4, h5, h6 {
     max-width: 80px;
 }
 
+.saaspricing-table .saaspricing-heading-title {
+    font-size: 18px;
+    color: var(--saaspricing-white);
+    font-weight: bold;
+}
+
 .saaspricing-table .saaspricing-table-title {
     font-size: 22px;
     font-weight: 600;
@@ -154,7 +156,7 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 35px 0 0 0;
 }
 
-.saaspricing-p-vertical-header{
+.saaspricing-p-vertical-header {
     padding: 70px 0 0 0;
 }
 
@@ -240,12 +242,12 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.sasspricing-horizontal-left{
-    padding: 48px 48px 0 48px;
-}
-
 .saaspricing-horizontal .saaspricing-horizontal-header .saaspricing-border-bottom {
     border-color: var(--saaspricing-platinum);
+}
+
+.saaspricing-horizontal-header{
+    padding: 48px 48px 35px 48px;
 }
 
 .saasspricing-pricing-block {
@@ -254,7 +256,6 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     flex-wrap: wrap;
     color: var(--saaspricing-primary);
-    padding-top: 20px;
 }
 
 .saaspricing-original-slashed-price, 
@@ -263,12 +264,8 @@ p, h1, h2, h3, h4, h5, h6 {
     line-height: .8;
 }
 
-.saaspricing-vertical-margin {
-    margin-bottom: 20px;
-}
-
-.saaspricing-vertical-margin:last-child {
-    margin-bottom: 0;
+.saaspricing-vertical-padding:last-child {
+    padding-bottom: 0;
 }
 
 /* ribbons  */
@@ -325,7 +322,7 @@ p, h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
 }
 
-.saaspricing-ribbon-title{
+.saaspricing-ribbon-title {
     font-size: 20px;
     font-weight: 600;
 }
@@ -370,11 +367,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Countdown */
 
-.saaspricing-horizontal-countdown{
+.saaspricing-horizontal-countdown {
     padding: 15px 0 0 0;
 }
 
-.saaspricing-vertical-countdown{
+.saaspricing-vertical-countdown {
     padding-top: 10px;
 }
 
@@ -416,7 +413,7 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 30px 0 0 0;
 }
 
-.saaspricing-cards-all .saaspricing-star-icon{
+.saaspricing-cards-all .saaspricing-star-icon {
     padding: 30px 0 0 0;
 }
 
@@ -445,16 +442,12 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 20px 0;
 }
 
-.saasp-horizontal-icon-wrapper {
-    padding-bottom: 20px;
-}
-
 .saaspricing-horizontal-des {
     padding-bottom: 24;
 }
 
 .saaspricing-horizontal-feature-list {
-    padding-top: 30px;
+    padding:0 48px 0 48px;
 }
 
 .saaspricing-horizontal .saaspricing-horizontal-slogan-title {
@@ -479,14 +472,14 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 30px 0 30px 0;
 }
 
-.saaspricing-vertical-feature li small , .saasp-horizontal-icon-wrapper small{
+.saaspricing-vertical-feature li small , .saasp-horizontal-icon-wrapper small {
     font-size: 16px;
     color: var(--saaspricing-mako);
     font-weight: 500;
 }
 
 .saaspricing-vertical-feature li svg,
-.saasp-horizontal-icon-wrapper svg{
+.saasp-horizontal-icon-wrapper svg {
     color: var(--saaspricing-primary);
 }
 
@@ -526,12 +519,34 @@ p, h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
+.saaspricng-horizontal-secondary-main {
+    width: 100%;
+}
+
 .saaspricing-horizontal .saaspricng-horizontal-secondary-main .saaspricing-horizontal-secondary {
     background-color: transparent;
     color: var(--saaspricing-white);
     font-weight: 600;
     text-decoration: underline;
     margin-top: 10px; 
+}
+
+.saaspricing-horizontal-pricing-left {
+    align-self: flex-start;
+    text-align: left;
+    justify-content:start;
+}
+
+.saaspricing-horizontal-pricing-center {
+    align-self: center;
+    text-align: center;
+    justify-content:center;
+}
+
+.saaspricing-horizontal-pricing-right {
+    align-self: end;
+    text-align: right;
+    justify-content:end;
 }
 
 .saaspricing-table .saaspricing-table-main .saaspricing-price .saaspricing-primary-btn {
@@ -588,7 +603,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .saaspricing-xl-btn:hover, .saaspricing-l-btn:hover, .saaspricing-m-btn:hover, 
-.saaspricing-sm-btn:hover, .saaspricing-xsm-btn:hover{
+.saaspricing-sm-btn:hover, .saaspricing-xsm-btn:hover {
     color: var(--saaspricing-white);
 }
 
@@ -597,8 +612,10 @@ p, h1, h2, h3, h4, h5, h6 {
     margin: 10px 0;
 }
 
-.saaspricing-horizontal-primary {
+.saaspricing-horizontal-primary, .saaspricing-horizontal-primary:hover {
     margin: 30px 0 0 0;
+    background-color: var(--saaspricing-white);
+    color: var( --saaspricing-dark-gray);
 }
 
 .saaspricing-star-right {
@@ -633,52 +650,21 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: var(--saaspricing-wild-sand);
 }
 
-.elementor-widget-saasp-vertical .elementor-widget-container,
-.elementor-widget-saasp-horizontal .elementor-widget-container {
-    background-color: #F7F7F7;
-}
-
-.tooltip-inner {
-    max-width: 300px;
-    padding: 15px 20px;
-    color: var(--saaspricing-black);
-    text-align: center;
-    background-color: var(--saaspricing-white);
-    border-radius: 5px;
-    -webkit-box-shadow: 0 0 10px var(--saaspricing-box-shadow);
-    box-shadow: 0 0 10px var(--saaspricing-box-shadow);
-}
-
-.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before,
-.bs-tooltip-bottom .tooltip-arrow::before {
-    border-bottom-color: var(--saaspricing-white);
-}
-
-.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before,
-.bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: var(--saaspricing-white);
-}
-
-.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before,
-.bs-tooltip-end .tooltip-arrow::before {
-    border-right-color: var(--saaspricing-white);
-}
-
-.tooltip.show {
-    opacity: 1;
-}
-
-@media screen and (max-width: 350px) {
-    .saaspricing-ribbon {
-        position: unset;
-        margin-bottom: 15px;
-        ;
-
+@media screen and (max-width: 920px) {
+    .saaspricing-star-right {
+        margin-left: -21px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .saaspricing-w-sm-100 {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .saaspricing-ribbon {
+        position: unset;
+        margin-bottom: 15px;
     }
 }

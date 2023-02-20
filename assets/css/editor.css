@@ -1,7 +1,7 @@
 .elementor-control.elementor-control-type-heading .elementor-control-title {
     font-weight: 600;
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .elementor-control-type-heading .elementor-control-title {
@@ -16,10 +16,10 @@
 	right: 0;
 	z-index: 1;
 	padding: 3px 4px;
-	border: 1px solid #fff;
+	border: 1px solid #ffffff;
 	font-size: 9px;
 	font-weight: 600;
 	text-transform: uppercase;
-	color: #fff;
+	color: #ffffff;
 	mix-blend-mode: difference;
 }
