@@ -1539,7 +1539,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-yellow' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-icons i::after' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
             ],
         ]
     );
@@ -1550,7 +1551,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Unmark Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-unmark' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-icons-none i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-icons-half i' => 'color: {{VALUE}}',
             ],
         ]
     );
@@ -2343,17 +2345,15 @@ $settings = $this->get_settings_for_display();
 
                                 for ($k = 0; $k <  $saasp_full_stars; $k++) {
                                 ?>
-                                    <span>
-                                        <i class="fas fa-star-half saaspricing-star-left saaspricing-yellow"></i>
-                                        <i class="fas fa-star-half saaspricing-star-right saaspricing-yellow"></i>
+                                    <span class="saaspricing-icons">
+                                        <i class="fa fa-star"></i>
                                     </span>
                                 <?php
                                 }
                                 if ($saasp_half_star >= 0.5) {
                                 ?>
-                                    <span>
-                                        <i class="fas fa-star-half saaspricing-star-left saaspricing-yellow"></i>
-                                        <i class="fas fa-star-half saaspricing-star-right saaspricing-unmark"></i>
+                                    <span class="saaspricing-icons-half">
+                                        <i class="fa fa-star"></i>
                                     </span>
                                 <?php
                                 }
@@ -2361,9 +2361,8 @@ $settings = $this->get_settings_for_display();
                                 <?php
                                 for($j=0; $j < 5 - ceil($settings['saasp_vertical_rating_num']); $j++){
                                 ?>
-                                    <span>
-                                        <i class="fas fa-star-half saaspricing-star-left saaspricing-unmark"></i>
-                                        <i class="fas fa-star-half saaspricing-star-right saaspricing-unmark"></i>
+                                    <span class="saaspricing-icons-none">
+                                        <i class="fa fa-star"></i>
                                     </span>
                                 <?php
                                 }

@@ -29,6 +29,10 @@
     border-collapse: separate;
 }
 
+.saaspricing-table tr td{
+    border: none;
+}
+
 .saaspricing-horizontal .saaspricing-horizontal-sidebar a,
 .saaspricing-cards-all .saaspricing-card a,
 .saaspricing-table .saaspricing-table-main a,
@@ -647,11 +651,37 @@
     background-color: var(--saaspricing-wild-sand);
 }
 
-@media screen and (max-width: 920px) {
-    .saaspricing-star-right {
-        margin-left: -21px;
-    }
+.saaspricing-icons i, .saaspricing-icons-half i, .saaspricing-icons-none i {
+    display: inline-block;
+    position: relative;
+    font-style: normal;
+    cursor: default;
 }
+
+.saaspricing-icons i::after,  .saaspricing-icons-half i::after, .saaspricing-icons-none i::after{
+    content: "\f005";
+    display: block;
+    font-size: inherit;
+    position: absolute;
+    overflow: hidden;
+    color: #f0ad4e;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.saaspricing-icons i::after{
+    width: 100%; 
+}
+
+.saaspricing-icons-half i::after {
+    width: 50%;
+}
+
+.saaspricing-icons-none i::after {
+    width: 0;
+}
+
 
 @media screen and (max-width: 768px) {
     .saaspricing-w-sm-100 {

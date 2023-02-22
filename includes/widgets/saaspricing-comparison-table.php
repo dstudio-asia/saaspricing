@@ -3573,7 +3573,7 @@ protected function register_controls() {
     $this->add_responsive_control(
         'saasp_comparison_original_price_padding',
         [
-            'label' => esc_html__( 'Paddding', 'saaspricing' ),
+            'label' => esc_html__( 'Padding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
@@ -4014,7 +4014,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Review Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-yellow' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons i::after' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
             ]
         ]
     );
@@ -4025,7 +4026,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Unmark Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-unmark' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons-none i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons-half i' => 'color: {{VALUE}}',
             ]
         ]
     );
@@ -4056,7 +4058,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Review Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-yellow' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons i::after' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
             ]
         ]
     );
@@ -4067,7 +4070,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Unmark Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-unmark' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons-none i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons-half i' => 'color: {{VALUE}}',
             ]
         ]
     );
@@ -4098,7 +4102,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Review Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-yellow' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons i::after' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
             ]
         ]
     );
@@ -4109,7 +4114,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Unmark Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-unmark' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons-none i' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons-half i' => 'color: {{VALUE}}',
             ]
         ]
     );
@@ -5589,17 +5595,15 @@ protected function render() {
 
                                             for ( $k = 0; $k <  $saasp_full_stars; $k++ ) {
                                             ?>
-                                                <span>
-                                                    <i class="fas fa-star-half saaspricing-star-left saaspricing-yellow"></i>
-                                                    <i class="fas fa-star-half saaspricing-star-right saaspricing-yellow"></i>
+                                                <span class="saaspricing-icons">
+                                                    <i class="fa fa-star"></i>
                                                 </span>
                                             <?php
                                             }
                                             if ($saasp_half_star >= 0.5) {
                                             ?>
-                                                <span>
-                                                    <i class="fas fa-star-half saaspricing-star-left saaspricing-yellow"></i>
-                                                    <i class="fas fa-star-half saaspricing-star-right saaspricing-unmark"></i>
+                                                <span class="saaspricing-icons-half">
+                                                    <i class="fa fa-star"></i>
                                                 </span>
                                             <?php
                                             }
@@ -5607,9 +5611,8 @@ protected function render() {
                                             <?php
                                             for( $j=0; $j < 5 - ceil($settings['saasp_comparison_rating_num_'.$i]); $j++ ){
                                             ?>
-                                                <span>
-                                                    <i class="fas fa-star-half saaspricing-star-left saaspricing-unmark"></i>
-                                                    <i class="fas fa-star-half saaspricing-star-right saaspricing-unmark"></i>
+                                                <span class="saaspricing-icons-none">
+                                                    <i class="fa fa-star"></i>
                                                 </span>
                                             <?php
                                             }
