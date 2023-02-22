@@ -81,6 +81,10 @@
     font-size: 14px;
 }
 
+.saaspricing-table .saaspricing-feature-list:last-child td {
+    padding-bottom: 0;
+}
+
 .saaspricing-table .saaspricing-ribbon-table-row .saaspricing-ribbon-wrapper {
     border: none;
     padding: 0;
@@ -547,12 +551,12 @@
 }
 
 .saaspricing-table .saaspricing-footer-cta .saaspricing-primary-btn {
-    margin-top: 20px;
+    margin: 30px 0 0 0;
 }
 
 .saaspricing-main .saaspricing-table .saaspricing-footer-cta {
     vertical-align: top;
-    padding-bottom: 40px;
+    padding: 10px 0 40px 0;
 }
 
 .saaspricing-xsm-btn {
@@ -602,7 +606,7 @@
 
 
 .saaspricing-cards-all .saaspricing-vertical-primary {
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
 }
 
 .saaspricing-horizontal-primary, .saaspricing-horizontal-primary:hover {
