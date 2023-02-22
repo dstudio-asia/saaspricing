@@ -307,7 +307,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Expire Date', 'saaspricing' ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
-            'default'=> esc_html__('2023-01-01 12:00', 'saaspricing'),
+            'default'=> gmdate( 'Y-m-d H:i', strtotime("+1 month") ),
             'condition' => [
                 'saasp_comparison_show_countdown_1' => 'yes',
                 'saasp_comparison_show_ribbon_1' => 'yes',
@@ -673,7 +673,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Expire Date', 'saaspricing' ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
-            'default'=> esc_html__('2023-01-01 12:00', 'saaspricing'),
+            'default'=> gmdate( 'Y-m-d H:i', strtotime("+1 month") ),
             'condition' => [
                 'saasp_comparison_show_countdown_2' => 'yes',
                 'saasp_comparison_show_ribbon_2' => 'yes',
@@ -1051,7 +1051,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Expire Date', 'saaspricing' ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
-            'default'=> esc_html__('2023-01-01 12:00', 'saaspricing'),
+            'default'=> gmdate( 'Y-m-d H:i', strtotime("+1 month") ),
             'condition' => [
                 'saasp_comparison_show_countdown_3' => 'yes',
                 'saasp_comparison_show_ribbon_3' => 'yes',
@@ -3014,7 +3014,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 0,
+                'size' => 10,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-table-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
@@ -5353,6 +5353,7 @@ protected function render() {
                                             ?>
                                                 <div class="saaspricing-show-expire-date" data-countdown-index="<?php echo esc_attr($j); ?>" 
                                                 data-expire-date-<?php echo esc_attr($i); ?>="<?php echo esc_attr($settings['saasp_comparison_expire_date_'.$i]); ?>">
+                                                <?php echo esc_html__('00d: 00h: 00m: 00s','saaspricing'); ?>
                                                 </div>
                                             <?php
                                             }

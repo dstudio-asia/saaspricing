@@ -155,7 +155,7 @@
 }
 
 .saaspricing-p-vertical-header {
-    padding: 70px 0 0 0;
+    padding: 40px 40px 0 40px;
 }
 
 .saaspricing-vertical-pricing-card .saaspricing-vertical-title, 
@@ -191,7 +191,7 @@
 
 .saaspricing-card-footer {
     padding: 0 16px;
-    margin: 0 0 40px 0;
+    margin: 0 0 20px 0;
 }
 
 .saaspricing-cta-card {
@@ -244,7 +244,7 @@
 }
 
 .saaspricing-horizontal-header{
-    padding: 48px 48px 35px 48px;
+    padding: 40px 40px 35px 40px;
 }
 
 .saasspricing-pricing-block {
@@ -441,7 +441,7 @@
 }
 
 .saaspricing-horizontal-feature-list {
-    padding:0 48px 20px 48px;
+    padding:0 40px 40px 40px;
 }
 
 .saaspricing-horizontal .saaspricing-horizontal-slogan-title {
@@ -602,7 +602,7 @@
 
 
 .saaspricing-cards-all .saaspricing-vertical-primary {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .saaspricing-horizontal-primary, .saaspricing-horizontal-primary:hover {

@@ -351,7 +351,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Expire Date', 'saaspricing' ),
             'type' =>  Controls_Manager::DATE_TIME,
             'label_block' => false,
-            'default'=> esc_html__('2023-01-01 12:00', 'saaspricing'),
+            'default'=> gmdate( 'Y-m-d H:i', strtotime("+1 month") ),
             'condition' => [
                 'saasp_vertical_show_countdown' => 'yes',
             ],
@@ -2324,6 +2324,7 @@ $settings = $this->get_settings_for_display();
                             <span class="saaspricing-countdown"
                             data-countdown-index="0"
                             data-expire-date="<?php echo esc_attr($settings['saasp_vertical_expire_date']); ?>">
+                            <?php echo esc_html__('00d: 00h: 00m: 00s','saaspricing'); ?>
                             </span>
                         </div>
                     <?php
