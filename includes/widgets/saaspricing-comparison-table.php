@@ -4245,7 +4245,7 @@ protected function register_controls() {
                 'size' => 5,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-price-table-help svg' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-main' => 'gap: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
