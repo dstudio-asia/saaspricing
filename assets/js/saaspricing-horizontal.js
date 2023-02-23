@@ -27,7 +27,7 @@
           
               if (saaspDistance < 0) {
                 clearInterval(saaspExpire);
-                $(this).html("0d: 0h: 0m: 0s");
+                $(this).html("00d: 00h: 00m: 00s");
               }
             });
           }, 1000);
