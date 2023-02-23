@@ -4405,6 +4405,7 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-icon svg' => 'fill: {{VALUE}} ',
             ],
         ]
     );
@@ -4436,6 +4437,7 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-icon svg' => 'fill: {{VALUE}} ',
             ],
         ]
     );
@@ -4467,6 +4469,7 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(4) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-table tr td:nth-child(4) .saaspricing-cell-icon svg' => 'fill: {{VALUE}} ',
             ],
         ]
     );
