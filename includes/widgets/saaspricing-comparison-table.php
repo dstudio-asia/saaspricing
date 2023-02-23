@@ -1375,6 +1375,9 @@ protected function register_controls() {
             ],
             'default' => 'before',
             'toggle' => true,
+            'condition' => [
+                'saasp_comparison_show_features_tooltip'=>'yes',
+            ]
         ]
     );
 
@@ -1508,6 +1511,9 @@ protected function register_controls() {
             ],
             'default' => 'before',
             'toggle' => true,
+            'condition' => [
+                'saasp_comparison_show_features_tooltip'=>'yes',
+            ]
         ]
     );
 
@@ -1685,6 +1691,9 @@ protected function register_controls() {
             ],
             'default' => 'before',
             'toggle' => true,
+            'condition' => [
+                'saasp_comparison_show_features_tooltip'=>'yes',
+            ]
         ]
     );
 
@@ -2055,6 +2064,8 @@ protected function register_controls() {
                 'value' => 'fas fa-arrow-right',
                 'library' => 'fa-solid',
             ],
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'recommended' => [
                 'fa-solid' => [
                     'circle',
@@ -2206,6 +2217,8 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Icon', 'saaspricing' ),
             'type' =>  Controls_Manager::ICONS,
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'recommended' => [
                 'fa-solid' => [
                     'circle',
@@ -2387,6 +2400,8 @@ protected function register_controls() {
                 'value' => 'fas  fa-arrow-right',
                 'library' => 'fa-solid',
             ],
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'recommended' => [
                 'fa-solid' => [
                     'circle',
@@ -2541,6 +2556,8 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Icon', 'saaspricing' ),
             'type' =>  Controls_Manager::ICONS,
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'recommended' => [
                 'fa-solid' => [
                     'circle',
@@ -2595,6 +2612,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(3)' => 'background-color: {{VALUE}}',
             ],
+            'condition' =>[
+                'saasp_comparison_select_columns' => ['2','3'],
+            ]
         ]
     );
 
@@ -2718,6 +2738,8 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Icon', 'saaspricing' ),
             'type' =>  Controls_Manager::ICONS,
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'default' => [
                 'value' => 'fas  fa-arrow-right',
                 'library' => 'fa-solid',
@@ -2876,6 +2898,8 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Icon', 'saaspricing' ),
             'type' =>  Controls_Manager::ICONS,
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'recommended' => [
                 'fa-solid' => [
                     'circle',
@@ -2930,6 +2954,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(4)' => 'background-color: {{VALUE}}',
             ],
+            'condition' =>[
+                'saasp_comparison_select_columns' => '3',
+            ]
         ]
     );
 
@@ -4323,6 +4350,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-cell-icon i' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-cell-icon svg' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );

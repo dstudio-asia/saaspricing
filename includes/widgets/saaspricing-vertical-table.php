@@ -637,6 +637,8 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Icon', 'saaspricing' ),
             'type' =>  Controls_Manager::ICONS,
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'default' => [
                 'value' => 'fas fa-arrow-right',
                 'library' => 'fa-solid',
@@ -777,6 +779,8 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Icon', 'saaspricing' ),
             'type' =>  Controls_Manager::ICONS,
+            'skin' => 'inline',
+            'exclude_inline_options' => [ 'svg' ],
             'condition' =>[
                 'saasp_vertical_secondary_cta_switch' => 'yes',
             ]
