@@ -477,7 +477,7 @@ protected function register_controls() {
                 'label' => esc_html__( 'Icon Color', 'saaspricing' ),
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -863,7 +863,8 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'fill: {{VALUE}}; color: {{VALUE}}; border-color: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-vertical-icon i' => 'color: {{VALUE}}; border-color: {{VALUE}};',
+                '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'fill: {{VALUE}}; border-color: {{VALUE}};',
             ],
         ]
     );
@@ -909,6 +910,7 @@ protected function register_controls() {
                 'size' => 0,
             ],
             'selectors' => [
+                '{{WRAPPER}} .saaspricing-vertical-icon i' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 '{{WRAPPER}} .saaspricing-vertical-icon svg' => 'margin-bottom: {{SIZE}}{{UNIT}};',
             ],
         ]
@@ -1731,7 +1733,7 @@ protected function register_controls() {
                 'size' => 14,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg ' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol i' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1754,7 +1756,7 @@ protected function register_controls() {
                 'size' => 5,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg ' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol i' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );

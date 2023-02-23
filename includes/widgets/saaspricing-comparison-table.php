@@ -4205,7 +4205,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-feature-main svg' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-feature-main i' => 'color: {{VALUE}} ',
             ],
         ]
     );
@@ -4228,7 +4228,7 @@ protected function register_controls() {
                 'size' => 14,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-feature-main svg' => 'font-size: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}}',
+                '{{WRAPPER}} .saaspricing-feature-main i' => 'font-size: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}}',
             ],
         ]
     );
@@ -4322,7 +4322,7 @@ protected function register_controls() {
                 'size' => 14,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-cell-icon svg' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-cell-icon i' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -4345,7 +4345,7 @@ protected function register_controls() {
                 'size' => 5,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-cell-icon svg' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-cell-icon i' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -4376,7 +4376,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Icon Color', 'saaspricing' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-icon svg' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
             ],
         ]
     );
@@ -4407,7 +4407,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Icon Color', 'saaspricing' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-icon svg' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
             ],
         ]
     );
@@ -4438,7 +4438,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Icon Color', 'saaspricing' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table tr td:nth-child(4) .saaspricing-cell-icon svg' => 'color: {{VALUE}} ',
+                '{{WRAPPER}} .saaspricing-table tr td:nth-child(4) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
             ],
         ]
     );

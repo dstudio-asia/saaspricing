@@ -300,7 +300,7 @@ protected function register_controls() {
                 'label' => esc_html__( 'Icon Color', 'saaspricing' ),
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -1212,7 +1212,7 @@ protected function register_controls() {
                 'size' => 14,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saasp-horizontal-icon-wrapper svg' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saasp-horizontal-icon-wrapper i' => 'font-size: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1235,7 +1235,7 @@ protected function register_controls() {
                 'size' => 5,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saasp-horizontal-icon-wrapper svg' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saasp-horizontal-icon-wrapper i' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
