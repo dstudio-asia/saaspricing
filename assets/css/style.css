@@ -185,16 +185,17 @@
 
 .saaspricing-card {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
     background-clip: border-box;
     border-radius: 5px;
-}
-
-.card-body {
-    flex: 1 1 auto;
 }
 
 .saaspricing-card-footer {
@@ -220,9 +221,16 @@
 }
 
 .saasprcing-vertical-pricing, .saasprcing-horizontal-pricing {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
     justify-content: left;
     line-height: .8;
     gap:5px;
@@ -256,9 +264,16 @@
 }
 
 .saasspricing-pricing-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
     justify-content: left;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     color: var(--saaspricing-primary);
 }
@@ -314,6 +329,9 @@
 }
 
 .saaspricing-row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
 }
 
@@ -490,11 +508,20 @@
     background: var(--saaspricing-primary);
     color: var(--saaspricing-white);
     padding: 68px 48px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     height: 100%;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -533,20 +560,31 @@
 }
 
 .saaspricing-horizontal-pricing-left {
+    -ms-flex-item-align: start;
     align-self: flex-start;
     text-align: left;
+    -webkit-box-pack:start;
+    -ms-flex-pack:start;
     justify-content:start;
 }
 
 .saaspricing-horizontal-pricing-center {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
     align-self: center;
     text-align: center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
     justify-content:center;
 }
 
 .saaspricing-horizontal-pricing-right {
+    -ms-flex-item-align: end;
+    -ms-grid-row-align: end;
     align-self: end;
     text-align: right;
+    -webkit-box-pack:end;
+    -ms-flex-pack:end;
     justify-content:end;
 }
 
