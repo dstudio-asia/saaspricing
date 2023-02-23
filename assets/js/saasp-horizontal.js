@@ -8,7 +8,7 @@
             let saaspMainClass = $(scope).find(".saaspricing-countdown");
             let saaspDate = saaspMainClass.data('expire-date');
             
-            let saaspCountDownDate = [new Date(saaspDate)];
+            let saaspCountDownDate = [new Date(saaspDate.replace(/-/g, "/"))] ;
             let saaspCurrentTime = new Date().getTime();
             let saaspCountdowns = $(scope).find(".saaspricing-countdown");
           

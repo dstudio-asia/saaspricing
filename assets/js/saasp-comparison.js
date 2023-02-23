@@ -10,7 +10,7 @@
             let saaspDateTwo = saaspMainClass.data('expire-date-two');
             let saaspDateThree = saaspMainClass.data('expire-date-three');
   
-            let saaspCountDownDate = [new Date(saaspDateOne), new Date(saaspDateTwo), new Date(saaspDateThree)];
+            let saaspCountDownDate = [new Date(saaspDateOne.replace(/-/g, "/")), new Date(saaspDateTwo.replace(/-/g, "/")),  new Date(saaspDateThree.replace(/-/g, "/"))];
             let saaspCurrentTime = new Date().getTime();
             let saaspCountdowns = $(scope).find(".saaspricing-show-expire-date");
           
