@@ -7,7 +7,7 @@
   
             var saaspMainClass = $(scope).find(".saaspricing-countdown");
             var saaspDate = saaspMainClass.data('expire-date');
-            
+            if ( "undefined" !== typeof saaspDate ) { 
             var saaspCountDownDate = [new Date(saaspDate.replace(/-/g, "/"))] ;
             var saaspCurrentTime = new Date().getTime();
             var saaspCountdowns = $(scope).find(".saaspricing-countdown");
@@ -30,6 +30,7 @@
                 $(this).html("00d: 00h: 00m: 00s");
               }
             });
+            }
           }, 1000);
              
         });
