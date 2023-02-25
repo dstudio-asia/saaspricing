@@ -4866,7 +4866,6 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before',
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
             ],
@@ -4996,7 +4995,6 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before',
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
             ],
