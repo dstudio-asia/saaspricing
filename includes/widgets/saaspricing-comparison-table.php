@@ -3177,7 +3177,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3188,6 +3191,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2) .saaspricing-heading-title' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -3200,6 +3206,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2) small' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3211,6 +3220,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2)' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3219,7 +3231,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3231,6 +3246,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(3) .saaspricing-heading-title' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3241,6 +3259,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(3) small' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -3264,7 +3285,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3276,6 +3300,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(4) .saaspricing-heading-title' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3286,6 +3313,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(4) small' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -3408,7 +3438,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3419,6 +3452,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2) .saaspricing-ribbon-title' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -3431,6 +3467,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2) .saaspricing-show-expire-date' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3442,6 +3481,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2)' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3450,7 +3492,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3461,7 +3506,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(3) .saaspricing-ribbon-title' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3472,7 +3520,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(3) .saaspricing-show-expire-date' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3483,7 +3534,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-common-ribbon:nth-child(3)' => 'background-color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3492,7 +3546,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3503,7 +3560,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(4) .saaspricing-ribbon-title' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3514,7 +3574,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(4) .saaspricing-show-expire-date' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3525,7 +3588,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-common-ribbon:nth-child(4)' => 'background-color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3614,7 +3680,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3625,6 +3694,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-price-text' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -3639,6 +3711,7 @@ protected function register_controls() {
             ],
             'condition' => [
                 'saasp_comparison_sale_1' => 'yes',
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -3651,6 +3724,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-period' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3662,6 +3738,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2)' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3670,7 +3749,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -3681,6 +3763,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-price-text' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -3695,6 +3780,7 @@ protected function register_controls() {
             ],
             'condition' => [
                 'saasp_comparison_sale_2' => 'yes',
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -3706,6 +3792,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-period' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -3729,7 +3818,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -3740,6 +3832,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-price-text' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -3754,6 +3849,7 @@ protected function register_controls() {
             ],
             'condition' => [
                 'saasp_comparison_sale_1' => 'yes',
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -3765,6 +3861,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-period' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -4031,7 +4130,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4043,7 +4145,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons i::after' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4055,7 +4160,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons-none i' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-icons-half i' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4066,7 +4174,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-review-text' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4075,7 +4186,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4087,7 +4201,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons i::after' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4099,7 +4216,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons-none i' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-icons-half i' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4110,7 +4230,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-review-text' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4119,7 +4242,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4131,7 +4257,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons i::after' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons-half i::after' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4143,7 +4272,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons-none i' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-icons-half i' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4154,7 +4286,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-review-text' => 'color: {{VALUE}}',
-            ]
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4383,7 +4518,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
     
@@ -4394,6 +4532,9 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-text' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -4407,6 +4548,9 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(2) .saaspricing-cell-icon svg' => 'fill: {{VALUE}} ',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4415,7 +4559,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
     
@@ -4426,6 +4573,9 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-text' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -4439,6 +4589,9 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(3) .saaspricing-cell-icon svg' => 'fill: {{VALUE}} ',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4447,7 +4600,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
     
@@ -4458,6 +4614,9 @@ protected function register_controls() {
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}}  .saaspricing-table tr td:nth-child(4) .saaspricing-cell-text' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -4470,6 +4629,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(4) .saaspricing-cell-icon i' => 'color: {{VALUE}} ',
                 '{{WRAPPER}} .saaspricing-table tr td:nth-child(4) .saaspricing-cell-icon svg' => 'fill: {{VALUE}} ',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -4574,6 +4736,9 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4585,6 +4750,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_normal_background_1',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4596,6 +4764,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4605,6 +4776,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_hover_background_1',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4616,6 +4790,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1:hover' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4624,13 +4801,16 @@ protected function register_controls() {
     $this->end_controls_tabs();
 
     $this->start_controls_tabs(
-        'saasp_comparison_primary_cta_hover_normal_text_color_1'
+        'saasp_comparison_primary_cta_hover_normal_text_color_1',
     );
 
     $this->start_controls_tab(
         'saasp_comparison_primary_cta_normal_text_1',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4642,6 +4822,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1' => 'color: {{VALUE}}',
             ],
+            'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4651,6 +4835,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_hover_text_1',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4662,6 +4849,11 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1:hover' => 'color: {{VALUE}}',
             ],
+            'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
+            
         ]
     );
 
@@ -4674,7 +4866,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4686,6 +4881,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_normal_background_2',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4697,6 +4895,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4706,6 +4907,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_hover_background_2',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4716,6 +4920,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2:hover' => 'background-color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -4732,6 +4939,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_normal_text_2',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4740,8 +4950,12 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
+            'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -4752,6 +4966,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_hover_text_2',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -4760,8 +4977,12 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
+            'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2:hover' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -4775,7 +4996,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4787,6 +5011,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_normal_background_3',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4798,6 +5025,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4807,6 +5037,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_hover_background_3',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4817,6 +5050,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3:hover' => 'background-color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -4833,6 +5069,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_normal_text_3',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4845,6 +5084,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4854,6 +5096,9 @@ protected function register_controls() {
         'saasp_comparison_primary_cta_hover_text_3',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -4865,6 +5110,9 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3:hover' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -4947,6 +5195,9 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4958,6 +5209,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_normal_background_1',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4969,6 +5223,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4978,6 +5235,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_hover_background_1',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -4988,6 +5248,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1:hover' => 'background-color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -5004,6 +5267,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_normal_text_1',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5015,6 +5281,10 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1' => 'color: {{VALUE}}',
             ],
+            'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5024,6 +5294,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_hover_text_1',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5034,6 +5307,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1:hover' => 'color: {{VALUE}}',
+            ],
+            'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -5047,7 +5324,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5059,6 +5339,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_normal_background_2',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5070,6 +5353,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5079,6 +5365,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_hover_background_2',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5089,6 +5378,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2:hover' => 'background-color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -5105,6 +5397,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_normal_text_2',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5113,8 +5408,12 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
+            'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -5125,6 +5424,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_hover_text_2',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5135,6 +5437,10 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2:hover' => 'color: {{VALUE}}',
+            ],
+            'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
             ],
         ]
     );
@@ -5148,7 +5454,10 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Column Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
+            'separator'=>'before',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5160,6 +5469,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_normal_background_3',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5171,6 +5483,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3' => 'background-color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5180,6 +5495,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_hover_background_3',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5190,6 +5508,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3:hover' => 'background-color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
@@ -5206,6 +5527,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_normal_text_3',
         [
             'label' => esc_html__( 'Normal', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5218,6 +5542,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3' => 'color: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5227,6 +5554,9 @@ protected function register_controls() {
         'saasp_comparison_secondary_cta_hover_text_3',
         [
             'label' => esc_html__( 'Hover', 'saaspricing' ),
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5238,6 +5568,9 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3:hover' => 'color: {{VALUE}}',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
             ],
         ]
     );
