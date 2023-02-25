@@ -9,7 +9,8 @@
             var saaspDateOne = saaspMainClass.data('expire-date-one');
             var saaspDateTwo = saaspMainClass.data('expire-date-two');
             var saaspDateThree = saaspMainClass.data('expire-date-three');
-  
+            
+            if ( "undefined" !== typeof saaspDateOne && "undefined" !== typeof saaspDateTwo && "undefined" !== typeof saaspDateThree) {
             var saaspCountDownDate = [new Date(saaspDateOne.replace(/-/g, "/")), new Date(saaspDateTwo.replace(/-/g, "/")),  new Date(saaspDateThree.replace(/-/g, "/"))];
             var saaspCurrentTime = new Date().getTime();
             var saaspCountdowns = $(scope).find(".saaspricing-show-expire-date");
@@ -32,6 +33,8 @@
                 $(this).html("00d: 00h: 00m: 00s");
               }
             });
+          }
+
           }, 1000);
   
           // Tooltip Trigger Function
