@@ -1,7 +1,6 @@
 === SaasPricing ===
 Contributors: debuggersstudio
-Donate link: https://debuggersstudio.com
-Tags: elementor table, price table , table styles, elementor pricing
+Tags: elementor table, price table ,comparison table, elementor pricing
 Requires at least: 5.8
 Tested up to: 6.1
 Requires PHP: 7.4
