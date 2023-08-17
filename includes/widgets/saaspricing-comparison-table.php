@@ -6274,9 +6274,6 @@ protected function render() {
                             <td class="saaspricing-blank"></td>
                             <?php
                             for( $i= 1; $i <= $settings['saasp_comparison_select_columns']; $i++ ){
-                                if ( ! empty( $settings['saasp_comparison_primary_cta_url_'.$i]['url'] ) ) {
-                                $this->add_link_attributes( 'saasp_comparison_primary_cta_url_'.$i, $settings['saasp_comparison_primary_cta_url_'.$i] );
-                                }
                             ?>
                                 <td class="saaspricing-footer-cta">
                                     <?php
@@ -6306,8 +6303,40 @@ protected function render() {
                                             ?>" 
                                             role="button" 
                                             <?php
-                                            echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags()); 
-                                            ?>>
+                                                if($settings['saasp_comparison_primary_cta_url_'.$i ]['url'] != '') {
+                                            ?>
+                                                href="<?php echo $settings['saasp_comparison_primary_cta_url_'.$i ]['url']; ?>"
+                                            <?php
+                                            }
+                                            ?>
+                                            <?php
+                                                if($settings['saasp_comparison_primary_cta_url_'.$i ]['is_external'] != '') {
+                                            ?>
+                                                target="_blank"
+                                            <?php
+                                            }
+                                            ?>
+                                            <?php
+                                                if($settings['saasp_comparison_primary_cta_url_'.$i ]['nofollow'] != '') {
+                                            ?>
+                                                rel="nofollow"
+                                            <?php
+                                            }
+                                            ?>
+                                            <?php
+                                            if($settings['saasp_comparison_primary_cta_url_'.$i ]['custom_attributes'] != '') {
+                                                $custom_attributes = $settings['saasp_comparison_primary_cta_url_'.$i ]['custom_attributes'];
+                                                $separate_attributes = explode(' ', trim($custom_attributes));
+                                                $attributes = array();
+                                                foreach ($separate_attributes as $attribute) {
+                                                    list($key, $value) = explode('|', $attribute);
+                                                    $attributes[] = "$key=\"$value\"";
+                                                }
+                                                $get_attributes = implode(' ', $attributes) ;
+                                                echo $get_attributes;
+                                            }
+                                            ?>
+                                            >
                                                 <?php echo esc_html($settings['saasp_comparison_primary_cta_text_'.$i]); ?>
                                                 <span class="saaspricing-primary-spacing-<?php echo esc_attr($i); ?>">
                                                     <?php Icons_Manager::render_icon( $settings['saasp_comparison_primary_cta_icon_'.$i], [ 'aria-hidden' => 'true' ] ); ?>

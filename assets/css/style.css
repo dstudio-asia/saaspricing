@@ -644,6 +644,7 @@
 .saaspricing-xl-btn:hover, .saaspricing-l-btn:hover, .saaspricing-m-btn:hover, 
 .saaspricing-sm-btn:hover, .saaspricing-xsm-btn:hover {
     color: var(--saaspricing-white);
+    background-color: var(--saaspricing-secondary);
 }
 
 

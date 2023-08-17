@@ -386,7 +386,7 @@ img.mfp-img {
     cursor: pointer;
 }
 
-.dialog-type-lightbox {
+.dialog-type-lightbox.elementor-lightbox {
 	display: none !important;
 }
 
