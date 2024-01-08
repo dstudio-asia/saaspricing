@@ -279,7 +279,7 @@ final class Saas_Pricing {
 
 	function saasp_action_link($actions) {
 		
-		$actions[] = '<a href="https://www.templatemonster.com/wordpress-plugins/saaspricing-pro-all-in-one-pricing-table-plugin-for-wordpress-366508.html" class="saasp-pro-link" target="_blank">Get Pro</a>';
+		$actions[] = '<a href="https://www.templatemonster.com/wordpress-plugins/saaspricing-pro-all-in-one-pricing-table-plugin-for-wordpress-366508.html" class="elementor-plugins-gopro" target="_blank">Get Pro</a>';
 		return $actions;
 	}
 
