@@ -6104,8 +6104,8 @@ protected function render() {
                                 <td class="saaspricing-feature-main d-flex align-items-center">
                                     <?php
                                     if( 'yes' === $saasp_features_one['saasp_comparison_show_features_tooltip'] && 
-                                    'before' === $saasp_features_one['saasp_comparison_features_tooltip_position'] || 
-                                    empty($saasp_features_one['saasp_comparison_features_tooltip_position']) ){
+                                    ('before' === $saasp_features_one['saasp_comparison_features_tooltip_position'] || 
+                                    empty($saasp_features_one['saasp_comparison_features_tooltip_position'])) ){
                                     ?>
                                         <span data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="<?php echo esc_attr($saasp_features_one['saasp_comparison_features_tooltip_description']); ?>"
@@ -6148,8 +6148,8 @@ protected function render() {
                             <td class="saaspricing-feature-main d-flex align-items-center">
                                 <?php
                                 if( 'yes' === $saasp_features_two['saasp_comparison_show_features_tooltip'] && 
-                                'before' === $saasp_features_two['saasp_comparison_features_tooltip_position'] ||
-                                empty($saasp_features_two['saasp_comparison_features_tooltip_position']) ){
+                                ('before' === $saasp_features_two['saasp_comparison_features_tooltip_position'] ||
+                                empty($saasp_features_two['saasp_comparison_features_tooltip_position'])) ){
                                 ?>
                                     <span data-bs-toggle="tooltip" data-bs-placement="top"
                                     title="<?php echo esc_attr($saasp_features_two['saasp_comparison_features_tooltip_description']); ?>"
@@ -6200,8 +6200,8 @@ protected function render() {
                                 <td class="saaspricing-feature-main d-flex align-items-center">
                                     <?php
                                     if( 'yes' === $saasp_features_three['saasp_comparison_show_features_tooltip'] && 
-                                    'before' === $saasp_features_three['saasp_comparison_features_tooltip_position'] ||
-                                    empty($saasp_features_three['saasp_comparison_features_tooltip_position']) ){
+                                    ('before' === $saasp_features_three['saasp_comparison_features_tooltip_position'] ||
+                                    empty($saasp_features_three['saasp_comparison_features_tooltip_position'])) ){
                                     ?>
                                         <span data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="<?php echo esc_attr($saasp_features_three['saasp_comparison_features_tooltip_description']); ?>"
