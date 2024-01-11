@@ -6060,15 +6060,15 @@ protected function render() {
                                             echo esc_attr(' w-100');
                                         }
                                         if( 'extra-small' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-xsm-btn');
+                                            echo esc_attr(' saaspricing-xsm-btn ');
                                         }elseif( 'small' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-sm-btn');
+                                            echo esc_attr(' saaspricing-sm-btn ');
                                         }
                                         elseif( 'medium' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-m-btn');
+                                            echo esc_attr(' saaspricing-m-btn ');
                                         }
                                         elseif( 'large' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-l-btn');
+                                            echo esc_attr(' saaspricing-l-btn ');
                                         }
                                         elseif( 'extra-large' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
                                             echo esc_attr(' saaspricing-xl-btn ');
