@@ -2624,4 +2624,337 @@ $settings = $this->get_settings_for_display();
 </div>
 <?php
  }
+ protected function _content_template() {
+?>
+    <div class="saaspricing-cards-all">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-12">
+                <div class="saaspricing-card saaspricing-vertical-pricing-card">
+                <#
+                var symbols = {
+                    dollar: '&#36;',
+                    euro: '&#128;',
+                    franc: '&#8355;',
+                    pound: '&#163;',
+                    ruble: '&#8381;',
+                    shekel: '&#8362;',
+                    baht: '&#3647;',
+                    yen: '&#165;',
+                    won: '&#8361;',
+                    guilder: '&fnof;',
+                    peso: '&#8369;',
+                    peseta: '&#8359;',
+                    lira: '&#8356;',
+                    rupee: '&#8360;',
+                    indian_rupee: '&#8377;',
+                    real: 'R$',
+                    krona: 'kr'
+                };
+    
+                var symbol = '',
+                    iconsHTML = {};
+    
+                if ( settings.saasp_vertical_currency_symbol ) {
+                    if ( 'custom' !== settings.saasp_vertical_currency_symbol ) {
+                        symbol = symbols[ settings.saasp_vertical_currency_symbol ] || '';
+                    } else {
+                        symbol = settings.saasp_vertical_currency_symbol_custom;
+                    }
+                }
+                #>
+    
+                <#
+                    var textAlign = 'text-center'
+                    if(settings.saasp_vertical_cta_alignment == 'center') {
+                        textAlign = 'text-center'
+                    }else if(settings.saasp_vertical_cta_alignment == 'right') {
+                        textAlign = 'text-end'
+                    }else if(settings.saasp_vertical_cta_alignment == 'left') {
+                        textAlign = 'text-start'
+                    }
+                #>
+    
+                <#
+                    var textJustify = ''
+                    var buttonSize = 'saaspricing-m-btn'
+                    if('justify' === settings.saasp_vertical_cta_alignment) {
+                        textJustify = 'w-100'
+                    }
+                    if('extra-small' === settings.saasp_vertical_primary_cta_size) {
+                        buttonSize = 'saaspricing-xsm-btn'
+                    } else if ( 'small' === settings.saasp_vertical_primary_cta_size ) {
+                        buttonSize = 'saaspricing-sm-btn'
+                    } else if ( 'medium' === settings.saasp_vertical_primary_cta_size ) {
+                        buttonSize = 'saaspricing-m-btn'
+                    } else if ( 'large' === settings.saasp_vertical_primary_cta_size ) {
+                        buttonSize = 'saaspricing-l-btn'
+                    } else if ( 'extra-large' === settings.saasp_vertical_primary_cta_size ) {
+                        buttonSize = 'saaspricing-xl-btn'
+                    }
+                #>
+
+                <#
+                    var secondaryButtonSize = 'saaspricing-m-btn'
+                    if('extra-small' === settings.saasp_vertical_secondary_cta_size) {
+                        secondaryButtonSize = 'saaspricing-xsm-btn'
+                    } else if ( 'small' === settings.saasp_vertical_secondary_cta_size ) {
+                        secondaryButtonSize = 'saaspricing-sm-btn'
+                    } else if ( 'medium' === settings.saasp_vertical_secondary_cta_size ) {
+                        secondaryButtonSize = 'saaspricing-m-btn'
+                    } else if ( 'large' === settings.saasp_vertical_secondary_cta_size ) {
+                        secondaryButtonSize = 'saaspricing-l-btn'
+                    } else if ( 'extra-large' === settings.saasp_vertical_secondary_cta_size ) {
+                        secondaryButtonSize = 'saaspricing-xl-btn'
+                    }
+                #>
+    
+    
+                    <!-- Table ribbon -->
+                    <#
+                    if ( 'yes' === settings.saasp_vertical_show_ribbon ) {
+                    #>
+                        <div class="saaspricing-card-header saaspricing-vertical-ribbon">
+                            <p class="saaspricing-ribbon-title mb-0 saaspricing-vertical-header-alignment"> 
+                                <small>{{{ settings.saasp_vertical_ribbon_title }}}</small>
+                            </p>
+                        </div>
+                    <#
+                    }
+                    #>
+                    <div class="saaspricing-card-body position-relative">
+                            <!-- Table header -->
+                            <div class="saaspricing-vertical-header saaspricing-vertical-header-alignment 
+                            <# if ( 'yes' !== settings.saasp_vertical_show_ribbon ) { #>
+                                saaspricing-p-vertical-header
+                            <# } #>
+                            ">
+                            <#  
+                            var iconHTML = elementor.helpers.renderIcon( view, settings.saasp_vertical_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                            if(iconHTML.value){
+                            #>
+                                <div class="saaspricing-vertical-icon elementor-icon saaspricing-vertical-header-alignment">
+                                    {{{ iconHTML.value }}}
+                                </div>
+                            <#  
+                            }
+                            #>
+    
+                            <# if ( settings.saasp_vertical_header_title ) { #>
+                                <{{{ settings.saasp_vertical_header_title_tag }}} class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">
+                                    {{{ settings.saasp_vertical_header_title }}}
+                                </{{{ settings.saasp_vertical_header_title_tag }}}>
+                            <# } #>
+    
+                            <p class="saaspricing-vertical-description saaspricing-vertical-header-alignment">
+                                {{{ settings.saasp_vertical_header_description }}}
+                            </p>
+                        </div>
+                        <!-- table pricing -->
+                        <div class="saasprcing-vertical-pricing saaspricing-vertical-body-alignment">
+                            <# 
+                            if ( 'none' !== settings.saasp_vertical_currency_symbol && 'yes' === settings.saasp_vertical_sale ) {
+                            #>
+                                <del class="saaspricing-vertical-original">
+                                    <span>
+                                        {{{ symbol }}}
+                                        <# if ( settings.saasp_vertical_original_price ) { #>
+                                            <span class="fw-bold">
+                                                {{{ settings.saasp_vertical_original_price }}}
+                                            </span>
+                                        <# } #>
+                                    </span>
+                                </del>
+                            <#
+                            }
+                            #>
+                            <# if ( 'before' === settings.saasp_vertical_pricing_symbol_position ) { #>
+                                <span class="saaspricing-vertical-symbol saaspricing-vertical-price-text">
+                                    {{{symbol}}}
+                                </span>
+                            <# } #>
+                            <# if ( '' === settings.saasp_vertical_currency_format ) { #>
+                                <span class="saaspricing-vertical-price saaspricing-vertical-typography saaspricing-vertical-price-text">
+                                    {{{ settings.sassp_vertical_price.split('.')[0] }}}
+                                </span>
+                            <# if ( settings.sassp_vertical_price.split('.')[1] ) { #>
+                                <span class="saaspricing-fraction-price saaspricing-vertical-price-text">
+                                    {{{ settings.sassp_vertical_price.split('.')[1] }}}
+                                </span>
+                            <# } #>
+                            <# } else { #>
+                                <span class="saaspricing-vertical-price saaspricing-vertical-typography saaspricing-vertical-price-text">
+                                    {{{ settings.sassp_vertical_price }}}
+                                </span>
+                            <# } #>
+                            <# if ( 'after' === settings.saasp_vertical_pricing_symbol_position ) { #>
+                                <span class="saaspricing-vertical-symbol saaspricing-vertical-price-text">
+                                    {{{symbol}}}
+                                </span>
+                            <# } #>
+                            <# if ( settings.saasp_vertical_period ) { #>
+                                <span class="saaspricing-vertical-period saaspricing-vertical-body-alignment
+                                    <# if ( 'below' === settings.saasp_vertical_period_position ) { #>
+                                        w-100 mt-1
+                                    <# } #>">
+                                    {{{ settings.saasp_vertical_period }}}
+                                </span>
+                            <# } #>
+                        </div>
+                        <!-- Table countdown -->
+                        <# if ( 'yes' === settings.saasp_vertical_show_countdown && settings.saasp_vertical_expire_date ) { #>
+                            <div class="saaspricing-vertical-countdown saaspricing-vertical-body-alignment">
+                                <span class="saaspricing-countdown"
+                                    data-countdown-index="0"
+                                    data-expire-date="{{ settings.saasp_vertical_expire_date }}">
+                                    <?php echo esc_html__('00d: 00h: 00m: 00s','saaspricing-pro'); ?>
+                                </span>
+                            </div>
+                        <# } #>
+                        <!-- Table review -->
+                        <# if ( 'yes' === settings.saasp_vertical_show_rating && settings.saasp_vertical_rating_num ) { #>
+                            <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
+                                <div class="saaspricing-star-icon fs-6"> 
+                                    <# var saasp_rating = settings.saasp_vertical_rating_num; #>
+                                    <# var saasp_full_stars = Math.floor( saasp_rating ); #>
+                                    <# var saasp_half_star = saasp_rating - saasp_full_stars; #>
+    
+                                    <# for ( var k = 0; k < saasp_full_stars; k++ ) { #>
+                                        <span class="saaspricing-icons">
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    <# } #>
+    
+                                    <# if ( saasp_half_star >= 0.5 ) { #>
+                                        <span class="saaspricing-icons-half">
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    <# } #>
+    
+                                    <# for ( var j = 0; j < 5 - Math.ceil( settings.saasp_vertical_rating_num ); j++ ) { #>
+                                        <span class="saaspricing-icons-none">
+                                            <i class="fa fa-star"></i>
+                                        </span>
+                                    <# } #>
+    
+                                    <# if ( settings.saasp_vertical_rating_counter ) { #>
+                                        <small class="saaspricing-review-text">
+                                            ({{ settings.saasp_vertical_rating_counter }})
+                                        </small>
+                                    <# } #>
+                                </div>
+                            </div>
+                        <# } #>
+                        <!-- Table top CTA -->
+                        <# if ( 'top' === settings.saasp_vertical_primary_cta_position || 'top' === settings.saasp_vertical_secondary_cta_position ) { #>
+                            
+                            <div class="saaspricing-cta-card saaspricing-vertical-cta-alignment {{ textAlign }}"> 
+                            <!-- top primary -->
+                            <# if ( 'yes' === settings.saasp_vertical_primary_cta_switch && settings.saasp_vertical_primary_cta_text && 'top' === settings.saasp_vertical_primary_cta_position ) { #>
+                            <a class="btn saaspricing-vertical-primary {{ textJustify }} {{ buttonSize }}" href='{{ settings.saasp_vertical_primary_cta_url.url }}'
+                            >
+                                {{{ settings.saasp_vertical_primary_cta_text }}}
+                                <span class="saaspricing-primary-spacing"> 
+                                    <#
+                                        var primaryTop = elementor.helpers.renderIcon( view, settings.saasp_vertical_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                    #>
+                                    {{{ primaryTop.value }}}
+                                </span>
+                            </a>
+                            <# } #>
+                            <!-- top secondary -->
+                            <# if ( 'yes' === settings.saasp_vertical_secondary_cta_switch && settings.saasp_vertical_secondary_cta_text && 'top' === settings.saasp_vertical_secondary_cta_position ) { #>
+                                    <div class="saaspricng-secondary-main {{ textAlign }}">
+                                        <a class="btn saaspricing-vertical-secondary {{ textJustify }} {{ secondaryButtonSize }}" href='{{ settings.saasp_vertical_primary_cta_url.url }}'>
+                                            {{{ settings.saasp_vertical_secondary_cta_text }}}
+                                            <span class="saaspricing-secondary-spacing"> 
+                                            <#
+                                                var SecondaryTop = elementor.helpers.renderIcon( view, settings.saasp_vertical_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                            #>
+                                            {{{ SecondaryTop.value }}}
+                                            </span>
+                                        </a>
+                                    </div>
+                            <# } #>
+                            </div>
+                        <# } #>
+                        <!-- Table features -->
+                        <div class="saaspricing-vertical-feature">
+                            <# if ( settings.saasp_vertical_features_title ) { #>
+                                <p class="saaspricing-features-title">
+                                    {{{ settings.saasp_vertical_features_title }}}
+                                </p>
+                            <# } #>
+                            <ol class="list-unstyled mb-0">
+                                <# if ( settings.saasp_vertical_features ) {
+                                    _.each( settings.saasp_vertical_features, function( feature ) { #>
+                                        <li class="saaspricing-vertical-padding elementor-repeater-item-{{ feature._id }}">
+                                            <#
+                                            var icon = elementor.helpers.renderIcon( view, feature.saasp_vertical_features_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                            #>
+                                            {{{ icon.value }}}
+                                            <small>
+                                                {{{ feature.saasp_vertical_features_text }}}
+                                            </small>
+                                        </li>
+                                    <# } );
+                                } #>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- Table bottom cta -->
+                    <# if ( ( 'top' !== settings.saasp_vertical_primary_cta_position && 'bottom' === settings.saasp_vertical_primary_cta_position ) ||
+                    ( 'top' !== settings.saasp_vertical_secondary_cta_position && 'bottom' === settings.saasp_vertical_secondary_cta_position ) ) { 
+                    #>
+                    <div class="saaspricing-card-footer {{ textAlign }}"> 
+                        <!-- Primary Bottom -->
+                        <#
+                        if ( '' !== settings.saasp_vertical_primary_cta_text && ('bottom' === settings.saasp_vertical_primary_cta_position || 
+                        settings.saasp_vertical_primary_cta_position === '' ) ) {
+                            if('yes' === settings.saasp_vertical_primary_cta_switch) {
+                        #>   
+                        <a class="btn saaspricing-vertical-primary {{ buttonSize }} {{ textJustify }}" href="{{settings.saasp_vertical_primary_cta_url.url}}" >
+                            {{{ settings.saasp_vertical_primary_cta_text }}}
+                            <span class="saaspricing-primary-spacing">
+                                <#
+                                    var primaryBottom = elementor.helpers.renderIcon( view, settings.saasp_vertical_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                #>
+                                {{{ primaryBottom.value }}}
+                            </span>
+                        </a>
+                        <#
+                        }
+                        }
+                        #>
+                        <!-- Secondary Bottom -->
+    
+                        <#
+                        if ( '' !== settings.saasp_vertical_secondary_cta_text && ('bottom' === settings.saasp_vertical_secondary_cta_position || 
+                        settings.saasp_vertical_secondary_cta_position === '' ) ) {
+                            if('yes' === settings.saasp_vertical_secondary_cta_switch) {
+                        #>
+                        <div class="saaspricng-secondary-main {{ textAlign }}">
+                            <a class="btn saaspricing-vertical-secondary {{ secondaryButtonSize }} {{ textJustify }}" href="{{settings.saasp_vertical_secondary_cta_url.url}}" >
+                                {{{ settings.saasp_vertical_secondary_cta_text }}}
+                                <span class="saaspricing-secondary-spacing">
+                                    <#
+                                        var secondaryBottom = elementor.helpers.renderIcon( view, settings.saasp_vertical_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                    #>
+                                    {{{ secondaryBottom.value }}}
+                                </span>
+                            </a>
+                        </div>
+                        <#
+                        }
+                        }
+                        #>
+                    </div>
+                    <# 
+                    }
+                    #>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+}
 }
