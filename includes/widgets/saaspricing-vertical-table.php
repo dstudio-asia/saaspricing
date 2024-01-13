@@ -2631,7 +2631,7 @@ $settings = $this->get_settings_for_display();
             <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="saaspricing-card saaspricing-vertical-pricing-card">
                 <#
-                var symbols = {
+                let symbols = {
                     dollar: '&#36;',
                     euro: '&#128;',
                     franc: '&#8355;',
@@ -2651,7 +2651,7 @@ $settings = $this->get_settings_for_display();
                     krona: 'kr'
                 };
     
-                var symbol = '',
+                let symbol = '',
                     iconsHTML = {};
     
                 if ( settings.saasp_vertical_currency_symbol ) {
@@ -2664,7 +2664,7 @@ $settings = $this->get_settings_for_display();
                 #>
     
                 <#
-                    var textAlign = 'text-center'
+                    let textAlign = 'text-center'
                     if(settings.saasp_vertical_cta_alignment == 'center') {
                         textAlign = 'text-center'
                     }else if(settings.saasp_vertical_cta_alignment == 'right') {
@@ -2675,8 +2675,8 @@ $settings = $this->get_settings_for_display();
                 #>
     
                 <#
-                    var textJustify = ''
-                    var buttonSize = 'saaspricing-m-btn'
+                    let textJustify = ''
+                    let buttonSize = 'saaspricing-m-btn'
                     if('justify' === settings.saasp_vertical_cta_alignment) {
                         textJustify = 'w-100'
                     }
@@ -2694,7 +2694,7 @@ $settings = $this->get_settings_for_display();
                 #>
 
                 <#
-                    var secondaryButtonSize = 'saaspricing-m-btn'
+                    let secondaryButtonSize = 'saaspricing-m-btn'
                     if('extra-small' === settings.saasp_vertical_secondary_cta_size) {
                         secondaryButtonSize = 'saaspricing-xsm-btn'
                     } else if ( 'small' === settings.saasp_vertical_secondary_cta_size ) {
@@ -2729,7 +2729,7 @@ $settings = $this->get_settings_for_display();
                             <# } #>
                             ">
                             <#  
-                            var iconHTML = elementor.helpers.renderIcon( view, settings.saasp_vertical_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                            let iconHTML = elementor.helpers.renderIcon( view, settings.saasp_vertical_icon, { 'aria-hidden': true }, 'i' , 'object' );
                             if(iconHTML.value){
                             #>
                                 <div class="saaspricing-vertical-icon elementor-icon saaspricing-vertical-header-alignment">
@@ -2814,11 +2814,11 @@ $settings = $this->get_settings_for_display();
                         <# if ( 'yes' === settings.saasp_vertical_show_rating && settings.saasp_vertical_rating_num ) { #>
                             <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
                                 <div class="saaspricing-star-icon fs-6"> 
-                                    <# var saasp_rating = settings.saasp_vertical_rating_num; #>
-                                    <# var saasp_full_stars = Math.floor( saasp_rating ); #>
-                                    <# var saasp_half_star = saasp_rating - saasp_full_stars; #>
+                                    <# let saasp_rating = settings.saasp_vertical_rating_num; #>
+                                    <# let saasp_full_stars = Math.floor( saasp_rating ); #>
+                                    <# let saasp_half_star = saasp_rating - saasp_full_stars; #>
     
-                                    <# for ( var k = 0; k < saasp_full_stars; k++ ) { #>
+                                    <# for ( let k = 0; k < saasp_full_stars; k++ ) { #>
                                         <span class="saaspricing-icons">
                                             <i class="fa fa-star"></i>
                                         </span>
@@ -2830,7 +2830,7 @@ $settings = $this->get_settings_for_display();
                                         </span>
                                     <# } #>
     
-                                    <# for ( var j = 0; j < 5 - Math.ceil( settings.saasp_vertical_rating_num ); j++ ) { #>
+                                    <# for ( let j = 0; j < 5 - Math.ceil( settings.saasp_vertical_rating_num ); j++ ) { #>
                                         <span class="saaspricing-icons-none">
                                             <i class="fa fa-star"></i>
                                         </span>
@@ -2855,7 +2855,7 @@ $settings = $this->get_settings_for_display();
                                 {{{ settings.saasp_vertical_primary_cta_text }}}
                                 <span class="saaspricing-primary-spacing"> 
                                     <#
-                                        var primaryTop = elementor.helpers.renderIcon( view, settings.saasp_vertical_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                        let primaryTop = elementor.helpers.renderIcon( view, settings.saasp_vertical_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                     #>
                                     {{{ primaryTop.value }}}
                                 </span>
@@ -2868,7 +2868,7 @@ $settings = $this->get_settings_for_display();
                                             {{{ settings.saasp_vertical_secondary_cta_text }}}
                                             <span class="saaspricing-secondary-spacing"> 
                                             <#
-                                                var SecondaryTop = elementor.helpers.renderIcon( view, settings.saasp_vertical_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                                let SecondaryTop = elementor.helpers.renderIcon( view, settings.saasp_vertical_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                             #>
                                             {{{ SecondaryTop.value }}}
                                             </span>
@@ -2889,7 +2889,7 @@ $settings = $this->get_settings_for_display();
                                     _.each( settings.saasp_vertical_features, function( feature ) { #>
                                         <li class="saaspricing-vertical-padding elementor-repeater-item-{{ feature._id }}">
                                             <#
-                                            var icon = elementor.helpers.renderIcon( view, feature.saasp_vertical_features_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                            let icon = elementor.helpers.renderIcon( view, feature.saasp_vertical_features_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                             #>
                                             {{{ icon.value }}}
                                             <small>
@@ -2916,7 +2916,7 @@ $settings = $this->get_settings_for_display();
                             {{{ settings.saasp_vertical_primary_cta_text }}}
                             <span class="saaspricing-primary-spacing">
                                 <#
-                                    var primaryBottom = elementor.helpers.renderIcon( view, settings.saasp_vertical_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                    let primaryBottom = elementor.helpers.renderIcon( view, settings.saasp_vertical_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                 #>
                                 {{{ primaryBottom.value }}}
                             </span>
@@ -2937,7 +2937,7 @@ $settings = $this->get_settings_for_display();
                                 {{{ settings.saasp_vertical_secondary_cta_text }}}
                                 <span class="saaspricing-secondary-spacing">
                                     <#
-                                        var secondaryBottom = elementor.helpers.renderIcon( view, settings.saasp_vertical_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                        let secondaryBottom = elementor.helpers.renderIcon( view, settings.saasp_vertical_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                     #>
                                     {{{ secondaryBottom.value }}}
                                 </span>

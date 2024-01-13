@@ -6414,7 +6414,7 @@ protected function render() {
             <table class="saaspricing-table" role="presentation">
                 <thead>
                 <#
-                var symbols = {
+                let symbols = {
                     dollar: '&#36;',
                     euro: '&#128;',
                     franc: '&#8355;',
@@ -6434,7 +6434,7 @@ protected function render() {
                     krona: 'kr'
                 };
     
-                var symbol = '',
+                let symbol = '',
                     iconsHTML = {};
                 #>
     
@@ -6445,12 +6445,12 @@ protected function render() {
                 <tr class="saaspricing-ribbon-table-row">
                     <td class="saaspricing-blank"></td>
                     <#
-                    var saasp_expire_date_one = settings.saasp_comparison_expire_date_1
-                    var saasp_expire_date_two = settings.saasp_comparison_expire_date_2
-                    var saasp_expire_date_three = settings.saasp_comparison_expire_date_3
+                    let saasp_expire_date_one = settings.saasp_comparison_expire_date_1
+                    let saasp_expire_date_two = settings.saasp_comparison_expire_date_2
+                    let saasp_expire_date_three = settings.saasp_comparison_expire_date_3
     
-                    for (var i = 1, j = 0; i <= settings.saasp_comparison_select_columns, j < settings.saasp_comparison_select_columns; i++, j++) {
-                        var saasp_visible = ''
+                    for (let i = 1, j = 0; i <= settings.saasp_comparison_select_columns, j < settings.saasp_comparison_select_columns; i++, j++) {
+                        let saasp_visible = ''
     
                         if ('yes' === settings['saasp_comparison_show_ribbon_' + i]) {
                             saasp_visible
@@ -6488,15 +6488,15 @@ protected function render() {
                 #>
                 <!-- Table head -->
                 <#
-                    var selectColumns = settings.saasp_comparison_select_columns
+                    let selectColumns = settings.saasp_comparison_select_columns
                     if (selectColumns === '1' || selectColumns === '2' || selectColumns === '3') {
                 #>
                     <tr class="saaspricing-price-table-head saaspricing-table-background">
                         <td class="saaspricing-blank"></td>
                         <#
-                        for (var i = 1; i <= selectColumns; i++) {
-                            var headerTitleText = settings['saasp_comparison_header_title_text_' + i];
-                            var headerTitleDescription = settings['saasp_comparison_header_title_description_' + i];
+                        for (let i = 1; i <= selectColumns; i++) {
+                            let headerTitleText = settings['saasp_comparison_header_title_text_' + i];
+                            let headerTitleDescription = settings['saasp_comparison_header_title_description_' + i];
                             
                             if (headerTitleText !== '' || headerTitleDescription !== '') {
                                 #>
@@ -6533,13 +6533,13 @@ protected function render() {
                             #>
                         </td>
                         <#
-                            for( var i = 1; i <= settings.saasp_comparison_select_columns; i++ ) {
+                            for( let i = 1; i <= settings.saasp_comparison_select_columns; i++ ) {
                         #>
                             <td class="saaspricing-price saaspricing-original-price saaspricing-comparison-header-alignment">
                                 <!-- Lightbox -->
                                 <# if ( '' !== settings['saasp_comparison_choose_media_' + i]['url'].url ) { #>
                                         <#
-                                        var popup = ''
+                                        let popup = ''
                                         if ( 'yes' === settings['saasp_comparison_media_light_box_' + i] ) {
                                             popup = 'saaspricing-image-popup'
                                         }
@@ -6620,11 +6620,11 @@ protected function render() {
                                 <# if ( 'yes' === settings['saasp_comparison_show_rating_' + i] && '' !== settings['saasp_comparison_rating_num_' + i] ) { #>
                                     <div class="saaspricing-ratings">
                                         <div class="saaspricing-star-icon fs-6">
-                                            <# var saasp_rating = settings['saasp_comparison_rating_num_' + i]; #>
-                                            <# var saasp_full_stars = Math.floor(saasp_rating); #>
-                                            <# var saasp_half_star = saasp_rating - saasp_full_stars; #>
+                                            <# let saasp_rating = settings['saasp_comparison_rating_num_' + i]; #>
+                                            <# let saasp_full_stars = Math.floor(saasp_rating); #>
+                                            <# let saasp_half_star = saasp_rating - saasp_full_stars; #>
     
-                                            <# for (var k = 0; k < saasp_full_stars; k++) { #>
+                                            <# for (let k = 0; k < saasp_full_stars; k++) { #>
                                                 <span class="saaspricing-icons">
                                                     <i class="fa fa-star"></i>
                                                 </span>
@@ -6636,7 +6636,7 @@ protected function render() {
                                                 </span>
                                             <# } #>
     
-                                            <# for (var j = 0; j < 5 - Math.ceil(settings['saasp_comparison_rating_num_' + i]); j++) { #>
+                                            <# for (let j = 0; j < 5 - Math.ceil(settings['saasp_comparison_rating_num_' + i]); j++) { #>
                                                 <span class="saaspricing-icons-none">
                                                     <i class="fa fa-star"></i>
                                                 </span>
@@ -6668,7 +6668,7 @@ protected function render() {
                                 {{{ settings['saasp_comparison_primary_cta_text_' + i] }}}
                                     <span class="saaspricing-primary-spacing-{{ i }}">
                                         <#
-                                            var topPrimary = elementor.helpers.renderIcon( view, settings['saasp_comparison_primary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                            let topPrimary = elementor.helpers.renderIcon( view, settings['saasp_comparison_primary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
                                         #>
                                         {{{ topPrimary.value }}}
                                     </span>
@@ -6679,7 +6679,7 @@ protected function render() {
                                 #>
                                 <!-- top primary button end -->
                                 <# 
-                                    var saasp_margin_top = '';
+                                    let saasp_margin_top = '';
                                     if ('top' === settings['saasp_comparison_primary_cta_position_' + i] && 'yes' === settings['saasp_comparison_primary_cta_switch_' + i]) {
                                 #>
                                 <br/>
@@ -6691,11 +6691,11 @@ protected function render() {
                                 <#
                                     if ('' !== settings['saasp_comparison_secondary_cta_text_' + i] && 'top' === settings['saasp_comparison_secondary_cta_position_' + i]) {
                                         if ('yes' === settings['saasp_comparison_secondary_cta_switch_' + i]) {
-                                            var button_classes = []
+                                            let button_classes = []
                                             if ('justify' === settings['saasp_comparison_cta_alignment']) {
                                                 button_classes.push('w-100');
                                             }
-                                            var size = settings['saasp_comparison_secondary_cta_size_' + i];
+                                            let size = settings['saasp_comparison_secondary_cta_size_' + i];
                                             if ('extra-small' === size) {
                                                 button_classes.push('saaspricing-xsm-btn');
                                             } else if ('small' === size) {
@@ -6713,7 +6713,7 @@ protected function render() {
                                         {{{ settings['saasp_comparison_secondary_cta_text_' + i] }}}
                                         <span class="saaspricing-secondary-spacing-{{ i }}">
                                         <#
-                                            var topSecondary = elementor.helpers.renderIcon( view, settings['saasp_comparison_secondary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                            let topSecondary = elementor.helpers.renderIcon( view, settings['saasp_comparison_secondary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
                                         #>
                                         {{{ topSecondary.value }}}
                                         </span>
@@ -6750,7 +6750,7 @@ protected function render() {
                             <td class="saaspricing-cell">
                                 <span class="saaspricing-cell-icon">
                                     <#
-                                        var columnOnceFeature = elementor.helpers.renderIcon( view, saasp_features_one.saasp_comparison_feature_icon , { 'aria-hidden': true }, 'i' , 'object' );
+                                        let columnOnceFeature = elementor.helpers.renderIcon( view, saasp_features_one.saasp_comparison_feature_icon , { 'aria-hidden': true }, 'i' , 'object' );
                                     #>
                                     {{{ columnOnceFeature.value }}}
                                 </span>
@@ -6781,7 +6781,7 @@ protected function render() {
                                 <td class="saaspricing-cell">
                                     <span class="saaspricing-cell-icon">
                                     <#
-                                        var columnTwoFeatureOne = elementor.helpers.renderIcon( view, saasp_features_two.saasp_comparison_feature_icon_1 , { 'aria-hidden': true }, 'i' , 'object' );
+                                        let columnTwoFeatureOne = elementor.helpers.renderIcon( view, saasp_features_two.saasp_comparison_feature_icon_1 , { 'aria-hidden': true }, 'i' , 'object' );
                                     #>
                                     {{{ columnTwoFeatureOne.value }}}
                                     </span>
@@ -6792,7 +6792,7 @@ protected function render() {
                                 <td class="saaspricing-cell">
                                     <span class="saaspricing-cell-icon">
                                     <#
-                                        var columnTwoFeatureTwo = elementor.helpers.renderIcon( view, saasp_features_two.saasp_comparison_feature_icon_2 , { 'aria-hidden': true }, 'i' , 'object' );
+                                        let columnTwoFeatureTwo = elementor.helpers.renderIcon( view, saasp_features_two.saasp_comparison_feature_icon_2 , { 'aria-hidden': true }, 'i' , 'object' );
                                     #>
                                     {{{ columnTwoFeatureTwo.value }}}
                                     </span>
@@ -6823,7 +6823,7 @@ protected function render() {
                                     <td class="saaspricing-cell">
                                         <span class="saaspricing-cell-icon">
                                             <#
-                                                var columnThreeFeatureOne = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_1 , { 'aria-hidden': true }, 'i' , 'object' );
+                                                let columnThreeFeatureOne = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_1 , { 'aria-hidden': true }, 'i' , 'object' );
                                             #>
                                             {{{ columnThreeFeatureOne.value }}}
                                         </span>
@@ -6834,7 +6834,7 @@ protected function render() {
                                     <td class="saaspricing-cell">
                                         <span class="saaspricing-cell-icon">
                                             <#
-                                                var columnThreeFeatureTwo = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_2 , { 'aria-hidden': true }, 'i' , 'object' );
+                                                let columnThreeFeatureTwo = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_2 , { 'aria-hidden': true }, 'i' , 'object' );
                                             #>
                                             {{{ columnThreeFeatureTwo.value }}}
                                         </span>
@@ -6845,7 +6845,7 @@ protected function render() {
                                     <td class="saaspricing-cell">
                                         <span class="saaspricing-cell-icon">
                                             <#
-                                                var columnThreeFeatureThree = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_3 , { 'aria-hidden': true }, 'i' , 'object' );
+                                                let columnThreeFeatureThree = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_3 , { 'aria-hidden': true }, 'i' , 'object' );
                                             #>
                                             {{{ columnThreeFeatureThree.value }}}
                                         </span>
@@ -6865,7 +6865,7 @@ protected function render() {
                     'bottom' === settings.saasp_comparison_primary_cta_position_3 || 
                     'bottom' === settings.saasp_comparison_secondary_cta_position_3) { #>
                         <#
-                            var ctaAlignment = 'text-start'
+                            let ctaAlignment = 'text-start'
                             if ('center' === settings.saasp_comparison_cta_alignment) {
                                 ctaAlignment = 'text-center'
                             } else if ('right' === settings.saasp_comparison_cta_alignment) { 
@@ -6874,7 +6874,7 @@ protected function render() {
                         #>
                         <tr class="saaspricing-cta-main {{ctaAlignment}}">
                             <td class="saaspricing-blank"></td>
-                            <# for (var i = 1; i <= settings.saasp_comparison_select_columns; i++) { #>
+                            <# for (let i = 1; i <= settings.saasp_comparison_select_columns; i++) { #>
                                 <td class="saaspricing-footer-cta">
                                     <# if ('' !== settings['saasp_comparison_primary_cta_text_' + i] && ('bottom' === settings['saasp_comparison_primary_cta_position_' + i] || !settings['saasp_comparison_primary_cta_position_' + i])) { #>
                                         <# if ('yes' === settings['saasp_comparison_primary_cta_switch_' + i]) { #>
@@ -6883,7 +6883,7 @@ protected function render() {
                                                 {{{ settings['saasp_comparison_primary_cta_text_' + i] }}}
                                                 <span class="saaspricing-primary-spacing-{{ i }}">
                                                     <#
-                                                        var bottomPrimary = elementor.helpers.renderIcon( view, settings['saasp_comparison_primary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                                        let bottomPrimary = elementor.helpers.renderIcon( view, settings['saasp_comparison_primary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
                                                     #>
                                                     {{{ bottomPrimary.value }}}
                                                 </span>
@@ -6902,7 +6902,7 @@ protected function render() {
                                                 {{{ settings['saasp_comparison_secondary_cta_text_' + i] }}}
                                                 <span class="saaspricing-secondary-spacing-{{ i }}">
                                                     <#
-                                                        var bottomSecondary = elementor.helpers.renderIcon( view, settings['saasp_comparison_secondary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                                        let bottomSecondary = elementor.helpers.renderIcon( view, settings['saasp_comparison_secondary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
                                                     #>
                                                     {{{ bottomSecondary.value }}}
                                                 </span>

@@ -2530,13 +2530,13 @@ protected function _content_template() {
     ?>
        <div class="saaspricing-horizontal">
            <#
-               var rowReverse = ''
+               let rowReverse = ''
                if('yes' === settings.saasp_horizontal_cta_row_reverse) {
                    rowReverse = 'saaspricing-row-reverse'
                }
            #>
            <#
-               var symbols = {
+               let symbols = {
                    dollar: '&#36;',
                    euro: '&#128;',
                    franc: '&#8355;',
@@ -2556,7 +2556,7 @@ protected function _content_template() {
                    krona: 'kr'
                };
    
-               var symbol = '',
+               let symbol = '',
                    iconsHTML = {};
    
                if ( settings.saasp_horizontal_currency_symbol ) {
@@ -2569,11 +2569,11 @@ protected function _content_template() {
            #>
    
            <#
-               var ctaAlignment = settings.saasp_horizontal_cta_alignment === 'right' ? 'ms-auto' : settings.saasp_horizontal_cta_alignment === 'center' ? 'mx-auto' : settings.saasp_horizontal_cta_alignment === 'left' ? 'me-auto' : 'mx-auto';
-               var buttonSize = settings.saasp_horizontal_primary_cta_size === 'extra-small' ? 'saaspricing-xsm-btn' : settings.saasp_horizontal_primary_cta_size === 'small' ? 'saaspricing-sm-btn' : settings.saasp_horizontal_primary_cta_size === 'medium' ? 'saaspricing-m-btn' : settings.saasp_horizontal_primary_cta_size === 'large' ? 'saaspricing-l-btn' : settings.saasp_horizontal_primary_cta_size === 'extra-large' ? 'saaspricing-xl-btn' : 'saaspricing-m-btn'
-               var buttonSizeSecondary = settings.saasp_horizontal_secondary_cta_size === 'extra-small' ? 'saaspricing-xsm-btn' : settings.saasp_horizontal_secondary_cta_size === 'small' ? 'saaspricing-sm-btn' : settings.saasp_horizontal_secondary_cta_size === 'medium' ? 'saaspricing-m-btn' : settings.saasp_horizontal_secondary_cta_size === 'large' ? 'saaspricing-l-btn' : settings.saasp_horizontal_secondary_cta_size === 'extra-large' ? 'saaspricing-xl-btn' : 'saaspricing-m-btn'
-               var buttonAlignment = settings.saasp_horizontal_cta_alignment === 'center' ? 'text-center' : settings.saasp_horizontal_cta_alignment === 'right' ? 'text-end' : settings.saasp_horizontal_cta_alignment === 'left' ? 'text-start' : 'text-center';
-               var ButtonWidth = 'justify' === settings.saasp_horizontal_cta_alignment ? 'w-100' : '';
+               let ctaAlignment = settings.saasp_horizontal_cta_alignment === 'right' ? 'ms-auto' : settings.saasp_horizontal_cta_alignment === 'center' ? 'mx-auto' : settings.saasp_horizontal_cta_alignment === 'left' ? 'me-auto' : 'mx-auto';
+               let buttonSize = settings.saasp_horizontal_primary_cta_size === 'extra-small' ? 'saaspricing-xsm-btn' : settings.saasp_horizontal_primary_cta_size === 'small' ? 'saaspricing-sm-btn' : settings.saasp_horizontal_primary_cta_size === 'medium' ? 'saaspricing-m-btn' : settings.saasp_horizontal_primary_cta_size === 'large' ? 'saaspricing-l-btn' : settings.saasp_horizontal_primary_cta_size === 'extra-large' ? 'saaspricing-xl-btn' : 'saaspricing-m-btn'
+               let buttonSizeSecondary = settings.saasp_horizontal_secondary_cta_size === 'extra-small' ? 'saaspricing-xsm-btn' : settings.saasp_horizontal_secondary_cta_size === 'small' ? 'saaspricing-sm-btn' : settings.saasp_horizontal_secondary_cta_size === 'medium' ? 'saaspricing-m-btn' : settings.saasp_horizontal_secondary_cta_size === 'large' ? 'saaspricing-l-btn' : settings.saasp_horizontal_secondary_cta_size === 'extra-large' ? 'saaspricing-xl-btn' : 'saaspricing-m-btn'
+               let buttonAlignment = settings.saasp_horizontal_cta_alignment === 'center' ? 'text-center' : settings.saasp_horizontal_cta_alignment === 'right' ? 'text-end' : settings.saasp_horizontal_cta_alignment === 'left' ? 'text-start' : 'text-center';
+               let ButtonWidth = 'justify' === settings.saasp_horizontal_cta_alignment ? 'w-100' : '';
            #>
            <div class="row gx-0 {{ rowReverse }}">
                <div class="col-lg-8">
@@ -2616,7 +2616,7 @@ protected function _content_template() {
                                    <div class="col-md-{{{ settings.saasp_horizontal_features_column }}}">
                                        <div class="saasp-horizontal-icon-wrapper elementor-repeater-item-{{{ saasp_horizontal_features._id }}}">
                                            <#
-                                               var featureIcon = elementor.helpers.renderIcon( view, saasp_horizontal_features.saasp_horizontal_features_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                               let featureIcon = elementor.helpers.renderIcon( view, saasp_horizontal_features.saasp_horizontal_features_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                            #>
                                            {{{ featureIcon.value }}}
                                            <small class="saaspricing-horizontal-feature-text">
@@ -2637,7 +2637,7 @@ protected function _content_template() {
                        <!-- Table ribbon -->
                        <#
                        if ( 'yes' === settings.saasp_horizontal_show_ribbon && '' !== settings.saasp_horizontal_ribbon_title ) {
-                           var saasp_ribbon_position = '';
+                           let saasp_ribbon_position = '';
                            if ( 'left' === settings.saasp_horizontal_ribbon_position ) {
                                saasp_ribbon_position = 'saaspricing-horizontal-left-position';
                            } else if ( 'right' === settings.saasp_horizontal_ribbon_position ) {
@@ -2759,15 +2759,15 @@ protected function _content_template() {
                        <!-- Table review -->
                        <#
                            if ( 'yes' === settings.saasp_horizontal_show_rating && '' !== settings.saasp_horizontal_rating_num ) {
-                               var saasp_rating = settings.saasp_horizontal_rating_num;
-                               var saasp_full_stars = Math.floor(saasp_rating);
-                               var saasp_half_star = saasp_rating - saasp_full_stars;
-                               var saasp_empty_stars = 5 - Math.ceil(saasp_rating);
+                               let saasp_rating = settings.saasp_horizontal_rating_num;
+                               let saasp_full_stars = Math.floor(saasp_rating);
+                               let saasp_half_star = saasp_rating - saasp_full_stars;
+                               let saasp_empty_stars = 5 - Math.ceil(saasp_rating);
                        #>
                            <div class="saaspricing-ratings saaspricing-horizontal-ratings {{ ctaAlignment }}">
                                <div class="saaspricing-star-icon fs-6"> 
                                    <#
-                                   for (var k = 0; k < saasp_full_stars; k++) {
+                                   for (let k = 0; k < saasp_full_stars; k++) {
                                        #>
                                        <span class="saaspricing-icons">
                                            <i class="fa fa-star"></i>
@@ -2781,7 +2781,7 @@ protected function _content_template() {
                                        </span>
                                        <#
                                    }
-                                   for (var j = 0; j < saasp_empty_stars; j++) {
+                                   for (let j = 0; j < saasp_empty_stars; j++) {
                                        #>
                                        <span class="saaspricing-icons-none">
                                            <i class="fa fa-star"></i>
@@ -2809,7 +2809,7 @@ protected function _content_template() {
                                {{{ settings.saasp_horizontal_primary_cta_text }}}
                                <span class="saaspricing-primary-spacing">
                                <#
-                                   var primaryButton = elementor.helpers.renderIcon( view, settings.saasp_horizontal_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                   let primaryButton = elementor.helpers.renderIcon( view, settings.saasp_horizontal_primary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                #>
                                {{{ primaryButton.value }}}
                                </span>
@@ -2827,7 +2827,7 @@ protected function _content_template() {
                                    {{{ settings.saasp_horizontal_secondary_cta_text }}}
                                    <span class="saaspricing-secondary-spacing">
                                    <#
-                                       var secondaryButton = elementor.helpers.renderIcon( view, settings.saasp_horizontal_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                                       let secondaryButton = elementor.helpers.renderIcon( view, settings.saasp_horizontal_secondary_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
                                    #>
                                    {{{ secondaryButton.value }}}
                                    </span>
