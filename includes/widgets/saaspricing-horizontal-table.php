@@ -301,6 +301,7 @@ protected function register_controls() {
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'fill: {{VALUE}}',
                 ],
             ]
         );
@@ -1213,6 +1214,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-icon-wrapper i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saasp-horizontal-icon-wrapper svg' => 'height: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1236,6 +1238,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-icon-wrapper i' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saasp-horizontal-icon-wrapper svg' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );

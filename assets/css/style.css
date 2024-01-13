@@ -709,6 +709,17 @@
     width: 100%;
 }
 
+.saaspricing-primary-spacing svg, .saaspricing-primary-btn svg, .saaspricing-vertical-padding svg{
+    height: 16px;
+    width: 16px;
+}
+.saaspricing-primary-spacing svg, .saaspricing-primary-btn svg{
+    fill: var(--saaspricing-white);
+}
+.saaspricing-horizontal-primary .saaspricing-primary-spacing svg{
+    fill: var(--saaspricing-primary);
+}
+
 .saaspricing-icons i::after{
     width: 100%; 
 }
