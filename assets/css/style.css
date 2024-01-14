@@ -30,7 +30,7 @@ svg, img {
     border: unset;
     margin-bottom: 0;
     overflow: hidden;
-    border-collapse: separate;
+    border-collapse: collapse;
 }
 
 .saaspricing-table tr td{
