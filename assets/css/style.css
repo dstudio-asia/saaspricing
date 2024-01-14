@@ -551,7 +551,8 @@ svg, img {
     color: var(--saaspricing-white);
 }
 
-.saaspricing-table .saaspricing-cta-main .saaspricing-secondary-btn {
+.saaspricing-table .saaspricing-cta-main .saaspricing-secondary-btn, 
+.saaspricing-table .saaspricing-cta-main .saaspricing-secondary-btn:hover {
     background-color: transparent;
     color: var(--saaspricing-secondary);
     font-weight: 600;
@@ -560,7 +561,8 @@ svg, img {
     padding: 0;
 }
 
-.saaspricing-cards-all .saaspricng-secondary-main .saaspricing-vertical-secondary {
+.saaspricing-cards-all .saaspricng-secondary-main .saaspricing-vertical-secondary,
+.saaspricing-cards-all .saaspricng-secondary-main .saaspricing-vertical-secondary:hover {
     background-color: transparent;
     color: var(--saaspricing-secondary);
     font-weight: 600;
@@ -729,14 +731,20 @@ svg, img {
     width: 100%;
 }
 
-.saaspricing-primary-spacing svg, .saaspricing-primary-btn svg, .saaspricing-vertical-padding svg{
+.saaspricing-primary-spacing svg, .saaspricing-secondary-btn span svg,
+.saaspricing-primary-btn svg, .saaspricing-secondary-spacing svg,
+.saaspricing-vertical-padding svg{
     height: 16px;
     width: 16px;
 }
-.saaspricing-primary-spacing svg, .saaspricing-primary-btn svg{
+
+.saaspricing-primary-spacing svg, .saaspricing-primary-btn svg,
+.saaspricing-horizontal-secondary .saaspricing-secondary-spacing svg{
     fill: var(--saaspricing-white);
 }
-.saaspricing-horizontal-primary .saaspricing-primary-spacing svg{
+
+.saaspricing-horizontal-primary .saaspricing-primary-spacing svg,
+.saaspricing-secondary-spacing svg, .saaspricing-secondary-btn span svg{
     fill: var(--saaspricing-primary);
 }
 

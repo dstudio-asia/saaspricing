@@ -1830,6 +1830,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-primary' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-primary span svg' => 'fill: {{VALUE}}',
             ],
         ]
     );
@@ -1850,6 +1851,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-primary:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-primary:hover span svg' => 'fill: {{VALUE}}',
             ],
         ]
     );
@@ -1991,6 +1993,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-secondary' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-secondary span svg' => 'fill: {{VALUE}}',
             ],
         ]
     );
@@ -2011,6 +2014,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-secondary:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-vertical-secondary:hover span svg' => 'fill: {{VALUE}}',
             ],
         ]
     );
