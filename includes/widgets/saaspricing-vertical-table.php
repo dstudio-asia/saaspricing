@@ -1806,7 +1806,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_primary_cta_section',
         [
-            'label' => esc_html__( 'Primary CTA', 'saaspricing' ),
+            'label' => esc_html__( 'Primary Button', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
         ]
@@ -1967,7 +1967,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_secondary_cta_section',
         [
-            'label' => esc_html__( 'Secondary CTA', 'saaspricing' ),
+            'label' => esc_html__( 'Secondary Button', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
         ]
