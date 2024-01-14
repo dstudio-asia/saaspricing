@@ -12,6 +12,10 @@
     --saaspricing-yellow:#f4b400;
 }
 
+svg, img {
+    display: unset;
+}
+
 .saaspricing-table p, .saaspricing-table h1,
 .saaspricing-table h2, .saaspricing-table h3,
 .saaspricing-table h4, .saaspricing-table h5,
@@ -527,7 +531,15 @@
 
 /* button css */
 
-.saaspricing-primary-btn, .wp-block-post-content a:where(:not(.wp-element-button)) {
+.saaspricing-primary-btn, .saaspricing-primary-btn:hover, .wp-block-post-content a:where(:not(.wp-element-button)), a:not([href]):not([tabindex]) {
+    color: var(--saaspricing-white);
+}
+
+.saaspricing-horizontal a:not([href]):not([tabindex]), .saaspricing-horizontal-primary, .saaspricing-horizontal-primary:hover {
+    color: var(--saaspricing-dark-gray);
+}
+
+.saaspricng-horizontal-secondary-main a:not([href]):not([tabindex]) {
     color: var(--saaspricing-white);
 }
 
