@@ -4821,6 +4821,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-1 svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -4848,6 +4849,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-1:hover svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -4952,6 +4954,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -4979,6 +4982,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -5081,6 +5085,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-3 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -5108,6 +5113,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',

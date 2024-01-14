@@ -35,6 +35,12 @@ svg, img {
 
 .saaspricing-table tr td{
     border: none;
+    text-align: unset;
+}
+
+.saaspricing-table tbody>tr:nth-child(odd)>td, 
+.saaspricing-table tbody>tr:nth-child(odd)>th {
+    background-color: transparent;
 }
 
 .saaspricing-horizontal .saaspricing-horizontal-sidebar a,
@@ -502,8 +508,9 @@ svg, img {
 }
 
 .saaspricing-vertical-feature li svg,
-.saasp-horizontal-icon-wrapper svg {
-    color: var(--saaspricing-primary);
+.saasp-horizontal-icon-wrapper svg,
+.saaspricing-cell-icon svg {
+    fill: var(--saaspricing-primary);
 }
 
 /* Sidebar */
@@ -531,7 +538,8 @@ svg, img {
 
 /* button css */
 
-.saaspricing-primary-btn, .saaspricing-primary-btn:hover, .wp-block-post-content a:where(:not(.wp-element-button)), a:not([href]):not([tabindex]) {
+.saaspricing-primary-btn, .saaspricing-primary-btn:hover, .wp-block-post-content a:where(:not(.wp-element-button)), a:not([href]):not([tabindex])
+, a:not([href]):not([tabindex]):hover {
     color: var(--saaspricing-white);
 }
 
