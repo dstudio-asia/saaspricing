@@ -53,6 +53,8 @@ svg, img {
 .saaspricing-table-description {
     font-size: 16px;
     color: var(--saaspricing-boulder);
+    max-height: 150px;
+    overflow-y: auto;
 }
 
 .saaspricing-price-table-head small {
