@@ -4661,7 +4661,6 @@ protected function register_controls() {
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-feature-list td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-list:last-child td' => 'padding-bottom: 0;',
             ],
         ]
     );
