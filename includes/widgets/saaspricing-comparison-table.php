@@ -6548,7 +6548,7 @@ protected function render() {
                         #>
                             <td class="saaspricing-price saaspricing-original-price saaspricing-comparison-header-alignment">
                                 <!-- Lightbox -->
-                                <# if ( '' !== settings['saasp_comparison_choose_media_' + i]['url'].url ) { #>
+                                <# if ( '' !== settings['saasp_comparison_choose_media_' + i]['url'] ) { #>
                                         <#
                                         let popup = ''
                                         if ( 'yes' === settings['saasp_comparison_media_light_box_' + i] ) {
