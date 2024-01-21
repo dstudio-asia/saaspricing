@@ -2,9 +2,9 @@
 Contributors: debuggersstudio
 Tags: elementor table, price table ,comparison table, elementor pricing
 Requires at least: 5.8
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,23 @@ SaasPricing provides a smooth, user-friendly interface that makes it easy to com
 3. Horizontal Table
 
 == Changelog ==
+
+= 1.0.3
+- Feat added border property to comparison table
+- Feat content template added
+- Fix footer cta each element gap
+- Fix tooltip hide/show not working
+- Fix when primary and secondary button at top there wasn't any gap between them
+- Fix button svg color and size in buttons
+- Fix fixed css for wordpress theme compatability
+- Fix table compitable issue for themes
+- Fix comparison table button svg color, in odd td there was different color
+- Fix primary and secondary button icon color not working
+- Fix justify cta option not working properly
+- Fix long table description issue in comparison table
+- Fix padding not working on last feature row
+- Fix broken images on content template when image removed or deleted
+- Fix last feature padding issues
 
 = 1.0.2
 - Fix Double URL Issue Of Comparison Table In Primary Button 

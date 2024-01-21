@@ -3150,6 +3150,134 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_comparison_table_border',
+        [
+            'label' => esc_html__( 'Table Border', 'saaspricing' ),
+            'type' =>  Controls_Manager::HEADING,
+            'separator' => 'before',
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_table_golbal_border_color',
+        [
+            'label' => esc_html__( 'Border Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}}  td.saaspricing-price.saaspricing-original-price.saaspricing-comparison-header-alignment' => 'border-color:{{VALUE}} !important;',
+                '{{WRAPPER}}  td.saaspricing-table-head.saaspricing-comparison-header-alignment' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}}  .saaspricing-main .saaspricing-table .saaspricing-footer-cta' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}}  .saaspricing-table .saaspricing-cell' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}}  .saaspricing-table tr td:first-child' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}}  tr.saaspricing-price-table-head.saaspricing-table-background td.saaspricing-blank:first-child' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}}  .saaspricing-cta-main td.saaspricing-blank' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}}  .saaspricing-table tr td:first-child' => 'border-color: {{VALUE}} !important',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-main' => 'border-color: {{VALUE}} !important',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_table_border_row_weight',
+        [
+            'label' => esc_html__( 'Feature Outer Width', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' =>0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table tr td:first-child' => 'border-left: {{SIZE}}{{UNIT}} solid; border-right: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} tr.saaspricing-price-table-head.saaspricing-table-background td.saaspricing-blank:first-child' => 'border-top: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} .saaspricing-cta-main td.saaspricing-blank' => 'border-bottom: {{SIZE}}{{UNIT}} solid;',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_table_border_column_weight',
+        [
+            'label' => esc_html__( 'Feature Inner Width', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' =>0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-main' => 'border: {{SIZE}}{{UNIT}} solid;',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_table_row_border_weight',
+        [
+            'label' => esc_html__( 'Column Width', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' =>0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} td.saaspricing-price.saaspricing-original-price.saaspricing-comparison-header-alignment' => 'border-left: {{SIZE}}{{UNIT}} solid; border-right: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} td.saaspricing-table-head.saaspricing-comparison-header-alignment' => 'border-left: {{SIZE}}{{UNIT}} solid; border-right: {{SIZE}}{{UNIT}} solid; border-top: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-footer-cta' => 'border-left: {{SIZE}}{{UNIT}} solid; border-right: {{SIZE}}{{UNIT}} solid; border-bottom: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-cell' => 'border-left: {{SIZE}}{{UNIT}} solid; border-right: {{SIZE}}{{UNIT}} solid;',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_table_column_border_weight',
+        [
+            'label' => esc_html__( 'Row Width', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 10,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' =>0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} td.saaspricing-price.saaspricing-original-price.saaspricing-comparison-header-alignment' => 'border-top: {{SIZE}}{{UNIT}} solid; border-bottom: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} td.saaspricing-table-head.saaspricing-comparison-header-alignment' => 'border-bottom: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-footer-cta' => 'border-top: {{SIZE}}{{UNIT}} solid;',
+                '{{WRAPPER}} .saaspricing-table .saaspricing-cell' => 'border-bottom: {{SIZE}}{{UNIT}} solid; border-top: {{SIZE}}{{UNIT}} solid;',
+            ],
+        ]
+    );
+
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -4661,7 +4789,6 @@ protected function register_controls() {
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-feature-list td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-list:last-child td' => 'padding-bottom: 0;',
             ],
         ]
     );
@@ -4725,7 +4852,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_primary_cta_section',
         [
-            'label' => esc_html__( 'Primary CTA', 'saaspricing' ),
+            'label' => esc_html__( 'Primary Buttons', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
         ]
@@ -4821,6 +4948,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-1 svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -4848,6 +4976,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-1:hover svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -4952,6 +5081,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -4979,6 +5109,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -5081,6 +5212,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-3 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -5108,6 +5240,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -5182,7 +5315,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_secondary_cta_section',
         [
-            'label' => esc_html__( 'Secondary CTA', 'saaspricing' ),
+            'label' => esc_html__( 'Secondary Buttons', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
         ]
@@ -5278,6 +5411,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-1 svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -5305,6 +5439,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-1:hover svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -5409,6 +5544,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-2 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -5435,6 +5571,7 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
             'condition' => [
@@ -5539,6 +5676,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-3 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -5566,6 +5704,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-3:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6060,15 +6199,15 @@ protected function render() {
                                             echo esc_attr(' w-100');
                                         }
                                         if( 'extra-small' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-xsm-btn');
+                                            echo esc_attr(' saaspricing-xsm-btn ');
                                         }elseif( 'small' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-sm-btn');
+                                            echo esc_attr(' saaspricing-sm-btn ');
                                         }
                                         elseif( 'medium' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-m-btn');
+                                            echo esc_attr(' saaspricing-m-btn ');
                                         }
                                         elseif( 'large' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
-                                            echo esc_attr(' saaspricing-l-btn');
+                                            echo esc_attr(' saaspricing-l-btn ');
                                         }
                                         elseif( 'extra-large' === $settings['saasp_comparison_secondary_cta_size_'.$i] ){
                                             echo esc_attr(' saaspricing-xl-btn ');
@@ -6101,11 +6240,11 @@ protected function render() {
                         foreach( $settings['saasp_comparison_table_feature_list_1'] as $saasp_features_one ){
                     ?>
                             <tr class="saaspricing-feature-list">
-                                <td class="saaspricing-feature-main d-flex align-items-center">
+                                <td class="saaspricing-feature-main">
                                     <?php
                                     if( 'yes' === $saasp_features_one['saasp_comparison_show_features_tooltip'] && 
-                                    'before' === $saasp_features_one['saasp_comparison_features_tooltip_position'] || 
-                                    empty($saasp_features_one['saasp_comparison_features_tooltip_position']) ){
+                                    ('before' === $saasp_features_one['saasp_comparison_features_tooltip_position'] || 
+                                    empty($saasp_features_one['saasp_comparison_features_tooltip_position'])) ){
                                     ?>
                                         <span data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="<?php echo esc_attr($saasp_features_one['saasp_comparison_features_tooltip_description']); ?>"
@@ -6145,11 +6284,11 @@ protected function render() {
                         foreach( $settings['saasp_comparison_table_feature_list_2'] as $saasp_features_two ){
                     ?>
                        <tr class="saaspricing-feature-list">
-                            <td class="saaspricing-feature-main d-flex align-items-center">
+                            <td class="saaspricing-feature-main">
                                 <?php
                                 if( 'yes' === $saasp_features_two['saasp_comparison_show_features_tooltip'] && 
-                                'before' === $saasp_features_two['saasp_comparison_features_tooltip_position'] ||
-                                empty($saasp_features_two['saasp_comparison_features_tooltip_position']) ){
+                                ('before' === $saasp_features_two['saasp_comparison_features_tooltip_position'] ||
+                                empty($saasp_features_two['saasp_comparison_features_tooltip_position'])) ){
                                 ?>
                                     <span data-bs-toggle="tooltip" data-bs-placement="top"
                                     title="<?php echo esc_attr($saasp_features_two['saasp_comparison_features_tooltip_description']); ?>"
@@ -6197,11 +6336,11 @@ protected function render() {
                         foreach( $settings['saasp_comparison_table_feature_list_3'] as $saasp_features_three ){
                     ?>
                             <tr class="saaspricing-feature-list">
-                                <td class="saaspricing-feature-main d-flex align-items-center">
+                                <td class="saaspricing-feature-main">
                                     <?php
                                     if( 'yes' === $saasp_features_three['saasp_comparison_show_features_tooltip'] && 
-                                    'before' === $saasp_features_three['saasp_comparison_features_tooltip_position'] ||
-                                    empty($saasp_features_three['saasp_comparison_features_tooltip_position']) ){
+                                    ('before' === $saasp_features_three['saasp_comparison_features_tooltip_position'] ||
+                                    empty($saasp_features_three['saasp_comparison_features_tooltip_position'])) ){
                                     ?>
                                         <span data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="<?php echo esc_attr($saasp_features_three['saasp_comparison_features_tooltip_description']); ?>"
@@ -6408,4 +6547,516 @@ protected function render() {
         </div>
 <?php
  }
+ protected function _content_template() {
+    ?>
+        <div class="saaspricing-main table-responsive-lg position-relative">
+            <table class="saaspricing-table" role="presentation">
+                <thead>
+                <#
+                let symbols = {
+                    dollar: '&#36;',
+                    euro: '&#128;',
+                    franc: '&#8355;',
+                    pound: '&#163;',
+                    ruble: '&#8381;',
+                    shekel: '&#8362;',
+                    baht: '&#3647;',
+                    yen: '&#165;',
+                    won: '&#8361;',
+                    guilder: '&fnof;',
+                    peso: '&#8369;',
+                    peseta: '&#8359;',
+                    lira: '&#8356;',
+                    rupee: '&#8360;',
+                    indian_rupee: '&#8377;',
+                    real: 'R$',
+                    krona: 'kr'
+                };
+    
+                let symbol = '',
+                    iconsHTML = {};
+                #>
+    
+                <!-- Ribbon is not working perfectly  -->
+                <#
+                    if ( 'yes' === settings.saasp_comparison_show_ribbon_1 || 'yes' === settings.saasp_comparison_show_ribbon_2 || 'yes' === settings.saasp_comparison_show_ribbon_3  ) {
+                #>
+                <tr class="saaspricing-ribbon-table-row">
+                    <td class="saaspricing-blank"></td>
+                    <#
+                    let saasp_expire_date_one = settings.saasp_comparison_expire_date_1
+                    let saasp_expire_date_two = settings.saasp_comparison_expire_date_2
+                    let saasp_expire_date_three = settings.saasp_comparison_expire_date_3
+    
+                    for (let i = 1, j = 0; i <= settings.saasp_comparison_select_columns, j < settings.saasp_comparison_select_columns; i++, j++) {
+                        let saasp_visible = ''
+    
+                        if ('yes' === settings['saasp_comparison_show_ribbon_' + i]) {
+                            saasp_visible
+                        } else {
+                            saasp_visible = 'saasp-hidden'
+                        }
+    
+                        #>
+                            <td class="saaspricing-ribbon-wrapper saaspricing-common-ribbon saaspricing-comparison-header-alignment {{ saasp_visible }}" 
+                                data-expire-date-one="{{ saasp_expire_date_one }}" 
+                                data-expire-date-two="{{ saasp_expire_date_two }}" 
+                                data-expire-date-three="{{ saasp_expire_date_three }}">
+                                <div class="saaspricing-ribbon-title">
+                                    {{{ settings['saasp_comparison_ribbon_title_' + i] }}}
+                                </div>
+                                <div class="saaspricing-countdown"> 
+                                    <#
+                                    if ('yes' === settings['saasp_comparison_show_countdown_' + i] && '' !== settings['saasp_comparison_show_countdown_' + i]) {
+                                        #>
+                                        <div class="saaspricing-show-expire-date" data-countdown-index="{{ j }}" 
+                                            data-expire-date-{{ i }}="{{ settings['saasp_comparison_expire_date_' + i] }}">
+                                            <?php echo esc_html__('00d: 00h: 00m: 00s','saaspricing-pro'); ?>
+                                        </div>
+                                        <#
+                                    }
+                                    #>
+                                </div>
+                            </td>
+                        <#
+                            }
+                        #>
+                </tr>
+                <#
+                }
+                #>
+                <!-- Table head -->
+                <#
+                    let selectColumns = settings.saasp_comparison_select_columns
+                    if (selectColumns === '1' || selectColumns === '2' || selectColumns === '3') {
+                #>
+                    <tr class="saaspricing-price-table-head saaspricing-table-background">
+                        <td class="saaspricing-blank"></td>
+                        <#
+                        for (let i = 1; i <= selectColumns; i++) {
+                            let headerTitleText = settings['saasp_comparison_header_title_text_' + i];
+                            let headerTitleDescription = settings['saasp_comparison_header_title_description_' + i];
+                            
+                            if (headerTitleText !== '' || headerTitleDescription !== '') {
+                                #>
+                                <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
+                                    <{{{ settings.saasp_comparison_column_html_title_tag }}} class="saaspricing-heading-title">{{{ headerTitleText }}}</{{{ settings.saasp_comparison_column_html_title_tag }}}>
+                                    <small>{{{ headerTitleDescription }}}</small>
+                                </td>
+                                <#
+                            }
+                        }
+                        #>
+                    </tr>
+                <#
+                }
+                #>
+                    <!-- Table images, pricing, review  -->
+                    <tr class="saaspricing-table-main saaspricing-table-background">
+                        <td class="saaspricing-table-title-description"> 
+                            <#
+                                if ('' !== settings.saasp_comparison_header_table_title) {
+                            #>
+                                <{{{settings.saasp_comparison_header_table_title_tag}}} class="d-block saaspricing-table-title" role="heading">
+                                    {{{ settings.saasp_comparison_header_table_title }}}
+                                </{{{settings.saasp_comparison_header_table_title_tag}}}>
+                            <#
+                                }
+                                if ('' !== settings.saasp_comparison_header_table_description) {
+                            #>
+                                <span class="d-block saaspricing-w-sm-100 saaspricing-table-description">
+                                    {{{ settings.saasp_comparison_header_table_description }}}
+                                </span>
+                            <#
+                                }
+                            #>
+                        </td>
+                        <#
+                            for( let i = 1; i <= settings.saasp_comparison_select_columns; i++ ) {
+                        #>
+                            <td class="saaspricing-price saaspricing-original-price saaspricing-comparison-header-alignment">
+                                <!-- Lightbox -->
+                                <# if ( '' !== settings['saasp_comparison_choose_media_' + i]['url'] ) { #>
+                                        <#
+                                        let popup = ''
+                                        if ( 'yes' === settings['saasp_comparison_media_light_box_' + i] ) {
+                                            popup = 'saaspricing-image-popup'
+                                        }
+                                        #>
+                                        <a class="{{popup}}"  href="{{ settings['saasp_comparison_choose_media_' + i]['url'] }}">
+                                            <img src="{{{ settings['saasp_comparison_choose_media_' + i]['url'] }}}" class="{{{ 'saaspricing-header-image-' + i }}}" alt="comparison table media {{ i }}">
+                                        </a>
+                                <# } #>
+                                <!-- Pricing -->
+                                <div class="saasspricing-pricing-block saaspricing-comparison-header-alignment" >
+    
+                                    <# if ( 'yes' === settings['saasp_comparison_sale_' + i] ) { #>
+                                        <s class="saaspricing-original-slashed-price me-2">
+                                            <# if ( 'none' !== settings['saasp_comparison_currency_symbol_' + i] && 'yes' === settings['saasp_comparison_sale_' + i] ) { #>
+                                                <span>
+                                                    <# if ( 'custom' !== settings['saasp_comparison_currency_symbol_' + i] ) { #>
+                                                        {{{ symbols[settings['saasp_comparison_currency_symbol_' + i]] }}}
+                                                    <# } else { #>
+                                                        {{{ symbols[settings['saasp_comparison_currency_symbol_custom_' + i]] }}}
+                                                    <# } #>
+                                                </span>
+                                            <# } #>
+                                            <# if ( '' !== settings['saasp_comparison_original_price_' + i] ) { #>
+                                                <span>
+                                                    {{{ settings['saasp_comparison_original_price_' + i] }}}
+                                                </span>
+                                            <# } #>
+                                        </s>
+                                    <# } #>
+    
+                                    <# if ( 'none' !== settings['saasp_comparison_currency_symbol_' + i] &&
+                                    ( 'before' === settings['saasp_comparison_header_pricing_symbol_position'] || 
+                                    '' === settings['saasp_comparison_header_pricing_symbol_position'] ) ) {                         
+                                    #>
+                                        <span class="saaspricing-price-text saaspricing-price-symbol saaspricing-price-typography">
+                                        <# if ( 'custom' !== settings['saasp_comparison_currency_symbol_' + i] ) { #>
+                                            {{{ symbols[settings['saasp_comparison_currency_symbol_' + i]] }}}
+                                        <# } else { #>
+                                            {{{ symbols[settings['saasp_comparison_currency_symbol_custom_' + i]] }}}
+                                        <# } #>
+                                        </span>
+                                    <# 
+                                        } 
+                                    #>
+    
+                                    <# if ( '' === settings['saasp_comparison_currency_format_' + i] ) { #>
+                                        <span class="saaspricing-price-text saaspricing-price-typography">
+                                            {{{ settings['sassp_comparison_price_' + i].split('.')[0] }}}
+                                        </span>
+                                    <# if ( '' !== settings['sassp_comparison_price_' + i].split('.')[1] ) { #>
+                                        <span class="saaspricing-price-text saaspricing-fraction-price saaspricing-price-typography">
+                                            {{{ settings['sassp_comparison_price_' + i].split('.')[1] }}}
+                                        </span>
+                                    <# } #>
+                                    <# } else { #>
+                                        <span class="saaspricing-price-text saaspricing-price-typography">
+                                            {{{ settings['sassp_comparison_price_' + i] }}}
+                                        </span>
+                                    <# } #>
+    
+                                    <# if ( 'none' !== settings['saasp_comparison_currency_symbol_' + i] && 'after' === settings['saasp_comparison_header_pricing_symbol_position'] ) { #>
+                                        <span class="saaspricing-price-text saaspricing-price-symbol saaspricing-price-typography">
+                                            <# if ( 'custom' !== settings['saasp_comparison_currency_symbol_' + i] ) { #>
+                                                {{{ symbols[settings['saasp_comparison_currency_symbol_' + i]] }}}
+                                            <# } else { #>
+                                                {{{ symbols[settings['saasp_comparison_currency_symbol_custom_' + i]] }}}
+                                            <# } #>
+                                        </span>
+                                    <# } #>
+    
+                                    <# if ( '' !== settings['saasp_comparison_period_' + i] ) { #>
+                                        <span class="saaspricing-period ms-1 saaspricing-comparison-header-alignment <# if ( 'below' === settings['saasp_comparison_header_period_position'] ) { #>w-100<# } #>">
+                                            {{{ settings['saasp_comparison_period_' + i] }}}
+                                        </span>
+                                    <# } #>
+                                </div>
+                                <!-- Review  -->
+                                <# if ( 'yes' === settings['saasp_comparison_show_rating_' + i] && '' !== settings['saasp_comparison_rating_num_' + i] ) { #>
+                                    <div class="saaspricing-ratings">
+                                        <div class="saaspricing-star-icon fs-6">
+                                            <# let saasp_rating = settings['saasp_comparison_rating_num_' + i]; #>
+                                            <# let saasp_full_stars = Math.floor(saasp_rating); #>
+                                            <# let saasp_half_star = saasp_rating - saasp_full_stars; #>
+    
+                                            <# for (let k = 0; k < saasp_full_stars; k++) { #>
+                                                <span class="saaspricing-icons">
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            <# } #>
+    
+                                            <# if (saasp_half_star >= 0.5) { #>
+                                                <span class="saaspricing-icons-half">
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            <# } #>
+    
+                                            <# for (let j = 0; j < 5 - Math.ceil(settings['saasp_comparison_rating_num_' + i]); j++) { #>
+                                                <span class="saaspricing-icons-none">
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            <# } #>
+    
+                                            <# if ('' !== settings['saasp_comparison_rating_counter_' + i]) { #>
+                                                <small class="saaspricing-review-text">
+                                                    {{{ '(' + settings['saasp_comparison_rating_counter_' + i] + ')' }}}
+                                                </small>
+                                            <# } #>
+                                        </div>
+                                    </div>
+                                <# } #>
+                                <!-- Review End -->
+                                <!-- top primary button start -->
+                                <#
+                                if ('' !== settings['saasp_comparison_primary_cta_text_' + i] && 'top' === settings['saasp_comparison_primary_cta_position_' + i]) {
+                                    if ('yes' === settings['saasp_comparison_primary_cta_switch_' + i]) {
+                                #>
+                                <a class="btn saaspricing-primary-btn saaspricing-primary-{{ i }} {{ 'justify' === settings['saasp_comparison_cta_alignment'] ? 'w-100' : '' }}
+                                {{ 'extra-small' === settings['saasp_comparison_primary_cta_size_' + i] ? 'saaspricing-xsm-btn' : '' }}
+                                {{ 'small' === settings['saasp_comparison_primary_cta_size_' + i] ? 'saaspricing-sm-btn' : '' }}
+                                {{ 'medium' === settings['saasp_comparison_primary_cta_size_' + i] ? 'saaspricing-m-btn' : '' }}
+                                {{ 'large' === settings['saasp_comparison_primary_cta_size_' + i] ? 'saaspricing-l-btn' : '' }}
+                                {{ 'extra-large' === settings['saasp_comparison_primary_cta_size_' + i] ? 'saaspricing-xl-btn' : '' }}"
+                                role="button"
+                                href="{{ settings['saasp_comparison_primary_cta_url_' + i]['url'] }}"
+                                >
+                                {{{ settings['saasp_comparison_primary_cta_text_' + i] }}}
+                                    <span class="saaspricing-primary-spacing-{{ i }}">
+                                        <#
+                                            let topPrimary = elementor.helpers.renderIcon( view, settings['saasp_comparison_primary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                        #>
+                                        {{{ topPrimary.value }}}
+                                    </span>
+                                </a>
+                                <#
+                                    }
+                                }
+                                #>
+                                <!-- top primary button end -->
+                                <# 
+                                    let saasp_margin_top = '';
+                                    if ('top' === settings['saasp_comparison_primary_cta_position_' + i] && 'yes' === settings['saasp_comparison_primary_cta_switch_' + i]) {
+                                #>
+                                <br/>
+                                <#
+                                        saasp_margin_top = 'mt-3';
+                                    }
+                                #>
+                                <!-- top secondary button start -->
+                                <#
+                                    if ('' !== settings['saasp_comparison_secondary_cta_text_' + i] && 'top' === settings['saasp_comparison_secondary_cta_position_' + i]) {
+                                        if ('yes' === settings['saasp_comparison_secondary_cta_switch_' + i]) {
+                                            let button_classes = []
+                                            if ('justify' === settings['saasp_comparison_cta_alignment']) {
+                                                button_classes.push('w-100');
+                                            }
+                                            let size = settings['saasp_comparison_secondary_cta_size_' + i];
+                                            if ('extra-small' === size) {
+                                                button_classes.push('saaspricing-xsm-btn');
+                                            } else if ('small' === size) {
+                                                button_classes.push('saaspricing-sm-btn');
+                                            } else if ('medium' === size) {
+                                                button_classes.push('saaspricing-m-btn');
+                                            } else if ('large' === size) {
+                                                button_classes.push('saaspricing-l-btn');
+                                            } else if ('extra-large' === size) {
+                                                button_classes.push('saaspricing-xl-btn');
+                                            }
+                                #>
+                                    <a class="btn btn-link saaspricing-secondary-btn saaspricing-secondary-{{ i }} {{ button_classes.join(' ') }} {{ saasp_margin_top }}"
+                                    role="button" href="{{ settings['saasp_comparison_secondary_cta_url_' + i]['url'] }}">
+                                        {{{ settings['saasp_comparison_secondary_cta_text_' + i] }}}
+                                        <span class="saaspricing-secondary-spacing-{{ i }}">
+                                        <#
+                                            let topSecondary = elementor.helpers.renderIcon( view, settings['saasp_comparison_secondary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                        #>
+                                        {{{ topSecondary.value }}}
+                                        </span>
+                                    </a>
+                                <#
+                                    }
+                                }
+                                #>
+                            </td>
+                        <#
+                        }
+                        #>
+                    </tr>
+                </thead>
+                <tbody class="saaspricing-table-body saaspricing-table-background">
+                <# if ('1' === settings.saasp_comparison_select_columns && settings.saasp_comparison_table_feature_list_1) { #>
+                    <# _.each(settings.saasp_comparison_table_feature_list_1, function(saasp_features_one) { #>
+                        <tr class="saaspricing-feature-list">
+                            <td class="saaspricing-feature-main">
+                                <# if ('yes' === saasp_features_one.saasp_comparison_show_features_tooltip && ('before' === saasp_features_one.saasp_comparison_features_tooltip_position || !saasp_features_one.saasp_comparison_features_tooltip_position)) { #>
+                                    <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ saasp_features_one.saasp_comparison_features_tooltip_description }}" class="saaspricing-price-table-help">
+                                        <i class="far fa-fw fa-question-circle"></i>
+                                    </span>
+                                <# } #>
+                                <span class="saaspricing-feature-title">
+                                    {{{ saasp_features_one.saasp_comparison_feature_title }}}
+                                </span>
+                                <# if ('yes' === saasp_features_one.saasp_comparison_show_features_tooltip && 'after' === saasp_features_one.saasp_comparison_features_tooltip_position) { #>
+                                    <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ saasp_features_one.saasp_comparison_features_tooltip_description }}" class="saaspricing-price-table-help">
+                                        <i class="far fa-fw fa-question-circle"></i>
+                                    </span>
+                                <# } #>
+                            </td>
+                            <td class="saaspricing-cell">
+                                <span class="saaspricing-cell-icon">
+                                    <#
+                                        let columnOnceFeature = elementor.helpers.renderIcon( view, saasp_features_one.saasp_comparison_feature_icon , { 'aria-hidden': true }, 'i' , 'object' );
+                                    #>
+                                    {{{ columnOnceFeature.value }}}
+                                </span>
+                                <span class="saaspricing-cell-text">
+                                    {{{ saasp_features_one.saasp_comparison_feature_text }}}
+                                </span>
+                            </td>
+                        </tr>
+                    <# }); #>
+                    <# } else if ('2' === settings.saasp_comparison_select_columns && settings.saasp_comparison_table_feature_list_2) { #>
+                        <# _.each(settings.saasp_comparison_table_feature_list_2, function(saasp_features_two) { #>
+                            <tr class="saaspricing-feature-list">
+                                <td class="saaspricing-feature-main">
+                                    <# if ('yes' === saasp_features_two.saasp_comparison_show_features_tooltip && ('before' === saasp_features_two.saasp_comparison_features_tooltip_position || !saasp_features_two.saasp_comparison_features_tooltip_position)) { #>
+                                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ saasp_features_two.saasp_comparison_features_tooltip_description }}" class="saaspricing-price-table-help">
+                                            <i class="far fa-fw fa-question-circle"></i>
+                                        </span>
+                                    <# } #>
+                                    <span class="saaspricing-feature-title">
+                                        {{{ saasp_features_two.saasp_comparison_feature_title }}}
+                                    </span>
+                                    <# if ('yes' === saasp_features_two.saasp_comparison_show_features_tooltip && 'after' === saasp_features_two.saasp_comparison_features_tooltip_position) { #>
+                                        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ saasp_features_two.saasp_comparison_features_tooltip_description }}" class="saaspricing-price-table-help">
+                                            <i class="far fa-fw fa-question-circle"></i>
+                                        </span>
+                                    <# } #>
+                                </td>
+                                <td class="saaspricing-cell">
+                                    <span class="saaspricing-cell-icon">
+                                    <#
+                                        let columnTwoFeatureOne = elementor.helpers.renderIcon( view, saasp_features_two.saasp_comparison_feature_icon_1 , { 'aria-hidden': true }, 'i' , 'object' );
+                                    #>
+                                    {{{ columnTwoFeatureOne.value }}}
+                                    </span>
+                                    <span class="saaspricing-cell-text">
+                                        {{{ saasp_features_two.saasp_comparison_feature_text_1 }}}
+                                    </span>
+                                </td>
+                                <td class="saaspricing-cell">
+                                    <span class="saaspricing-cell-icon">
+                                    <#
+                                        let columnTwoFeatureTwo = elementor.helpers.renderIcon( view, saasp_features_two.saasp_comparison_feature_icon_2 , { 'aria-hidden': true }, 'i' , 'object' );
+                                    #>
+                                    {{{ columnTwoFeatureTwo.value }}}
+                                    </span>
+                                    <span class="saaspricing-cell-text">
+                                        {{{ saasp_features_two.saasp_comparison_feature_text_2 }}}
+                                    </span>
+                                </td>
+                            </tr>
+                        <# }); #>
+                        <# } else if ('3' === settings.saasp_comparison_select_columns && settings.saasp_comparison_table_feature_list_3) { #>
+                            <# _.each(settings.saasp_comparison_table_feature_list_3, function(saasp_features_three) { #>
+                                <tr class="saaspricing-feature-list">
+                                    <td class="saaspricing-feature-main">
+                                        <# if ('yes' === saasp_features_three.saasp_comparison_show_features_tooltip && ('before' === saasp_features_three.saasp_comparison_features_tooltip_position || !saasp_features_three.saasp_comparison_features_tooltip_position)) { #>
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ saasp_features_three.saasp_comparison_features_tooltip_description }}" class="saaspricing-price-table-help">
+                                                <i class="far fa-fw fa-question-circle"></i>
+                                            </span>
+                                        <# } #>
+                                        <span class="saaspricing-feature-title">
+                                            {{{ saasp_features_three.saasp_comparison_feature_title }}}
+                                        </span>
+                                        <# if ('yes' === saasp_features_three.saasp_comparison_show_features_tooltip && 'after' === saasp_features_three.saasp_comparison_features_tooltip_position) { #>
+                                            <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ saasp_features_three.saasp_comparison_features_tooltip_description }}" class="saaspricing-price-table-help">
+                                                <i class="far fa-fw fa-question-circle"></i>
+                                            </span>
+                                        <# } #>
+                                    </td>
+                                    <td class="saaspricing-cell">
+                                        <span class="saaspricing-cell-icon">
+                                            <#
+                                                let columnThreeFeatureOne = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_1 , { 'aria-hidden': true }, 'i' , 'object' );
+                                            #>
+                                            {{{ columnThreeFeatureOne.value }}}
+                                        </span>
+                                        <span class="saaspricing-cell-text">
+                                            {{{ saasp_features_three.saasp_comparison_feature_text_1 }}}
+                                        </span>
+                                    </td>
+                                    <td class="saaspricing-cell">
+                                        <span class="saaspricing-cell-icon">
+                                            <#
+                                                let columnThreeFeatureTwo = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_2 , { 'aria-hidden': true }, 'i' , 'object' );
+                                            #>
+                                            {{{ columnThreeFeatureTwo.value }}}
+                                        </span>
+                                        <span class="saaspricing-cell-text">
+                                            {{{ saasp_features_three.saasp_comparison_feature_text_2 }}}
+                                        </span>
+                                    </td>
+                                    <td class="saaspricing-cell">
+                                        <span class="saaspricing-cell-icon">
+                                            <#
+                                                let columnThreeFeatureThree = elementor.helpers.renderIcon( view, saasp_features_three.saasp_comparison_feature_icon_3 , { 'aria-hidden': true }, 'i' , 'object' );
+                                            #>
+                                            {{{ columnThreeFeatureThree.value }}}
+                                        </span>
+                                        <span class="saaspricing-cell-text">
+                                            {{{ saasp_features_three.saasp_comparison_feature_text_3 }}}
+                                        </span>
+                                    </td>
+                                </tr>
+                            <# }); #>
+                    <# } #>
+                </tbody>
+                <tfoot class="saaspricing-table-background">
+                    <# if ('bottom' === settings.saasp_comparison_primary_cta_position_1 || 
+                    'bottom' === settings.saasp_comparison_secondary_cta_position_1 || 
+                    'bottom' === settings.saasp_comparison_primary_cta_position_2 || 
+                    'bottom' === settings.saasp_comparison_secondary_cta_position_2 || 
+                    'bottom' === settings.saasp_comparison_primary_cta_position_3 || 
+                    'bottom' === settings.saasp_comparison_secondary_cta_position_3) { #>
+                        <#
+                            let ctaAlignment = 'text-start'
+                            if ('center' === settings.saasp_comparison_cta_alignment) {
+                                ctaAlignment = 'text-center'
+                            } else if ('right' === settings.saasp_comparison_cta_alignment) { 
+                                ctaAlignment = 'text-end'
+                            } 
+                        #>
+                        <tr class="saaspricing-cta-main {{ctaAlignment}}">
+                            <td class="saaspricing-blank"></td>
+                            <# for (let i = 1; i <= settings.saasp_comparison_select_columns; i++) { #>
+                                <td class="saaspricing-footer-cta">
+                                    <# if ('' !== settings['saasp_comparison_primary_cta_text_' + i] && ('bottom' === settings['saasp_comparison_primary_cta_position_' + i] || !settings['saasp_comparison_primary_cta_position_' + i])) { #>
+                                        <# if ('yes' === settings['saasp_comparison_primary_cta_switch_' + i]) { #>
+                                            <a class="btn saaspricing-primary-btn saaspricing-primary-{{ i }}{{ 'justify' === settings.saasp_comparison_cta_alignment ? ' w-100' : '' }}{{ 'extra-small' === settings['saasp_comparison_primary_cta_size_' + i] ? ' saaspricing-xsm-btn' : '' }}{{ 'small' === settings['saasp_comparison_primary_cta_size_' + i] ? ' saaspricing-sm-btn' : '' }}{{ 'medium' === settings['saasp_comparison_primary_cta_size_' + i] ? ' saaspricing-m-btn' : '' }}{{ 'large' === settings['saasp_comparison_primary_cta_size_' + i] ? ' saaspricing-l-btn' : '' }}{{ 'extra-large' === settings['saasp_comparison_primary_cta_size_' + i] ? ' saaspricing-xl-btn' : '' }}" role="button" href="{{ settings['saasp_comparison_primary_cta_url_' + i]['url'] }}"
+                                            >
+                                                {{{ settings['saasp_comparison_primary_cta_text_' + i] }}}
+                                                <span class="saaspricing-primary-spacing-{{ i }}">
+                                                    <#
+                                                        let bottomPrimary = elementor.helpers.renderIcon( view, settings['saasp_comparison_primary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                                    #>
+                                                    {{{ bottomPrimary.value }}}
+                                                </span>
+                                            </a>
+                                        <# } #>
+                                    <# } #>
+                                    <# if ('bottom' === settings['saasp_comparison_primary_cta_position_' + i] && 'yes' === settings['saasp_comparison_primary_cta_switch_' + i] ) { #>
+                                        <br/>
+                                    <# } #>
+                                    <# 
+                                        if ('' !== settings['saasp_comparison_secondary_cta_text_' + i] && ('bottom' === settings['saasp_comparison_secondary_cta_position_' + i] || !settings['saasp_comparison_secondary_cta_position_' + i])) {
+                                            if ('yes' === settings['saasp_comparison_secondary_cta_switch_' + i]) {
+                                    #>
+                                       
+                                            <a class="btn btn-link saaspricing-secondary-btn saaspricing-secondary-{{ i }}{{ 'justify' === settings.saasp_comparison_cta_alignment ? ' w-100' : '' }}{{ 'extra-small' === settings['saasp_comparison_secondary_cta_size_' + i] ? ' saaspricing-xsm-btn' : '' }}{{ 'small' === settings['saasp_comparison_secondary_cta_size_' + i] ? ' saaspricing-sm-btn' : '' }}{{ 'medium' === settings['saasp_comparison_secondary_cta_size_' + i] ? ' saaspricing-m-btn' : '' }}{{ 'large' === settings['saasp_comparison_secondary_cta_size_' + i] ? ' saaspricing-l-btn' : '' }}{{ 'extra-large' === settings['saasp_comparison_secondary_cta_size_' + i] ? ' saaspricing-xl-btn' : '' }}" role="button" href="{{ settings['saasp_comparison_secondary_cta_url_' + i]['url'] }}">
+                                                {{{ settings['saasp_comparison_secondary_cta_text_' + i] }}}
+                                                <span class="saaspricing-secondary-spacing-{{ i }}">
+                                                    <#
+                                                        let bottomSecondary = elementor.helpers.renderIcon( view, settings['saasp_comparison_secondary_cta_icon_' + i], { 'aria-hidden': true }, 'i' , 'object' );
+                                                    #>
+                                                    {{{ bottomSecondary.value }}}
+                                                </span>
+                                            </a>
+                                    <# 
+                                            }
+                                        } 
+                                    #>
+                                </td>
+                            <# } #>
+                        </tr>
+                    <# } #>
+                </tfoot>
+            </table>
+        </div>
+    <?php
+    }
 }

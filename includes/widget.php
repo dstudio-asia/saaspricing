@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.0.2';
+	const VERSION = '1.0.3';
 
 	/**
 	 * Minimum Elementor Version
@@ -209,6 +209,7 @@ final class Saas_Pricing {
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'saasp_editor_styles' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'saasp_register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [$this,'saasp_add_categories']);
+		add_filter( 'plugin_action_links_saaspricing/saaspricing.php', [$this,'saasp_action_link']);
 	}
 
 	public function saasp_frontend_styles() {
@@ -274,6 +275,12 @@ final class Saas_Pricing {
 			]
 		);
 	
+	}
+
+	function saasp_action_link($actions) {
+		
+		$actions[] = '<a href="https://www.templatemonster.com/wordpress-plugins/saaspricing-pro-all-in-one-pricing-table-plugin-for-wordpress-366508.html" class="elementor-plugins-gopro" target="_blank">Get Pro</a>';
+		return $actions;
 	}
 
 }
