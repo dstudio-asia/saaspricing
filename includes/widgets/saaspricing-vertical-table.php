@@ -2111,6 +2111,14 @@ protected function register_controls() {
             'label' => esc_html__( 'Padding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
+            'default' => [
+                'top' => 0,
+                'right' => 0,
+                'bottom' => 0,
+                'left' => 0,
+                'unit' => 'px',
+                'isLinked' => false,
+            ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-secondary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
