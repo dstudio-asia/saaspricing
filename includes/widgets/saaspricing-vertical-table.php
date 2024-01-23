@@ -2353,9 +2353,10 @@ $settings = $this->get_settings_for_display();
                     <!-- Table review -->
                     <?php
                     if( 'yes' === $settings['saasp_vertical_show_rating'] && '' !== $settings['saasp_vertical_rating_num'] ){
+                        $saasp_top_gap = 'yes' === $settings['saasp_vertical_show_countdown'] ? 'gap-30' : 'no-gap' ;
                     ?>
                         <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
-                            <div class="saaspricing-star-icon fs-6"> 
+                            <div class="saaspricing-star-icon <?php echo esc_attr($saasp_top_gap); ?> fs-6"> 
                                 <?php                                    
                                 $saasp_rating = $settings['saasp_vertical_rating_num'];
                                 $saasp_full_stars = floor( $saasp_rating);
@@ -2823,9 +2824,12 @@ $settings = $this->get_settings_for_display();
                             </div>
                         <# } #>
                         <!-- Table review -->
-                        <# if ( 'yes' === settings.saasp_vertical_show_rating && settings.saasp_vertical_rating_num ) { #>
+                        <# 
+                        if ( 'yes' === settings.saasp_vertical_show_rating && settings.saasp_vertical_rating_num ) { 
+                           let saasp_top_gap =  'yes' === settings.saasp_vertical_show_countdown ? 'gap-30' : 'no-gap' ;  
+                        #>
                             <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
-                                <div class="saaspricing-star-icon fs-6"> 
+                                <div class="saaspricing-star-icon {{ saasp_top_gap }} fs-6"> 
                                     <# let saasp_rating = settings.saasp_vertical_rating_num; #>
                                     <# let saasp_full_stars = Math.floor( saasp_rating ); #>
                                     <# let saasp_half_star = saasp_rating - saasp_full_stars; #>

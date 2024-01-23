@@ -209,7 +209,7 @@ svg, img {
 }
 
 .saaspricing-cta-card {
-    padding: 8px 40px 0 40px;
+    padding: 10px 40px 0 40px;
 }
 
 .saaspricing-cards-all {
@@ -400,7 +400,7 @@ svg, img {
 }
 
 .saaspricing-vertical-countdown {
-    padding-top: 10px;
+    padding: 10px 40px 0 40px;
 }
 
 .saaspricing-vertical-countdown .saaspricing-countdown {
@@ -442,7 +442,10 @@ svg, img {
 }
 
 .saaspricing-cards-all .saaspricing-star-icon {
-    padding: 30px 40px 0 40px;
+    padding: 20px 40px 0 40px;
+}
+.saaspricing-cards-all .saaspricing-star-icon.no-gap {
+    padding: 10px 40px 10px 40px;
 }
 
 .saaspricing-star-icon small {
@@ -493,7 +496,7 @@ svg, img {
 }
 
 .saaspricing-vertical-feature {
-    padding: 30px 40px 30px 40px;
+    padding: 15px 40px 30px 40px;
 }
 
 .saaspricing-vertical-feature li small , .saasp-horizontal-icon-wrapper small {
