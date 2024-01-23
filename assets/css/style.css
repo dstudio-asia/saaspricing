@@ -163,11 +163,7 @@ svg, img {
     line-height: normal;
 }
 
-.saaspricing-vertical-header {
-    padding: 35px 0 0 0;
-}
-
-.saaspricing-p-vertical-header {
+.saaspricing-p-vertical-header, .saaspricing-vertical-header {
     padding: 40px 40px 0 40px;
 }
 
@@ -245,7 +241,7 @@ svg, img {
 }
 
 .saaspricing-card-header {
-    padding: 8px 16px;
+    padding: 8px 40px;
     margin-bottom: 0;
     background-color: rgba(0,0,0,.03);
     background-color: var(--saaspricing-black);

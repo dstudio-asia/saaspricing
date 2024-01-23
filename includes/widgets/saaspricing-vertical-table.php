@@ -478,6 +478,7 @@ protected function register_controls() {
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'fill: {{VALUE}}',
                 ],
             ]
         );
