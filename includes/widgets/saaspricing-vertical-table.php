@@ -1739,6 +1739,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-pricing-card ol i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1762,6 +1763,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-pricing-card ol i' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
