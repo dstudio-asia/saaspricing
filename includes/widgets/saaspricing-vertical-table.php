@@ -478,6 +478,7 @@ protected function register_controls() {
                 'type' =>  Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} {{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} {{CURRENT_ITEM}} svg' => 'fill: {{VALUE}}',
                 ],
             ]
         );
@@ -1738,6 +1739,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-pricing-card ol i' => 'font-size: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1761,6 +1763,7 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-pricing-card ol i' => 'margin-right: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-vertical-pricing-card ol svg' => 'margin-right: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1800,6 +1803,42 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'CTA', 'saaspricing' ),
             'tab' =>   Controls_Manager::TAB_STYLE,
+        ]
+    );
+
+    $this->add_control(
+        'saasp_vertical_cta_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'separator'=>'before',
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-card-footer' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_vertical_cta_global_padding',
+        [
+            'label' => esc_html__( 'Padding', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-card-footer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_vertical_cta_global_margin',
+        [
+            'label' => esc_html__( 'Margin', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-card-footer' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
         ]
     );
 
@@ -2111,6 +2150,14 @@ protected function register_controls() {
             'label' => esc_html__( 'Padding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
+            'default' => [
+                'top' => 0,
+                'right' => 0,
+                'bottom' => 0,
+                'left' => 0,
+                'unit' => 'px',
+                'isLinked' => false,
+            ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-vertical-secondary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
@@ -2125,42 +2172,6 @@ protected function register_controls() {
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .saaspricng-secondary-main' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_vertical_cta_background_color',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'separator'=>'before',
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-card-footer' => 'background-color: {{VALUE}}',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_vertical_cta_global_padding',
-        [
-            'label' => esc_html__( 'Padding', 'saaspricing' ),
-            'type' =>  Controls_Manager::DIMENSIONS,
-            'size_units' => [ 'px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-card-footer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_vertical_cta_global_margin',
-        [
-            'label' => esc_html__( 'Margin', 'saaspricing' ),
-            'type' =>  Controls_Manager::DIMENSIONS,
-            'size_units' => [ 'px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-card-footer' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -2345,9 +2356,10 @@ $settings = $this->get_settings_for_display();
                     <!-- Table review -->
                     <?php
                     if( 'yes' === $settings['saasp_vertical_show_rating'] && '' !== $settings['saasp_vertical_rating_num'] ){
+                        $saasp_top_gap = 'yes' === $settings['saasp_vertical_show_countdown'] ? 'gap-30' : 'no-gap' ;
                     ?>
                         <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
-                            <div class="saaspricing-star-icon fs-6"> 
+                            <div class="saaspricing-star-icon <?php echo esc_attr($saasp_top_gap); ?> fs-6"> 
                                 <?php                                    
                                 $saasp_rating = $settings['saasp_vertical_rating_num'];
                                 $saasp_full_stars = floor( $saasp_rating);
@@ -2815,9 +2827,12 @@ $settings = $this->get_settings_for_display();
                             </div>
                         <# } #>
                         <!-- Table review -->
-                        <# if ( 'yes' === settings.saasp_vertical_show_rating && settings.saasp_vertical_rating_num ) { #>
+                        <# 
+                        if ( 'yes' === settings.saasp_vertical_show_rating && settings.saasp_vertical_rating_num ) { 
+                           let saasp_top_gap =  'yes' === settings.saasp_vertical_show_countdown ? 'gap-30' : 'no-gap' ;  
+                        #>
                             <div class="saaspricing-ratings saaspricing-vertical-ratings saaspricing-vertical-body-alignment">
-                                <div class="saaspricing-star-icon fs-6"> 
+                                <div class="saaspricing-star-icon {{ saasp_top_gap }} fs-6"> 
                                     <# let saasp_rating = settings.saasp_vertical_rating_num; #>
                                     <# let saasp_full_stars = Math.floor( saasp_rating ); #>
                                     <# let saasp_half_star = saasp_rating - saasp_full_stars; #>
