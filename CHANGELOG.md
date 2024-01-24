@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.4](https://github.com/dstudio-asia/saaspricing/compare/v1.0.3...v1.0.4) (2024-01-24)
+
+
+### Bug Fixes
+
+* svg issues ([7b82c92](https://github.com/dstudio-asia/saaspricing/commit/7b82c92a793c02b8a51e848c19281790609e000b))
+* vertical table elements top bottom gap adjustment ([f263353](https://github.com/dstudio-asia/saaspricing/commit/f263353ee911f4cea1b92dbe73082fc970b123ac))
+* vertical table svg icon color and ribbon default padding ([7304069](https://github.com/dstudio-asia/saaspricing/commit/730406958ada7c6561abf29d9f8eaa178a46918a))
+
 ## 1.0.3 (2024-01-21)
 
 
