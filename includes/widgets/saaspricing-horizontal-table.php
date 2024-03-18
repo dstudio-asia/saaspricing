@@ -1111,6 +1111,17 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_horizontal_features_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .sasspricing-horizontal-left' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
     $this->add_responsive_control(
         'saasp_horizontal_features_global_padding',
         [
