@@ -1,4 +1,4 @@
-=== SaasPricing - Ultimate Pricing & Comparison Table Widget For Elementor ===
+=== SaasPricing - Pricing Table, Price list, Comparison Table for Elementor ===
 Contributors: debuggersstudio
 Tags: elementor table, price table, comparison table, elementor pricing, vertical table, horizontal table, pricing table, price, pricing, table, css table, comparison, price gird, pricing gird, pricing box, price chart, price plan, chart, plan
 Requires at least: 5.8
@@ -12,15 +12,13 @@ Ultimate pricing & comparison widget for Elementor. Three table options, customi
 
 == Description ==
 
-SaasPricing is the ultimate pricing and comparison widget for [Elementor](https://wordpress.org/plugins/elementor/) 
+SaasPricing is a fully responsive pricing and comparison table widget for [Elementor](https://wordpress.org/plugins/elementor/) 
 
-It enables you to create responsive and custom price tables for your business or saas. SaasPricing has all the features you need to create an amazing pricing table. With three different table options – **comparison price table**, **vertical pricing table**, and **horizontal pricing table** – you can customize these tables to increase your product or services engagement and conversion.
+This wordpress plugin enables you to create responsive and custom price tables for your service based business and saas. SaasPricing has all the features you need to create an amazing pricing table. With three different table options – **comparison price table**, **vertical pricing table**, and **horizontal pricing table** – you can customize these tables to increase your product or services engagement and conversion.
 
 Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, and interactive pricing calculator makes your pricing table unique, user-friendly and attention-grabbing for your audience.
 
 [Plugin Demo](https://wp.dstudio.asia/saaspricing/) | [Documentation](https://documentation.dstudio.asia/saaspricing-documentation/)
-
-No more hassle for creating pricing table businesses including roofing, tree services, physical therapy, plumbing and HVAC, roof cleaning, financial services, hotels, local retail, pool and spa cleaning, home organization, and more. With elementor comparison pricing table, horizontal pricing table and vertical pricing table options, you can choose the layout that best fits your needs and makes it easy for your customers to compare your pricing options.
 
 ## SaasPricing Table Features:
 
