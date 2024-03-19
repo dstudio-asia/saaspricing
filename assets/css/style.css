@@ -466,6 +466,10 @@ svg, img {
     padding: 0 0 20px 0;
 }
 
+.sasspricing-horizontal-left {
+    background-color: var(--saaspricing-wild-sand);
+}
+
 .saaspricing-horizontal-description {
     padding-bottom: 24;
 }
