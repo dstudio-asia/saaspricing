@@ -1929,6 +1929,14 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_vertical_primary_cta_border',
+            'selector' => '{{WRAPPER}} .saaspricing-vertical-primary',
+        ]
+    );
+
     $this->end_controls_tab();
 
     $this->start_controls_tab(
@@ -1949,17 +1957,17 @@ protected function register_controls() {
         ]
     );
 
-    $this->end_controls_tab();
-
-    $this->end_controls_tabs();
-
     $this->add_group_control(
         Group_Control_Border::get_type(),
         [
-            'name' => 'saasp_vertical_primary_cta_border',
-            'selector' => '{{WRAPPER}} .saaspricing-vertical-primary',
+            'name' => 'saasp_vertical_primary_cta_hover_border',
+            'selector' => '{{WRAPPER}} .saaspricing-vertical-primary:hover',
         ]
     );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
 
     $this->add_responsive_control(
         'saasp_vertical_primary_cta_border_radius',
@@ -2092,6 +2100,14 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_vertical_secondary_cta_border',
+            'selector' => '{{WRAPPER}} .saaspricing-vertical-secondary',
+        ]
+    );
+
     $this->end_controls_tab();
 
     $this->start_controls_tab(
@@ -2112,17 +2128,17 @@ protected function register_controls() {
         ]
     );
 
-    $this->end_controls_tab();
-
-    $this->end_controls_tabs();
-
     $this->add_group_control(
         Group_Control_Border::get_type(),
         [
-            'name' => 'saasp_vertical_secondary_cta_border',
-            'selector' => '{{WRAPPER}} .saaspricing-vertical-secondary',
+            'name' => 'saasp_vertical_secondary_cta_hover_border',
+            'selector' => '{{WRAPPER}} .saaspricing-vertical-secondary:hover',
         ]
     );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
 
     $this->add_responsive_control(
         'saasp_vertical_secondary_cta_border_radius',
