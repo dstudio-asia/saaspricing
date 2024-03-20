@@ -5968,17 +5968,16 @@ protected function render() {
                                 <?php
                                 if( '' !== $settings['saasp_comparison_choose_media_'.$i]['url']){
                                 ?>
-                                    <a
+                                <div 
                                     <?php
                                     if( 'yes' === $settings['saasp_comparison_media_light_box_'.$i] ){
                                     ?>
-                                    class="saaspricing-image-popup"
+                                    class="saasprcing-img-holder"
                                     <?php
                                     }
-                                    ?>
-                                    href="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>">
-                                        <img src="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>" class="<?php echo esc_attr('saaspricing-header-image-'.$i) ?>" alt="comparison table media <?php echo esc_attr($i); ?>">
-                                    </a>
+                                ?>>
+                                   <img src="<?php echo esc_url($settings['saasp_comparison_choose_media_'.$i]['url']); ?>" class="<?php echo esc_attr('saaspricing-header-image-'.$i) ?>" alt="comparison table media <?php echo esc_attr($i); ?>">
+                                </div>
                                 <?php
                                 }
                                 ?>
@@ -6233,6 +6232,18 @@ protected function render() {
                         ?>
                     </tr>
                 </thead>
+
+                <!-- popup image section -->
+                <div class="saasprcing-img-lightbox">
+                    <div class="saasprcing-img-lightbox-inner">
+                        <img src="" alt="Popup Image">
+                        <div class="saasprcing-lightbox-close">
+                            <div class="saasprcing-lightbox-bar"></div>
+                            <div class="saasprcing-lightbox-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <tbody class="saaspricing-table-body saaspricing-table-background">
                      <!-- Table Features  -->
                     <?php
