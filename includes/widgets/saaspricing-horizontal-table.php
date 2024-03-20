@@ -941,7 +941,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 30,
+                'size' => 0,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-description' => 'padding-bottom: {{SIZE}}{{UNIT}};',
@@ -972,7 +972,7 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_horizontal_header_divider_width',
+        'saasp_horizontal_header_divider_weight',
         [
             'label' => esc_html__( 'Weight', 'saaspricing' ),
             'type' =>  Controls_Manager::SLIDER,
@@ -989,7 +989,7 @@ protected function register_controls() {
                 'size' => 2,
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-border-bottom' => 'border-width: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .saasp-horizontal-divider hr' => 'border-width: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1000,7 +1000,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-border-bottom' => 'border-color: {{VALUE}}',
+                '{{WRAPPER}} .saasp-horizontal-divider hr' => 'border-color: {{VALUE}}',
             ],
         ]
     );
@@ -1018,10 +1018,61 @@ protected function register_controls() {
                 'double' => esc_html__( 'Double', 'saaspricing' ),
             ],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-border-bottom' => 'border-bottom-style: {{VALUE}};',
+                '{{WRAPPER}} .saasp-horizontal-divider hr' => 'border-style: {{VALUE}};',
             ],
         ]
     );
+
+    $this->add_control(
+        'saasp_horizontal_header_divider_width',
+        [
+            'label' => esc_html__( 'Width', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['%'],
+            'range' => [
+                '%' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => '%',
+                'size' => 80,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saasp-horizontal-divider hr' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_horizontal_header_divider_alignment',
+        [
+            'label' => esc_html__( 'Alignment', 'saasprcing' ),
+            'type' => Controls_Manager::CHOOSE,
+            'options' => [
+                '0 0 0 0' => [
+                    'title' => esc_html__( 'Left', 'saasprcing' ),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                '0 auto 0 auto' => [
+                    'title' => esc_html__( 'Center', 'saasprcing' ),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                '0 0 0 auto' => [
+                    'title' => esc_html__( 'Right', 'saasprcing' ),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'center',
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} .saasp-horizontal-divider hr' => 'margin: {{VALUE}};',
+            ],
+        ]
+    );
+
 
     $this->end_controls_section();
 
@@ -2228,13 +2279,20 @@ protected function render() {
                         <?php
                         if( '' !== $settings['saasp_horizontal_header_description'] ){
                         ?>
-                            <p class="saaspricing-horizontal-description <?php if( 'yes' === ($settings['saasp_horizontal_show_divider']) ){ echo esc_attr('saaspricing-border-bottom'); } ?>">
+                            <p class="saaspricing-horizontal-description">
                                 <?php echo esc_html($settings['saasp_horizontal_header_description']); ?>
                             </p>
                         <?php
                         }
                         ?>
                     </div>
+                    
+                    <?php if( 'yes' === ($settings['saasp_horizontal_show_divider']) ){ ?>
+                        <div class="saasp-horizontal-divider">
+                            <hr>
+                        </div>
+                    <?php } ?>
+
                     <!-- Table features -->
                     <div class="saaspricing-horizontal-feature-list">
                         <?php
@@ -2618,13 +2676,22 @@ protected function _content_template() {
                            <#
                                if ( '' !== settings.saasp_horizontal_header_description ) {
                            #>
-                               <p class="saaspricing-horizontal-description {{ 'yes' === settings.saasp_horizontal_show_divider ? 'saaspricing-border-bottom' : '' }}">
+                               <p class="saaspricing-horizontal-description">
                                    {{{ settings.saasp_horizontal_header_description }}}
                                </p>
                            <#
                                }
                            #>
                        </div>
+                        <# 
+                        if( 'yes' === settings.saasp_horizontal_show_divider ){ 
+                        #>
+                            <div class="saasp-horizontal-divider">
+                                <hr>
+                            </div>
+                        <# 
+                        } 
+                        #>
                        <!-- Table features -->
                        <div class="saaspricing-horizontal-feature-list">
                            <#
