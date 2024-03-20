@@ -1,6 +1,17 @@
+:root {
+    --saaspricing-wild-sand:#F7F7F7;
+    --saaspricing-white:#ffffff;
+    --saaspricing-black:#000000;
+    --saaspricing-box-shadow:#00000015;
+}
+
 .elementor-widget-saasp-vertical .elementor-widget-container,
 .elementor-widget-saasp-horizontal .elementor-widget-container {
-    background-color: #F7F7F7;
+    overflow: hidden;
+}
+
+.elementor-widget-saasp-vertical .elementor-widget-container {
+    background-color: var(--saaspricing-wild-sand);
 }
 
 .tooltip-inner {
