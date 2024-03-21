@@ -941,7 +941,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 0,
+                'size' => 35,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-description' => 'padding-bottom: {{SIZE}}{{UNIT}};',
@@ -986,7 +986,7 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 2,
+                'size' => 1,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-divider hr' => 'border-width: {{SIZE}}{{UNIT}};',
@@ -1038,10 +1038,33 @@ protected function register_controls() {
             ],
             'default' => [
                 'unit' => '%',
-                'size' => 80,
+                'size' => 90,
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-divider hr' => 'width: {{SIZE}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_horizontal_divider_bottom_gap',
+        [
+            'label' => esc_html__( 'Gap', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => ['px'],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 1,
+                ]
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 30,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saasp-horizontal-divider' => 'padding-bottom: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
@@ -1065,7 +1088,7 @@ protected function register_controls() {
                     'icon' => 'eicon-text-align-right',
                 ],
             ],
-            'default' => 'center',
+            'default' => '0 auto 0 auto',
             'toggle' => true,
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-divider hr' => 'margin: {{VALUE}};',
