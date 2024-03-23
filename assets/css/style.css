@@ -52,6 +52,7 @@ svg, img {
 
 .saasp-horizontal-divider hr{
     opacity: unset;
+    color: var(--saaspricing-mako);
 }
 
 .saaspricing-table-description {
@@ -265,7 +266,7 @@ svg, img {
 }
 
 .saaspricing-horizontal-header{
-    padding: 40px 40px 0 40px;
+    padding: 40px 40px 30px 40px;
 }
 
 .saasspricing-pricing-block {
@@ -479,7 +480,7 @@ svg, img {
 }
 
 .saaspricing-horizontal-feature-list {
-    padding:0 40px 40px 40px;
+    padding:30px 40px 40px 40px;
 }
 
 .saaspricing-horizontal .saaspricing-horizontal-slogan-title {

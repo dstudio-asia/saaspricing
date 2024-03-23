@@ -161,23 +161,10 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_horizontal_show_divider',
-        [
-            'label' => esc_html__( 'Divider', 'saaspricing' ),
-            'type' =>  Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Show', 'saaspricing' ),
-            'label_off' => esc_html__( 'Hide', 'saaspricing' ),
-            'return_value' => 'yes',
-            'default' => 'yes',
-        ]
-    );
-
-    $this->add_control(
         'sassp_horizontal_ribbon_alignment',
         [
             'label' => esc_html__( 'Alignment', 'saaspricing' ),
             'type' =>  Controls_Manager::CHOOSE,
-            'separator' => 'before',
             'options' => [
                 'left' => [
                     'title' => esc_html__( 'Left', 'saaspricing' ),
@@ -198,6 +185,19 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-horizontal-title' => 'text-align: {{VALUE}};',
                 '{{WRAPPER}} .saaspricing-horizontal-description' => 'text-align: {{VALUE}};',
             ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_horizontal_show_divider',
+        [
+            'label' => esc_html__( 'Divider', 'saaspricing' ),
+            'type' =>  Controls_Manager::SWITCHER,
+            'label_on' => esc_html__( 'Show', 'saaspricing' ),
+            'label_off' => esc_html__( 'Hide', 'saaspricing' ),
+            'return_value' => 'yes',
+            'default' => 'yes',
+            'separator' => 'before'
         ]
     );
     
@@ -636,6 +636,9 @@ protected function register_controls() {
             'label_block' => true,
             'condition' =>[
                 'saasp_horizontal_primary_cta_switch' => 'yes',
+            ],
+            'dynamic' => [
+                'active' => true
             ]
         ]
     );
@@ -741,6 +744,9 @@ protected function register_controls() {
                 'custom_attributes' => '',
             ],
             'label_block' => true,
+            'dynamic' => [
+                'active' => true
+            ],
             'condition' =>[
                 'saasp_horizontal_secondary_cta_switch' => 'yes',
             ]
@@ -925,36 +931,13 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_control(
-        'saasp_horizontal_header_description_distance',
-        [
-            'label' => esc_html__( 'Distance', 'saaspricing' ),
-            'type' =>  Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'separator' => 'after',
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
-                ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 35,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-horizontal-description' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
-
     $this->add_responsive_control(
         'saasp_horizontal_header_padding',
         [
             'label' => esc_html__( 'Padding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
+            'separator' => 'before',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
@@ -1042,29 +1025,6 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saasp-horizontal-divider hr' => 'width: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_horizontal_divider_bottom_gap',
-        [
-            'label' => esc_html__( 'Gap', 'saaspricing' ),
-            'type' =>  Controls_Manager::SLIDER,
-            'size_units' => ['px'],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
-                ]
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 30,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .saasp-horizontal-divider' => 'padding-bottom: {{SIZE}}{{UNIT}};',
             ],
         ]
     );
