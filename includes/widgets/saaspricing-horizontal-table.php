@@ -299,13 +299,13 @@ protected function register_controls() {
 			[
 				'label' => esc_html__( 'Column', 'saaspricing' ),
 				'type' =>  Controls_Manager::SELECT,
-				'default' => '25%',
 				'options' => [
 					'100%' => esc_html__( '1', 'saaspricing' ),
 					'50%'  => esc_html__( '2', 'saaspricing' ),
 					'33.3%' => esc_html__( '3', 'saaspricing' ),
 					'25%' => esc_html__( '4', 'saaspricing' ),
                 ],
+                'default' => '25%',
                 'selectors' => [
 					'{{WRAPPER}} .saasp-columns' => 'width: {{VALUE}};',
 				],
@@ -1402,6 +1402,30 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_responsive_control(
+        'saasp_horizontal_pricing_padding',
+        [
+            'label' => esc_html__( 'Paddding', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_horizontal_pricing_margin',
+        [
+            'label' => esc_html__( 'Margin', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
     $this->start_controls_tabs(
         'saasp_horizontal_pricing_styles_tab'
     );
@@ -1440,6 +1464,25 @@ protected function register_controls() {
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+        Group_Control_Box_Shadow::get_type(),
+       [
+           'name' => 'saasp_horizontal_pricing_section_box_shadow',
+           'selector' => '{{WRAPPER}} .saasprcing-horizontal-pricing',
+       ]
+   );
+
+   $this->add_control(
+        'saasp_horizontal_price_text_color',
+        [
+            'label' => esc_html__( 'Color', 'saaspricing' ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-horizontal-price-text' => 'color: {{VALUE}}',
             ],
         ]
     );
@@ -1484,53 +1527,28 @@ protected function register_controls() {
         ]
     );
 
-    $this->end_controls_tab();
-
-    $this->end_controls_tabs();
-
-    $this->add_responsive_control(
-        'saasp_horizontal_pricing_padding',
-        [
-            'label' => esc_html__( 'Paddding', 'saaspricing' ),
-            'type' =>  Controls_Manager::DIMENSIONS,
-            'size_units' => [ 'px', '%', 'em'],
-            'separator' => 'before',
-            'selectors' => [
-                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_horizontal_pricing_margin',
-        [
-            'label' => esc_html__( 'Margin', 'saaspricing' ),
-            'type' =>  Controls_Manager::DIMENSIONS,
-            'size_units' => [ 'px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
     $this->add_group_control(
-         Group_Control_Box_Shadow::get_type(),
-        [
-            'name' => 'saasp_horizontal_pricing_section_box_shadow',
-            'selector' => '{{WRAPPER}} .saasprcing-horizontal-pricing',
-        ]
-    );
+        Group_Control_Box_Shadow::get_type(),
+       [
+           'name' => 'saasp_horizontal_pricing_hover_section_box_shadow',
+           'selector' => '{{WRAPPER}} .saasprcing-horizontal-pricing:hover',
+       ]
+   );
 
-    $this->add_control(
-        'saasp_horizontal_price_text_color',
+   $this->add_control(
+        'saasp_horizontal_price_hover_text_color',
         [
             'label' => esc_html__( 'Color', 'saaspricing' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-horizontal-price-text' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-horizontal-price-text:hover' => 'color: {{VALUE}}',
             ],
         ]
     );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
 
     $this->add_group_control(
        Group_Control_Typography::get_type(),
@@ -2782,7 +2800,7 @@ protected function _content_template() {
                                if ( settings.saasp_horizontal_features ) {
                                    settings.saasp_horizontal_features.forEach( function( saasp_horizontal_features ) {
                                #>
-                                   <div class="col-md-{{{ settings.saasp_horizontal_features_column }}}">
+                                   <div class="saasp-columns">
                                        <div class="saasp-horizontal-icon-wrapper elementor-repeater-item-{{{ saasp_horizontal_features._id }}}">
                                            <#
                                                let featureIcon = elementor.helpers.renderIcon( view, saasp_horizontal_features.saasp_horizontal_features_icon, { 'aria-hidden': true }, 'i' , 'object' );
