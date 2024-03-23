@@ -294,18 +294,21 @@ protected function register_controls() {
 			]
 		);
 
-        $this->add_control(
+        $this->add_responsive_control(
 			'saasp_horizontal_features_column',
 			[
 				'label' => esc_html__( 'Column', 'saaspricing' ),
 				'type' =>  Controls_Manager::SELECT,
-				'default' => '3',
+				'default' => '25%',
 				'options' => [
-					'12' => esc_html__( '1', 'saaspricing' ),
-					'6'  => esc_html__( '2', 'saaspricing' ),
-					'4' => esc_html__( '3', 'saaspricing' ),
-					'3' => esc_html__( '4', 'saaspricing' ),
-				]
+					'100%' => esc_html__( '1', 'saaspricing' ),
+					'50%'  => esc_html__( '2', 'saaspricing' ),
+					'33.3%' => esc_html__( '3', 'saaspricing' ),
+					'25%' => esc_html__( '4', 'saaspricing' ),
+                ],
+                'selectors' => [
+					'{{WRAPPER}} .saasp-columns' => 'width: {{VALUE}};',
+				],
 			]
 		);
 
@@ -2380,7 +2383,7 @@ protected function render() {
                         if($settings['saasp_horizontal_features']){
                             foreach($settings['saasp_horizontal_features'] as $saasp_horizontal_features){
                         ?>
-                                <div class="col-md-<?php echo esc_attr($settings['saasp_horizontal_features_column']); ?>">
+                                <div class="saasp-columns">
                                     <div class="saasp-horizontal-icon-wrapper elementor-repeater-item-<?php echo esc_attr($saasp_horizontal_features['_id']); ?>">
                                         <?php Icons_Manager::render_icon( $saasp_horizontal_features['saasp_horizontal_features_icon'], [ 'aria-hidden' => 'true' ] ); ?> 
                                         <small class="saaspricing-horizontal-feature-text"><?php echo esc_html($saasp_horizontal_features['saasp_horizontal_features_text']); ?></small>
