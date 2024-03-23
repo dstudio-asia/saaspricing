@@ -1399,6 +1399,17 @@ protected function register_controls() {
         ]
     );
 
+    $this->start_controls_tabs(
+        'saasp_horizontal_pricing_styles_tab'
+    );
+
+    $this->start_controls_tab(
+        'saasp_horizontal_pricing_style_normal',
+        [
+            'label' => esc_html__( 'Normal', 'saaspricing' ),
+        ]
+    );
+
     $this->add_control(
         'saasp_horizontal_pricing_background_color',
         [
@@ -1410,14 +1421,91 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_horizontal_pricing_border_control',
+            'selector' => '{{WRAPPER}} .saasprcing-horizontal-pricing',
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_horizontal_pricing_border_radius',
+        [
+            'label' => esc_html__( 'Border Radius', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->start_controls_tab(
+        'saasp_horizontal_pricing_style_hover',
+        [
+            'label' => esc_html__( 'Hover', 'saaspricing' ),
+        ]
+    );
+
+    $this->add_control(
+        'saasp_horizontal_pricing_background_color_hover',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing:hover' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+        Group_Control_Border::get_type(),
+        [
+            'name' => 'saasp_horizontal_pricing_border_control_hover',
+            'selector' => '{{WRAPPER}} .saasprcing-horizontal-pricing:hover',
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_horizontal_pricing_border_radius_hover',
+        [
+            'label' => esc_html__( 'Border Radius', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
     $this->add_responsive_control(
         'saasp_horizontal_pricing_padding',
         [
             'label' => esc_html__( 'Paddding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
+            'separator' => 'before',
             'selectors' => [
                 '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_horizontal_pricing_margin',
+        [
+            'label' => esc_html__( 'Margin', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
