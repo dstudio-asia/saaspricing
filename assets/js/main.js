@@ -1,23 +1,25 @@
-
-// Add Image Popuup Class To Gallery Image Link
-document.addEventListener('DOMContentLoaded', function() {
-    var galleryOne = document.querySelectorAll('.gallery-icon.landscape a img');
-    galleryOne.forEach(function(image) {
-        var popupLink = image.closest('a');
-        if (popupLink && popupLink.getAttribute('data-elementor-open-lightbox') === 'yes') {
-            popupLink.classList.add('saaspricing-image-popup');
-        }
-    });
-});
-
-// Creating Popup 
 jQuery(document).ready(function($) {
-    $('.saaspricing-image-popup').magnificPopup({
-        type: 'image',
-        closeOnContentClick: true,
-        mainClass: 'mfp-img-mobile',
-        image: {
-            verticalFit: true
-        }
+    // required elements
+    var imgPopup = $('.saasprcing-img-lightbox')
+    var imgPopupInner = $('.saasprcing-img-lightbox-inner');
+    var imgCont  = $('.saasprcing-img-holder');
+    var popupImage = $('.saasprcing-img-lightbox img');
+    var closeBtn = $('.saasprcing-lightbox-close');
+  
+    // handle events
+    imgCont.on('click', function() {
+      var img_src = $(this).children('img').attr('src');
+      imgPopupInner.children('img').attr('src', img_src);
+      imgPopup.addClass('opened');
     });
-});
+  
+    $(imgPopup, closeBtn).on('click', function() {
+      imgPopup.removeClass('opened');
+      imgPopupInner.children('img').attr('src', '');
+    });
+  
+    popupImage.on('click', function(e) {
+      e.stopPropagation();
+    });
+    
+  });
