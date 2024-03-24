@@ -53,6 +53,10 @@ svg, img {
 .saasp-horizontal-divider hr{
     opacity: unset;
     color: var(--saaspricing-mako);
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    background-color: transparent !important;
 }
 
 .saaspricing-table-description {
