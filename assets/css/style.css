@@ -38,6 +38,10 @@ svg, img {
     text-align: unset;
 }
 
+.saaspricing-table tr.saaspricing-ribbon-table-row td.saaspricing-blank {
+    border-left: none !important;
+    border-right: none !important;
+}
 .saaspricing-table tbody>tr:nth-child(odd)>td, 
 .saaspricing-table tbody>tr:nth-child(odd)>th {
     background-color: transparent;
