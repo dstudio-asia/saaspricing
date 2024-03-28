@@ -209,7 +209,9 @@ final class Saas_Pricing {
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'saasp_editor_styles' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'saasp_register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [$this,'saasp_add_categories']);
-		add_filter( 'plugin_action_links_saaspricing/saaspricing.php', [$this,'saasp_action_link']);
+		if( !file_exists(WP_PLUGIN_DIR . '/saaspricing-pro/saaspricing-pro.php')) {
+			add_filter( 'plugin_action_links_saaspricing/saaspricing.php', [$this,'saasp_action_link']);
+		}
 	}
 
 	public function saasp_frontend_styles() {
