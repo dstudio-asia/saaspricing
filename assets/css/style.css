@@ -26,7 +26,7 @@ svg, img {
 
 .saaspricing-table {
     table-layout: fixed;
-    min-width: 830px;
+    min-width: 1600px;
     border: unset;
     margin-bottom: 0;
     overflow: hidden;
@@ -103,7 +103,7 @@ svg, img {
 }
 
 .saaspricing-table .saaspricing-feature-list td {
-    padding: 0 30px 20px 30px;
+    padding: 10px 30px 10px 30px;
     font-size: 14px;
 }
 
