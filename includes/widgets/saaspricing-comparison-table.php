@@ -4934,7 +4934,7 @@ protected function register_controls() {
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-common-ribbon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2)' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
@@ -4946,7 +4946,7 @@ protected function register_controls() {
         Group_Control_Box_Shadow::get_type(),
         [
             'name' => 'saasp_comparison_header_ribbon_box_shadow',
-            'selector' => '{{WRAPPER}} .saaspricing-table .saaspricing-common-ribbon',
+            'selector' => '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2)',
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
             ],
@@ -5014,7 +5014,7 @@ protected function register_controls() {
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-common-ribbon:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2):hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
@@ -5026,7 +5026,7 @@ protected function register_controls() {
         Group_Control_Box_Shadow::get_type(),
         [
             'name' => 'saasp_comparison_header_ribbon_one_hover_box_shadow',
-            'selector' => '{{WRAPPER}} .saaspricing-table .saaspricing-common-ribbon:hover',
+            'selector' => '{{WRAPPER}} .saaspricing-main .saaspricing-common-ribbon:nth-child(2):hover',
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
             ],
