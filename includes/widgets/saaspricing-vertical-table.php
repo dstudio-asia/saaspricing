@@ -601,6 +601,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'dynamic' => [
+                'active' => true,
+            ],
             'default' => [
                 'url' => '',
                 'is_external' => true,
@@ -743,6 +746,9 @@ protected function register_controls() {
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
+            'dynamic' => [
+                'active' => true,
+            ],
             'default' => [
                 'url' => '',
                 'is_external' => true,

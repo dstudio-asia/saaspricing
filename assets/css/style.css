@@ -560,6 +560,7 @@ svg, img {
 
 .saaspricng-horizontal-secondary-main a:not([href]):not([tabindex]) {
     color: var(--saaspricing-white);
+    border: none;
 }
 
 .saaspricing-table .saaspricing-cta-main .saaspricing-secondary-btn, 
@@ -778,6 +779,15 @@ svg, img {
 @media screen and (max-width: 768px) {
     .saaspricing-w-sm-100 {
         width: 100%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .saaspricing-row-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .saaspricing-horizontal-wrapper {
+        row-gap: 0 !important;
     }
 }
 

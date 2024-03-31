@@ -1403,6 +1403,17 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_horizontal_pricing_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
     $this->add_responsive_control(
         'saasp_horizontal_pricing_padding',
         [
@@ -1423,17 +1434,6 @@ protected function register_controls() {
             'size_units' => [ 'px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_horizontal_pricing_background_color',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saasprcing-horizontal-pricing' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -1466,7 +1466,15 @@ protected function register_controls() {
        ]
    );
 
-   $this->add_control(
+    $this->add_group_control(
+       Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_horizontal_pricing_text_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-horizontal-price-text',
+        ]
+    );
+
+    $this->add_control(
         'saasp_horizontal_price_text_color',
         [
             'label' => esc_html__( 'Color', 'saaspricing' ),
@@ -1475,14 +1483,6 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-horizontal-price-text' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-fraction-price' => 'color: {{VALUE}}',
             ],
-        ]
-    );
-
-    $this->add_group_control(
-       Group_Control_Typography::get_type(),
-        [
-            'name' => 'saasp_horizontal_pricing_text_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-horizontal-price-text',
         ]
     );
 
@@ -2315,7 +2315,7 @@ protected function render() {
  $settings = $this->get_settings_for_display();
 ?>
     <div class="saaspricing-horizontal">
-        <div class="row gx-0 <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'saaspricing-row-reverse' ); } ?>">
+        <div class="row gx-0 gy-0 saaspricing-horizontal-wrapper <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'saaspricing-row-reverse' ); } ?>">
             <div class="col-lg-8">
                 <div class="sasspricing-horizontal-left d-flex flex-column justify-content-center position-relative h-100">
                     <!-- Table header -->

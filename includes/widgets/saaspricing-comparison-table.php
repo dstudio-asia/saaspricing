@@ -2022,6 +2022,9 @@ protected function register_controls() {
             'label' => esc_html__( 'Link', 'saaspricing' ),
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
+            'dynamic' => [
+                'active' => true,
+            ],
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
             'default' => [
                 'url' => '',
@@ -2179,6 +2182,9 @@ protected function register_controls() {
             'label' => esc_html__( 'Link', 'saaspricing' ),
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
+            'dynamic' => [
+                'active' => true,
+            ],
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
             'default' => [
                 'url' => '',
@@ -2358,6 +2364,9 @@ protected function register_controls() {
             'label' => esc_html__( 'Link', 'saaspricing' ),
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
+            'dynamic' => [
+                'active' => true,
+            ],
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
             'default' => [
                 'url' => '',
@@ -2518,6 +2527,9 @@ protected function register_controls() {
             'label' => esc_html__( 'Link', 'saaspricing' ),
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
+            'dynamic' => [
+                'active' => true,
+            ],
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
             'default' => [
                 'url' => '',
@@ -2700,6 +2712,9 @@ protected function register_controls() {
             'label' => esc_html__( 'Link', 'saaspricing' ),
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
+            'dynamic' => [
+                'active' => true,
+            ],
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
             'default' => [
                 'url' => '',
@@ -2860,6 +2875,9 @@ protected function register_controls() {
             'label' => esc_html__( 'Link', 'saaspricing' ),
             'type' =>  Controls_Manager::URL,
             'placeholder' => esc_html__( 'https://your-link.com', 'saaspricing' ),
+            'dynamic' => [
+                'active' => true,
+            ],
             'options' => [ 'url', 'is_external', 'nofollow', 'custom_attributes' ],
             'default' => [
                 'url' => '',
