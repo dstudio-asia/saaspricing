@@ -3141,6 +3141,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_column_one_head_border',
             'selector' => '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2)',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3152,6 +3155,9 @@ protected function register_controls() {
             'size_units' => ['px', '%', 'em'],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2)' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
             ],
         ]
     );
@@ -3224,6 +3230,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_column_one_head_hover_border',
             'selector' => '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2):hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3236,6 +3245,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2):hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -3244,6 +3256,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_column_one_head_hover_boxshadow',
             'selector' => '{{WRAPPER}} .saaspricing-main .saaspricing-table-head:nth-child(2):hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
     
@@ -5499,6 +5514,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_1_border',
             'selector' => '{{WRAPPER}} .saaspricing-primary-1',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5511,6 +5529,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5519,6 +5540,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_1_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-primary-1',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5569,6 +5593,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_1_2_border_hover',
             'selector' => '{{WRAPPER}} .saaspricing-primary-1:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5581,6 +5608,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-1:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5589,6 +5619,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_1_box_shadow_hover',
             'selector' => '{{WRAPPER}} .saaspricing-primary-1:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -5656,6 +5689,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_2_border',
             'selector' => '{{WRAPPER}} .saaspricing-primary-2',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5668,6 +5704,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5676,6 +5715,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_2_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-primary-2',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5726,6 +5768,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_2_border_hover',
             'selector' => '{{WRAPPER}} .saaspricing-primary-2:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5738,6 +5783,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-2:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5746,6 +5794,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_2_box_shadow_hover',
             'selector' => '{{WRAPPER}} .saaspricing-primary-2:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -5813,6 +5864,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_3_border',
             'selector' => '{{WRAPPER}} .saaspricing-primary-3',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5825,6 +5879,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5833,6 +5890,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_3_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-primary-3',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5870,7 +5930,7 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3:hover' => 'color: {{VALUE}}',
-                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-3:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -5883,6 +5943,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_3_border_hover',
             'selector' => '{{WRAPPER}} .saaspricing-primary-3:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5895,6 +5958,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-primary-3:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -5903,6 +5969,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_primary_cta_3_box_shadow_hover',
             'selector' => '{{WRAPPER}} .saaspricing-primary-3:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -6012,6 +6081,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_1_border',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-1',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -6024,6 +6096,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -6032,6 +6107,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_1_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-1',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -6082,6 +6160,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_1_hover_border',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-1:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -6094,6 +6175,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-1:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -6102,6 +6186,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_1_hover_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-1:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
         ]
     );
 
@@ -6170,6 +6257,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_2_border',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-2',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -6182,6 +6272,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -6190,6 +6283,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_2_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-2',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -6240,6 +6336,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_2_hover_border',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-2:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -6252,6 +6351,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-2:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -6260,6 +6362,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_2_hover_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-2:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
         ]
     );
 
@@ -6328,6 +6433,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_3_border',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-3',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -6340,6 +6448,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -6348,6 +6459,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_3_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-3',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -6398,6 +6512,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_3_hover_border',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-3:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -6410,6 +6527,9 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-secondary-3:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -6418,6 +6538,9 @@ protected function register_controls() {
         [
             'name' => 'saasp_comparison_secondary_cta_hover_box_shadow',
             'selector' => '{{WRAPPER}} .saaspricing-secondary-3:hover',
+            'condition' => [
+                'saasp_comparison_select_columns' => '3',
+            ],
         ]
     );
 
@@ -7114,9 +7237,6 @@ protected function render() {
                                 $saasp_margin_top = "";
 
                                 if( 'top' === $settings['saasp_comparison_primary_cta_position_'.$i] &&  'yes' === $settings['saasp_comparison_primary_cta_switch_'.$i] ){
-                                ?>
-                                    <br/>
-                                <?php
                                     $saasp_margin_top = "mt-3";
                                 }else{
                                     $saasp_margin_top;
@@ -7130,7 +7250,7 @@ protected function render() {
                                     if( 'yes' === $settings['saasp_comparison_secondary_cta_switch_'.$i] ){
                                 ?>
 
-                                    <div class="saasp-top-secondary"<?php
+                                    <div class="saaspricing-cta-main saasp-top-secondary"<?php
                                         if('center' === $settings['saasp_comparison_cta_alignment']){
                                             echo esc_attr('text-center');
                                         }elseif('right' === $settings['saasp_comparison_cta_alignment']){
@@ -7787,9 +7907,6 @@ protected function render() {
                                 <# 
                                     let saasp_margin_top = '';
                                     if ('top' === settings['saasp_comparison_primary_cta_position_' + i] && 'yes' === settings['saasp_comparison_primary_cta_switch_' + i]) {
-                                #>
-                                <br/>
-                                <#
                                         saasp_margin_top = 'mt-3';
                                     }
                                 #>
@@ -7822,7 +7939,7 @@ protected function render() {
                                         ctaAlignment = 'text-end'
                                     } 
                                 #>
-                                <div class="saasp-top-secondary {{ ctaAlignment }}">
+                                <div class="saaspricing-cta-main saasp-top-secondary {{ ctaAlignment }}">
                                     <a class="btn btn-link saaspricing-secondary-btn saaspricing-secondary-{{ i }} {{ button_classes.join(' ') }} {{ saasp_margin_top }}"
                                     role="button" href="{{ settings['saasp_comparison_secondary_cta_url_' + i]['url'] }}">
                                         {{{ settings['saasp_comparison_secondary_cta_text_' + i] }}}
