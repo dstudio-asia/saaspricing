@@ -2315,7 +2315,7 @@ protected function render() {
  $settings = $this->get_settings_for_display();
 ?>
     <div class="saaspricing-horizontal">
-        <div class="row gx-0 gy-0 saaspricing-horizontal-wrapper <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'saaspricing-row-reverse' ); } ?>">
+        <div class="row gx-0 saaspricing-horizontal-wrapper <?php if( 'yes' === $settings['saasp_horizontal_cta_row_reverse'] ){ echo esc_attr( 'saaspricing-row-reverse' ); } ?>">
             <div class="col-lg-8">
                 <div class="sasspricing-horizontal-left d-flex flex-column justify-content-center position-relative h-100">
                     <!-- Table header -->
@@ -2710,7 +2710,7 @@ protected function _content_template() {
                let buttonAlignment = settings.saasp_horizontal_cta_alignment === 'center' ? 'text-center' : settings.saasp_horizontal_cta_alignment === 'right' ? 'text-end' : settings.saasp_horizontal_cta_alignment === 'left' ? 'text-start' : 'text-center';
                let ButtonWidth = 'justify' === settings.saasp_horizontal_cta_alignment ? 'w-100' : '';
            #>
-           <div class="row gx-0 {{ rowReverse }}">
+           <div class="row gx-0 saaspricing-horizontal-wrapper  {{ rowReverse }}">
                <div class="col-lg-8">
                    <div class="sasspricing-horizontal-left d-flex flex-column justify-content-center position-relative h-100">
                        <!-- Table header -->

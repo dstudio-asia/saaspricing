@@ -2470,7 +2470,7 @@ $settings = $this->get_settings_for_display();
                         ?>
                             <a class="btn saaspricing-vertical-primary <?php
                             if('justify' === $settings['saasp_vertical_cta_alignment']){
-                                echo esc_attr('w-100 ');
+                                echo esc_attr('saaspricing-vertical-justify ');
                             }
                             if( 'extra-small' === $settings['saasp_vertical_primary_cta_size'] ){
                             echo esc_attr('saaspricing-xsm-btn');
@@ -2514,7 +2514,7 @@ $settings = $this->get_settings_for_display();
                             ?>">
                                 <a class="btn saaspricing-vertical-secondary <?php 
                                 if('justify' === $settings['saasp_vertical_cta_alignment']){
-                                    echo esc_attr('w-100 ');
+                                    echo esc_attr('saaspricing-vertical-justify ');
                                 }    
                                 if( '' !== $settings['saasp_vertical_cta_alignment']){
                                     echo esc_attr('saaspricing-cta-'.$settings['saasp_vertical_cta_alignment']);
@@ -2601,7 +2601,7 @@ $settings = $this->get_settings_for_display();
                         ?>
                                 <a class="btn saaspricing-vertical-primary <?php
                                 if('justify' === $settings['saasp_vertical_cta_alignment']){
-                                    echo esc_attr('w-100 ');
+                                    echo esc_attr('saaspricing-vertical-justify ');
                                 }    
                                 if( 'extra-small' === $settings['saasp_vertical_primary_cta_size'] ){
                                 echo esc_attr('saaspricing-xsm-btn');
@@ -2647,7 +2647,7 @@ $settings = $this->get_settings_for_display();
                                 ?>">
                                     <a class="btn saaspricing-vertical-secondary <?php
                                     if('justify' === $settings['saasp_vertical_cta_alignment']){
-                                        echo esc_attr('w-100 ');
+                                        echo esc_attr('saaspricing-vertical-justify ');
                                     }        
                                     if( 'extra-small' === $settings['saasp_vertical_secondary_cta_size'] ){
                                     echo esc_attr('saaspricing-xsm-btn');
@@ -2741,7 +2741,7 @@ $settings = $this->get_settings_for_display();
                     let textJustify = ''
                     let buttonSize = 'saaspricing-m-btn'
                     if('justify' === settings.saasp_vertical_cta_alignment) {
-                        textJustify = 'w-100'
+                        textJustify = 'saaspricing-vertical-justify'
                     }
                     if('extra-small' === settings.saasp_vertical_primary_cta_size) {
                         buttonSize = 'saaspricing-xsm-btn'
@@ -2857,7 +2857,7 @@ $settings = $this->get_settings_for_display();
                             <# if ( settings.saasp_vertical_period ) { #>
                                 <span class="saaspricing-vertical-period saaspricing-vertical-body-alignment
                                     <# if ( 'below' === settings.saasp_vertical_period_position ) { #>
-                                        w-100 mt-1
+                                        saaspricing-vertical-justify mt-1
                                     <# } #>">
                                     {{{ settings.saasp_vertical_period }}}
                                 </span>
