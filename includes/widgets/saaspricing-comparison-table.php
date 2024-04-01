@@ -167,6 +167,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Select Column', 'saaspricing' ),
             'type' =>  Controls_Manager::SELECT,
             'default' => '3',
+            'separator' => 'before',
             'options' => [
                 '1' => esc_html__( '1', 'saaspricing' ),
                 '2'  => esc_html__( '2', 'saaspricing' ),
@@ -1451,25 +1452,25 @@ protected function register_controls() {
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 1', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 1', 'saaspricing' ),
                     'saasp_comparison_feature_text' => esc_html__( 'Feature 1', 'saaspricing' ),
                 ],
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 2', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 2', 'saaspricing' ),
                     'saasp_comparison_feature_text' => esc_html__( 'Feature 2', 'saaspricing' ),
                 ],
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 3', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 3', 'saaspricing' ),
                     'saasp_comparison_feature_text' => esc_html__( 'Feature 3', 'saaspricing' ),
                 ],
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 4', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 4', 'saaspricing' ),
                     'saasp_comparison_feature_text' => esc_html__( 'Feature 4', 'saaspricing' ),
                 ]
             ],
@@ -1627,28 +1628,28 @@ protected function register_controls() {
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 1', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                 ],
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 2', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 2', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                 ],
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 3', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 3', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                 ],
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 4', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 4', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                 ]
@@ -1844,7 +1845,7 @@ protected function register_controls() {
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 1', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                     'saasp_comparison_feature_text_3' => esc_html__( 'Feature 3', 'saaspricing' ),
@@ -1852,7 +1853,7 @@ protected function register_controls() {
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 2', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 2', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                     'saasp_comparison_feature_text_3' => esc_html__( 'Feature 3', 'saaspricing' ),
@@ -1860,7 +1861,7 @@ protected function register_controls() {
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 3', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 3', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                     'saasp_comparison_feature_text_3' => esc_html__( 'Feature 3', 'saaspricing' ),
@@ -1868,7 +1869,7 @@ protected function register_controls() {
                 [
                     'saasp_comparison_show_features_tooltip' => 'no',
                     'saasp_comparison_features_tooltip_description' => esc_html__( 'Enter your tooltip description', 'saaspricing' ),
-                    'saasp_comparison_feature_title' => esc_html__( 'Feature 4', 'saaspricing' ),
+                    'saasp_comparison_feature_title' => esc_html__( 'Feature Title 4', 'saaspricing' ),
                     'saasp_comparison_feature_text_1' => esc_html__( 'Feature 1', 'saaspricing' ),
                     'saasp_comparison_feature_text_2' => esc_html__( 'Feature 2', 'saaspricing' ),
                     'saasp_comparison_feature_text_3' => esc_html__( 'Feature 3', 'saaspricing' ),
@@ -3042,33 +3043,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'sassp_comparison_table_alignment',
-        [
-            'label' => esc_html__( 'Alignment', 'saaspricing' ),
-            'type' =>  Controls_Manager::CHOOSE,
-            'options' => [
-                'start' => [
-                    'title' => esc_html__( 'Left', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-left',
-                ],
-                'center' => [
-                    'title' => esc_html__( 'Center', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-center',
-                ],
-                'end' => [
-                    'title' => esc_html__( 'Right', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-right',
-                ],
-            ],
-            'default' => 'left', 
-            'toggle' => true,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_table_title',
         [
             'label' => esc_html__( 'Table Title', 'saaspricing' ),
@@ -3114,6 +3088,33 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-table-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'sassp_comparison_table_alignment',
+        [
+            'label' => esc_html__( 'Alignment', 'saaspricing' ),
+            'type' =>  Controls_Manager::CHOOSE,
+            'options' => [
+                'start' => [
+                    'title' => esc_html__( 'Left', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                'center' => [
+                    'title' => esc_html__( 'Center', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                'end' => [
+                    'title' => esc_html__( 'Right', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'left', 
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
             ],
         ]
     );
