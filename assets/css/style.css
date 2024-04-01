@@ -121,7 +121,8 @@ svg, img {
 }
 
 .saaspricing-table .saaspricing-ribbon-table-row .saasp-hidden {
-    display: none;
+    visibility: hidden;
+    border: none !important;
 }
 
 .saaspricing-table .saaspricing-price-table-head td {
