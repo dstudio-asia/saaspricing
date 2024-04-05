@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.1.0](https://github.com/dstudio-asia/saaspricing/compare/v1.0.4...v1.1.0) (2024-04-05)
+
+
+### Features
+
+* add additional option to divider ([cb26424](https://github.com/dstudio-asia/saaspricing/commit/cb26424388991dfa323bea875f253c7110604579))
+* added border and hover propterty to pricing section ([b226402](https://github.com/dstudio-asia/saaspricing/commit/b226402b48766c4aa5f5b93aa993f6d4b43e545e))
+* added border color in hover in vertical table ([c58ca55](https://github.com/dstudio-asia/saaspricing/commit/c58ca558a6d5bd318142b4e436deb86b9d8e4efe))
+* added countdown and review background ([05186fe](https://github.com/dstudio-asia/saaspricing/commit/05186fe112e00af3369e9e5d1146a408e949b0b0))
+* background color added to features section ([a9a367e](https://github.com/dstudio-asia/saaspricing/commit/a9a367ed66c0f5b254eaaba91782a2dd80d2dff5))
+* complete horizontal table ([d60962b](https://github.com/dstudio-asia/saaspricing/commit/d60962b336f7aee4227cc26ed37b544bf63aa629))
+
+
+### Bug Fixes
+
+* columns options in features ([6ecded7](https://github.com/dstudio-asia/saaspricing/commit/6ecded7f0a7f6045456f5b88397287d6b0f3f002))
+* cta alginment at top ([2a36d58](https://github.com/dstudio-asia/saaspricing/commit/2a36d58a9a9f515dbb1e3d8fcf1d21064a26a025))
+* divider border issue ([8d1bc46](https://github.com/dstudio-asia/saaspricing/commit/8d1bc46840c017edfd29b4d04937a79586102ebc))
+* lightbox issues in comparison table ([b572b4a](https://github.com/dstudio-asia/saaspricing/commit/b572b4abd5235f616e517d411d60c85697ca5089))
+* min width of saaspricing ([1e25654](https://github.com/dstudio-asia/saaspricing/commit/1e2565447d48ef0b31c17d45640dffa267cfe935))
+* table border for ribbon in comparison table ([c12c648](https://github.com/dstudio-asia/saaspricing/commit/c12c648c24a5ca2dae0b229159b9f127ab771e63))
+* table border issue in comparison table ([073f0ba](https://github.com/dstudio-asia/saaspricing/commit/073f0bacd36b571fa30f47c540c910351f50c06c))
+* vertical and horizontal table feedbacks ([8c9ff57](https://github.com/dstudio-asia/saaspricing/commit/8c9ff574e676a503c00c6edf7e63cc6cbcb662cd))
+
 ## [1.0.4](https://github.com/dstudio-asia/saaspricing/compare/v1.0.3...v1.0.4) (2024-01-24)
 
 
