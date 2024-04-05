@@ -2,9 +2,9 @@
 Contributors: debuggersstudio
 Tags: elementor table, price table, comparison table, elementor pricing, vertical table, horizontal table, pricing table, price, pricing, table, css table, comparison, price gird, pricing gird, pricing box, price chart, price plan, chart, plan
 Requires at least: 5.8
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -142,6 +142,24 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 3. Horizontal Table
 
 == Changelog ==
+
+= 1.0.5
+- Feat even odd style for comparison table feature list
+- Feat button hover, border, boxshadow added for vertical table
+- Feat background color option for countdown and rating in vertical table
+- Feat button hover, border, boxshadow added for horizontal table
+- Feat added dynamic tag for all table links
+- Fix button alignment not working on position top for comparison table
+- Fix comparison lightbox conflict with elemntor image widget lightbox
+- Fix table border not working properly and global border color is not working
+- Fix vertical table primary button margin issue
+- Fix vertical table main wrap border radius is not working
+- Fix vertical table cta background color, Padding, and margin not working at position top
+- Fix vertical table countdown alignment is not working
+- Fix horizontal table main wrap border radius is not working
+- Fix horizontal table added background color features section
+- Fix horizontal table reverse column optoin is not working for tab, tab extra, mobile, mobile extra
+- Fix horiztal table unnecessary gap between feature and cta section in tab, tab extra, mobile, mobile extra
 
 = 1.0.4
 - Fix veritcal table default padding issue
