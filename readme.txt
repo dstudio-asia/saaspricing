@@ -34,6 +34,13 @@ Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, an
 * **Dual CTA Button Supported** : Dual CTA Button Support ensures a great user experience. With this capability, users have the flexibility to choose between two compelling Calls-to-Action, either start their plan immediately or opt for the Learn More option.
 * **Reviews Counter** : Reviews Counter provide valuable social proof, increase trust, offering insights about how many customers positively rated the product or service.  They help potential customers make informed decisions by showcasing others' positive experiences.
 * **Countdown Timer** : The countdown timer feature adds a sense of urgency for potential customers. It creates a visual representation of a limited-time offer, encouraging users to make faster decisions and take advantage of the discounted prices.
+* **Multi Column supported up to 5 (Pro)**
+* **Monthly & Yearly Pricing Table Switch or Toggle (Pro)** : The SaasPricing pro includes a special feature that allows customers to easily switch between different pricing options, such as paying on a monthly or yearly basis.
+* **Spam Protection RecaptchaV3 Supported (Pro)** : Create a Pricing table with advanced security. The Pro version integrates RecaptchaV3 support for robust spam protection. It ensures a secure and reliable environment for your users and prevents unwanted form submissions.
+* **Stripe Checkout Payment Supported (Pro)** : Make it easier for your users to make payments with Stripe Checkout integration in the Pro version. You can securely and efficiently accept payments directly through the SaasPricing table, making the transaction experience smooth for both you and your customers.
+* **Data Submission (Pro)** : Experience the full potential of engaging with your customers using the Pro version's Form Submission feature. With this feature, you can effortlessly gather and organize user information, queries, or purchases right from your SaasPricing table.
+* **Email Notification (Pro)** : Get immediate notifications when someone fills out a form, so you'll never miss an important lead or customer message. Stay on top of your communication to make sure it's fast and effective, which will make your customers happier.
+* **20+ Prebuilt Attractive Pricing Table Template Import (Pro)** : Upgrade to the Pro version and get more than 20+ ready-made and attractive pricing table templates. Import these templates to give your SaasPricing table a professional and attractive design that matches your brand's style.
 
 ## Different Table Options :
 
@@ -64,7 +71,10 @@ The interactive pricing calculator feature for SaaSPricing Pro is beneficial as 
 * Radio Field
 * Checkbox Field
 * Select Field
-* Field Columns
+* RcaptchaV3
+* Paragraph Field
+* Multi Columns or customs
+* Stripe Checkout Supported
 
 Check out our [Pro Version](https://wp.dstudio.asia/saaspricing/pricing-calculator/) , see all these features in action.
 
