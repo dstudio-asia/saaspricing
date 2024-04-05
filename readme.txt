@@ -1,6 +1,6 @@
 === SaasPricing - Pricing Table, Price list, Comparison Table for Elementor ===
 Contributors: debuggersstudio
-Tags: elementor table, price table, comparison table, elementor pricing, vertical table, horizontal table, pricing table, price, pricing, table, css table, comparison, price gird, pricing gird, pricing box, price chart, price plan, chart, plan
+Tags: price table, comparison table, pricing box, price plan, pricing calculator, price estimator table
 Requires at least: 5.8
 Tested up to: 6.5
 Requires PHP: 7.4
