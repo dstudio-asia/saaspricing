@@ -4,7 +4,7 @@ Tags: price table, comparison table, pricing box, price plan, pricing calculator
 Requires at least: 5.8
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,25 +44,25 @@ Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, an
 
 SaasPricing has five types of tables to choose from:
 
-### 1. [Comparison Price table] (https://wp.dstudio.asia/saaspricing/comparison-table/)
+### 1. Comparison Price table
 
-Comparison pricing table serves as valuable tools for website owners, aiding in the effective presentation and comparison of products or services. These tables allow users to quickly assess different pricing plans, features, and specifications side by side.
+Comparison pricing table serves as valuable tools for website owners, aiding in the effective presentation and comparison of products or services. These tables allow users to quickly assess different pricing plans, features, and specifications side by side. [Demo](https://wp.dstudio.asia/saaspricing/comparison-table/)
 
-### 2. [Vertical Price Table] (https://wp.dstudio.asia/saaspricing/horizontal-pricing-table/)
+### 2. Vertical Price Table
 
-The vertical pricing table provides a clear and comprehensive overview of subscription packages in a vertically organized format. This design facilitates easy comparison of features, pricing, and benefits. Additionally, this vertical table promotes a structured presentation of details.
+The vertical pricing table provides a clear and comprehensive overview of subscription packages in a vertically organized format. This design facilitates easy comparison of features, pricing, and benefits. Additionally, this vertical table promotes a structured presentation of details. [Demo](https://wp.dstudio.asia/saaspricing/vertical-pricing-table/)
 
-### 3. [Horizontal Price Table] (https://wp.dstudio.asia/saaspricing/vertical-pricing-table/)
+### 3. Horizontal Price Table
 
-The horizontal pricing table presents key features, pricing, and benefits side by side in a horizontal layout that improves clarity and simplify decision-making. Users can quickly scan across different plans, comparing the offerings and pricing structures effortlessly.
+The horizontal pricing table presents key features, pricing, and benefits side by side in a horizontal layout that improves clarity and simplify decision-making. Users can quickly scan across different plans, comparing the offerings and pricing structures effortlessly. [Demo](https://wp.dstudio.asia/saaspricing/horizontal-pricing-table/)
 
-### 4. [Pricelist Widget] (https://wp.dstudio.asia/saaspricing/pricelist/)
+### 4. Pricelist Widget
 
-The price list widget is used to help you create price lists to showcase value and offers together. You can use it to create restaurant menus, product lists, item bundles, the Grand Slam offer creation, and any other kind of price list you require. This versatile price list widget can showcase item names and the total value of list items, then offer a discount price over the total value.
+The price list widget is used to help you create price lists to showcase value and offers together. You can use it to create restaurant menus, product lists, item bundles, the Grand Slam offer creation, and any other kind of price list you require. This versatile price list widget can showcase item names and the total value of list items, then offer a discount price over the total value. [Demo](https://wp.dstudio.asia/saaspricing/pricelist/)
 
-### 5. [Interactive Real Time Pricing Calculator (Pro)] (https://wp.dstudio.asia/saaspricing/pricing-calculator/)
+### 5. Interactive Real Time Pricing Calculator (Pro)
 
-The interactive pricing calculator feature for SaaSPricing Pro is beneficial as it allows customers to dynamically customize costs based on their specific needs. Customers can make their own package and get the cost estimate real time. It improves user engagement by providing a personalized experience.
+The interactive pricing calculator feature for SaaSPricing Pro is beneficial as it allows customers to dynamically customize costs based on their specific needs. Customers can make their own package and get the cost estimate real time. It improves user engagement by providing a personalized experience. [Demo](https://wp.dstudio.asia/saaspricing/pricing-calculator/)
 
 #### SaasPricing Table Pro Features:
 
@@ -156,7 +156,7 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 
 == Changelog ==
 
-= 1.0.6
+= 1.0.8
 - Feat new pricelist widget added
 
 = 1.0.5
