@@ -152,6 +152,7 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 1. Comparison Table
 2. Vertical Table
 3. Horizontal Table
+4. Pricelist Widget
 
 == Changelog ==
 
