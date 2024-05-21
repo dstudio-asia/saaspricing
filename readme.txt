@@ -14,7 +14,7 @@ Ultimate pricing & comparison widget for Elementor. Three table options, customi
 
 SaasPricing is a fully responsive pricing and comparison table widget for [Elementor](https://wordpress.org/plugins/elementor/) 
 
-This wordpress plugin enables you to create responsive and custom price tables for your service based business and saas. SaasPricing has all the features you need to create an amazing pricing table. With three different table options – **comparison price table**, **vertical pricing table**, and **horizontal pricing table** – you can customize these tables to increase your product or services engagement and conversion.
+SaasPricing helps to create price tables and comparison tables for service-based businesses website and SaaS pricing page. It gives you flexibility to customize your pricing plan and comparison tables for your pricing page. It allows you to showcase your the pricing in different types of layouts like comparison tables, vertical price tables, horizontal price tables, real-time price calculators, and offer-based price lists.
 
 Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, and interactive pricing calculator makes your pricing table unique, user-friendly and attention-grabbing for your audience.
 
@@ -34,7 +34,7 @@ Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, an
 * **Dual CTA Button Supported** : Dual CTA Button Support ensures a great user experience. With this capability, users have the flexibility to choose between two compelling Calls-to-Action, either start their plan immediately or opt for the Learn More option.
 * **Reviews Counter** : Reviews Counter provide valuable social proof, increase trust, offering insights about how many customers positively rated the product or service.  They help potential customers make informed decisions by showcasing others' positive experiences.
 * **Countdown Timer** : The countdown timer feature adds a sense of urgency for potential customers. It creates a visual representation of a limited-time offer, encouraging users to make faster decisions and take advantage of the discounted prices.
-* **Multi Column supported up to 5 (Pro)**
+* **Multi Column supported up to 5 (Pro)** : The Multi Column feature allows you to compare more than five different products or services side by side. This functionality makes it simple for users to analyze different options and select the one that suits them the most.
 * **Monthly & Yearly Pricing Table Switch or Toggle (Pro)** : The SaasPricing pro includes a special feature that allows customers to easily switch between different pricing options, such as paying on a monthly or yearly basis.
 * **Spam Protection RecaptchaV3 Supported (Pro)** : Create a Pricing table with advanced security. The Pro version integrates RecaptchaV3 support for robust spam protection. It ensures a secure and reliable environment for your users and prevents unwanted form submissions.
 * **Stripe Checkout Payment Supported (Pro)** : Make it easier for your users to make payments with Stripe Checkout integration in the Pro version. You can securely and efficiently accept payments directly through the SaasPricing table, making the transaction experience smooth for both you and your customers.
@@ -42,21 +42,25 @@ Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, an
 
 ## Different Table Options :
 
-SaasPricing has four types of tables to choose from:
+SaasPricing has five types of tables to choose from:
 
-### 1. Comparison Price table
+### 1. [Comparison Price table] (https://wp.dstudio.asia/saaspricing/comparison-table/)
 
 Comparison pricing table serves as valuable tools for website owners, aiding in the effective presentation and comparison of products or services. These tables allow users to quickly assess different pricing plans, features, and specifications side by side.
 
-### 2. Vertical Price Table
+### 2. [Vertical Price Table] (https://wp.dstudio.asia/saaspricing/horizontal-pricing-table/)
 
 The vertical pricing table provides a clear and comprehensive overview of subscription packages in a vertically organized format. This design facilitates easy comparison of features, pricing, and benefits. Additionally, this vertical table promotes a structured presentation of details.
 
-### 3. Horizontal Price Table
+### 3. [Horizontal Price Table] (https://wp.dstudio.asia/saaspricing/vertical-pricing-table/)
 
 The horizontal pricing table presents key features, pricing, and benefits side by side in a horizontal layout that improves clarity and simplify decision-making. Users can quickly scan across different plans, comparing the offerings and pricing structures effortlessly.
 
-### 4. Interactive Real Time Pricing Calculator (Pro)
+### 4. [Pricelist Widget] (https://wp.dstudio.asia/saaspricing/pricelist/)
+
+The price list widget is used to help you create price lists to showcase value and offers together. You can use it to create restaurant menus, product lists, item bundles, the Grand Slam offer creation, and any other kind of price list you require. This versatile price list widget can showcase item names and the total value of list items, then offer a discount price over the total value.
+
+### 5. [Interactive Real Time Pricing Calculator (Pro)] (https://wp.dstudio.asia/saaspricing/pricing-calculator/)
 
 The interactive pricing calculator feature for SaaSPricing Pro is beneficial as it allows customers to dynamically customize costs based on their specific needs. Customers can make their own package and get the cost estimate real time. It improves user engagement by providing a personalized experience.
 
@@ -150,6 +154,9 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 3. Horizontal Table
 
 == Changelog ==
+
+= 1.0.6
+- Feat new pricelist widget added
 
 = 1.0.5
 - Feat even odd style for comparison table feature list
