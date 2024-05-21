@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/dstudio-asia/saaspricing/compare/v1.0.5...v1.1.0) (2024-05-21)
+
+
+### Features
+
+* pricelist widget ([8cce225](https://github.com/dstudio-asia/saaspricing/commit/8cce225509afa8f38c0fbe21c4c348605ee86ccc))
+
 ## [1.0.4](https://github.com/dstudio-asia/saaspricing/compare/v1.0.3...v1.0.4) (2024-01-24)
 
 
