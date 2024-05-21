@@ -240,7 +240,6 @@ final class Saas_Pricing {
 		wp_register_script( 'saasp-vertical-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-vertical.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-horizontal-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-horizontal.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-comparison-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-comparison.js' , [ 'jquery' ] , self::VERSION , true );
-		wp_register_script( 'saasp-pricelist-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-pricelist.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-main-js', SAASP_PRICING_ASSETS_URL . 'js/main.js' , [ 'jquery' ] , self::VERSION , true );
 
 		wp_enqueue_script('saasp-fontawesome-js');
@@ -250,7 +249,6 @@ final class Saas_Pricing {
 		wp_enqueue_script('saasp-horizontal-js');
 		if( !in_array( 'saaspricing-pro/saaspricing-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 			wp_enqueue_script('saasp-comparison-js');
-			wp_enqueue_script('saasp-pricelist-js');
 		}
 		wp_enqueue_script('saasp-main-js');
 
