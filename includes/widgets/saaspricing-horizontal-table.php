@@ -2894,7 +2894,7 @@ protected function _content_template() {
                                <span class="saaspricing-countdown"
                                data-countdown-index="0"
                                data-expire-date="{{ settings.saasp_horizontal_expire_date }}">
-                               <?php echo esc_html__('00d: 00h: 00m: 00s','saaspricing-pro'); ?>
+                               <?php echo esc_html__('00d: 00h: 00m: 00s','saaspricing'); ?>
                                </span>
                            </div>
                        <#
