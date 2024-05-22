@@ -80,7 +80,7 @@ The interactive pricing calculator feature for SaaSPricing Pro is beneficial as 
 * Multi Columns or customs
 * Stripe Checkout Supported
 
-Check out our [Pro Version](https://wp.dstudio.asia/saaspricing/pricing-calculator/) , see all these features in action.
+Check out our [Pro Version](https://www.templatemonster.com/wordpress-plugins/saaspricing-pro-all-in-one-pricing-table-plugin-for-wordpress-366508.html) , see all these features in action.
 
 ## Benefits Of Using SaasPricing Table:
 
