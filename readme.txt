@@ -4,7 +4,7 @@ Tags: price table, comparison table, pricing box, price plan, pricing calculator
 Requires at least: 5.8
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, an
 * **RTL & MultiLang Support** : Not only can you customize the content, but you also have the unique feature of adjusting the table to your preferred language. SaasPricing goes the extra mile by supporting Right-to-Left (RTL) text format, which ensures seamless alignment and readability for languages that follow this orientation.
 * **Multi Currency** : This table offers versatile multi-currency features. It supports various currencies such as BDT, Dollar, Euro, Baht, Franc, Guilder, Krona, Lira, Peseta, Peso, and more. Additionally, it provides a feature that allows you to customize the currency according to your preference.
 * **Offer Discounted Price** : With this pricing table you can offer your discounted price to improve your sales growth. It helps to capture your audience's attention with special offers, enticing them to choose your plans.
-* **Ribbons** : The ribbons in this pricing table serve as visual cues to highlight key features or offers, such as "Most Popular" or â€Recommendedâ€ or  â€œOn Saleâ€. They help users quickly identify and make decisions based on the attractiveness of specific plans.
+* **Ribbons** : The ribbons in this pricing table serve as visual cues to highlight key features or offers, such as "Most Popular" or ”Recommended” or  “On Sale”. They help users quickly identify and make decisions based on the attractiveness of specific plans.
 * **Tooltips** : The tooltips in this pricing table provide additional information without making the main display crowded. Users can easily access details about specific features by hovering over relevant elements.
 * **Drag & Drop Functionality** : The drag and drop feature of this pricing table allows you to create an amazing pricing table without any coding knowledge.
 * **Lightbox** : This pricing table also has a "lightbox" feature. It's a popup window that opens when a user interacts with a specific element of this table, such as clicking on an image.
@@ -92,7 +92,7 @@ Check out our [Pro Version](https://www.templatemonster.com/wordpress-plugins/sa
 * Comparison pricing table, horizontal or vertical pricing table options to meet your needs
 * Customize the pricing table to match your branding and website design
 * Increase user engagement and conversion rates by providing countdown time
-* Save time and effort with a pre-built pricing table thatâ€™s easy to use and customize to your specific needs
+* Save time and effort with a pre-built pricing table that’s easy to use and customize to your specific needs
 
 SaasPricing provides a smooth, user-friendly interface that makes it easy to compare pricing options for any WordPress website.
 
@@ -157,6 +157,9 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 4. Pricelist Widget
 
 == Changelog ==
+
+= 1.1.0
+- Fix overwriting font-family 
 
 = 1.0.9
 - Fix after installed pro, defaulft comparison table design not working
