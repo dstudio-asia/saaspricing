@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.0.4';
+	const VERSION = '1.1.0';
 
 	/**
 	 * Minimum Elementor Version
@@ -264,17 +264,12 @@ final class Saas_Pricing {
 	function saasp_register_widgets( $widgets_manager ) {
 		require_once(  __DIR__ . '/widgets/saaspricing-vertical-table.php' );
 		require_once(  __DIR__ . '/widgets/saaspricing-horizontal-table.php' );
-
+		require_once(  __DIR__ . '/widgets/saaspricing-comparison-table.php' );
+		require_once(  __DIR__ . '/widgets/saaspricing-pricelist.php' );
+		$widgets_manager->register( new \Saaspricing_Pricelist() );
 		$widgets_manager->register( new \Saasp_Horizontal() );
 		$widgets_manager->register( new \Saasp_Vertical() );
-
-		if( !in_array( 'saaspricing-pro/saaspricing-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-			require_once(  __DIR__ . '/widgets/saaspricing-comparison-table.php' );
-			require_once(  __DIR__ . '/widgets/saaspricing-pricelist.php' );
-
-			$widgets_manager->register( new \Saaspricing_Pricelist() );
-			$widgets_manager->register( new \Saasp_Comparison() );
-		}
+		$widgets_manager->register( new \Saasp_Comparison() );
 
 	}
 

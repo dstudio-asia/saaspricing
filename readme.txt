@@ -4,7 +4,7 @@ Tags: price table, comparison table, pricing box, price plan, pricing calculator
 Requires at least: 5.8
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.0.8
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,8 @@ Ultimate pricing & comparison widget for Elementor. Three table options, customi
 SaasPricing is a fully responsive pricing and comparison table widget for [Elementor](https://wordpress.org/plugins/elementor/) 
 
 SaasPricing helps to create price tables and comparison tables for service-based businesses website and SaaS pricing page. It gives you flexibility to customize your pricing plan and comparison tables for your pricing page. It allows you to showcase your the pricing in different types of layouts like comparison tables, vertical price tables, horizontal price tables, real-time price calculators, and offer-based price lists.
+
+[youtube https://youtu.be/33UldUqYwJI?si=L2wcpYsJNFrAQ2HX]
 
 Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, and interactive pricing calculator makes your pricing table unique, user-friendly and attention-grabbing for your audience.
 
@@ -78,7 +80,7 @@ The interactive pricing calculator feature for SaaSPricing Pro is beneficial as 
 * Multi Columns or customs
 * Stripe Checkout Supported
 
-Check out our [Pro Version](https://wp.dstudio.asia/saaspricing/pricing-calculator/) , see all these features in action.
+Check out our [Pro Version](https://www.templatemonster.com/wordpress-plugins/saaspricing-pro-all-in-one-pricing-table-plugin-for-wordpress-366508.html) , see all these features in action.
 
 ## Benefits Of Using SaasPricing Table:
 
@@ -155,6 +157,12 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 4. Pricelist Widget
 
 == Changelog ==
+
+= 1.1.0
+- Fix overwriting font-family 
+
+= 1.0.9
+- Fix after installed pro, defaulft comparison table design not working
 
 = 1.0.8
 - Feat new pricelist widget added
