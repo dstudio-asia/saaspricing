@@ -2,7 +2,7 @@
 Contributors: debuggersstudio
 Tags: price table, comparison table, pricing box, price plan, pricing calculator, price estimator table
 Requires at least: 5.8
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 7.4
 Stable tag: 1.1.0
 License: GPLv2 or later
@@ -37,7 +37,7 @@ Features like countdown timers, ribbons, reviews counter, tooltips, lightbox, an
 * **Reviews Counter** : Reviews Counter provide valuable social proof, increase trust, offering insights about how many customers positively rated the product or service.  They help potential customers make informed decisions by showcasing others' positive experiences.
 * **Countdown Timer** : The countdown timer feature adds a sense of urgency for potential customers. It creates a visual representation of a limited-time offer, encouraging users to make faster decisions and take advantage of the discounted prices.
 * **Multi Column supported up to 5 (Pro)** : The Multi Column feature allows you to compare more than five different products or services side by side. This functionality makes it simple for users to analyze different options and select the one that suits them the most.
-* **Monthly & Yearly Pricing Table Switch or Toggle (Pro)** : The SaasPricing pro includes a special feature that allows customers to easily switch between different pricing options, such as paying on a monthly or yearly basis.
+* **Monthly & Yearly Content Switcher (Pro)** : The SaasPricing pro includes a special feature that allows customers to easily switch between different pricing options, such as paying on a monthly or yearly basis.
 * **Spam Protection RecaptchaV3 Supported (Pro)** : Create a Pricing table with advanced security. The Pro version integrates RecaptchaV3 support for robust spam protection. It ensures a secure and reliable environment for your users and prevents unwanted form submissions.
 * **Stripe Checkout Payment Supported (Pro)** : Make it easier for your users to make payments with Stripe Checkout integration in the Pro version. You can securely and efficiently accept payments directly through the SaasPricing table, making the transaction experience smooth for both you and your customers.
 * **20+ Prebuilt Attractive Pricing Table Template Import (Pro)** : Upgrade to the Pro version and get more than 20+ ready-made and attractive pricing table templates. Import these templates to give your SaasPricing table a professional and attractive design that matches your brand's style.
