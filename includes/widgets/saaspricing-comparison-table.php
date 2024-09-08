@@ -25,7 +25,7 @@ public function get_name() {
 }
 
 public function get_title() {
-    return esc_html__( 'Comparison Pricing Table', 'saaspricing' );
+    return esc_html__( 'Comparison Table', 'saaspricing' );
 }
 
 public function get_icon() {
@@ -120,7 +120,7 @@ protected function register_controls() {
     $this->start_controls_section(
         'saasp_comparison_content_section',
         [
-            'label' => esc_html__( 'Header', 'saaspricing' ),
+            'label' => esc_html__( 'Table', 'saaspricing' ),
             'tab' => Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -158,6 +158,16 @@ protected function register_controls() {
                 'span' => esc_html__( 'Span', 'saaspricing' ),
                 'p' => esc_html__( 'P', 'saaspricing' ),
             ],
+        ]
+    );
+
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+        'saasp_comparison_columns_section',
+        [
+            'label' => esc_html__( 'Columns', 'saaspricing' ),
+            'tab' => Controls_Manager::TAB_CONTENT,
         ]
     );
     
@@ -1942,7 +1952,7 @@ protected function register_controls() {
     $this->start_controls_section(
         'saasp_comparison_cta_section_starts',
         [
-            'label' => esc_html__( 'CTA', 'saaspricing' ),
+            'label' => esc_html__( 'Buttons', 'saaspricing' ),
             'tab' =>   Controls_Manager::TAB_CONTENT,
         ]
     );
@@ -1950,7 +1960,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_one_primary_cta_heading',
         [
-            'label' => esc_html__( 'Column One', 'saaspricing' ),
+            'label' => esc_html__( 'Button One', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
         ]
@@ -2286,7 +2296,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_primary_cta_2',
         [
-            'label' => esc_html__( 'Column Two', 'saaspricing' ), 
+            'label' => esc_html__( 'Button Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
             'condition' =>[
@@ -2634,7 +2644,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_primary_cta',
         [
-            'label' => esc_html__( 'Column Three', 'saaspricing' ),
+            'label' => esc_html__( 'Button Three', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
             'condition' =>[
@@ -2982,7 +2992,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_cta_alignment',
         [
-            'label' => esc_html__( 'CTA Alignment', 'saaspricing' ),
+            'label' => esc_html__( 'Button Alignment', 'saaspricing' ),
             'type' => Controls_Manager::CHOOSE,
             'separator' => 'before',
             'options' => [
@@ -3050,6 +3060,14 @@ protected function register_controls() {
             'separator'=>'before'
         ]
     );
+
+    $this->add_group_control(
+        Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_comparison_table_title_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-table-title-description .saaspricing-table-title',
+        ]
+    );
     
     $this->add_control(
         'saasp_comparison_table_title_color',
@@ -3059,14 +3077,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table-title-description .saaspricing-table-title' => 'color: {{VALUE}}',
             ],
-        ]
-    );
-
-    $this->add_group_control(
-        Group_Control_Typography::get_type(),
-        [
-            'name' => 'saasp_comparison_table_title_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-table-title-description .saaspricing-table-title',
         ]
     );
 
@@ -3127,6 +3137,14 @@ protected function register_controls() {
             'separator' => 'before',
         ]
     );
+
+    $this->add_group_control(
+        Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_comparison_table_description_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-table-title-description .saaspricing-table-description',
+        ]
+    );
     
     $this->add_control(
         'saasp_comparison_table_description_color',
@@ -3136,14 +3154,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table-title-description .saaspricing-table-description' => 'color: {{VALUE}}',
             ],
-        ]
-    );
-
-    $this->add_group_control(
-        Group_Control_Typography::get_type(),
-        [
-            'name' => 'saasp_comparison_table_description_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-table-title-description .saaspricing-table-description',
         ]
     );
 
@@ -3283,7 +3293,7 @@ protected function register_controls() {
     $this->start_controls_section(
         'saasp_comparison_style_header_heading_section',
         [
-            'label' => esc_html__( 'Heading', 'saaspricing' ),
+            'label' => esc_html__( 'Columns', 'saaspricing' ),
             'tab' =>Controls_Manager::TAB_STYLE,
         ]
     );
@@ -3303,7 +3313,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_header_style_tab_heading_title',
         [
-            'label' => esc_html__( 'Title', 'saaspricing' ),
+            'label' => esc_html__( 'Head Title', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator'=>'before'
         ]
@@ -3343,7 +3353,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_header_style_tab_heading_description',
         [
-            'label' => esc_html__( 'Description', 'saaspricing' ),
+            'label' => esc_html__( 'Head Description', 'saaspricing' ),
             'type' =>  Controls_Manager::HEADING,
             'separator'=>'before'
         ]
@@ -3966,6 +3976,15 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_group_control(
+        Group_Control_Typography::get_type(),
+         [
+             'name' => 'saasp_comparison_pricing_text_typography',
+             'selector' => '{{WRAPPER}} .saaspricing-price-typography',
+             'separator'=>'after'
+         ]
+     );
+
     $this->add_responsive_control(
         'saasp_comparison_original_price_padding',
         [
@@ -4185,15 +4204,6 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_group_control(
-       Group_Control_Typography::get_type(),
-        [
-            'name' => 'saasp_comparison_pricing_text_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-price-typography',
-            'separator'=>'before'
-        ]
-    );
-
     $this->add_control(
         'saasp_comparison_header_pricing_currency_symbol',
         [
@@ -4276,7 +4286,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_header_pricing_fractional_part',
         [
-            'label' => esc_html__( 'Fractional Part', 'saaspricing' ),
+            'label' => esc_html__( 'Decimal Part', 'saaspricing' ),
             'type' => Controls_Manager::HEADING,
             'separator'=>'before'
         ]
@@ -4417,17 +4427,6 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_control(
-        'saasp_comparison_feature_tooltip_icon_color',
-        [
-            'label' => esc_html__( 'Color', 'saaspricing' ),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-feature-main i' => 'color: {{VALUE}} ',
-            ],
-        ]
-    );
-
     $this->add_responsive_control(
         'saasp_comparison_features_tooltip_icon_size',
         [
@@ -4447,6 +4446,17 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-main i' => 'font-size: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}}',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_feature_tooltip_icon_color',
+        [
+            'label' => esc_html__( 'Color', 'saaspricing' ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-feature-main i' => 'color: {{VALUE}} ',
             ],
         ]
     );
@@ -4484,6 +4494,72 @@ protected function register_controls() {
         ]
     );
 
+    $this->start_controls_tabs( 'saasp_comparison_cell_normal_hover_background' );
+	
+    $this->start_controls_tab(
+		'saasp_comparison_cell_normal_background',
+		[
+			'label' => esc_html__( 'Normal', 'saaspricing'),
+		]
+	);
+
+    $this->add_control(
+        'saasp_comparison_cell_odd_background_color',
+        [
+            'label' => esc_html__( 'Odd Background', 'saaspricing' ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(odd)' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_cell_even_background_color',
+        [
+            'label' => esc_html__( 'Even Background', 'saaspricing' ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(even)' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->start_controls_tab(
+		'saasp_comparison_cell_hover_background',
+		[
+			'label' => esc_html__( 'Hover', 'saaspricing'),
+		]
+	);
+
+    $this->add_control(
+        'saasp_comparison_cell_odd_hover_background_color',
+        [
+            'label' => esc_html__( 'Odd Background', 'saaspricing' ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(odd):hover' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_cell_even_hover_background_color',
+        [
+            'label' => esc_html__( 'Even Background', 'saaspricing' ),
+            'type' => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(even):hover' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->end_controls_tab();
+
+    $this->end_controls_tabs();
+
     $this->add_control(
         'saasp_comparison_feature_title_section',
         [
@@ -4491,6 +4567,14 @@ protected function register_controls() {
             'type' =>  Controls_Manager::HEADING,
             'separator'=>'before'
         ]
+    );
+
+    $this->add_group_control(
+        Group_Control_Typography::get_type(),
+       [
+           'name' => 'saasp_comparison_feature_title_typography',
+           'selector' => '{{WRAPPER}} .saaspricing-feature-title',
+       ]
     );
 
     $this->add_control(
@@ -4501,14 +4585,6 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-title' => 'color: {{VALUE}}',
             ],
-        ]
-    );
-
-    $this->add_group_control(
-         Group_Control_Typography::get_type(),
-        [
-            'name' => 'saasp_comparison_feature_title_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-feature-title',
         ]
     );
 
@@ -4576,6 +4652,35 @@ protected function register_controls() {
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-cell-icon i' => 'margin-right: {{SIZE}}{{UNIT}};',
                 '{{WRAPPER}} .saaspricing-table .saaspricing-cell-icon svg' => 'margin-right: {{SIZE}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_feature_cell',
+        [
+            'label' => esc_html__( 'Feature Text', 'saaspricing' ), 
+            'type' =>  Controls_Manager::HEADING,
+            'separator'=>'before'
+        ]
+    );
+
+    $this->add_group_control(
+         Group_Control_Typography::get_type(),
+        [
+            'name' => 'saasp_comparison_feature_cell_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-cell .saaspricing-cell-text',
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_comparison_feature_cell_padding',
+        [
+            'label' => esc_html__( 'Padding', 'saaspricing' ),
+            'type' =>  Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-list td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -4703,103 +4808,6 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_control(
-        'saasp_comparison_feature_cell',
-        [
-            'label' => esc_html__( 'Feature Text', 'saaspricing' ), 
-            'type' =>  Controls_Manager::HEADING,
-            'separator'=>'before'
-        ]
-    );
-
-    $this->add_group_control(
-         Group_Control_Typography::get_type(),
-        [
-            'name' => 'saasp_comparison_feature_cell_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-cell .saaspricing-cell-text',
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_comparison_feature_cell_padding',
-        [
-            'label' => esc_html__( 'Padding', 'saaspricing' ),
-            'type' =>  Controls_Manager::DIMENSIONS,
-            'size_units' => [ 'px', '%', 'em'],
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-feature-list td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-    
-    $this->start_controls_tabs( 'saasp_comparison_cell_normal_hover_background' );
-	
-    $this->start_controls_tab(
-		'saasp_comparison_cell_normal_background',
-		[
-			'label' => esc_html__( 'Normal', 'saaspricing'),
-
-		]
-	);
-
-    $this->add_control(
-        'saasp_comparison_cell_odd_background_color',
-        [
-            'label' => esc_html__( 'Odd Background', 'saaspricing' ),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(odd)' => 'background-color: {{VALUE}}',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_cell_even_background_color',
-        [
-            'label' => esc_html__( 'Even Background', 'saaspricing' ),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(even)' => 'background-color: {{VALUE}}',
-            ],
-        ]
-    );
-
-    $this->end_controls_tab();
-
-    $this->start_controls_tab(
-		'saasp_comparison_cell_hover_background',
-		[
-			'label' => esc_html__( 'Hover', 'saaspricing'),
-
-		]
-	);
-
-    $this->add_control(
-        'saasp_comparison_cell_odd_hover_background_color',
-        [
-            'label' => esc_html__( 'Odd Background', 'saaspricing' ),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(odd):hover' => 'background-color: {{VALUE}}',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_cell_even_hover_background_color',
-        [
-            'label' => esc_html__( 'Even Background', 'saaspricing' ),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-main .saaspricing-table .saaspricing-feature-list:nth-child(even):hover' => 'background-color: {{VALUE}}',
-            ],
-        ]
-    );
-
-    $this->end_controls_tab();
-
-    $this->end_controls_tabs();
-
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -4807,6 +4815,37 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Review', 'saaspricing' ),
             'tab' =>Controls_Manager::TAB_STYLE,
+        ]
+    );
+
+    $this->add_group_control(
+        Group_Control_Typography::get_type(),
+        [
+            'name' => 'saaspricing_review_text_typography',
+            'selector' => '{{WRAPPER}} .saaspricing-review-text',
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_comparison_header_review_spacing',
+        [
+            'label' => esc_html__( 'Spacing', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px' ],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 20,
+                    'step' => 1,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-ratings span:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
+            ],
         ]
     );
 
@@ -4867,7 +4906,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_one_review_text_color',
         [
-            'label' => esc_html__( 'Review Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(2) .saaspricing-review-text' => 'color: {{VALUE}}',
@@ -4923,7 +4962,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_two_review_text_color',
         [
-            'label' => esc_html__( 'Review Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(3) .saaspricing-review-text' => 'color: {{VALUE}}',
@@ -4979,7 +5018,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_three_review_text_color',
         [
-            'label' => esc_html__( 'Review Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-original-price:nth-child(4) .saaspricing-review-text' => 'color: {{VALUE}}',
@@ -4990,55 +5029,6 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_control(
-        'saasp_comparison_style_header_review_satar_heading',
-        [
-            'label' => esc_html__( 'Stars', 'saaspricing' ),
-            'type' =>  Controls_Manager::HEADING,
-            'separator' => 'before',
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_comparison_header_review_spacing',
-        [
-            'label' => esc_html__( 'Spacing', 'saaspricing' ),
-            'type' =>  Controls_Manager::SLIDER,
-            'size_units' => [ 'px' ],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
-                ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 0,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-ratings span:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_style_header_review_text_heading',
-        [
-            'label' => esc_html__( 'Text', 'saaspricing' ), 
-            'type' =>  Controls_Manager::HEADING,
-            'separator' => 'before',
-        ]
-    );
-
-    $this->add_group_control(
-        Group_Control_Typography::get_type(),
-        [
-            'name' => 'saaspricing_review_text_typography',
-            'selector' => '{{WRAPPER}} .saaspricing-review-text',
-        ]
-    );
-
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -5046,6 +5036,45 @@ protected function register_controls() {
         [
             'label' => esc_html__( 'Ribbon', 'saaspricing' ),
             'tab' =>Controls_Manager::TAB_STYLE,
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_header_ribbon_countdown_distance_between',
+        [
+            'label' => esc_html__( 'Distance Between', 'saaspricing' ),
+            'type' =>  Controls_Manager::SLIDER,
+            'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 100,
+                    'step' => 5,
+                ],
+                '%' => [
+                    'min' => 0,
+                    'max' => 100,
+                ],
+            ],
+            'default' => [
+                'unit' => 'px',
+                'size' => 0,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-ribbon-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+            ],
+        ]
+    );
+
+    $this->add_responsive_control(
+        'saasp_comparison_header_ribbon_padding',
+        [
+            'label' => esc_html__( 'Padding', 'saaspricing' ),
+            'type' => Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px', '%', 'em'],
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table .saaspricing-common-ribbon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
         ]
     );
 
@@ -5104,46 +5133,6 @@ protected function register_controls() {
             'separator' => 'after',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-show-expire-date' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_header_ribbon_countdown_distance_between',
-        [
-            'label' => esc_html__( 'Distance Between', 'saaspricing' ),
-            'type' =>  Controls_Manager::SLIDER,
-            'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 5,
-                ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 100,
-                ],
-            ],
-            'default' => [
-                'unit' => 'px',
-                'size' => 0,
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-ribbon-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'saasp_comparison_header_ribbon_padding',
-        [
-            'label' => esc_html__( 'Padding', 'saaspricing' ),
-            'type' => Controls_Manager::DIMENSIONS,
-            'size_units' => [ 'px', '%', 'em'],
-            'separator' => 'before',
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-table .saaspricing-common-ribbon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -5684,7 +5673,7 @@ protected function register_controls() {
     $this->start_controls_section(
         'saasp_comparison_cta_section',
         [
-            'label' => esc_html__( 'CTA', 'saaspricing' ),
+            'label' => esc_html__( 'Buttons', 'saaspricing' ),
             'tab' =>   Controls_Manager::TAB_STYLE,
         ]
     );
@@ -5745,7 +5734,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_one_primary_cta',
         [
-            'label' => esc_html__( 'Column One', 'saaspricing' ), 
+            'label' => esc_html__( 'Button One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
             'condition' => [
@@ -5848,20 +5837,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_hover_background_color_1',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-1:hover' => 'background-color: {{VALUE}}',
-            ],
-            'condition' => [
-                'saasp_comparison_select_columns' => ['1','2','3'],
-            ],
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_primary_cta_hover_text_color_1',
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
@@ -5870,7 +5845,21 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-primary-1:hover' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-primary-spacing-1:hover svg' => 'fill: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_primary_cta_hover_background_color_1',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-primary-1:hover' => 'background-color: {{VALUE}}',
+            ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
             ],
@@ -5921,7 +5910,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_two_primary_cta',
         [
-            'label' => esc_html__( 'Column Two', 'saaspricing' ), 
+            'label' => esc_html__( 'Button Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -5944,12 +5933,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_normal_background_color_2',
+        'saasp_comparison_primary_cta_normal_text_color_2',
         [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-2' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-2' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -5958,14 +5948,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_normal_text_color_2',
+        'saasp_comparison_primary_cta_normal_background_color_2',
         [
-            'label' => esc_html__( 'Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-2' => 'color: {{VALUE}}',
-                '{{WRAPPER}} span.saaspricing-primary-spacing-2 svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-2' => 'background-color: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -6023,12 +6012,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_hover_background_color_2',
+        'saasp_comparison_primary_cta_hover_text_color_2',
         [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-2:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-2:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -6037,14 +6027,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_hover_text_color_2',
+        'saasp_comparison_primary_cta_hover_background_color_2',
         [
-            'label' => esc_html__( 'Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-2:hover' => 'color: {{VALUE}}',
-                '{{WRAPPER}} span.saaspricing-primary-spacing-2:hover svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-2:hover' => 'background-color: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -6096,7 +6085,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_three_primary_cta',
         [
-            'label' => esc_html__( 'Column Three', 'saaspricing' ), 
+            'label' => esc_html__( 'Button Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6119,12 +6108,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_normal_background_color_3',
+        'saasp_comparison_primary_cta_normal_text_color_3',
         [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-3' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-3' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-3 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6133,14 +6123,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_normal_text_color_3',
+        'saasp_comparison_primary_cta_normal_background_color_3',
         [
-            'label' => esc_html__( 'Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-3' => 'color: {{VALUE}}',
-                '{{WRAPPER}} span.saaspricing-primary-spacing-3 svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-3' => 'background-color: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6198,12 +6187,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_hover_background_color_3',
+        'saasp_comparison_primary_cta_hover_text_color_3',
         [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-3:hover' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-3:hover' => 'color: {{VALUE}}',
+                '{{WRAPPER}} span.saaspricing-primary-spacing-3:hover svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6212,14 +6202,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_primary_cta_hover_text_color_3',
+        'saasp_comparison_primary_cta_hover_background_color_3',
         [
-            'label' => esc_html__( 'Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-primary-3:hover' => 'color: {{VALUE}}',
-                '{{WRAPPER}} span.saaspricing-primary-spacing-3:hover svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-primary-3:hover' => 'background-color: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6312,7 +6301,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_one_secondary_cta',
         [
-            'label' => esc_html__( 'Column One', 'saaspricing' ), 
+            'label' => esc_html__( 'Button One', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'separator' => 'before',
             'condition' => [
@@ -6336,20 +6325,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_normal_background_color_1',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-1' => 'background-color: {{VALUE}}',
-            ],
-            'condition' => [
-                'saasp_comparison_select_columns' => ['1','2','3'],
-            ],
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_secondary_cta_normal_text_color_1',
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
@@ -6358,7 +6333,21 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-secondary-1' => 'color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-secondary-spacing-1 svg' => 'fill: {{VALUE}}',
             ],
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_normal_background_color_1',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-1' => 'background-color: {{VALUE}}',
+            ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
             ],
@@ -6415,20 +6404,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_hover_background_color_1',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-1:hover' => 'background-color: {{VALUE}}',
-            ],
-            'condition' => [
-                'saasp_comparison_select_columns' => ['1','2','3'],
-            ],
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_secondary_cta_hover_text_color_1',
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
@@ -6438,6 +6413,20 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-secondary-spacing-1:hover svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['1','2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_hover_background_color_1',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-1:hover' => 'background-color: {{VALUE}}',
+            ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['1','2','3'],
             ],
@@ -6488,7 +6477,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_two_secondary_cta',
         [
-            'label' => esc_html__( 'Column Two', 'saaspricing' ), 
+            'label' => esc_html__( 'Button Two', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'separator'=>'before',
             'condition' => [
@@ -6512,12 +6501,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_normal_background_color_2',
+        'saasp_comparison_secondary_cta_normal_text_color_2',
         [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-2' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-2' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-2 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -6526,14 +6516,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_normal_text_color_2',
+        'saasp_comparison_secondary_cta_normal_background_color_2',
         [
-            'label' => esc_html__( 'Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-2' => 'color: {{VALUE}}',
-                '{{WRAPPER}} .saaspricing-secondary-spacing-2 svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-2' => 'background-color: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
@@ -6591,20 +6580,6 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_hover_background_color_2',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-2:hover' => 'background-color: {{VALUE}}',
-            ],
-            'condition' => [
-                'saasp_comparison_select_columns' => ['2','3'],
-            ],
-        ]
-    );
-
-    $this->add_control(
         'saasp_comparison_secondary_cta_hover_text_color_2',
         [
             'label' => esc_html__( 'Text Color', 'saaspricing' ),
@@ -6614,6 +6589,20 @@ protected function register_controls() {
                 '{{WRAPPER}} .saaspricing-secondary-spacing-2:hover svg' => 'fill: {{VALUE}}',
             ],
             'separator' => 'after',
+            'condition' => [
+                'saasp_comparison_select_columns' => ['2','3'],
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'saasp_comparison_secondary_cta_hover_background_color_2',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-secondary-2:hover' => 'background-color: {{VALUE}}',
+            ],
             'condition' => [
                 'saasp_comparison_select_columns' => ['2','3'],
             ],
@@ -6664,7 +6653,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_column_three_secondary_cta',
         [
-            'label' => esc_html__( 'Column Three', 'saaspricing' ), 
+            'label' => esc_html__( 'Button Three', 'saaspricing' ), 
             'type' =>  Controls_Manager::HEADING,
             'separator'=>'before',
             'condition' => [
@@ -6688,12 +6677,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_normal_background_color_3',
+        'saasp_comparison_secondary_cta_normal_text_color_3',
         [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'label' => esc_html__( 'Text Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-3' => 'background-color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-3' => 'color: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-spacing-3 svg' => 'fill: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
@@ -6702,14 +6692,13 @@ protected function register_controls() {
     );
 
     $this->add_control(
-        'saasp_comparison_secondary_cta_normal_text_color_3',
+        'saasp_comparison_secondary_cta_normal_background_color_3',
         [
-            'label' => esc_html__( 'Text Color', 'saaspricing' ),
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'separator' => 'after',
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-secondary-3' => 'color: {{VALUE}}',
-                '{{WRAPPER}} .saaspricing-secondary-spacing-3 svg' => 'fill: {{VALUE}}',
+                '{{WRAPPER}} .saaspricing-secondary-3' => 'background-color: {{VALUE}}',
             ],
             'condition' => [
                 'saasp_comparison_select_columns' => '3',
