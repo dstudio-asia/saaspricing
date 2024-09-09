@@ -4580,7 +4580,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_comparison_feature_title_color',
         [
-            'label' => esc_html__( 'Color', 'saaspricing' ),
+            'label' => esc_html__( 'Title Color', 'saaspricing' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-feature-title' => 'color: {{VALUE}}',
