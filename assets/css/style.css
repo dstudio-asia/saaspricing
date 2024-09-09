@@ -27,6 +27,7 @@ svg, img {
 .saaspricing-table {
     table-layout: fixed;
     min-width: 830px;
+    width: 100%;
     border: unset;
     margin-bottom: 0;
     overflow: hidden;

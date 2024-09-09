@@ -480,8 +480,8 @@ protected function register_controls() {
             'type' => Controls_Manager::SELECT,
             'default' => ',',
             'options' => [
-                '' => '1,234.56 (Default)',
-                ',' => '1.234,56',
+                ',' => '1.234,56 (Default)',
+                '' => '1,234.56',
             ],
         ]
     );
@@ -852,8 +852,8 @@ protected function register_controls() {
             'type' => Controls_Manager::SELECT,
             'default' => ',',
             'options' => [
-                '' => '1,234.56 (Default)',
-                ',' => '1.234,56',
+                ',' => '1.234,56 (Default)',
+                '' => '1,234.56',
             ],
         ]
     );
@@ -1230,8 +1230,8 @@ protected function register_controls() {
             'type' => Controls_Manager::SELECT,
             'default' => ',',
             'options' => [
-                '' => '1,234.56 (Default)',
-                ',' => '1.234,56',
+                ',' => '1.234,56 (Default)',
+                '' => '1,234.56',
             ],
         ]
     );
