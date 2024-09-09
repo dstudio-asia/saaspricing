@@ -516,6 +516,7 @@ svg, img {
 
 .saaspricing-vertical-feature {
     padding: 15px 40px 30px 40px;
+    text-align: center;
 }
 
 .saaspricing-vertical-feature li small , .saasp-horizontal-icon-wrapper small {
