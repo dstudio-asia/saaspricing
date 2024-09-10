@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.1.0';
+	const VERSION = '1.1.1';
 
 	/**
 	 * Minimum Elementor Version
