@@ -589,6 +589,35 @@ protected function register_controls() {
             ]
         );
 
+        $this->add_control(
+            'saasp_horizontal_cta_alignment',
+            [
+                'label' => esc_html__( 'Alignment', 'saaspricing' ),
+                'type' =>  Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => esc_html__( 'Left', 'saaspricing' ),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__( 'Center', 'saaspricing' ),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__( 'Right', 'saaspricing' ),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__( 'Justify', 'saaspricing' ),
+                        'icon' => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default' => 'center',
+                'toggle' => true,
+                'separator' => 'before',
+            ]
+        );
+
     $this->end_controls_section();
     
     $this->start_controls_section(
@@ -815,37 +844,7 @@ protected function register_controls() {
         ]
     );
 
-    $this->add_control(
-        'saasp_horizontal_cta_alignment',
-        [
-            'label' => esc_html__( 'Button Alignment', 'saaspricing' ),
-            'type' =>  Controls_Manager::CHOOSE,
-            'options' => [
-                'left' => [
-                    'title' => esc_html__( 'Left', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-left',
-                ],
-                'center' => [
-                    'title' => esc_html__( 'Center', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-center',
-                ],
-                'right' => [
-                    'title' => esc_html__( 'Right', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-right',
-                ],
-                'justify' => [
-                    'title' => esc_html__( 'Justify', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-justify',
-                ],
-            ],
-            'default' => 'center',
-            'toggle' => true,
-            'separator' => 'before',
-        ]
-    );
-
     $this->end_controls_section();
-
 
     $this->start_controls_section(
         'saasp_horizontal_style_header',
