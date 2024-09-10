@@ -1261,7 +1261,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_vertical_header_pricing_fractional_part',
         [
-            'label' => esc_html__( 'Fractional Part', 'saaspricing' ),
+            'label' => esc_html__( 'Decimal Part', 'saaspricing' ),
             'type' => Controls_Manager::HEADING,
             'separator'=>'before'
         ]
@@ -2295,7 +2295,7 @@ $settings = $this->get_settings_for_display();
                         <?php } ?>
 
                         <?php if ('' !== $settings['saasp_vertical_period']) { ?>
-                            <span class="saaspricing-vertical-period saaspricing-vertical-body-alignment<?php if ('below' === $settings['saasp_vertical_period_position']) { echo esc_attr('w-100 mt-1'); } ?>">
+                            <span class="saaspricing-vertical-period saaspricing-vertical-body-alignment <?php if ('below' === $settings['saasp_vertical_period_position']) { echo esc_attr('w-100 mt-1'); } ?>">
                                 <?php echo esc_html($settings['saasp_vertical_period']); ?>
                             </span>
                         <?php } ?>

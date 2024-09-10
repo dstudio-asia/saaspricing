@@ -170,7 +170,7 @@ svg, img {
 }
 
 .saaspricing-table .saaspricing-table-title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     color: var(--saaspricing-mako);
     margin: 0;
@@ -183,7 +183,7 @@ svg, img {
 
 .saaspricing-vertical-pricing-card .saaspricing-vertical-title, 
 .saaspricing-horizontal .saaspricing-horizontal-title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     color: var(--saaspricing-mako);
     margin-bottom: 0;

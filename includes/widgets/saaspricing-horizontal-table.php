@@ -1569,7 +1569,7 @@ protected function register_controls() {
     $this->add_control(
         'saasp_horizontal_header_pricing_fractional_part',
         [
-            'label' => esc_html__( 'Fractional Part', 'saaspricing' ),
+            'label' => esc_html__( 'Decimal Part', 'saaspricing' ),
             'type' => Controls_Manager::HEADING,
             'separator'=>'before'
         ]
