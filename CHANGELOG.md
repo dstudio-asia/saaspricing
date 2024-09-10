@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/dstudio-asia/saaspricing/compare/v1.0.6...v1.0.7) (2024-06-12)
+
+
+### Bug Fixes
+
+* font-family overwriting issue ([89d8f11](https://github.com/dstudio-asia/saaspricing/commit/89d8f11d253dfae746dd949a15bb327179d952d3))
+
 ## [1.1.0](https://github.com/dstudio-asia/saaspricing/compare/v1.0.5...v1.1.0) (2024-05-21)
 
 

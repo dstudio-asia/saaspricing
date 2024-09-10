@@ -64,9 +64,9 @@ class Saaspricing_Pricelist extends Widget_Base {
 			[
 				'label' => esc_html__( 'List Price', 'saaspricing' ),
 				'type' =>  Controls_Manager::NUMBER,
-				'min' => 5,
-				'max' => 100,
-				'step' => 5,
+				'min' => 0,
+				'max' => 99999999999999999,
+				'step' => 1,
 				'default' => 10,
 			]
 		);
@@ -250,6 +250,14 @@ class Saaspricing_Pricelist extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'saasp_pricelist_title_typography',
+				'selector' => '{{WRAPPER}} .saasp-pricelist-title',
+			]
+		);
+
 		$this->add_control(
 			'saasp_pricelist_title_color_style',
 			[
@@ -258,14 +266,6 @@ class Saaspricing_Pricelist extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .saasp-pricelist-title' => 'color: {{VALUE}}',
 				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'saasp_pricelist_title_typography',
-				'selector' => '{{WRAPPER}} .saasp-pricelist-title',
 			]
 		);
 
@@ -305,6 +305,14 @@ class Saaspricing_Pricelist extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'saasp_pricelist_description_typography',
+				'selector' => '{{WRAPPER}} .saasp-pricelist-description',
+			]
+		);
+
 		$this->add_control(
 			'saasp_pricelist_description_color_style',
 			[
@@ -313,14 +321,6 @@ class Saaspricing_Pricelist extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .saasp-pricelist-description' => 'color: {{VALUE}}',
 				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'saasp_pricelist_description_typography',
-				'selector' => '{{WRAPPER}} .saasp-pricelist-description',
 			]
 		);
 
@@ -333,6 +333,14 @@ class Saaspricing_Pricelist extends Widget_Base {
 			]
 		);
 
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'saasp_pricelist_price_typography',
+				'selector' => '{{WRAPPER}} .saasp-pricelist-price',
+			]
+		);
+
 		$this->add_control(
 			'saasp_pricelist_price_color_style',
 			[
@@ -341,14 +349,6 @@ class Saaspricing_Pricelist extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .saasp-pricelist-price' => 'color: {{VALUE}}',
 				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'saasp_pricelist_price_typography',
-				'selector' => '{{WRAPPER}} .saasp-pricelist-price',
 			]
 		);
 
@@ -383,63 +383,64 @@ class Saaspricing_Pricelist extends Widget_Base {
 	protected function render(){
 		$settings = $this->get_settings_for_display();
 	?>
-		<div class="container saasp-pricelist-main-container">
-			<div class="saasp-pricelist-main">
-				<!-- Pricelist Repeater Start -->
-				<div class="saasp-wraped-lists">
-					<?php
-					if( '' !== $settings['saasp_pricelist_repeater'] ) {
-						foreach($settings['saasp_pricelist_repeater'] as $pricelist) {
-					?>
-						<div class="row saasp-pricelist-wraper">
-							<?php
-							if( $pricelist['saasp_pricelist_list_title'] || $pricelist['saasp_pricelist_list_description'] || $pricelist['saasp_pricelist_list_price']) {
-							?>
-								<div class="col">
-									<div class="saasp-pricelist-right d-flex justify-content-between saasp-pricelist-content-alignment">
-										<?php
-										if( '' !== $pricelist['saasp_pricelist_list_title'] || '' !== $pricelist['saasp_pricelist_list_description'] ) {
-										?>
-											<div class="saasp-pricelist">
-												<h3 class="saasp-pricelist-title">
-													<?php echo esc_html($pricelist['saasp_pricelist_list_title']); ?>
-												</h3>
-												<p class="saasp-pricelist-description">
-													<?php echo esc_html( $pricelist['saasp_pricelist_list_description']); ?>
-												</p>
-											</div>
-										<?php
-										}
-										?>
-										<?php
-										if( '' !== $pricelist['saasp_pricelist_list_price'] ) {
-										?>
-											<h3 class="saasp-pricelist-price text-end text-nowrap">
-												<span class="saasp-pricelist-currency">
-												<?php 
-												if( 'custom' !== $settings['saasp_pricelist_currency_symbol'] ){
-													echo esc_html($this->get_currency_symbol($settings['saasp_pricelist_currency_symbol']));
-												}else{
-													echo esc_html($settings['saasp_pricelist_currency_symbol_custom']);
-												}
-												?></span><span class="saasp-pricelist-list-num"><?php echo esc_html( $pricelist['saasp_pricelist_list_price']); ?></span>
+	<div class="container saasp-pricelist-main-container">
+    	<div class="saasp-pricelist-main">
+			<!-- Pricelist Repeater Start -->
+			<div class="saasp-wraped-lists">
+				<?php
+				if ('' !== $settings['saasp_pricelist_repeater']) {
+					foreach ($settings['saasp_pricelist_repeater'] as $pricelist) {
+				?>
+					<div class="row saasp-pricelist-wraper">
+						<?php
+						if ($pricelist['saasp_pricelist_list_title'] || $pricelist['saasp_pricelist_list_description'] || $pricelist['saasp_pricelist_list_price']) {
+						?>
+							<div class="col">
+								<div class="saasp-pricelist-right d-flex justify-content-between saasp-pricelist-content-alignment">
+									<?php
+									if ('' !== $pricelist['saasp_pricelist_list_title'] || '' !== $pricelist['saasp_pricelist_list_description']) {
+									?>
+										<div class="saasp-pricelist">
+											<h3 class="saasp-pricelist-title">
+												<?php echo esc_html($pricelist['saasp_pricelist_list_title']); ?>
 											</h3>
-										<?php
-										}
-										?>
-									</div>
+											<p class="saasp-pricelist-description">
+												<?php echo esc_html($pricelist['saasp_pricelist_list_description']); ?>
+											</p>
+										</div>
+									<?php
+									}
+									?>
+									<?php
+									if ('' !== $pricelist['saasp_pricelist_list_price']) {
+									?>
+										<h3 class="saasp-pricelist-price text-end text-nowrap">
+											<span class="saasp-pricelist-currency">
+											<?php 
+											if ('custom' !== $settings['saasp_pricelist_currency_symbol']) {
+												echo esc_html($this->get_currency_symbol($settings['saasp_pricelist_currency_symbol']));
+											} else {
+												echo esc_html($settings['saasp_pricelist_currency_symbol_custom']);
+											}
+											?></span><span class="saasp-pricelist-list-num"><?php echo esc_html($pricelist['saasp_pricelist_list_price']); ?></span>
+										</h3>
+									<?php
+									}
+									?>
 								</div>
-							<?php
-							}
-							?>
-						</div>
-					<?php
+							</div>
+						<?php
 						}
+						?>
+					</div>
+				<?php
 					}
-					?>
-				</div>
+				}
+				?>
 			</div>
-		</div>
+    	</div>
+	</div>
+
 	<?php
 	}
 
@@ -450,7 +451,7 @@ class Saaspricing_Pricelist extends Widget_Base {
 				<div class="saasp-wraped-lists">
 					<!-- Pricelist Repeater Start -->
 					<#
-					let symbols = {
+						let symbols = {
 							taka: '&#2547;',
 							dollar: '&#36;',
 							euro: '&#128;',
@@ -470,29 +471,29 @@ class Saaspricing_Pricelist extends Widget_Base {
 							real: 'R$',
 							krona: 'kr'
 						};
-				
+
 						let symbol = '',
 							iconsHTML = {};
 
-						if ( settings.saasp_pricelist_currency_symbol ) {
-							if ( 'custom' !== settings.saasp_pricelist_currency_symbol ) {
-								symbol = symbols[ settings.saasp_pricelist_currency_symbol ] || '';
+						if (settings.saasp_pricelist_currency_symbol) {
+							if ('custom' !== settings.saasp_pricelist_currency_symbol) {
+								symbol = symbols[settings.saasp_pricelist_currency_symbol] || '';
 							} else {
 								symbol = settings.saasp_pricelist_currency_symbol_custom;
 							}
 						}
 
-					if ( settings.saasp_pricelist_repeater ) {
-						_.each( settings.saasp_pricelist_repeater, function( pricelist ) {
+						if (settings.saasp_pricelist_repeater) {
+							_.each(settings.saasp_pricelist_repeater, function(pricelist) {
 					#>
 						<div class="row saasp-pricelist-wraper">
 							<#
-    							if ( pricelist.saasp_pricelist_list_title || pricelist.saasp_pricelist_list_description || pricelist.saasp_pricelist_list_price ) {
-    						#>
+								if (pricelist.saasp_pricelist_list_title || pricelist.saasp_pricelist_list_description || pricelist.saasp_pricelist_list_price) {
+							#>
 								<div class="col">
 									<div class="saasp-pricelist-right d-flex justify-content-between saasp-pricelist-content-alignment">
 										<#
-										if ( pricelist.saasp_pricelist_list_title || pricelist.saasp_pricelist_list_description ) {
+										if (pricelist.saasp_pricelist_list_title || pricelist.saasp_pricelist_list_description) {
 										#>
 											<div class="saasp-pricelist">
 												<h3 class="saasp-pricelist-title">
@@ -506,7 +507,7 @@ class Saaspricing_Pricelist extends Widget_Base {
 										}
 										#>
 										<#
-										if ( pricelist.saasp_pricelist_list_price ) {
+										if (pricelist.saasp_pricelist_list_price !== null && pricelist.saasp_pricelist_list_price !== undefined) {
 										#>
 											<h3 class="saasp-pricelist-price text-end text-nowrap">
 												<span class="saasp-pricelist-currency">{{{symbol}}}</span><span class="saasp-pricelist-list-num">{{{ pricelist.saasp_pricelist_list_price }}}</span>
@@ -521,7 +522,7 @@ class Saaspricing_Pricelist extends Widget_Base {
 							#>
 						</div>
 					<#
-					});
+						});
 					}
 					#>
 				</div>
