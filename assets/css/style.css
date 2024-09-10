@@ -714,10 +714,6 @@ svg, img {
     font-size: 12px;
 }
 
-.saaspricing-countdown {
-    white-space: nowrap;
-}
-
 .saaspricing-fraction-price {
     vertical-align: super;
     font-size: 16px;
