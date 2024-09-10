@@ -27,6 +27,7 @@ svg, img {
 .saaspricing-table {
     table-layout: fixed;
     min-width: 830px;
+    width: 100%;
     border: unset;
     margin-bottom: 0;
     overflow: hidden;
@@ -169,7 +170,7 @@ svg, img {
 }
 
 .saaspricing-table .saaspricing-table-title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     color: var(--saaspricing-mako);
     margin: 0;
@@ -182,7 +183,7 @@ svg, img {
 
 .saaspricing-vertical-pricing-card .saaspricing-vertical-title, 
 .saaspricing-horizontal .saaspricing-horizontal-title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     color: var(--saaspricing-mako);
     margin-bottom: 0;
@@ -515,6 +516,7 @@ svg, img {
 
 .saaspricing-vertical-feature {
     padding: 15px 40px 30px 40px;
+    text-align: center;
 }
 
 .saaspricing-vertical-feature li small , .saasp-horizontal-icon-wrapper small {
@@ -710,10 +712,6 @@ svg, img {
 
 .saaspricing-fs-sm {
     font-size: 12px;
-}
-
-.saaspricing-countdown {
-    white-space: nowrap;
 }
 
 .saaspricing-fraction-price {
