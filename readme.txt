@@ -4,11 +4,11 @@ Tags: price table, comparison table, pricing box, price plan, pricing calculator
 Requires at least: 5.8
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Ultimate pricing & comparison widget for Elementor. Three table options, customizable, scrollable, switchable, timer, ribbon, reviews, tooltip, mirror & more! Get the ultimate pricing experience with Saaspricing.
+Top Elementor Widget for Price Table, comparison table and real time pricing calculator With trendy design and different table style
 
 == Description ==
 

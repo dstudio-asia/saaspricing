@@ -2288,6 +2288,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-main td:nth-child(2) .saasp-top-primary' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(2)' => 'background-color: {{VALUE}}',
             ],
         ]
@@ -2633,6 +2634,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-main td:nth-child(3) .saasp-top-primary' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(3)' => 'background-color: {{VALUE}}',
             ],
             'condition' =>[
@@ -2981,6 +2983,7 @@ protected function register_controls() {
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-main td:nth-child(4) .saasp-top-primary' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(4)' => 'background-color: {{VALUE}}',
             ],
             'condition' =>[
@@ -7473,7 +7476,7 @@ protected function render() {
                         ?>">
                             <td class="saaspricing-blank"></td>
                             <?php
-                            for( $i= 1; $i <= $settings['saasp_comparison_select_columns']; $i++ ){
+                            for( $i= 1; $i <= $settings['saasp_comparison_select_columns']; $i++ ){                                                             
                             ?>
                                 <td class="saaspricing-footer-cta">
                                     <?php
