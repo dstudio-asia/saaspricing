@@ -278,7 +278,7 @@ final class Saas_Pricing {
 		$elements_manager->add_category(
 			'saas_pricing_category',
 			[
-				'title' => esc_html__( 'Saas_Pricing', 'saaspricing' ),
+				'title' => esc_html__( 'SaasPricing', 'saaspricing' ),
 				'icon' => 'fa fa-plug',
 			]
 		);

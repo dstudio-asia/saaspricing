@@ -16,10 +16,12 @@
 	right: 0;
 	z-index: 1;
 	padding: 3px 4px;
-	border: 1px solid #ffffff;
+	border: 1px solid #474242;
+    border-right: none;
+    border-top: none;
 	font-size: 9px;
 	font-weight: 600;
 	text-transform: uppercase;
-	color: #ffffff;
+	color: #726f6f;
 	mix-blend-mode: difference;
 }
