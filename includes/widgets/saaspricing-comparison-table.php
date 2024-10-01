@@ -2288,7 +2288,6 @@ protected function register_controls() {
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-main td:nth-child(2) .saasp-top-primary' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(2)' => 'background-color: {{VALUE}}',
             ],
         ]
@@ -2634,7 +2633,6 @@ protected function register_controls() {
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-main td:nth-child(3) .saasp-top-primary' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(3)' => 'background-color: {{VALUE}}',
             ],
             'condition' =>[
@@ -2983,7 +2981,6 @@ protected function register_controls() {
             'label' => esc_html__( 'Background Color', 'saaspricing' ),
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-main td:nth-child(4) .saasp-top-primary' => 'background-color: {{VALUE}}',
                 '{{WRAPPER}} .saaspricing-footer-cta:nth-child(4)' => 'background-color: {{VALUE}}',
             ],
             'condition' =>[
@@ -3031,6 +3028,44 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_comparison_table_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}}  .saaspricing-table-background' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'sassp_comparison_table_alignment',
+        [
+            'label' => esc_html__( 'Alignment', 'saaspricing' ),
+            'type' =>  Controls_Manager::CHOOSE,
+            'options' => [
+                'start' => [
+                    'title' => esc_html__( 'Left', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                'center' => [
+                    'title' => esc_html__( 'Center', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                'end' => [
+                    'title' => esc_html__( 'Right', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'left', 
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
+            ],
+        ]
+    );
+
     $this->add_responsive_control(
         'saasp_comparison_table_padding',
         [
@@ -3040,17 +3075,6 @@ protected function register_controls() {
             'separator' => 'before',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table-title-description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_table_background_color',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}}  .saaspricing-table-background' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -3101,33 +3125,6 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-table-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'sassp_comparison_table_alignment',
-        [
-            'label' => esc_html__( 'Alignment', 'saaspricing' ),
-            'type' =>  Controls_Manager::CHOOSE,
-            'options' => [
-                'start' => [
-                    'title' => esc_html__( 'Left', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-left',
-                ],
-                'center' => [
-                    'title' => esc_html__( 'Center', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-center',
-                ],
-                'end' => [
-                    'title' => esc_html__( 'Right', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-right',
-                ],
-            ],
-            'default' => 'left', 
-            'toggle' => true,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
             ],
         ]
     );
