@@ -158,6 +158,11 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 
 == Changelog ==
 
+= 1.1.2
+- Fix border color issue
+- Fix editor css style
+- Ref table alignment controls placement 
+
 = 1.1.1
 - Fix plugin controls sorting
 - Fix overflow countdown text
