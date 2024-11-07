@@ -3028,6 +3028,44 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'saasp_comparison_table_background_color',
+        [
+            'label' => esc_html__( 'Background Color', 'saaspricing' ),
+            'type' =>  Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}}  .saaspricing-table-background' => 'background-color: {{VALUE}}',
+            ],
+        ]
+    );
+
+    $this->add_control(
+        'sassp_comparison_table_alignment',
+        [
+            'label' => esc_html__( 'Alignment', 'saaspricing' ),
+            'type' =>  Controls_Manager::CHOOSE,
+            'options' => [
+                'start' => [
+                    'title' => esc_html__( 'Left', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                'center' => [
+                    'title' => esc_html__( 'Center', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                'end' => [
+                    'title' => esc_html__( 'Right', 'saaspricing' ),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'left', 
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
+            ],
+        ]
+    );
+
     $this->add_responsive_control(
         'saasp_comparison_table_padding',
         [
@@ -3037,17 +3075,6 @@ protected function register_controls() {
             'separator' => 'before',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table-title-description' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'saasp_comparison_table_background_color',
-        [
-            'label' => esc_html__( 'Background Color', 'saaspricing' ),
-            'type' =>  Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}}  .saaspricing-table-background' => 'background-color: {{VALUE}}',
             ],
         ]
     );
@@ -3098,33 +3125,6 @@ protected function register_controls() {
             ],
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-table .saaspricing-table-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'sassp_comparison_table_alignment',
-        [
-            'label' => esc_html__( 'Alignment', 'saaspricing' ),
-            'type' =>  Controls_Manager::CHOOSE,
-            'options' => [
-                'start' => [
-                    'title' => esc_html__( 'Left', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-left',
-                ],
-                'center' => [
-                    'title' => esc_html__( 'Center', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-center',
-                ],
-                'end' => [
-                    'title' => esc_html__( 'Right', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-right',
-                ],
-            ],
-            'default' => 'left', 
-            'toggle' => true,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
             ],
         ]
     );
@@ -7473,7 +7473,7 @@ protected function render() {
                         ?>">
                             <td class="saaspricing-blank"></td>
                             <?php
-                            for( $i= 1; $i <= $settings['saasp_comparison_select_columns']; $i++ ){
+                            for( $i= 1; $i <= $settings['saasp_comparison_select_columns']; $i++ ){                                                             
                             ?>
                                 <td class="saaspricing-footer-cta">
                                     <?php
