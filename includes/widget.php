@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.1.2';
+	const VERSION = '1.1.3';
 
 	/**
 	 * Minimum Elementor Version
@@ -233,16 +233,13 @@ final class Saas_Pricing {
 	}
 
 	public function saasp_frontend_scripts(){ 
-
-		wp_register_script( 'saasp-fontawesome-js', SAASP_PRICING_ASSETS_URL  . 'js/fontawesome.min.js' , [ 'jquery' ] , null , true );
 		wp_register_script( 'saasp-bootstrap-js', SAASP_PRICING_ASSETS_URL  . 'js/bootstrap.bundle.min.js' , [ 'jquery' ] , null , true );
 		wp_register_script( 'saasp-popup-js', SAASP_PRICING_ASSETS_URL . 'js/popup.js' , [ 'jquery' ] , null , true );
 		wp_register_script( 'saasp-vertical-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-vertical.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-horizontal-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-horizontal.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-comparison-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-comparison.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-main-js', SAASP_PRICING_ASSETS_URL . 'js/main.js' , [ 'jquery' ] , self::VERSION , true );
-
-		wp_enqueue_script('saasp-fontawesome-js');
+		
 		wp_enqueue_script('saasp-bootstrap-js');
 		wp_enqueue_script('saasp-popup-js');
 		wp_enqueue_script('saasp-vertical-js');
