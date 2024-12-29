@@ -2,7 +2,7 @@
 Contributors: debuggersstudio
 Tags: price table, comparison table, pricing box, price plan, pricing calculator, price estimator table
 Requires at least: 5.8
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.4
 Stable tag: 1.1.3
 License: GPLv2 or later
