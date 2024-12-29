@@ -4,7 +4,7 @@ Tags: price table, comparison table, pricing box, price plan, pricing calculator
 Requires at least: 5.8
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,9 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 4. Pricelist Widget
 
 == Changelog ==
+
+= 1.1.4
+- Fix bootstrap confliction with other css
 
 = 1.1.3
 - Removed font-awesome script
