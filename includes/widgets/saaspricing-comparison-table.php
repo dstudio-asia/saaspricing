@@ -161,6 +161,33 @@ protected function register_controls() {
         ]
     );
 
+    $this->add_control(
+        'sassp_comparison_table_alignment',
+        [
+            'label' => esc_html__('Alignment', 'saaspricing'),
+            'type' =>  Controls_Manager::CHOOSE,
+            'options' => [
+                'start' => [
+                    'title' => esc_html__('Left', 'saaspricing'),
+                    'icon' => 'eicon-text-align-left',
+                ],
+                'center' => [
+                    'title' => esc_html__('Center', 'saaspricing'),
+                    'icon' => 'eicon-text-align-center',
+                ],
+                'end' => [
+                    'title' => esc_html__('Right', 'saaspricing'),
+                    'icon' => 'eicon-text-align-right',
+                ],
+            ],
+            'default' => 'left',
+            'toggle' => true,
+            'selectors' => [
+                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
+            ],
+        ]
+    );
+
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -430,23 +457,23 @@ protected function register_controls() {
             'type' => Controls_Manager::SELECT,
             'options' => [
                 '' => esc_html__( 'None', 'saaspricing'  ),
-                'dollar' => '&#36; ' . esc_html__( 'Dollar', 'Currency', 'saaspricing'  ),
-                'euro' => '&#128; ' . esc_html__( 'Euro', 'Currency', 'saaspricing'  ),
-                'baht' => '&#3647; ' . esc_html__( 'Baht', 'Currency', 'saaspricing'  ),
-                'franc' => '&#8355; ' . esc_html__( 'Franc', 'Currency', 'saaspricing'  ),
-                'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'Currency', 'saaspricing'  ),
-                'krona' => 'kr ' . esc_html__( 'Krona', 'Currency', 'saaspricing'  ),
-                'lira' => '&#8356; ' . esc_html__( 'Lira', 'Currency', 'saaspricing'  ),
-                'peseta' => '&#8359;' . esc_html__( 'Peseta', 'Currency', 'saaspricing'  ),
-                'peso' => '&#8369; ' . esc_html__( 'Peso', 'Currency', 'saaspricing'  ),
-                'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'Currency', 'saaspricing'  ),
-                'real' => 'R$ ' . esc_html__( 'Real', 'Currency', 'saaspricing'  ),
-                'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'Currency', 'saaspricing'  ),
-                'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'Currency', 'saaspricing'  ),
-                'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'Currency', 'saaspricing'  ),
-                'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'Currency', 'saaspricing'  ),
-                'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'Currency', 'saaspricing'  ),
-                'won' => '&#8361; ' . esc_html__( 'Won', 'Currency', 'saaspricing'  ),
+                'dollar' => '&#36; ' . esc_html__( 'Dollar', 'saaspricing'  ),
+                'euro' => '&#128; ' . esc_html__( 'Euro', 'saaspricing'  ),
+                'baht' => '&#3647; ' . esc_html__( 'Baht', 'saaspricing'  ),
+                'franc' => '&#8355; ' . esc_html__( 'Franc', 'saaspricing'  ),
+                'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'saaspricing'  ),
+                'krona' => 'kr ' . esc_html__( 'Krona', 'saaspricing'  ),
+                'lira' => '&#8356; ' . esc_html__( 'Lira', 'saaspricing'  ),
+                'peseta' => '&#8359;' . esc_html__( 'Peseta', 'saaspricing'  ),
+                'peso' => '&#8369; ' . esc_html__( 'Peso', 'saaspricing'  ),
+                'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'saaspricing'  ),
+                'real' => 'R$ ' . esc_html__( 'Real', 'saaspricing'  ),
+                'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'saaspricing'  ),
+                'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'saaspricing'  ),
+                'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'saaspricing'  ),
+                'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'saaspricing'  ),
+                'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'saaspricing'  ),
+                'won' => '&#8361; ' . esc_html__( 'Won', 'saaspricing'  ),
                 'custom' => esc_html__( 'Custom', 'saaspricing'  ),
             ],
             'default' => 'dollar',
@@ -802,23 +829,23 @@ protected function register_controls() {
             'type' => Controls_Manager::SELECT,
             'options' => [
                 '' => esc_html__( 'None', 'saaspricing'  ),
-                'dollar' => '&#36; ' . esc_html__( 'Dollar', 'Currency', 'saaspricing'  ),
-                'euro' => '&#128; ' . esc_html__( 'Euro', 'Currency', 'saaspricing'  ),
-                'baht' => '&#3647; ' . esc_html__( 'Baht', 'Currency', 'saaspricing'  ),
-                'franc' => '&#8355; ' . esc_html__( 'Franc', 'Currency', 'saaspricing'  ),
-                'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'Currency', 'saaspricing'  ),
-                'krona' => 'kr ' . esc_html__( 'Krona', 'Currency', 'saaspricing'  ),
-                'lira' => '&#8356; ' . esc_html__( 'Lira', 'Currency', 'saaspricing'  ),
-                'peseta' => '&#8359 ' . esc_html__( 'Peseta', 'Currency', 'saaspricing'  ),
-                'peso' => '&#8369; ' . esc_html__( 'Peso', 'Currency', 'saaspricing'  ),
-                'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'Currency', 'saaspricing'  ),
-                'real' => 'R$ ' . esc_html__( 'Real', 'Currency', 'saaspricing'  ),
-                'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'Currency', 'saaspricing'  ),
-                'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'Currency', 'saaspricing'  ),
-                'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'Currency', 'saaspricing'  ),
-                'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'Currency', 'saaspricing'  ),
-                'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'Currency', 'saaspricing'  ),
-                'won' => '&#8361; ' . esc_html__( 'Won', 'Currency', 'saaspricing'  ),
+                'dollar' => '&#36; ' . esc_html__( 'Dollar', 'saaspricing'  ),
+                'euro' => '&#128; ' . esc_html__( 'Euro', 'saaspricing'  ),
+                'baht' => '&#3647; ' . esc_html__( 'Baht', 'saaspricing'  ),
+                'franc' => '&#8355; ' . esc_html__( 'Franc', 'saaspricing'  ),
+                'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'saaspricing'  ),
+                'krona' => 'kr ' . esc_html__( 'Krona', 'saaspricing'  ),
+                'lira' => '&#8356; ' . esc_html__( 'Lira', 'saaspricing'  ),
+                'peseta' => '&#8359;' . esc_html__( 'Peseta', 'saaspricing'  ),
+                'peso' => '&#8369; ' . esc_html__( 'Peso', 'saaspricing'  ),
+                'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'saaspricing'  ),
+                'real' => 'R$ ' . esc_html__( 'Real', 'saaspricing'  ),
+                'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'saaspricing'  ),
+                'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'saaspricing'  ),
+                'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'saaspricing'  ),
+                'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'saaspricing'  ),
+                'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'saaspricing'  ),
+                'won' => '&#8361; ' . esc_html__( 'Won', 'saaspricing'  ),
                 'custom' => esc_html__( 'Custom', 'saaspricing'  ),
             ],
             'default' => 'dollar',
@@ -1180,23 +1207,23 @@ protected function register_controls() {
             'type' => Controls_Manager::SELECT,
             'options' => [
                 '' => esc_html__( 'None', 'saaspricing'  ),
-                'dollar' => '&#36; ' . esc_html__( 'Dollar', 'Currency', 'saaspricing'  ),
-                'euro' => '&#128; ' . esc_html__( 'Euro', 'Currency', 'saaspricing'  ),
-                'baht' => '&#3647; ' . esc_html__( 'Baht', 'Currency', 'saaspricing'  ),
-                'franc' => '&#8355; ' . esc_html__( 'Franc', 'Currency', 'saaspricing'  ),
-                'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'Currency', 'saaspricing'  ),
-                'krona' => 'kr ' . esc_html__( 'Krona', 'Currency', 'saaspricing'  ),
-                'lira' => '&#8356; ' . esc_html__( 'Lira', 'Currency', 'saaspricing'  ),
-                'peseta' => '&#8359 ' . esc_html__( 'Peseta', 'Currency', 'saaspricing'  ),
-                'peso' => '&#8369; ' . esc_html__( 'Peso', 'Currency', 'saaspricing'  ),
-                'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'Currency', 'saaspricing'  ),
-                'real' => 'R$ ' . esc_html__( 'Real', 'Currency', 'saaspricing'  ),
-                'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'Currency', 'saaspricing'  ),
-                'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'Currency', 'saaspricing'  ),
-                'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'Currency', 'saaspricing'  ),
-                'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'Currency', 'saaspricing'  ),
-                'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'Currency', 'saaspricing'  ),
-                'won' => '&#8361; ' . esc_html__( 'Won', 'Currency', 'saaspricing'  ),
+                'dollar' => '&#36; ' . esc_html__( 'Dollar', 'saaspricing'  ),
+                'euro' => '&#128; ' . esc_html__( 'Euro', 'saaspricing'  ),
+                'baht' => '&#3647; ' . esc_html__( 'Baht', 'saaspricing'  ),
+                'franc' => '&#8355; ' . esc_html__( 'Franc', 'saaspricing'  ),
+                'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'saaspricing'  ),
+                'krona' => 'kr ' . esc_html__( 'Krona', 'saaspricing'  ),
+                'lira' => '&#8356; ' . esc_html__( 'Lira', 'saaspricing'  ),
+                'peseta' => '&#8359;' . esc_html__( 'Peseta', 'saaspricing'  ),
+                'peso' => '&#8369; ' . esc_html__( 'Peso', 'saaspricing'  ),
+                'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'saaspricing'  ),
+                'real' => 'R$ ' . esc_html__( 'Real', 'saaspricing'  ),
+                'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'saaspricing'  ),
+                'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'saaspricing'  ),
+                'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'saaspricing'  ),
+                'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'saaspricing'  ),
+                'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'saaspricing'  ),
+                'won' => '&#8361; ' . esc_html__( 'Won', 'saaspricing'  ),
                 'custom' => esc_html__( 'Custom', 'saaspricing'  ),
             ],
             'default' => 'dollar',
@@ -3035,33 +3062,6 @@ protected function register_controls() {
             'type' =>  Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}}  .saaspricing-table-background' => 'background-color: {{VALUE}}',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'sassp_comparison_table_alignment',
-        [
-            'label' => esc_html__( 'Alignment', 'saaspricing' ),
-            'type' =>  Controls_Manager::CHOOSE,
-            'options' => [
-                'start' => [
-                    'title' => esc_html__( 'Left', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-left',
-                ],
-                'center' => [
-                    'title' => esc_html__( 'Center', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-center',
-                ],
-                'end' => [
-                    'title' => esc_html__( 'Right', 'saaspricing' ),
-                    'icon' => 'eicon-text-align-right',
-                ],
-            ],
-            'default' => 'left', 
-            'toggle' => true,
-            'selectors' => [
-                '{{WRAPPER}} .saaspricing-table-title-description' => 'text-align: {{VALUE}};',
             ],
         ]
     );
@@ -6919,7 +6919,7 @@ protected function render() {
                             <tr class="saaspricing-price-table-head saaspricing-table-background">
                                 <td class="saaspricing-blank"></td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_comparison_column_html_title_tag'], $settings['saasp_comparison_header_title_text_1']);?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_1'] ));?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_1']); ?>
                                     </small>
@@ -6934,13 +6934,13 @@ protected function render() {
                             <tr class="saaspricing-price-table-head saaspricing-table-background">
                                 <td class="saaspricing-blank"></td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_comparison_column_html_title_tag'], $settings['saasp_comparison_header_title_text_1']);?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_1'] ));?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_1']); ?>
                                     </small>
                                 </td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_comparison_column_html_title_tag'], $settings['saasp_comparison_header_title_text_2']);?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_2'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_2']); ?>
                                     </small>
@@ -6956,19 +6956,19 @@ protected function render() {
                             <tr class="saaspricing-price-table-head saaspricing-table-background">
                                 <td class="saaspricing-blank"></td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_comparison_column_html_title_tag'], $settings['saasp_comparison_header_title_text_1']);?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_1'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_1']); ?>
                                     </small>
                                 </td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_comparison_column_html_title_tag'], $settings['saasp_comparison_header_title_text_2']);?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_2'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_2']); ?>
                                     </small>
                                 </td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', $settings['saasp_comparison_column_html_title_tag'], $settings['saasp_comparison_header_title_text_3']);?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_3'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_3']); ?>
                                     </small>
@@ -6983,7 +6983,7 @@ protected function render() {
                         <td class="saaspricing-table-title-description"> 
                             <?php
                             if( '' !== $settings['saasp_comparison_header_table_title'] ){
-                                printf('<%1$s class="d-block saaspricing-table-title" role="heading"> %2$s </%1$s>', $settings['saasp_comparison_header_table_title_tag'], $settings['saasp_comparison_header_table_title']);
+                                printf('<%1$s class="d-block saaspricing-table-title" role="heading"> %2$s </%1$s>', esc_html( $settings['saasp_comparison_header_table_title_tag'] ), esc_html( $settings['saasp_comparison_header_table_title'] ) );
                             }
                             ?>
                             <?php
@@ -7205,7 +7205,7 @@ protected function render() {
                                         ?>" 
                                         role="button" 
                                         <?php
-                                        echo wp_kses($this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags()); 
+                                        echo wp_kses( $this->get_render_attribute_string( 'saasp_comparison_primary_cta_url_'.$i ), $this->saasp_allowed_tags() ); 
                                         ?>>
                                             <?php echo esc_html($settings['saasp_comparison_primary_cta_text_'.$i]); ?>
                                             <span class="saaspricing-primary-spacing-<?php echo esc_attr($i); ?>">
@@ -7505,7 +7505,7 @@ protected function render() {
                                             <?php
                                                 if($settings['saasp_comparison_primary_cta_url_'.$i ]['url'] != '') {
                                             ?>
-                                                href="<?php echo $settings['saasp_comparison_primary_cta_url_'.$i ]['url']; ?>"
+                                                href="<?php echo esc_url( $settings['saasp_comparison_primary_cta_url_'.$i ]['url'] ); ?>"
                                             <?php
                                             }
                                             ?>
@@ -7524,17 +7524,21 @@ protected function render() {
                                             }
                                             ?>
                                             <?php
-                                            if($settings['saasp_comparison_primary_cta_url_'.$i ]['custom_attributes'] != '') {
-                                                $custom_attributes = $settings['saasp_comparison_primary_cta_url_'.$i ]['custom_attributes'];
-                                                $separate_attributes = explode(' ', trim($custom_attributes));
-                                                $attributes = array();
-                                                foreach ($separate_attributes as $attribute) {
-                                                    list($key, $value) = explode('|', $attribute);
-                                                    $attributes[] = "$key=\"$value\"";
+                                                if ( !empty( $settings['saasp_comparison_primary_cta_url_'.$i]['custom_attributes'] ) ) {
+                                                    $attributes = [];
+                                                    $custom_attrs = trim( $settings['saasp_comparison_primary_cta_url_'.$i]['custom_attributes'] );
+                                                    foreach ( explode(' ', $custom_attrs ) as $attr ) {
+                                                        if (strpos($attr, '|') === false) continue;
+                                                        [$key, $raw_value] = explode('|', $attr, 2);
+                                                        $key = trim($key);
+                                                        $raw_value = trim($raw_value);
+                                                        $value = preg_replace('/^[\'"](.*)[\'"]$/', '$1', $raw_value);
+                                                        $attributes[] = esc_attr($key) . '="' . esc_attr($value) . '"';
+                                                    }
+                                                    // Attributes are above escaped correctly
+                                                   // phpcs:disable WordPress.Security.EscapeOutput
+                                                    echo implode(' ', $attributes);
                                                 }
-                                                $get_attributes = implode(' ', $attributes) ;
-                                                echo $get_attributes;
-                                            }
                                             ?>
                                             >
                                                 <?php echo esc_html($settings['saasp_comparison_primary_cta_text_'.$i]); ?>

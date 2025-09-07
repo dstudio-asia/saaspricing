@@ -1,0 +1,23 @@
+name: Deploy to WordPress.org
+
+on:
+  push:
+    tags:
+    - "*" # This means the workflow will run on any Git tag push
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04 # Specifies the runner environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # Checks out your repository code
+
+      - name: WordPress Plugin Deploy
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable # The main deployment action
+        
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }} # Your WordPress.org SVN password
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }} # Your WordPress.org SVN username
+          SLUG: saaspricing 
