@@ -158,83 +158,87 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 
 == Changelog ==
 
+= 1.2.2 – 2025-09-07
+- Tweak: Added version in register css to better performance
+- Fix: Reduce arguments in escaping function
+
 = 1.2.1
-- Refactor: move table-alignment control from style tab to content tab
+- Tweak: Move table-alignment control from style tab to content tab
 
 = 1.2.0
-- Fixed: Security vulnerability related to user input handling.
-- Improved: Input sanitization across plugin settings.
-- Improved: Output escaping to prevent potential XSS attacks.
+- Fix: Security vulnerability related to user input handling.
+- Tweak: Input sanitization across plugin settings.
+- Tweak: Output escaping to prevent potential XSS attacks.
 
 = 1.1.4
 - Fix bootstrap confliction with other css
 
 = 1.1.3
-- Removed font-awesome script
+- Tweak: font-awesome script
 
 = 1.1.2
 - Fix border color issue
 - Fix editor css style
-- Ref table alignment controls placement 
+- Tweak: table alignment controls placement 
 
 = 1.1.1
-- Fix plugin controls sorting
-- Fix overflow countdown text
-- Fix plugin currncy format issue
+- Fix: plugin controls sorting
+- Fix: overflow countdown text
+- Fix: plugin currncy format issue
 
 = 1.1.0
-- Fix overwriting font-family 
+- Fix: overwriting font-family 
 
 = 1.0.9
-- Fix after installed pro, defaulft comparison table design not working
+- Fix: after installed pro, defaulft comparison table design not working
 
 = 1.0.8
-- Feat new pricelist widget added
+- New: new pricelist widget added
 
 = 1.0.5
-- Feat even odd style for comparison table feature list
-- Feat button hover, border, boxshadow added for vertical table
-- Feat background color option for countdown and rating in vertical table
-- Feat button hover, border, boxshadow added for horizontal table
-- Feat added dynamic tag for all table links
-- Fix button alignment not working on position top for comparison table
-- Fix comparison lightbox conflict with elemntor image widget lightbox
-- Fix table border not working properly and global border color is not working
-- Fix vertical table primary button margin issue
-- Fix vertical table main wrap border radius is not working
-- Fix vertical table cta background color, Padding, and margin not working at position top
-- Fix vertical table countdown alignment is not working
-- Fix horizontal table main wrap border radius is not working
-- Fix horizontal table added background color features section
-- Fix horizontal table reverse column optoin is not working for tab, tab extra, mobile, mobile extra
-- Fix horiztal table unnecessary gap between feature and cta section in tab, tab extra, mobile, mobile extra
+- New: even odd style for comparison table feature list
+- New: button hover, border, boxshadow added for vertical table
+- New: background color option for countdown and rating in vertical table
+- New: button hover, border, boxshadow added for horizontal table
+- New: added dynamic tag for all table links
+- Fix: button alignment not working on position top for comparison table
+- Fix: comparison lightbox conflict with elemntor image widget lightbox
+- Fix: table border not working properly and global border color is not working
+- Fix: vertical table primary button margin issue
+- Fix: vertical table main wrap border radius is not working
+- Fix: vertical table cta background color, Padding, and margin not working at position top
+- Fix: vertical table countdown alignment is not working
+- Fix: horizontal table main wrap border radius is not working
+- Fix: horizontal table added background color features section
+- Fix: horizontal table reverse column optoin is not working for tab, tab extra, mobile, mobile extra
+- Fix: horiztal table unnecessary gap between feature and cta section in tab, tab extra, mobile, mobile extra
 
 = 1.0.4
-- Fix veritcal table default padding issue
-- Fix vertical table svg icon color issue
-- Fix vertical table ribbon default padding issue
+- Fix: veritcal table default padding issue
+- Fix: vertical table svg icon color issue
+- Fix: vertical table ribbon default padding issue
 
 = 1.0.3
-- Feat added border property to comparison table
-- Feat content template added
-- Fix footer cta each element gap
-- Fix tooltip hide/show not working
-- Fix when primary and secondary button at top there wasn't any gap between them
-- Fix button svg color and size in buttons
-- Fix fixed css for wordpress theme compatability
-- Fix table compitable issue for themes
-- Fix comparison table button svg color, in odd td there was different color
-- Fix primary and secondary button icon color not working
-- Fix justify cta option not working properly
-- Fix long table description issue in comparison table
-- Fix padding not working on last feature row
-- Fix broken images on content template when image removed or deleted
-- Fix last feature padding issues
+- New: added border property to comparison table
+- New: content template added
+- Fix: footer cta each element gap
+- Fix: tooltip hide/show not working
+- Fix: when primary and secondary button at top there wasn't any gap between them
+- Fix: button svg color and size in buttons
+- Fix: fixed css for wordpress theme compatability
+- Fix: table compitable issue for themes
+- Fix: comparison table button svg color, in odd td there was different color
+- Fix: primary and secondary button icon color not working
+- Fix: justify cta option not working properly
+- Fix: long table description issue in comparison table
+- Fix: padding not working on last feature row
+- Fix: broken images on content template when image removed or deleted
+- Fix: last feature padding issues
 
 = 1.0.2
-- Fix Double URL Issue Of Comparison Table In Primary Button 
-- Fix Elementor Gallery Popup Image Issue
-- Fix Button Hover Visbility Issue Default Widget
+- Fix: Double URL Issue Of Comparison Table In Primary Button 
+- Fix: Elementor Gallery Popup Image Issue
+- Fix: Button Hover Visbility Issue Default Widget
 
 
 = 1.0.1 
