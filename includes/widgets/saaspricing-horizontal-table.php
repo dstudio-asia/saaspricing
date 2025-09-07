@@ -387,23 +387,23 @@ protected function register_controls() {
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     '' => esc_html__( 'None', 'saaspricing'  ),
-                    'dollar' => '&#36; ' . esc_html__( 'Dollar', 'Currency', 'saaspricing'  ),
-                    'euro' => '&#128; ' . esc_html__( 'Euro', 'Currency', 'saaspricing'  ),
-                    'baht' => '&#3647; ' . esc_html__( 'Baht', 'Currency', 'saaspricing'  ),
-                    'franc' => '&#8355; ' . esc_html__( 'Franc', 'Currency', 'saaspricing'  ),
-                    'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'Currency', 'saaspricing'  ),
-                    'krona' => 'kr' . esc_html__( 'Krona', 'Currency', 'saaspricing'  ),
-                    'lira' => '&#8356; ' . esc_html__( 'Lira', 'Currency', 'saaspricing'  ),
-                    'peseta' => '&#8359;' . esc_html__( 'Peseta', 'Currency', 'saaspricing'  ),
-                    'peso' => '&#8369; ' . esc_html__( 'Peso', 'Currency', 'saaspricing'  ),
-                    'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'Currency', 'saaspricing'  ),
-                    'real' => 'R$ ' . esc_html__( 'Real', 'Currency', 'saaspricing'  ),
-                    'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'Currency', 'saaspricing'  ),
-                    'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'Currency', 'saaspricing'  ),
-                    'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'Currency', 'saaspricing'  ),
-                    'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'Currency', 'saaspricing'  ),
-                    'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'Currency', 'saaspricing'  ),
-                    'won' => '&#8361; ' . esc_html__( 'Won', 'Currency', 'saaspricing'  ),
+                    'dollar' => '&#36; ' . esc_html__( 'Dollar', 'saaspricing'  ),
+                    'euro' => '&#128; ' . esc_html__( 'Euro', 'saaspricing'  ),
+                    'baht' => '&#3647; ' . esc_html__( 'Baht', 'saaspricing'  ),
+                    'franc' => '&#8355; ' . esc_html__( 'Franc', 'saaspricing'  ),
+                    'guilder' => '&fnof; ' . esc_html__( 'Guilder', 'saaspricing'  ),
+                    'krona' => 'kr ' . esc_html__( 'Krona', 'saaspricing'  ),
+                    'lira' => '&#8356; ' . esc_html__( 'Lira', 'saaspricing'  ),
+                    'peseta' => '&#8359;' . esc_html__( 'Peseta', 'saaspricing'  ),
+                    'peso' => '&#8369; ' . esc_html__( 'Peso', 'saaspricing'  ),
+                    'pound' => '&#163; ' . esc_html__( 'Pound Sterling', 'saaspricing'  ),
+                    'real' => 'R$ ' . esc_html__( 'Real', 'saaspricing'  ),
+                    'ruble' => '&#8381; ' . esc_html__( 'Ruble', 'saaspricing'  ),
+                    'rupee' => '&#8360; ' . esc_html__( 'Rupee', 'saaspricing'  ),
+                    'indian_rupee' => '&#8377; ' . esc_html__( 'Rupee (Indian)', 'saaspricing'  ),
+                    'shekel' => '&#8362; ' . esc_html__( 'Shekel', 'saaspricing'  ),
+                    'yen' => '&#165; ' . esc_html__( 'Yen/Yuan', 'saaspricing'  ),
+                    'won' => '&#8361; ' . esc_html__( 'Won', 'saaspricing'  ),
                     'custom' => esc_html__( 'Custom', 'saaspricing'  ),
                 ],
                 'default' => 'dollar',
@@ -1035,19 +1035,19 @@ protected function register_controls() {
     $this->add_control(
         'saasp_horizontal_header_divider_alignment',
         [
-            'label' => esc_html__( 'Alignment', 'saasprcing' ),
+            'label' => esc_html__( 'Alignment', 'saaspricing' ),
             'type' => Controls_Manager::CHOOSE,
             'options' => [
                 '0 0 0 0' => [
-                    'title' => esc_html__( 'Left', 'saasprcing' ),
+                    'title' => esc_html__( 'Left', 'saaspricing' ),
                     'icon' => 'eicon-text-align-left',
                 ],
                 '0 auto 0 auto' => [
-                    'title' => esc_html__( 'Center', 'saasprcing' ),
+                    'title' => esc_html__( 'Center', 'saaspricing' ),
                     'icon' => 'eicon-text-align-center',
                 ],
                 '0 0 0 auto' => [
-                    'title' => esc_html__( 'Right', 'saasprcing' ),
+                    'title' => esc_html__( 'Right', 'saaspricing' ),
                     'icon' => 'eicon-text-align-right',
                 ],
             ],
@@ -2074,22 +2074,13 @@ protected function register_controls() {
 
     $this->end_controls_tabs();
 
-    $this->add_control(
-        'saasp_horizontal_primary_separator',
-        [
-            'label' => esc_html__( '', 'saaspricing' ),
-            'type' =>  Controls_Manager::RAW_HTML,
-            'raw' => esc_html__( '', 'saaspricing' ),
-            'separator'=> 'after',
-        ]
-    );
-
     $this->add_responsive_control(
         'saasp_horizontal_primary_cta_padding',
         [
             'label' => esc_html__( 'Padding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
+            'separator' => 'before',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-primary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
@@ -2251,22 +2242,13 @@ protected function register_controls() {
 
     $this->end_controls_tabs();
 
-    $this->add_control(
-        'saasp_horizontal_secondary_separator',
-        [
-            'label' => esc_html__( '', 'saaspricing' ),
-            'type' =>  Controls_Manager::RAW_HTML,
-            'raw' => esc_html__( '', 'saaspricing' ),
-            'separator'=> 'after',
-        ]
-    );
-
     $this->add_responsive_control(
         'saasp_horizontal_secondary_cta_padding',
         [
             'label' => esc_html__( 'Padding', 'saaspricing' ),
             'type' =>  Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%', 'em'],
+            'separator' => 'before',
             'selectors' => [
                 '{{WRAPPER}} .saaspricing-horizontal-secondary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
