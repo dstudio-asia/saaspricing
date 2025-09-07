@@ -1,6 +1,6 @@
 === PricingAddons – Advanced Pricing & Comparison Tables for Elementor ===
 Contributors: debuggersstudio
-Tags: price table, comparison table, pricing box, price plan, pricing calculator
+Tags: price table, comparison table, pricing box, elementor table, pricing calculator
 Requires at least: 5.8
 Tested up to: 6.8
 Requires PHP: 7.4
