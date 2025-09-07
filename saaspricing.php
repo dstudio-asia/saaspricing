@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: SaasPricing - Pricing Table, Price list, Comparison Table for Elementor
+ * Plugin Name: PricingAddons – Advanced Pricing & Comparison Tables for Elementor
  * Description: Top Elementor Widget for Price Table, comparison table and real time pricing calculator With trendy design and different table style
- * Version: 1.1.3
+ * Version: 1.2.2
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Elementor tested up to: 3.8.0
@@ -11,6 +11,9 @@
  * Author URI: https://debuggersstudio.com
  * Text Domain: saaspricing
  * Domain Path: /languages
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires Plugins: elementor
  */
 
  if ( ! defined( 'ABSPATH' ) ) {

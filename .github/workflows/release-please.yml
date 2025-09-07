@@ -1,19 +1,41 @@
+name: Release-Please
+
 on:
   push:
     branches:
-      - dev
+      - main   # <- change to 'dev' if you release from dev
 
 permissions:
   contents: write
   pull-requests: write
-
-name: release-please
+  issues: write
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Read version from readme.txt (Stable tag: x.y.z)
+      - name: Read version from readme.txt
+        id: readme_version
+        run: |
+          VERSION=$(grep -oP '^Stable tag:\s*\K[0-9]+(\.[0-9]+)*' readme.txt)
+          if [ -z "$VERSION" ]; then
+            echo "❌ Stable tag not found in readme.txt"; exit 1
+          fi
+          echo "Found version: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      # Run Release Please WITHOUT touching any files
+      - name: Release Please (no file changes)
+        uses: google-github-actions/release-please-action@v3
         with:
-          release-type: node
+          release-type: simple
           package-name: saaspricing
+          default-branch: main               # <- change to 'dev' if needed
+          include-v-in-tag: false
+          release-as: ${{ steps.readme_version.outputs.version }}
+          # NOTE: do NOT set 'version-file' or 'extra-files'
+          # This ensures nothing in the repo gets edited.

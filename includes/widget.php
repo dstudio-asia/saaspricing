@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.1.3';
+	const VERSION = '1.2.2';
 
 	/**
 	 * Minimum Elementor Version
@@ -114,6 +114,14 @@ final class Saas_Pricing {
 
 	}
 
+	public function saasp_allowed_tags()
+    {
+        $allowed_tags = array(
+            'strong' => array(),
+        );
+        return $allowed_tags;
+    }
+
 	/**
 	 * Admin notice
 	 *
@@ -125,17 +133,15 @@ final class Saas_Pricing {
 
 	public function admin_notice_missing_main_plugin() {
 
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
 		$message = sprintf(
-
+			/* translators: %1$s is replaced with "PricingAddons – Advanced Pricing & Comparison Tables for Elementor"  and %2$s is replaced with "Elementor"*/
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'saaspricing' ),
 			'<strong>' . esc_html__( 'Saaspricing', 'saaspricing' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'saaspricing' ) . '</strong>'
 
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses( $message, $this->saasp_allowed_tags() ) );
 
 	}
 
@@ -150,10 +156,8 @@ final class Saas_Pricing {
 
 	public function admin_notice_minimum_elementor_version() {
 
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
 		$message = sprintf(
-
+			/* translators: %1$s is replaced with "PricingAddons – Advanced Pricing & Comparison Tables for Elementor", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'saaspricing' ),
 			'<strong>' . esc_html__( 'Saaspricing', 'saaspricing' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'saaspricing' ) . '</strong>',
@@ -161,7 +165,7 @@ final class Saas_Pricing {
 
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses( $message, $this->saasp_allowed_tags() ) );
 
 	}
 
@@ -176,10 +180,8 @@ final class Saas_Pricing {
 
 	public function admin_notice_minimum_php_version() {
 
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
-
 		$message = sprintf(
-			
+			/* translators: %1$s is replaced with "PricingAddons – Advanced Pricing & Comparison Tables for Elementor", %2$s is replaced with "php", %3$s is replaced with "7.4" */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'saaspricing' ),
 			'<strong>' . esc_html__( 'Saaspricing', 'saaspricing' ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'saaspricing' ) . '</strong>',
@@ -187,7 +189,7 @@ final class Saas_Pricing {
 			 
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses( $message, $this->saasp_allowed_tags() ) );
 
 	}
 
@@ -216,11 +218,11 @@ final class Saas_Pricing {
 
 	public function saasp_frontend_styles() {
 
-		wp_register_style( 'saasp-bootstrap-css', SAASP_PRICING_ASSETS_URL . 'css/bootstrap.min.css' );
-	    wp_register_style( 'saasp-popup-css', SAASP_PRICING_ASSETS_URL . 'css/popup.css' );
-		wp_register_style( 'saasp-vendor-css', SAASP_PRICING_ASSETS_URL . 'css/vendor.css' );
-		wp_register_style( 'saasp-pricelist-css', SAASP_PRICING_ASSETS_URL . 'css/pricelist.css' );
-		wp_register_style( 'saasp-style-css', SAASP_PRICING_ASSETS_URL . 'css/style.css' );
+		wp_register_style( 'saasp-bootstrap-css', SAASP_PRICING_ASSETS_URL . 'css/bootstrap.min.css', null, self::VERSION, false );
+	    wp_register_style( 'saasp-popup-css', SAASP_PRICING_ASSETS_URL . 'css/popup.css', null, self::VERSION, false );
+		wp_register_style( 'saasp-vendor-css', SAASP_PRICING_ASSETS_URL . 'css/vendor.css', null, self::VERSION, false );
+		wp_register_style( 'saasp-pricelist-css', SAASP_PRICING_ASSETS_URL . 'css/pricelist.css', null, self::VERSION, false );
+		wp_register_style( 'saasp-style-css', SAASP_PRICING_ASSETS_URL . 'css/style.css', null, self::VERSION, false );
 	  
 		wp_enqueue_style( 'saasp-bootstrap-css' );
 		wp_enqueue_style( 'saasp-popup-css' );
@@ -233,8 +235,8 @@ final class Saas_Pricing {
 	}
 
 	public function saasp_frontend_scripts(){ 
-		wp_register_script( 'saasp-bootstrap-js', SAASP_PRICING_ASSETS_URL  . 'js/bootstrap.bundle.min.js' , [ 'jquery' ] , null , true );
-		wp_register_script( 'saasp-popup-js', SAASP_PRICING_ASSETS_URL . 'js/popup.js' , [ 'jquery' ] , null , true );
+		wp_register_script( 'saasp-bootstrap-js', SAASP_PRICING_ASSETS_URL  . 'js/bootstrap.bundle.min.js' , [ 'jquery' ] , self::VERSION , true );
+		wp_register_script( 'saasp-popup-js', SAASP_PRICING_ASSETS_URL . 'js/popup.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-vertical-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-vertical.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-horizontal-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-horizontal.js' , [ 'jquery' ] , self::VERSION , true );
 		wp_register_script( 'saasp-comparison-js', SAASP_PRICING_ASSETS_URL . 'js/saaspricing-comparison.js' , [ 'jquery' ] , self::VERSION , true );
@@ -253,7 +255,7 @@ final class Saas_Pricing {
 
 	public function saasp_editor_styles(){
 
-		wp_register_style( 'saasp-editor-css', SAASP_PRICING_ASSETS_URL . 'css/editor.css' );
+		wp_register_style( 'saasp-editor-css', SAASP_PRICING_ASSETS_URL . 'css/editor.css', null, self::VERSION, false );
 		wp_enqueue_style( 'saasp-editor-css' );
 
 	}
