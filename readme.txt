@@ -2,9 +2,9 @@
 Contributors: debuggersstudio
 Tags: price table, comparison table, pricing box, price plan, pricing calculator, price estimator table
 Requires at least: 5.8
-Tested up to: 6.6
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.1.3
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,17 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 4. Pricelist Widget
 
 == Changelog ==
+
+= 1.2.1
+- Refactor: move table-alignment control from style tab to content tab
+
+= 1.2.0
+- Fixed: Security vulnerability related to user input handling.
+- Improved: Input sanitization across plugin settings.
+- Improved: Output escaping to prevent potential XSS attacks.
+
+= 1.1.4
+- Fix bootstrap confliction with other css
 
 = 1.1.3
 - Removed font-awesome script

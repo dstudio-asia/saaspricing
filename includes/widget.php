@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.1.3';
+	const VERSION = '1.2.1';
 
 	/**
 	 * Minimum Elementor Version
@@ -114,6 +114,14 @@ final class Saas_Pricing {
 
 	}
 
+	public function saasp_allowed_tags()
+    {
+        $allowed_tags = array(
+            'strong' => array(),
+        );
+        return $allowed_tags;
+    }
+
 	/**
 	 * Admin notice
 	 *
@@ -135,7 +143,7 @@ final class Saas_Pricing {
 
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses( $message, $this->saasp_allowed_tags() ) );
 
 	}
 
@@ -161,7 +169,7 @@ final class Saas_Pricing {
 
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses( $message, $this->saasp_allowed_tags() ) );
 
 	}
 
@@ -187,7 +195,7 @@ final class Saas_Pricing {
 			 
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses( $message, $this->saasp_allowed_tags() ) );
 
 	}
 

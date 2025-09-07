@@ -2321,7 +2321,7 @@ protected function render() {
                 <!-- Table header -->
                 <div class="saaspricing-horizontal-header">
                     <?php if ('' !== $settings['saasp_horizontal_header_title']) {
-                        printf('<%1$s class="saaspricing-horizontal-title">%2$s</%1$s>', $settings['saasp_horizontal_header_title_tag'], $settings['saasp_horizontal_header_title']);
+                        printf('<%1$s class="saaspricing-horizontal-title">%2$s</%1$s>', esc_html( $settings['saasp_horizontal_header_title_tag'] ), esc_html( $settings['saasp_horizontal_header_title'] ) );
                     } ?>
                     <?php if ('' !== $settings['saasp_horizontal_header_description']) { ?>
                         <p class="saaspricing-horizontal-description">

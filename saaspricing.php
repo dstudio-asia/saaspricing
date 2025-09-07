@@ -3,7 +3,7 @@
 /**
  * Plugin Name: SaasPricing - Pricing Table, Price list, Comparison Table for Elementor
  * Description: Top Elementor Widget for Price Table, comparison table and real time pricing calculator With trendy design and different table style
- * Version: 1.1.3
+ * Version: 1.2.1
  * Requires at least: 5.8
  * Requires PHP: 7.4
  * Elementor tested up to: 3.8.0
@@ -11,6 +11,7 @@
  * Author URI: https://debuggersstudio.com
  * Text Domain: saaspricing
  * Domain Path: /languages
+ * Requires Plugins: elementor
  */
 
  if ( ! defined( 'ABSPATH' ) ) {

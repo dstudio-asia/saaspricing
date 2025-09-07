@@ -2233,8 +2233,8 @@ $settings = $this->get_settings_for_display();
 
                         <?php if ('' !== $settings['saasp_vertical_header_title']) {
                             printf('<%1$s class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">%2$s</%1$s>',
-                                $settings['saasp_vertical_header_title_tag'],
-                                $settings['saasp_vertical_header_title']);
+                                esc_html( $settings['saasp_vertical_header_title_tag'] ),
+                                esc_html( $settings['saasp_vertical_header_title'] ) );
                         } ?>
 
                         <p class="saaspricing-vertical-description saaspricing-vertical-header-alignment">
