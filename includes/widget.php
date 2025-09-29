@@ -9,7 +9,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.2.2';
+	const VERSION = '1.2.3';
 
 	/**
 	 * Minimum Elementor Version
@@ -134,7 +134,7 @@ final class Saas_Pricing {
 	public function admin_notice_missing_main_plugin() {
 
 		$message = sprintf(
-			/* translators: %1$s is replaced with "PricingAddons – Advanced Pricing & Comparison Tables for Elementor"  and %2$s is replaced with "Elementor"*/
+			/* translators: %1$s is replaced with "SaasPricing – Advanced Pricing & Comparison Tables for Elementor"  and %2$s is replaced with "Elementor"*/
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'saaspricing' ),
 			'<strong>' . esc_html__( 'Saaspricing', 'saaspricing' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'saaspricing' ) . '</strong>'
@@ -157,7 +157,7 @@ final class Saas_Pricing {
 	public function admin_notice_minimum_elementor_version() {
 
 		$message = sprintf(
-			/* translators: %1$s is replaced with "PricingAddons – Advanced Pricing & Comparison Tables for Elementor", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
+			/* translators: %1$s is replaced with "SaasPricing – Advanced Pricing & Comparison Tables for Elementor", %2$s is replaced with "Elementor", %3$s is replaced with "3.8.0" */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'saaspricing' ),
 			'<strong>' . esc_html__( 'Saaspricing', 'saaspricing' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'saaspricing' ) . '</strong>',
@@ -181,7 +181,7 @@ final class Saas_Pricing {
 	public function admin_notice_minimum_php_version() {
 
 		$message = sprintf(
-			/* translators: %1$s is replaced with "PricingAddons – Advanced Pricing & Comparison Tables for Elementor", %2$s is replaced with "php", %3$s is replaced with "7.4" */
+			/* translators: %1$s is replaced with "SaasPricing – Advanced Pricing & Comparison Tables for Elementor", %2$s is replaced with "php", %3$s is replaced with "7.4" */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'saaspricing' ),
 			'<strong>' . esc_html__( 'Saaspricing', 'saaspricing' ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'saaspricing' ) . '</strong>',
