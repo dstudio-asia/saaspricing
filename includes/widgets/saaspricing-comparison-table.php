@@ -20,6 +20,8 @@
 
 class Saasp_Comparison extends Widget_Base{
 
+use Sassp_Utils;
+
 public function get_name() {
     return 'saasp-comparison';
 }
@@ -6919,7 +6921,7 @@ protected function render() {
                             <tr class="saaspricing-price-table-head saaspricing-table-background">
                                 <td class="saaspricing-blank"></td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_1'] ));?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_column_html_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_title_text_1'] ));?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_1']); ?>
                                     </small>
@@ -6934,13 +6936,13 @@ protected function render() {
                             <tr class="saaspricing-price-table-head saaspricing-table-background">
                                 <td class="saaspricing-blank"></td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_1'] ));?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_column_html_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_title_text_1'] ));?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_1']); ?>
                                     </small>
                                 </td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_2'] ) );?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_column_html_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_title_text_2'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_2']); ?>
                                     </small>
@@ -6956,19 +6958,19 @@ protected function render() {
                             <tr class="saaspricing-price-table-head saaspricing-table-background">
                                 <td class="saaspricing-blank"></td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_1'] ) );?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_column_html_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_title_text_1'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_1']); ?>
                                     </small>
                                 </td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_2'] ) );?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_column_html_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_title_text_2'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_2']); ?>
                                     </small>
                                 </td>
                                 <td class="saaspricing-table-head saaspricing-comparison-header-alignment">
-                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( $settings['saasp_comparison_column_html_title_tag'] ), esc_html( $settings['saasp_comparison_header_title_text_3'] ) );?>
+                                    <?php printf('<%1$s class="saaspricing-heading-title">%2$s</%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_column_html_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_title_text_3'] ) );?>
                                     <small>
                                         <?php echo esc_html($settings['saasp_comparison_header_title_description_3']); ?>
                                     </small>
@@ -6983,7 +6985,7 @@ protected function render() {
                         <td class="saaspricing-table-title-description"> 
                             <?php
                             if( '' !== $settings['saasp_comparison_header_table_title'] ){
-                                printf('<%1$s class="d-block saaspricing-table-title" role="heading"> %2$s </%1$s>', esc_html( $settings['saasp_comparison_header_table_title_tag'] ), esc_html( $settings['saasp_comparison_header_table_title'] ) );
+                                printf('<%1$s class="d-block saaspricing-table-title" role="heading"> %2$s </%1$s>', esc_html( self::validate_html_tag( $settings['saasp_comparison_header_table_title_tag'] ) ), esc_html( $settings['saasp_comparison_header_table_title'] ) );
                             }
                             ?>
                             <?php
