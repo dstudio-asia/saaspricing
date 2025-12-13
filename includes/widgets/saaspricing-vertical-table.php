@@ -19,6 +19,8 @@
 
 class Saasp_Vertical extends Widget_Base {
 
+use Sassp_Utils;
+
 public function get_name() {
     return 'saasp-vertical';
 }
@@ -2233,7 +2235,7 @@ $settings = $this->get_settings_for_display();
 
                         <?php if ('' !== $settings['saasp_vertical_header_title']) {
                             printf('<%1$s class="card-title saaspricing-vertical-title saaspricing-vertical-header-alignment">%2$s</%1$s>',
-                                esc_html( $settings['saasp_vertical_header_title_tag'] ),
+                                esc_html( self::validate_html_tag( $settings['saasp_vertical_header_title_tag'] ) ),
                                 esc_html( $settings['saasp_vertical_header_title'] ) );
                         } ?>
 
