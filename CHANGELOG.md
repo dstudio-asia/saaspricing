@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.5](https://github.com/dstudio-asia/saaspricing/compare/1.2.2...1.2.5) (2025-12-13)
+
+
+### Bug Fixes
+
+* patched a potential XSS vulnerability reported in frontend input handling ([2abcc5a](https://github.com/dstudio-asia/saaspricing/commit/2abcc5a333d69dd07277b67219946a8a7b9f82ca))
+* Removed body text color to avoid overriding the default font color ([5c01ece](https://github.com/dstudio-asia/saaspricing/commit/5c01ecea76daf890b1bcc678dc19c5718e8e8413))
+
 ## [1.0.7](https://github.com/dstudio-asia/saaspricing/compare/v1.0.6...v1.0.7) (2024-06-12)
 
 
