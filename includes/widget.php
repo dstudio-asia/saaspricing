@@ -1,5 +1,11 @@
 <?php
+
 namespace Saas_Pricing_Table;
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
+
 
 final class Saas_Pricing {
 	/**
@@ -9,7 +15,7 @@ final class Saas_Pricing {
 	 * @var string The addon version.
 	 */
 
-	const VERSION = '1.2.5';
+	const VERSION = '1.2.6';
 
 	/**
 	 * Minimum Elementor Version

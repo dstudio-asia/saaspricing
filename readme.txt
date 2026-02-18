@@ -4,7 +4,7 @@ Tags: price table, comparison table, pricing box, elementor table, pricing calcu
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,9 @@ The Interactive Pricing Calculator is a dynamic tool that lets you enter your ow
 4. Pricelist Widget
 
 == Changelog ==
+
+= 1.2.6 - 2026-02-18 =
+- Fix: Blocked direct access to PHP files.
 
 = 1.2.5 - 2025-12-13
 - Fix: Patched a potential XSS vulnerability reported in frontend input handling.
