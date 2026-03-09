@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.7](https://github.com/dstudio-asia/saaspricing/compare/1.2.5...1.2.7) (2026-03-09)
+
+
+### Features
+
+* updated elementor compitability ([661fffe](https://github.com/dstudio-asia/saaspricing/commit/661fffee867d7e5af64d494c1239fe5d108b752c))
+
+
+### Bug Fixes
+
+* blocked direct access to php files ([1dcd903](https://github.com/dstudio-asia/saaspricing/commit/1dcd903b0d7b8e5ce1968c47136aa8c0cf5432b0))
+
 ## [1.2.5](https://github.com/dstudio-asia/saaspricing/compare/1.2.2...1.2.5) (2025-12-13)
 
 
