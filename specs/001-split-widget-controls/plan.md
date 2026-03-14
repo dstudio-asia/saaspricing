@@ -89,7 +89,15 @@ includes/
     |       |   `-- content-*.php
     |       `-- style-controls/
     |           `-- style-*.php
-    |-- saaspricing-pricelist.php
+    |-- pricelist/
+    |   |-- saaspricing-pricelist.php
+    |   `-- controls/
+    |       |-- content-controls-manager.php
+    |       |-- style-controls-manager.php
+    |       |-- content-controls/
+    |       |   `-- content-*.php
+    |       `-- style-controls/
+    |           `-- style-*.php
     |-- saaspricing-vertical-table.php
 assets/
 |-- css/
