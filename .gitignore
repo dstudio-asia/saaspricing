@@ -1,1 +1,12 @@
 .vscode/
+.codex
+.specify
+AGENTS.md
+vendor/
+*.log
+*.cache
+*.env
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp

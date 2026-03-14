@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
+require_once SAASP_PRICING__DIR__ . '/classes/widgets-manager.php';
+
 
 final class Saas_Pricing {
 	/**
@@ -215,7 +217,7 @@ final class Saas_Pricing {
 		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'saasp_frontend_styles' ] );
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'saasp_frontend_scripts' ] );
 		add_action( 'elementor/editor/before_enqueue_styles', [ $this, 'saasp_editor_styles' ] );
-		add_action( 'elementor/widgets/register', [ $this, 'saasp_register_widgets' ] );
+		add_action( 'elementor/widgets/register', [ Widgets_Manager::instance(), 'register_widgets' ] );
 		add_action( 'elementor/elements/categories_registered', [$this,'saasp_add_categories']);
 		if( !in_array( 'saaspricing-pro/saaspricing-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 			add_filter( 'plugin_action_links_saaspricing/saaspricing.php', [$this,'saasp_action_link']);
@@ -266,18 +268,6 @@ final class Saas_Pricing {
 
 	}
 	
-	function saasp_register_widgets( $widgets_manager ) {
-		require_once(  __DIR__ . '/widgets/saaspricing-vertical-table.php' );
-		require_once(  __DIR__ . '/widgets/saaspricing-horizontal-table.php' );
-		require_once(  __DIR__ . '/widgets/saaspricing-comparison-table.php' );
-		require_once(  __DIR__ . '/widgets/saaspricing-pricelist.php' );
-		$widgets_manager->register( new \Saaspricing_Pricelist() );
-		$widgets_manager->register( new \Saasp_Horizontal() );
-		$widgets_manager->register( new \Saasp_Vertical() );
-		$widgets_manager->register( new \Saasp_Comparison() );
-
-	}
-
 	function saasp_add_categories( $elements_manager ) {
 
 		$elements_manager->add_category(
