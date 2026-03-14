@@ -48,9 +48,11 @@ class Widgets_Manager {
 			],
 			[
 				'class'        => '\Saasp_Vertical',
-				'widget_file'  => '/includes/widgets/saaspricing-vertical-table.php',
+				'widget_file'  => '/includes/widgets/vertical-table/saaspricing-vertical-table.php',
 				'control_dirs' => [
-					'/includes/widgets/traits/vertical/',
+					'/includes/widgets/vertical-table/controls/content-controls/',
+					'/includes/widgets/vertical-table/controls/style-controls/',
+					'/includes/widgets/vertical-table/controls/',
 				],
 			],
 			[

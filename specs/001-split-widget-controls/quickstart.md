@@ -40,7 +40,7 @@
    - `includes/widgets/comparison-table/saaspricing-comparison-table.php`
    - `includes/widgets/horizontal-table/saaspricing-horizontal-table.php`
    - `includes/widgets/pricelist/saaspricing-pricelist.php`
-   - `includes/widgets/saaspricing-vertical-table.php`
+   - `includes/widgets/vertical-table/saaspricing-vertical-table.php`
 4. Confirm each widget file still owns its widget class after the control split.
 5. Confirm `classes/widgets-manager.php` loads the widget control trait files before the widget
    classes are required.
@@ -132,6 +132,23 @@ Document a before/after mapping for:
   - inline `Price List` controls -> `includes/widgets/pricelist/controls/content-controls/content-pricelist.php`
 - Pricelist style-tab sections currently map as:
   - inline `Price List` controls -> `includes/widgets/pricelist/controls/style-controls/style-pricelist.php`
+- Vertical widget entry file now lives at `includes/widgets/vertical-table/saaspricing-vertical-table.php`
+  and now loads:
+  - `includes/widgets/vertical-table/controls/content-controls-manager.php`
+  - `includes/widgets/vertical-table/controls/style-controls-manager.php`
+- Vertical content-tab sections currently map as:
+  - inline `Header` controls -> `includes/widgets/vertical-table/controls/content-controls/content-header.php`
+  - inline `Body` controls -> `includes/widgets/vertical-table/controls/content-controls/content-body.php`
+  - inline `Features` controls -> `includes/widgets/vertical-table/controls/content-controls/content-features.php`
+  - inline `Buttons` controls -> `includes/widgets/vertical-table/controls/content-controls/content-buttons.php`
+- Vertical style-tab sections currently map as:
+  - inline `Header` controls -> `includes/widgets/vertical-table/controls/style-controls/style-header.php`
+  - inline `Ribbon` controls -> `includes/widgets/vertical-table/controls/style-controls/style-ribbon.php`
+  - inline `Pricing` controls -> `includes/widgets/vertical-table/controls/style-controls/style-pricing.php`
+  - inline `Countdown` controls -> `includes/widgets/vertical-table/controls/style-controls/style-countdown.php`
+  - inline `Review` controls -> `includes/widgets/vertical-table/controls/style-controls/style-review.php`
+  - inline `Features` controls -> `includes/widgets/vertical-table/controls/style-controls/style-features.php`
+  - inline `Buttons` controls -> `includes/widgets/vertical-table/controls/style-controls/style-buttons.php`
 
 ## Completion Evidence
 
