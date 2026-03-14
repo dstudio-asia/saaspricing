@@ -30,9 +30,11 @@ class Widgets_Manager {
 		return [
 			[
 				'class'        => '\Saaspricing_Pricelist',
-				'widget_file'  => '/includes/widgets/saaspricing-pricelist.php',
+				'widget_file'  => '/includes/widgets/pricelist/saaspricing-pricelist.php',
 				'control_dirs' => [
-					'/includes/widgets/traits/pricelist/',
+					'/includes/widgets/pricelist/controls/content-controls/',
+					'/includes/widgets/pricelist/controls/style-controls/',
+					'/includes/widgets/pricelist/controls/',
 				],
 			],
 			[

@@ -39,7 +39,7 @@
 3. Confirm the same widget classes remain in use:
    - `includes/widgets/comparison-table/saaspricing-comparison-table.php`
    - `includes/widgets/horizontal-table/saaspricing-horizontal-table.php`
-   - `includes/widgets/saaspricing-pricelist.php`
+   - `includes/widgets/pricelist/saaspricing-pricelist.php`
    - `includes/widgets/saaspricing-vertical-table.php`
 4. Confirm each widget file still owns its widget class after the control split.
 5. Confirm `classes/widgets-manager.php` loads the widget control trait files before the widget
@@ -124,6 +124,14 @@ Document a before/after mapping for:
   - inline `Countdown` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-countdown.php`
   - inline `Review` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-review.php`
   - inline `Buttons` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-buttons.php`
+- Pricelist widget entry file now lives at `includes/widgets/pricelist/saaspricing-pricelist.php`
+  and now loads:
+  - `includes/widgets/pricelist/controls/content-controls-manager.php`
+  - `includes/widgets/pricelist/controls/style-controls-manager.php`
+- Pricelist content-tab sections currently map as:
+  - inline `Price List` controls -> `includes/widgets/pricelist/controls/content-controls/content-pricelist.php`
+- Pricelist style-tab sections currently map as:
+  - inline `Price List` controls -> `includes/widgets/pricelist/controls/style-controls/style-pricelist.php`
 
 ## Completion Evidence
 
