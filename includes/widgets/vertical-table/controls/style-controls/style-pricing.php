@@ -6,7 +6,6 @@ if (! defined('ABSPATH')) {
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
 trait Saasp_Vertical_Style_Pricing_Controls
