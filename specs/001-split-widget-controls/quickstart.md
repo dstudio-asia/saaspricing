@@ -38,7 +38,7 @@
    class files are registered.
 3. Confirm the same widget classes remain in use:
    - `includes/widgets/comparison-table/saaspricing-comparison-table.php`
-   - `includes/widgets/saaspricing-horizontal-table.php`
+   - `includes/widgets/horizontal-table/saaspricing-horizontal-table.php`
    - `includes/widgets/saaspricing-pricelist.php`
    - `includes/widgets/saaspricing-vertical-table.php`
 4. Confirm each widget file still owns its widget class after the control split.
@@ -105,6 +105,25 @@ Document a before/after mapping for:
   - inline `Ribbon` controls -> `includes/widgets/comparison-table/controls/style-controls/style-ribbon.php`
   - inline `Buttons` controls -> `includes/widgets/comparison-table/controls/style-controls/style-buttons.php`
 - Remaining widgets should follow the same widget-owned folder pattern as they are split.
+- Horizontal widget entry file now lives at `includes/widgets/horizontal-table/saaspricing-horizontal-table.php`
+  and now loads:
+  - `includes/widgets/horizontal-table/controls/content-controls-manager.php`
+  - `includes/widgets/horizontal-table/controls/style-controls-manager.php`
+- Horizontal content-tab sections currently map as:
+  - inline `Header` controls -> `includes/widgets/horizontal-table/controls/content-controls/content-header.php`
+  - inline `Features` controls -> `includes/widgets/horizontal-table/controls/content-controls/content-features.php`
+  - inline `Pricing` controls -> `includes/widgets/horizontal-table/controls/content-controls/content-pricing.php`
+  - inline `Buttons` controls -> `includes/widgets/horizontal-table/controls/content-controls/content-buttons.php`
+- Horizontal style-tab sections currently map as:
+  - inline `Header` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-header.php`
+  - inline `Divider` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-divider.php`
+  - inline `Features` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-features.php`
+  - inline `CTA` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-cta.php`
+  - inline `Ribbon` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-ribbon.php`
+  - inline `Pricing` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-pricing.php`
+  - inline `Countdown` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-countdown.php`
+  - inline `Review` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-review.php`
+  - inline `Buttons` controls -> `includes/widgets/horizontal-table/controls/style-controls/style-buttons.php`
 
 ## Completion Evidence
 

@@ -104,8 +104,8 @@ The feature applies to these four existing widgets individually:
 - **Comparison Table Widget**: MUST use `includes/widgets/comparison-table/saaspricing-comparison-table.php`
   as its widget entry file and keep its control definitions inside that widget-owned folder.
 - **Horizontal Pricing Table Widget**: MUST keep
-  `includes/widgets/saaspricing-horizontal-table.php` as its widget entry file and move only
-  its control definitions into its future widget-owned folder.
+  `includes/widgets/horizontal-table/saaspricing-horizontal-table.php` as its widget entry
+  file and keep its control definitions inside that widget-owned folder.
 - **Pricelist Widget**: MUST keep `includes/widgets/saaspricing-pricelist.php` as its widget
   entry file and move only its control definitions into its future widget-owned folder.
 - **Vertical Pricing Table Widget**: MUST keep

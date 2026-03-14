@@ -29,44 +29,48 @@ class Widgets_Manager {
 	private function get_widgets_config() {
 		return [
 			[
-				'class'      => '\Saaspricing_Pricelist',
-				'file'       => 'saaspricing-pricelist.php',
-				'trait_dirs' => [
+				'class'        => '\Saaspricing_Pricelist',
+				'widget_file'  => '/includes/widgets/saaspricing-pricelist.php',
+				'control_dirs' => [
 					'/includes/widgets/traits/pricelist/',
 				],
 			],
 			[
-				'class'      => '\Saasp_Horizontal',
-				'file'       => 'saaspricing-horizontal-table.php',
-				'trait_dirs' => [
-					'/includes/widgets/traits/horizontal/',
+				'class'        => '\Saasp_Horizontal',
+				'widget_file'  => '/includes/widgets/horizontal-table/saaspricing-horizontal-table.php',
+				'control_dirs' => [
+					'/includes/widgets/horizontal-table/controls/content-controls/',
+					'/includes/widgets/horizontal-table/controls/style-controls/',
+					'/includes/widgets/horizontal-table/controls/',
 				],
 			],
 			[
-				'class'      => '\Saasp_Vertical',
-				'file'       => 'saaspricing-vertical-table.php',
-				'trait_dirs' => [
+				'class'        => '\Saasp_Vertical',
+				'widget_file'  => '/includes/widgets/saaspricing-vertical-table.php',
+				'control_dirs' => [
 					'/includes/widgets/traits/vertical/',
 				],
 			],
 			[
-				'class'      => '\Saasp_Comparison',
-				'file'       => 'saaspricing-comparison-table.php',
-				'trait_dirs' => [
-					'/includes/widgets/traits/comparison-table/',
+				'class'        => '\Saasp_Comparison',
+				'widget_file'  => '/includes/widgets/comparison-table/saaspricing-comparison-table.php',
+				'control_dirs' => [
+					'/includes/widgets/comparison-table/controls/content-controls/',
+					'/includes/widgets/comparison-table/controls/style-controls/',
+					'/includes/widgets/comparison-table/controls/',
 				],
 			],
 		];
 	}
 
 	private function register_single_widget( $config, $widgets_manager ) {
-		if ( empty( $config['class'] ) || empty( $config['file'] ) ) {
+		if ( empty( $config['class'] ) || empty( $config['widget_file'] ) ) {
 			return;
 		}
 
-		$this->load_trait_directories( $config['trait_dirs'] ?? [] );
+		$this->load_control_directories( $config['control_dirs'] ?? [] );
 
-		$widget_path = SAASP_PRICING__DIR__ . '/includes/widgets/' . $config['file'];
+		$widget_path = SAASP_PRICING__DIR__ . $config['widget_file'];
 
 		if ( ! file_exists( $widget_path ) ) {
 			return;
@@ -79,7 +83,7 @@ class Widgets_Manager {
 		}
 	}
 
-	private function load_trait_directories( $directories ) {
+	private function load_control_directories( $directories ) {
 		foreach ( $directories as $directory ) {
 			$full_dir_path = SAASP_PRICING__DIR__ . $directory;
 
@@ -96,8 +100,8 @@ class Widgets_Manager {
 			usort(
 				$trait_files,
 				static function( $left, $right ) {
-					$left_is_aggregator  = preg_match( '/(?:content|style)-controls\.php$/', str_replace( '\\', '/', $left ) );
-					$right_is_aggregator = preg_match( '/(?:content|style)-controls\.php$/', str_replace( '\\', '/', $right ) );
+					$left_is_aggregator  = preg_match( '/(?:content|style)-controls(?:-manager)?\.php$/', str_replace( '\\', '/', $left ) );
+					$right_is_aggregator = preg_match( '/(?:content|style)-controls(?:-manager)?\.php$/', str_replace( '\\', '/', $right ) );
 
 					if ( $left_is_aggregator !== $right_is_aggregator ) {
 						return $left_is_aggregator ? 1 : -1;
