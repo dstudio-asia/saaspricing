@@ -80,7 +80,15 @@ includes/
     |       |   `-- content-*.php
     |       `-- style-controls/
     |           `-- style-*.php
-    |-- saaspricing-horizontal-table.php
+    |-- horizontal-table/
+    |   |-- saaspricing-horizontal-table.php
+    |   `-- controls/
+    |       |-- content-controls-manager.php
+    |       |-- style-controls-manager.php
+    |       |-- content-controls/
+    |       |   `-- content-*.php
+    |       `-- style-controls/
+    |           `-- style-*.php
     |-- saaspricing-pricelist.php
     |-- saaspricing-vertical-table.php
 assets/
