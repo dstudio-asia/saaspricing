@@ -21,7 +21,7 @@ description: "Task list for separating widget controls only"
 ## Path Conventions
 
 - **Plugin root**: `saaspricing.php`, `includes/`, `assets/`, `languages/`
-- **Widget entry files**: `includes/widgets/comparison-table/saaspricing-comparison-table.php`, `includes/widgets/horizontal-table/saaspricing-horizontal-table.php`, `includes/widgets/pricelist/saaspricing-pricelist.php`, `includes/widgets/saaspricing-vertical-table.php`
+- **Widget entry files**: `includes/widgets/comparison-table/saaspricing-comparison-table.php`, `includes/widgets/horizontal-table/saaspricing-horizontal-table.php`, `includes/widgets/pricelist/saaspricing-pricelist.php`, `includes/widgets/vertical-table/saaspricing-vertical-table.php`
 - **Control files**: `includes/widgets/<widget>/controls/content-controls-manager.php`,
   `includes/widgets/<widget>/controls/style-controls-manager.php`, and tab-prefixed section files
 - Every move task MUST preserve an old-to-new mapping for the touched control areas
@@ -64,7 +64,7 @@ description: "Task list for separating widget controls only"
 - [X] T006 [P] [US1] Update `includes/widgets/comparison-table/saaspricing-comparison-table.php` so it keeps widget logic in place, uses local comparison traits directly, and does not `require_once` raw control snippets inline
 - [X] T007 [P] [US1] Update `includes/widgets/horizontal-table/saaspricing-horizontal-table.php` so it keeps widget logic in place, uses local horizontal traits directly, and does not `require_once` raw control snippets inline
 - [X] T008 [P] [US1] Update `includes/widgets/pricelist/saaspricing-pricelist.php` so it keeps widget logic in place, uses local pricelist traits directly, and does not `require_once` raw control snippets inline
-- [ ] T009 [P] [US1] Update `includes/widgets/saaspricing-vertical-table.php` so it keeps widget logic in place, uses vertical traits directly, and does not `require_once` its trait files inline
+- [X] T009 [P] [US1] Update `includes/widgets/vertical-table/saaspricing-vertical-table.php` so it keeps widget logic in place, uses local vertical traits directly, and does not `require_once` raw control snippets inline
 - [ ] T010 [US1] Verify the current widget files and registration flow remain unchanged after control extraction
 
 **Checkpoint**: Existing widget files still own their classes and load correctly after the control split
@@ -87,7 +87,7 @@ description: "Task list for separating widget controls only"
 - [X] T013 [P] [US2] Extract comparison style-tab controls from `includes/widgets/comparison-table/saaspricing-comparison-table.php` into `includes/widgets/comparison-table/controls/style-controls-manager.php` and any required `includes/widgets/comparison-table/controls/style-controls/style-*.php` section traits
 - [X] T014 [P] [US2] Extract horizontal content-tab and style-tab controls into `includes/widgets/horizontal-table/controls/content-controls-manager.php`, `includes/widgets/horizontal-table/controls/style-controls-manager.php`, and the required tab-prefixed section traits
 - [X] T015 [P] [US2] Extract pricelist content-tab and style-tab controls into `includes/widgets/pricelist/controls/content-controls-manager.php`, `includes/widgets/pricelist/controls/style-controls-manager.php`, and the required tab-prefixed section traits
-- [ ] T016 [P] [US2] Extract vertical content-tab and style-tab controls into a widget-owned folder with `controls/content-controls-manager.php`, `controls/style-controls-manager.php`, and any required tab-prefixed section traits
+- [X] T016 [P] [US2] Extract vertical content-tab and style-tab controls into `includes/widgets/vertical-table/controls/content-controls-manager.php`, `includes/widgets/vertical-table/controls/style-controls-manager.php`, and the required tab-prefixed section traits
 - [ ] T017 [US2] Verify every widget still has dedicated content and style control manager files even when a tab has only one section
 - [ ] T018 [US2] Run the editor checks in `specs/001-split-widget-controls/quickstart.md` for content-tab and style-tab controls across comparison, horizontal, pricelist, and vertical widgets
 
