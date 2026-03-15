@@ -109,8 +109,8 @@ The feature applies to these four existing widgets individually:
 - **Pricelist Widget**: MUST use `includes/widgets/pricelist/saaspricing-pricelist.php` as
   its widget entry file and keep its control definitions inside that widget-owned folder.
 - **Vertical Pricing Table Widget**: MUST keep
-  `includes/widgets/saaspricing-vertical-table.php` as its widget entry file and move only
-  its control definitions into its future widget-owned folder.
+  `includes/widgets/vertical-table/saaspricing-vertical-table.php` as its widget entry file
+  and keep its control definitions inside that widget-owned folder.
 
 For each widget above, maintainers must be able to:
 
